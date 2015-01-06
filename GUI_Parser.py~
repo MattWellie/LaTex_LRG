@@ -229,7 +229,7 @@ class Parser:
                             print "Invalid selection please type y or n"
                 out = open(outputFilePath, "w")
                 self.print_latex(td[y], y, self.genename, self.refseqname, out)
-                return outputfile
+                return outputFilePath
         
         elif self.option == '-p':
             dnaSeq = self.grab_element('fixed_annotation/sequence', self.root)
@@ -256,7 +256,7 @@ class Parser:
                             print "Invalid selection please type y or n"
                 out = open(outputFilePath, "w")
                 self.print_exons(pd[y], y, self.genename, self.refseqname, out)
-                return outputfile
+                return outputFilePath
         else:
             dnaSeq = self.grab_element('fixed_annotation/sequence', self.root)
             td = self.get_exoncoords(self.fixannot, self.pad, dnaSeq)
@@ -286,4 +286,4 @@ class Parser:
                             print "Invalid selection please type y or n"
                 out = open(outputFilePath, "w")
                 self.print_both(p, y, self.genename, self.refseqname, out)
-                return outputfile
+                return outputFilePath

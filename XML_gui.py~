@@ -27,7 +27,7 @@ def run_parser():
     latex_file = xml_parser.run()
     os.chdir("outputFiles")
     os.mkdir(latex_file[0:-4])
-    shutil.move(latex_file, os.path.join(latex_file[0:-4], latex_file))
+    shutil.move(latex_file, os.path.join(latex_file[0:-4], latex_file)
     os.chdir(latex_file[0:-4])
     call(["pdflatex", latex_file])
     root.quit()
