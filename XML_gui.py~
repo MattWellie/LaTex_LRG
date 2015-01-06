@@ -15,8 +15,10 @@ def About():
     #Operating instructions
 
 #OS methods (not fixed for class)
+#A fair amount of hard-coding is in place, just to ensure that output is in folders
 
 def run_parser():
+    #Files will not be stored directly in outputFiles anymore - requires overwrite check
     existingFiles = os.listdir('outputFiles')
     option = v.get()
     directory_and_file= entry.get()
@@ -27,7 +29,7 @@ def run_parser():
     latex_file = xml_parser.run()
     os.chdir("outputFiles")
     os.mkdir(latex_file[0:-4])
-    shutil.move(latex_file, os.path.join(latex_file[0:-4], latex_file)
+    shutil.move(latex_file, os.path.join(latex_file[0:-4], latex_file))
     os.chdir(latex_file[0:-4])
     call(["pdflatex", latex_file])
     root.quit()
