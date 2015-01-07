@@ -87,7 +87,7 @@ class Parser:
                         startIndex = int(coordinates.attrib['start'])
                         endIndex = int(coordinates.attrib['end'])
                         assert startIndex >= 0, "Exon index out of bounds"
-                        print "Start Index: " + str(startIndex)
+                        #print "Start Index: " + str(startIndex)
                         assert endIndex <= len(genseq), "Exon index out of bounds"
                         seq = genseq[startIndex-1:endIndex]
                         if pad > 0:					
@@ -96,7 +96,7 @@ class Parser:
                             pad5 = genseq[startIndex-pad:startIndex]
                             pad3 = genseq[endIndex:endIndex+pad]
                             seq = pad5.lower() + seq + pad3.lower()
-                tranexons.append((exon.attrib['label'], genStart, genEnd, seq))
+                tranexons.append((exon.attrib['label'], genStart, genEnd, seq, startIndex, endIndex))
                     #can add extra elif options to grab other sequence types
             transcriptdict[self.DNA_transcript] = tranexons
         return transcriptdict
@@ -119,7 +119,6 @@ class Parser:
                 exon_counter = 0
                 for exon in exon_item.iter('exon'):
                     exon_counter = exon_counter + 1
-                    #print 'for coord in exon'
                     attribute_list = []
                     for coordinates in exon: 
                         attribute_list.append(coordinates.attrib['coord_system'][-2:])
@@ -144,50 +143,67 @@ class Parser:
         for ex in exoncoordlist:
             header = ">Exon_" + str(ex[0]) + "|" + gene + "|" + refseqid +'|LengthOfExon:' + str(ex[2]-ex[1]) + "|StartPos:"+str(ex[1]) + "|EndPos:"+str(ex[2])
             print >>outfile, header,"\n",ex[-1]
-    
+   
 
     def print_latex(self, exoncoordlist, transcript, gene, refseqid, outfile):
-        '''Creates a LaTex readable file which can be converted to a final document
-	       Currently only working for DNA sequences'''
-        CDS_count = 0 		#A variable to maintain a count of the transcript length across all exons
+        ''' Creates a LaTex readable file which can be converted to a final document
+	        Currently only working for DNA sequences
+            Lengths of numbers calculated using len(###)'''
+        refseqid = refseqid.replace('_', '\_')       #Required for LaTex
+        CDS_count = 1 		#A variable to maintain a count of the transcript length across all exons
 	#The initial line(s) of the LaTex file, required to run
-        self.line_printer('\\documentclass{article}\n\\usepackage{fancyvrb}\n\\begin{document}\n\\begin{Verbatim}', outfile)
+        self.line_printer('\\documentclass{article}\n\\usepackage{fancyvrb}\n\\begin{document}\n\\begin{center}\n\\begin{large}\n Gene: %s - Sequence: %s\n\\end{large}\n\\end{center}\n \\begin{Verbatim}' % (gene, refseqid), outfile)
+        wait_value = 0
+        number_to_print = ''
         for exon in range(len(exoncoordlist)):
             DNA_exon = exoncoordlist[exon]
             print >>outfile, '\n\n\n\n Exon %s | Start: %s | End: %s \n' % (str(DNA_exon[0]), str(DNA_exon[1]), str(DNA_exon[2]))
             line_count = 0
             number_string  = [] 
             dna_string = []
-            for char in DNA_exon[-1]:
+            for char in DNA_exon[-3]:
+                #Stop each line at a specific length
+                #Remainder method prevents count being reset
                 if line_count%60 == 0:
+                    if wait_value != 0:
+                        for x in range(wait_value):
+                            number_string.append(number_to_print[x-1])
+                        wait_value = 0
                     self.line_printer(number_string, outfile)
                     self.line_printer(dna_string, outfile)
                     number_string = []
                     dna_string = []
                 dna_string.append(char)
                 if char.isupper():
-                    if (CDS_count % 10 == 0) or (CDS_count == 0):
+                    if (CDS_count % 10 == 1) or (CDS_count == 1) and (wait_value != 0):
                         number_string.append('|')
+                        number_to_print = str(CDS_count)[::-1]
+                        wait_value = len(number_to_print)
                         CDS_count = CDS_count + 1
+                    elif wait_value != 0:
+                        number_string.append(number_to_print[wait_value-1])
+                        CDS_count = CDS_count + 1 
+                        wait_value = wait_value - 1
                     else:
                         number_string.append(' ')
                         CDS_count = CDS_count + 1  
                 else:
-                    number_string.append(' ')
+                    if wait_value != 0:
+                        number_string.append(number_to_print[wait_value-1])
+                        wait_value = wait_value - 1
+                    else:
+                        number_string.append(' ')
                 line_count += 1
             
             #Section for incomplete lines (has not reached line-limit print)
             if len(dna_string) != 0:
-                #for char in dna_string:
-                #    if char.isupper():
-                #        if (CDS_count % 10 == 0) or (CDS_count == 0):
-                #            number_string.append('|')
-			    #            CDS_count += 1
-                #        else:
-                #            number_string.append(' ')
-			    #            CDS_count += 1
+                if wait_value != 0:
+                    for x in range(wait_value):
+                        number_string.append(number_to_print[x-1])
+                    wait_value = 0
                 self.line_printer(number_string, outfile)
                 self.line_printer(dna_string, outfile)
+
         self.line_printer('\\end{Verbatim}', outfile)       
         self.line_printer('\\end{document}', outfile)
 
