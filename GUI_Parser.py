@@ -31,12 +31,14 @@ class Parser:
             self.root = self.tree.getroot()
             self.fixannot = self.root.find('fixed_annotation') #ensures only exons from the fixed annotation will be taken
             self.genename = self.root.find('updatable_annotation/annotation_set/lrg_locus').text    
+            self.CDS_offset_path = 'fixed_annotation/transcript/coding_region/coordinates'
             self.prot_path = 'fixed_annotation/transcript/coding_region/translation'
             self.refseqname = self.root.find('fixed_annotation/sequence_source').text
         except IOError as fileNotPresent:
             print "The specified file cannot be located: " + fileNotPresent.filename
             exit()
-
+        self.CDS_offset = 0
+        self.CDS_length = 0
         try:
             self.pad = int(padding)
         except:
@@ -77,7 +79,16 @@ class Parser:
             #Transcript coordinates wanted for output
             genStart = 0
             genEnd = 0
+            CDS_holder = self.root.findall(self.CDS_offset_path)
+            for item in CDS_holder:
+                self.CDS_offset = int(item.attrib['start'])
+                self.CDS_length = int(item.attrib['end']) - int(item.attrib['start'])
             for exon in items.iter('exon'):
+                if exon.attrib['label'] == '1':
+                    for coordinates in exon:
+                        if coordinates.attrib['coord_system'][-2] not in ['t', 'p']:
+                            startIndex = int(coordinates.attrib['start'])
+                            self.CDS_offset = self.CDS_offset - startIndex
                 for coordinates in exon:
                     if coordinates.attrib['coord_system'][-2] == 't':
                         genStart = int(coordinates.attrib['start'])
@@ -150,7 +161,7 @@ class Parser:
 	        Currently only working for DNA sequences
             Lengths of numbers calculated using len(###)'''
         refseqid = refseqid.replace('_', '\_')       #Required for LaTex
-        CDS_count = 1 		#A variable to maintain a count of the transcript length across all exons
+        CDS_count = 1 - self.CDS_offset     #A variable to maintain a count of the transcript length across all exons
 	#The initial line(s) of the LaTex file, required to run
         self.line_printer('\\documentclass{article}\n\\usepackage{fancyvrb}\n\\begin{document}\n\\begin{center}\n\\begin{large}\n Gene: %s - Sequence: %s\n\\end{large}\n\\end{center}\n \\begin{Verbatim}' % (gene, refseqid), outfile)
         wait_value = 0
@@ -175,7 +186,7 @@ class Parser:
                     dna_string = []
                 dna_string.append(char)
                 if char.isupper():
-                    if (CDS_count % 10 == 1) or (CDS_count == 1) and (wait_value != 0):
+                    if (CDS_count % 10 == 1) or (CDS_count == 1) and (wait_value != 0) and (CDS_count >= 1) and (CDS_count <= CDS_length):
                         number_string.append('|')
                         number_to_print = str(CDS_count)[::-1]
                         wait_value = len(number_to_print)
@@ -223,6 +234,7 @@ class Parser:
         
 
     def run(self):
+        
         #if elif options for which sequences need to be grabbed 
         if self.option == '-g':
             gen_seq = self.grab_element('fixed_annotation/sequence', self.root)
