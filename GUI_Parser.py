@@ -113,58 +113,34 @@ class Parser:
         return transcriptdict
     
     
-    def get_protein_exons(self, prot_level, exon_level, root):
+    def get_protein_exons(self, prot_level, root):
+        ''' Cut down, only collects full protein sequence '''
         proteindict = {} #to contain exons from protein sequence
         for item in root.findall(prot_level):
             try:
                 prot_block = item.find("sequence")
                 protein_seq = prot_block.text
-                #print protein_seq    
                 self.prot_transcript = item.attrib['name']
-                #print transcript
             except:
                 print "No protein sequence was found"   
-            protexons = []
-            #print 'for exon in...'
-            for exon_item in root.findall(exon_level):
-                exon_counter = 0
-                for exon in exon_item.iter('exon'):
-                    exon_counter = exon_counter + 1
-                    attribute_list = []
-                    for coordinates in exon: 
-                        attribute_list.append(coordinates.attrib['coord_system'][-2:])
-                    if self.prot_transcript in attribute_list:
-                        for coordinates in exon: 
-                            if coordinates.attrib['coord_system'][-2:] == self.prot_transcript:
-                                start_index = int(coordinates.attrib['start'])
-                                end_index = int(coordinates.attrib['end'])
-                                assert start_index >= 0, "Exon index out of bounds"
-                                assert end_index <= len(protein_seq), "Exon index out of bounds"
-                                seq = protein_seq[start_index-1:end_index]
-                                protexons.append((exon.attrib['label'], start_index, end_index,seq))
-                    else:
-                        protexons.append((exon_counter, 0, 0, ''))
-            proteindict[self.prot_transcript] = protexons
-            #print proteindict
+            proteindict[self.prot_transcript] = protein_seq
         return proteindict
 
+    def print_latex(self, exoncoordlist, protein, transcript, gene, refseqid, outfile):
 
-    def print_exons(self, exoncoordlist, transcript, gene, refseqid, outfile):
-        '''Prints the exon sequences with headers to a fasta file'''
-        for ex in exoncoordlist:
-            header = ">Exon_" + str(ex[0]) + "|" + gene + "|" + refseqid +'|LengthOfExon:' + str(ex[2]-ex[1]) + "|StartPos:"+str(ex[1]) + "|EndPos:"+str(ex[2])
-            print >>outfile, header,"\n",ex[-1]
-   
-
-    def print_latex(self, exoncoordlist, transcript, gene, refseqid, outfile):
         ''' Creates a LaTex readable file which can be converted to a final document
 	        Currently only working for DNA sequences
             Lengths of numbers calculated using len(###)'''
-        refseqid = refseqid.replace('_', '\_')       #Required for LaTex
-        CDS_count = 1 - self.CDS_offset     #A variable to maintain a count of the transcript length across all exons
-	#The initial line(s) of the LaTex file, required to run
+
+        refseqid = refseqid.replace('_', '\_')#Required for LaTex
+        CDS_count = 1 - self.CDS_offset       #A variable to keep a count of the 
+                                              #transcript length across all exons
+	    #The initial line(s) of the LaTex file, required to run
         self.line_printer('\\documentclass{article}\n\\usepackage{fancyvrb}\n\\begin{document}\n\\begin{center}\n\\begin{large}\n Gene: %s - Sequence: %s\n\\end{large}\n\\end{center}\n \\begin{Verbatim}' % (gene, refseqid), outfile)
         wait_value = 0
+        codon_count = 2
+        amino_acid_counter = 0
+        amino_printing = False
         number_to_print = ''
         for exon in range(len(exoncoordlist)):
             DNA_exon = exoncoordlist[exon]
@@ -172,9 +148,12 @@ class Parser:
             line_count = 0
             number_string  = [] 
             dna_string = []
+            amino_string = []
+            
             for char in DNA_exon[-3]:
                 #Stop each line at a specific length
-                #Remainder method prevents count being reset
+                #Remainder method prevents count being 
+                #print amino_acid_counter
                 if line_count%60 == 0:
                     if wait_value != 0:
                         for x in range(wait_value):
@@ -182,9 +161,26 @@ class Parser:
                         wait_value = 0
                     self.line_printer(number_string, outfile)
                     self.line_printer(dna_string, outfile)
+                    self.line_printer(amino_string, outfile)
+                    amino_string = []
                     number_string = []
                     dna_string = []
                 dna_string.append(char)
+                if CDS_count == 1:
+                    amino_printing = True
+                if amino_acid_counter >= len(protein):
+                    amino_printing = False
+                if amino_printing == True and char.isupper():
+                    if codon_count == 3:
+                        amino_string.append(protein[amino_acid_counter])
+                        amino_acid_counter = amino_acid_counter + 1
+                        codon_count = 1
+                    else:
+                        codon_count = codon_count + 1
+                        amino_string.append(' ')
+                else:
+                    amino_string.append(' ') 
+                   
                 if char.isupper():
                     if (CDS_count % 10 == 1) or (CDS_count == 1) and (wait_value != 0) and (CDS_count >= 1) and (CDS_count <= CDS_length):
                         number_string.append('|')
@@ -214,6 +210,8 @@ class Parser:
                     wait_value = 0
                 self.line_printer(number_string, outfile)
                 self.line_printer(dna_string, outfile)
+                self.line_printer(amino_string, outfile)
+                self.line_printer('\\n', outfile)
 
         self.line_printer('\\end{Verbatim}', outfile)       
         self.line_printer('\\end{document}', outfile)
@@ -221,86 +219,19 @@ class Parser:
     def line_printer(self, string, outfile):
         print >>outfile, ''.join(string)
 
-    def print_both(self, prot_list, exon_list, gene, refseqid, outfile):
-        '''Prints the file header, DNA seq, and protein seq for each exon.
-        Not strictly FastA, but required for WMRGL'''
-        for exon in range(len(prot_list)):
-            DNA_exon = exon_list[exon]
-            PROT_exon = prot_list[exon]
-            header = ">Exon_" + DNA_exon[0] + "|" + gene + "|" + refseqid +'|LengthOfDNA:' + str((DNA_exon[2]-1)-DNA_exon[1])+'|LengthOfProt:' + str(( PROT_exon[2]+1)-PROT_exon[1]) + "|DNA_StartPos:"+str(DNA_exon[1]) + "|DNA_EndPos:"+str(DNA_exon[2])+"|PROT_StartPos:"+str(PROT_exon[1]) +   "|PROT_EndPos:"+str(PROT_exon[2])
-            print >>outfile, header
-            print >>outfile, DNA_exon[-1]
-            print >>outfile, PROT_exon[-1]
-        
-
     def run(self):
         
         #if elif options for which sequences need to be grabbed 
         if self.option == '-g':
             gen_seq = self.grab_element('fixed_annotation/sequence', self.root)
             td = self.get_exoncoords(self.fixannot, self.pad, gen_seq)
-            for y in td.keys():
-                outputfile = self.fileName.split('.')[0]+'_'+y+"_"+str(self.pad)+'_Out.tex'
-                outputFilePath = 'outputFiles/' + outputfile
-                #print outputFilePath
-                #print self.existingFiles
-                if outputfile in self.existingFiles:
-                    #tests whether file already exists
-                    print 'The output file already exists in the present directory'
-                    print 'Would you like to overwrite the file? y/n'
-                    c = 0
-                    while c == 0:
-                        userChoice = raw_input('> ')
-                        if userChoice == 'n':
-                            print "Program exited without creating file"
-                            exit() # can change later to offer alternate filename
-                        elif userChoice == 'y':
-                            c += 1
-                        else:
-                            print "Invalid selection please type y or n"
-                out = open(outputFilePath, "w")
-                self.print_latex(td[y], y, self.genename, self.refseqname, out)
-                return outputfile
-        
-        elif self.option == '-p':
-            dnaSeq = self.grab_element('fixed_annotation/sequence', self.root)
-            pd = self.get_protein_exons(self.prot_path, 'fixed_annotation/transcript', self.root)
-            for y in pd.keys():
-                outputfile = self.fileName.split('.')[0]+'_'+y+"_"+'_Prot_Out.fasta'
-                outputFilePath = 'outputFiles\\' + outputfile
-                print 'output path: ', outputFilePath
-                #self.existingFiles = os.listdir('outputFiles')
-                #print 'Existing files: ', existingFiles
-                if outputfile in self.existingFiles:
-                    #tests whether file already exists
-                    print 'The output file already exists in the present directory'
-                    print 'Would you like to overwrite the file? y/n'
-                    c = 0
-                    while c == 0:
-                        userChoice = raw_input('> ')
-                        if userChoice == 'n':
-                            print "Program exited without creating file"
-                            exit() # can change later to offer alternate filename
-                        elif userChoice == 'y':
-                            c += 1
-                        else:
-                            print "Invalid selection please type y or n"
-                out = open(outputFilePath, "w")
-                self.print_exons(pd[y], y, self.genename, self.refseqname, out)
-                return outputfile
-        else:
-            dnaSeq = self.grab_element('fixed_annotation/sequence', self.root)
-            td = self.get_exoncoords(self.fixannot, self.pad, dnaSeq)
-            pd = self.get_protein_exons(self.prot_path, 'fixed_annotation/transcript', self.root)
-            assert len(pd) == len(td), "The number of transcripts are different, please check file"
+            pd = self.get_protein_exons(self.prot_path, self.root)
             for entry in range(len(td)):
-                y = td[td.keys()[entry]]
-                p = pd[pd.keys()[entry]]
-                assert len(y) == len(p), "The number of exons are different, please check file"
-                outputfile = str(self.fileName.split('.')[0])+'_DNA'+self.DNA_transcript+"-Prot"+self.prot_transcript+"_"+str(self.pad)+'intronic_DNA_PROT_Out.fasta'
-                #print outputfile
+                exons = td[td.keys()[entry]]
+                protein = pd[pd.keys()[entry]]
+            #for y in td.keys():
+                outputfile = self.fileName.split('.')[0]+'_'+td.keys()[entry]+"_"+str(self.pad)+'_Out.tex'
                 outputFilePath = 'outputFiles/' + outputfile
-                #existingFiles = os.listdir('outputFiles')
                 if outputfile in self.existingFiles:
                     #tests whether file already exists
                     print 'The output file already exists in the present directory'
@@ -316,5 +247,5 @@ class Parser:
                         else:
                             print "Invalid selection please type y or n"
                 out = open(outputFilePath, "w")
-                self.print_both(p, y, self.genename, self.refseqname, out)
+                self.print_latex(exons, protein, td.keys()[entry], self.genename, self.refseqname, out)
                 return outputfile
