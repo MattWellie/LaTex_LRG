@@ -157,7 +157,7 @@ class Parser:
         number_to_print = ''
         for exon in range(len(exoncoordlist)):
             DNA_exon = exoncoordlist[exon]
-            print >>outfile, '\n\n\n\n Exon %s | Start: %s | End: %s \n' % (str(DNA_exon[0]), str(DNA_exon[1]), str(DNA_exon[2]))
+            print >>outfile, '\n\n\n\n Exon %s | Start: %s | End: %s | Length: %d \n' % (str(DNA_exon[0]), str(DNA_exon[1]), str(DNA_exon[2]), (DNA_exon[2]-DNA_exon[1]))
             line_count = 0
             number_string  = [] 
             dna_string = []
