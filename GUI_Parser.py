@@ -119,8 +119,8 @@ class Parser:
         offset_total = 0
         offset = self.transcriptdict[transcript]['cds_offset']
         for exon in self.transcriptdict[transcript]['list_of_exons']:
-            print 'exon: ' + exon
-            print self.transcriptdict[transcript]['exons'][exon]
+            #print 'exon: ' + exon
+            #print self.transcriptdict[transcript]['exons'][exon]
             g_start = self.transcriptdict[transcript]['exons'][exon]['genomic_start']
             g_stop = self.transcriptdict[transcript]['exons'][exon]['genomic_end']
             if offset > g_stop and offset_found == False:
@@ -279,7 +279,7 @@ class Parser:
         self.get_protein_exons(self.fixannot)
         for transcript in self.transcriptdict.keys():
             self.transcriptdict[transcript]['list_of_exons'].sort(key=float)
-            print self.transcriptdict[transcript]['list_of_exons']
+            #print self.transcriptdict[transcript]['list_of_exons']
             self.find_cds_delay(transcript)
 
         for entry in self.transcriptdict.keys():
