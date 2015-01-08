@@ -105,10 +105,22 @@ class Parser:
             sequence = translation.find('sequence').text
             self.transcriptdict[p_number]['protein_seq'] = sequence+'*' # Stop codon
 
-    def find_cds_delay(self):
+    def find_cds_delay(self, transcript):
         ''' Method to find the actual start of the translated sequence
             introduced to sort out non-coding exon problems '''
         #STUB
+        offset_found = False
+        offset_total = 0
+        offset = self.transcriptdict[transcript]['protein_seq']
+        for exon in self.transcriptdict[transcript]['list_of_exons']:
+            g_start = self.transcriptdict[transcript]['exons'][exon]['genomic_start']
+            g_stop = self.transcriptdict[transcript]['exons'][exon]['genomic_end']
+            while offset_found = False:
+                if offset > g_stop:
+                    offset_total = offset_total + (g_stop - g_start)
+                else:   
+                    offset_total = offset_total + offset - g_start
+            
 
     def print_latex(self, transcript, outfile):
         latex_dict = self.transcriptdict[transcript]
@@ -127,6 +139,7 @@ class Parser:
         self.line_printer('\\begin{center}', outfile)        
         self.line_printer('\\begin{large}', outfile)
         self.line_printer(' Gene: %s - Sequence: %s' % (self.genename, refseqid), outfile)
+        self.line_printer(' ', outfile)
         self.line_printer(' Date : \\today', outfile)
         self.line_printer('\\end{large}', outfile)
         self.line_printer('\\end{center}', outfile)
@@ -159,6 +172,7 @@ class Parser:
                 #Remainder method prevents count being 
                 #print amino_acid_counter
                 if line_count%60 == 0:
+                    #HACK, experiment
                     if wait_value != 0:
                         for x in range(wait_value + 1)[::-1]:
                             number_to_print = number_to_print[::-1]
@@ -265,7 +279,8 @@ class Parser:
             self.transcriptdict[transcript]['list_of_exons'] = exon_list
 
         #finding cds offset
-        self.find_cds_delay()
+
+            self.find_cds_delay(transcript)
 
         for entry in self.transcriptdict.keys():
             outputfile = self.fileName.split('.')[0]+'_'+entry+"_"+str(self.pad)
