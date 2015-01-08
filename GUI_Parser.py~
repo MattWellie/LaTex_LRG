@@ -283,7 +283,7 @@ class Parser:
             self.find_cds_delay(transcript)
 
         for entry in self.transcriptdict.keys():
-            outputfile = self.fileName.split('.')[0]+'_'+str(entry)+"_"+str(self.pad)
+            outputfile = self.genename+self.fileName.split('.')[0]+'_'+str(entry)+"_"+str(self.pad)
             outputfilename = outputfile + '.tex'
             outputFilePath = os.path.join('outputFiles', outputfilename)
             if outputfile in self.existingFiles:
