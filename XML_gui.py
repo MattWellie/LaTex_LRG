@@ -20,11 +20,10 @@ def About():
 def run_parser():
     #Files will not be stored directly in outputFiles anymore - requires overwrite check
     existingFiles = os.listdir('outputFiles')
-    option = v.get()
     directory_and_file= entry.get()
     file_name = directory_and_file.split('/')[-1]
     padding = pad.get()
-    xml_parser = Parser(file_name, padding, option, existingFiles)
+    xml_parser = Parser(file_name, padding, existingFiles)
     print 'Running parser'
     latex_file = xml_parser.run()
     os.chdir("outputFiles")
@@ -52,15 +51,6 @@ padding_in_label.grid(row=1, column=1, sticky = 'w')
 pad = Entry(root)
 pad.grid(row=1,column=2, sticky = 'w')
 pad.insert(0, "0")
-
-v=StringVar()
-v.set('-g')
-gen_radio = Radiobutton(root, text="Genomic only", variable=v, value='-g')#, command=set_option(value))
-prot_radio = Radiobutton(root, text="Protein only", variable=v, value='-p')#, command=set_option(value))
-both_radio = Radiobutton(root, text="Genomic + Protein", variable=v, value='-pg')#, command=set_option(value))
-gen_radio.grid(row=2, column=1, sticky = 'w')
-prot_radio.grid(row=2, column=2)
-both_radio.grid(row=2, column=3)
 
 button = Button(root, text="QUIT", fg="red", command=root.quit)
 button.grid(row=3, column=1)

@@ -11,20 +11,14 @@ import os
 
 class Parser:
 
-    def __init__(self, file_name, padding, option, existingFiles):#, root, option):
+    def __init__(self, file_name, padding, existingFiles):#, root, option):
         self.fileName = file_name
         self.existingFiles = existingFiles
         #assert len(sys.argv) <=4, "Too many arguments!" #check no additional arguments provided on command line
         #Check file name is valid .xml
         assert self.fileName[-4:] == '.xml', 'You have the wrong input file' 
         #Scan for the optional argument specifying genomic/protein etc.
-        #If option is not identified, use genomic only
-        self.option = ''
-        try:
-            self.option = option
-        except:
-            self.option = '-g'
-        #print 'option: ', option
+
         #Read in the specified input file into a variable
         try:
             self.tree = etree.parse(self.fileName)
@@ -48,7 +42,7 @@ class Parser:
         assert self.pad <= 2000, "Padding too large, please use a value below 2000 bases" 
 
     #Check the version of the file we are opening is correct
-        if self.root.attrib['schema_version'] <> '1.8':
+        if self.root.attrib['schema_version'] <> '1.9':
             print 'This LRG file is not the correct version for this script'
             print 'This is designed for v.1.8'
             print 'This file is v.' + self.root.attrib['schema_version']
@@ -136,20 +130,34 @@ class Parser:
         CDS_count = 1 - self.CDS_offset       #A variable to keep a count of the 
                                               #transcript length across all exons
 	    #The initial line(s) of the LaTex file, required to run
-        self.line_printer('\\documentclass{article}\n\\usepackage{fancyvrb}\n\\begin{document}\n\\begin{center}\n\\begin{large}\n Gene: %s - Sequence: %s\n\\end{large}\n\\end{center}\n \\begin{Verbatim}' % (gene, refseqid), outfile)
+        self.line_printer('\\documentclass{article}', outfile)
+        self.line_printer('\\usepackage{fancyvrb}', outfile)
+        self.line_printer('\\begin{document}', outfile)
+        self.line_printer('\\begin{center}', outfile)        
+        self.line_printer('\\begin{large}', outfile)
+        self.line_printer(' Gene: %s - Sequence: %s' % (gene, refseqid), outfile)
+        self.line_printer(' Date : \\today', outfile)
+        self.line_printer('\\end{large}', outfile)
+        self.line_printer('\\end{center}', outfile)
+        self.line_printer(' \\begin{Verbatim}', outfile)
         wait_value = 0
-        codon_count = 2
+        codon_count = 3
         amino_acid_counter = 0
+        amino_wait = 0
+        amino_number = ''
+        amino_number_string = []
         amino_printing = False
         number_to_print = ''
+        codon_numbered = False
         for exon in range(len(exoncoordlist)):
             DNA_exon = exoncoordlist[exon]
-            print >>outfile, '\n\n\n\n Exon %s | Start: %s | End: %s | Length: %d \n' % (str(DNA_exon[0]), str(DNA_exon[1]), str(DNA_exon[2]), (DNA_exon[2]-DNA_exon[1]))
+            print >>outfile, '\n\n\n Exon %s | Start: %s | End: %s | Length: %d \n' % (str(DNA_exon[0]), str(DNA_exon[1]), str(DNA_exon[2]), (DNA_exon[2]-DNA_exon[1]))
             line_count = 0
             number_string  = [] 
             dna_string = []
             amino_string = []
-            
+            amino_number_string = []
+
             for char in DNA_exon[-3]:
                 #Stop each line at a specific length
                 #Remainder method prevents count being 
@@ -159,12 +167,19 @@ class Parser:
                         for x in range(wait_value):
                             number_string.append(number_to_print[x-1])
                         wait_value = 0
+                    if amino_wait != 0:
+                        for x in range(amino_wait):
+                            amino_number_string.append(amino_number[x-1])
+                        amino_wait = 0
                     self.line_printer(number_string, outfile)
                     self.line_printer(dna_string, outfile)
                     self.line_printer(amino_string, outfile)
+                    self.line_printer(amino_number_string, outfile)
+                    self.line_printer('   ', outfile)
                     amino_string = []
                     number_string = []
                     dna_string = []
+                    amino_number_string = []
                 dna_string.append(char)
                 if CDS_count == 1:
                     amino_printing = True
@@ -174,6 +189,7 @@ class Parser:
                     if codon_count == 3:
                         amino_string.append(protein[amino_acid_counter])
                         amino_acid_counter = amino_acid_counter + 1
+                        codon_numbered = False
                         codon_count = 1
                     else:
                         codon_count = codon_count + 1
@@ -200,6 +216,18 @@ class Parser:
                         wait_value = wait_value - 1
                     else:
                         number_string.append(' ')
+                
+                #Amino Acid numbering
+                if amino_acid_counter %10 == 1 and codon_numbered == False:
+                    amino_number_string.append('|')
+                    amino_number = str(amino_acid_counter)[::-1]
+                    amino_wait = len(amino_number)
+                    codon_numbered = True
+                elif amino_wait != 0:
+                    amino_number_string.append(amino_number[amino_wait-1])
+                    amino_wait = amino_wait - 1
+                elif amino_acid_counter %10 != 1 and amino_wait == 0:
+                    amino_number_string.append(' ')
                 line_count += 1
             
             #Section for incomplete lines (has not reached line-limit print)
@@ -208,10 +236,15 @@ class Parser:
                     for x in range(wait_value):
                         number_string.append(number_to_print[x-1])
                     wait_value = 0
+                if amino_wait != 0:
+                    for x in range(amino_wait):
+                        amino_number_string.append(amino_number[x-1])
+                    amino_wait = 0
                 self.line_printer(number_string, outfile)
                 self.line_printer(dna_string, outfile)
                 self.line_printer(amino_string, outfile)
-                self.line_printer('\\n', outfile)
+                self.line_printer(amino_number_string, outfile)
+                self.line_printer('  ', outfile)
 
         self.line_printer('\\end{Verbatim}', outfile)       
         self.line_printer('\\end{document}', outfile)
@@ -221,31 +254,29 @@ class Parser:
 
     def run(self):
         
-        #if elif options for which sequences need to be grabbed 
-        if self.option == '-g':
-            gen_seq = self.grab_element('fixed_annotation/sequence', self.root)
-            td = self.get_exoncoords(self.fixannot, self.pad, gen_seq)
-            pd = self.get_protein_exons(self.prot_path, self.root)
-            for entry in range(len(td)):
-                exons = td[td.keys()[entry]]
-                protein = pd[pd.keys()[entry]]
-            #for y in td.keys():
-                outputfile = self.fileName.split('.')[0]+'_'+td.keys()[entry]+"_"+str(self.pad)+'_Out.tex'
-                outputFilePath = 'outputFiles/' + outputfile
-                if outputfile in self.existingFiles:
-                    #tests whether file already exists
-                    print 'The output file already exists in the present directory'
-                    print 'Would you like to overwrite the file? y/n'
-                    c = 0
-                    while c == 0:
-                        userChoice = raw_input('> ')
-                        if userChoice == 'n':
-                            print "Program exited without creating file"
-                            exit() # can change later to offer alternate filename
-                        elif userChoice == 'y':
-                            c += 1
-                        else:
-                            print "Invalid selection please type y or n"
-                out = open(outputFilePath, "w")
-                self.print_latex(exons, protein, td.keys()[entry], self.genename, self.refseqname, out)
-                return outputfile
+        gen_seq = self.grab_element('fixed_annotation/sequence', self.root)
+        td = self.get_exoncoords(self.fixannot, self.pad, gen_seq)
+        pd = self.get_protein_exons(self.prot_path, self.root)
+        for entry in range(len(td)):
+            exons = td[td.keys()[entry]]
+            protein = pd[pd.keys()[entry]]
+        #for y in td.keys():
+            outputfile = self.fileName.split('.')[0]+'_'+td.keys()[entry]+"_"+str(self.pad)+'_Out.tex'
+            outputFilePath = 'outputFiles/' + outputfile
+            if outputfile in self.existingFiles:
+            #tests whether file already exists
+                print 'The output file already exists in the present directory'
+                print 'Would you like to overwrite the file? y/n'
+                c = 0
+                while c == 0:
+                    userChoice = raw_input('> ')
+                    if userChoice == 'n':
+                        print "Program exited without creating file"
+                        exit() # can change later to offer alternate filename
+                    elif userChoice == 'y':
+                        c += 1
+                    else:
+                        print "Invalid selection please type y or n"
+            out = open(outputFilePath, "w")
+            self.print_latex(exons, protein, td.keys()[entry], self.genename, self.refseqname, out)
+            return outputfile
