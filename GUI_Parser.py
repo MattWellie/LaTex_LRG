@@ -125,7 +125,7 @@ class Parser:
         ''' Creates a LaTex readable file which can be converted to a final document
 	        Currently only working for DNA sequences
             Lengths of numbers calculated using len(###)'''
-
+        protein = protein + '*'
         refseqid = refseqid.replace('_', '\_')#Required for LaTex
         CDS_count = 1 - self.CDS_offset       #A variable to keep a count of the 
                                               #transcript length across all exons
@@ -196,8 +196,8 @@ class Parser:
                         amino_string.append(' ')
                 else:
                     amino_string.append(' ') 
-                   
-                if char.isupper():
+                
+                if char.isupper() and amino_acid_counter < len(protein):
                     if (CDS_count % 10 == 1) or (CDS_count == 1) and (wait_value != 0) and (CDS_count >= 1) and (CDS_count <= CDS_length):
                         number_string.append('|')
                         number_to_print = str(CDS_count)[::-1]
@@ -209,7 +209,7 @@ class Parser:
                         wait_value = wait_value - 1
                     else:
                         number_string.append(' ')
-                        CDS_count = CDS_count + 1  
+                        CDS_count = CDS_count + 1   
                 else:
                     if wait_value != 0:
                         number_string.append(number_to_print[wait_value-1])
