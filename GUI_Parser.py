@@ -125,9 +125,9 @@ class Parser:
             g_start = self.transcriptdict[transcript]['exons'][exon]['genomic_start']
             g_stop = self.transcriptdict[transcript]['exons'][exon]['genomic_end']
             if offset > g_stop and offset_found == False:
-                offset_total = offset_total + (g_stop - g_start)
+                offset_total = offset_total + (g_stop - g_start)+1
             elif offset < g_stop and offset > g_start:   
-                offset_total = offset_total + offset - g_start
+                offset_total = offset_total + (offset - g_start)
                 offset_found = True
             self.transcriptdict[transcript]['cds_offset'] = offset_total
             
