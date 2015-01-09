@@ -20,6 +20,7 @@ class Parser:
             self.transcriptdict = {}
             self.existingFiles = existingfiles
             self.pad = int(padding)
+            self.is_matt_awesome = True
         except IOError as fileNotPresent:
             print "The specified file cannot be located: " + fileNotPresent.filename
             exit()
