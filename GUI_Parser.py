@@ -110,7 +110,7 @@ class Parser:
             
             translation = coding_region.find('translation')
             sequence = translation.find('sequence').text
-            self.transcriptdict[p_number]['protein_seq'] = sequence+'*' # Stop codon
+            self.transcriptdict[p_number]['protein_seq'] = sequence+'* ' # Stop codon
 
 
     def find_cds_delay(self, transcript):
