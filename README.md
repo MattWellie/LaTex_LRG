@@ -30,6 +30,11 @@ and allow file selection directly.
 - There is a 'Help' button on the ribbon which will print a brief guide statement
 to the command line. This can be edited in the XML_gui.py file
 
+##Planned updates
+-intronic markers for every 5 bases (not numbered due to visual conflict)
+
+-.gbk file variant
+
 ##Issue Tracker
 - stumbles on exons numbered with letters (e.g. 14a)
     - Due to a failed sorting mechanism, otherwise works
