@@ -41,10 +41,30 @@ To have the amino acid appear below different bases within the codon:
     - 3 to print with the first base of the codon
     - 2 to print in the middle
     - 1 to print below the final base
+
 The protein sequence is grabbed as a single uninterrupted sequence, so none of these 
 approaches will affect the number of AAs printed, only the positions. However, this 
 may change which exon the AA is printed in (if a codon is across exons)
 
 
+─────────▄──────────────▄
+────────▌▒█───────────▄▀▒▌
+────────▌▒▒▀▄───────▄▀▒▒▒▐
+───────▐▄▀▒▒▀▀▀▀▄▄▄▀▒▒▒▒▒▐
+─────▄▄▀▒▒▒▒▒▒▒▒▒▒▒█▒▒▄█▒▐
+───▄▀▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▀██▀▒▌
+──▐▒▒▒▄▄▄▒▒▒▒▒▒▒▒▒▒▒▒▒▀▄▒▒▌
+──▌▒▒▐▄█▀▒▒▒▒▄▀█▄▒▒▒▒▒▒▒█▒▐
+─▐▒▒▒▒▒▒▒▒▒▒▒▌██▀▒▒▒▒▒▒▒▒▀▄▌
+─▌▒▀▄██▄▒▒▒▒▒▒▒▒▒▒▒░░░░▒▒▒▒▌
+─▌▀▐▄█▄█▌▄▒▀▒▒▒▒▒▒░░░░░░▒▒▒▐
+▐▒▀▐▀▐▀▒▒▄▄▒▄▒▒▒▒▒░░░░░░▒▒▒▒▌
+▐▒▒▒▀▀▄▄▒▒▒▄▒▒▒▒▒▒░░░░░░▒▒▒▐
+─▌▒▒▒▒▒▒▀▀▀▒▒▒▒▒▒▒▒░░░░▒▒▒▒▌
+─▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▐
+──▀▄▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▄▒▒▒▒▌
+────▀▄▒▒▒▒▒▒▒▒▒▒▄▄▄▀▒▒▒▒▄▀
+───▐▀▒▀▄▄▄▄▄▄▀▀▀▒▒▒▒▒▄▄▀
+──▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▀▀
 
-#happy hunting
+#Happy hunting
