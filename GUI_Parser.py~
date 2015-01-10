@@ -225,7 +225,7 @@ class Parser:
             if self.amino_printing == True:
                 self.amino_spacing = True
                 if codon_count == 3:
-                    #print 'AA = ' + protein[amino_acid_counter]
+                    print 'AA = ' + protein[amino_acid_counter]
                     output = protein[amino_acid_counter]
                     amino_acid_counter = amino_acid_counter + 1
                     codon_numbered = False
@@ -278,7 +278,7 @@ class Parser:
             Lengths of numbers calculated using len(#)'''
             
         protein = latex_dict['protein_seq']
-        #print protein
+        print protein
         refseqid = self.transcriptdict['refseqname'].replace('_', '\_')#Required for LaTex
         CDS_count = 1 - latex_dict['cds_offset'] #A variable to keep a count of the 
                                                  #transcript length across all exons
