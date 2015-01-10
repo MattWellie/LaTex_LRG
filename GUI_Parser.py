@@ -155,13 +155,7 @@ class Parser:
     #Character deciding methods for the numbering and amino acid strings
     #May be over-complicating, but separates out logic trees
     def decide_number_string_character(self, char, wait_value, CDS_count,  amino_acid_counter, post_protein_printer, intron_offset, intron_in_padding, protein, intron_out):
-        #do this
         output = ''
-        #char = current_char
-        #wait_value = current_wait_value
-        #CDS_count = current_CDS_count
-        #amino_acid_counter = current_amino_acid_counter
-        #post_protein_printer = current_post_protein_printer
         if char.isupper():
             if amino_acid_counter < len(protein):
                 if CDS_count % 10 == 1 and wait_value == 0:
@@ -175,9 +169,6 @@ class Parser:
                     output = ' '
                     CDS_count = CDS_count + 1
             elif amino_acid_counter >= len(protein):
-                if post_protein_printer == 1 and wait_value != 0:
-                    print 'THIS HAPPENS'
-                    this = raw_input()
                 if post_protein_printer % 10 == 1 and wait_value == 0:         
                     output = '|+'+str(post_protein_printer)
                     wait_value = len(str(post_protein_printer))+1
