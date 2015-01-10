@@ -1,6 +1,4 @@
-#Retry of existing reference sequence producer. 
-#Various faults with formatting and exon handling exist in previous version
-#Formatting and logic is also messy; this is a cleanup attempt
+#Complete overhaul of original version
 
 import sys
 import xml.etree.ElementTree as etree
@@ -8,24 +6,35 @@ import os
 
 class Parser:
 
+    '''
+    Class version: 0.1
+    Modified Date: 10/01/2015
+    Author : Matt Welland
+    
+    Notes:
+        Majority of variable storage change to dictionary entries
+        -   This replaces the list storage of initial draft
+        Checked with clinical scientists, .gbk variant required
+    '''
+
     def __init__(self, file_name, padding, existingfiles):#, root, option):
         self.fileName = file_name
         #Read in the specified input file into a variable
         try:
+            self.transcriptdict = {}
             self.tree = etree.parse(self.fileName)
             self.root = self.tree.getroot()
             self.fixannot = self.root.find('fixed_annotation') #ensures only exons from the fixed annotation will be taken
-            self.genename = self.root.find('updatable_annotation/annotation_set/lrg_locus').text    
-            self.refseqname = self.root.find('fixed_annotation/sequence_source').text
-            self.transcriptdict = {}
+            self.transcriptdict['genename'] = self.root.find('updatable_annotation/annotation_set/lrg_locus').text    
+            self.transcriptdict['refseqname'] = self.root.find('fixed_annotation/sequence_source').text
             self.existingFiles = existingfiles
-            self.pad = int(padding)
+            self.transcriptdict['pad'] = int(padding)
             self.is_matt_awesome = True
         except IOError as fileNotPresent:
             print "The specified file cannot be located: " + fileNotPresent.filename
             exit()
 
-        assert self.pad <= 2000, "Padding too large, please use a value below 2000 bases" 
+        assert self.transcriptdict['pad'] <= 2000, "Padding too large, please use a value below 2000 bases" 
 
     #Check the version of the file we are opening is correct
         if self.root.attrib['schema_version'] <> '1.9':
@@ -45,12 +54,15 @@ class Parser:
 
 
 #Grab exon coords and sequences from the xml file 
-    def get_exoncoords(self, level, pad, genseq):
-        ''' Traverses the LRG eTree to find all the useful coordinate values
+    def get_exoncoords(self, level, genseq):
+        ''' Traverses the LRG ETree to find all the useful coordinate values
             and sequence elements.
             Since previous version this has become a dictionary with the 
             following format (as opposed to lists of lists)
-            Dict { transcript {   protein_seq 
+            Dict { pad
+                   genename
+                   refseqname
+                   transcript {   protein_seq 
                                   cds_offset
                                   exons {  exon_number {   genomic_start
                                                            genomic_stop
@@ -88,6 +100,7 @@ class Parser:
                 assert genomic_start >= 0, "Exon index out of bounds"
                 assert genomic_end <= len(genseq), "Exon index out of bounds"
                 seq = genseq[genomic_start-1:genomic_end]
+                pad = self.transcriptdict['pad']
                 if pad > 0:					
                     assert genomic_start - pad >= 0, "Exon index out of bounds"
                     assert genomic_end + pad <= len(genseq), "Exon index out of bounds"
@@ -138,7 +151,7 @@ class Parser:
 	        Currently only working for DNA sequences
             Lengths of numbers calculated using len(###)'''
         protein = latex_dict['protein_seq']
-        refseqid = self.refseqname.replace('_', '\_')#Required for LaTex
+        refseqid = self.transcriptdict['refseqname'].replace('_', '\_')#Required for LaTex
         CDS_count = 1 - latex_dict['cds_offset'] #A variable to keep a count of the 
                                                  #transcript length across all exons
 
@@ -148,7 +161,7 @@ class Parser:
         self.line_printer('\\begin{document}', outfile)
         self.line_printer('\\begin{center}', outfile)        
         self.line_printer('\\begin{large}', outfile)
-        self.line_printer(' Gene: %s - Sequence: %s' % (self.genename, refseqid), outfile)
+        self.line_printer(' Gene: %s - Sequence: %s' % (self.transcriptdict['genename'], refseqid), outfile)
         self.line_printer(' ', outfile)
         self.line_printer(' Date : \\today', outfile)
         self.line_printer('\\end{large}', outfile)
@@ -276,7 +289,7 @@ class Parser:
         
         #initial sequence grabbing and populating dictionaries
         gen_seq = self.grab_element('fixed_annotation/sequence', self.root)
-        self.get_exoncoords(self.fixannot, self.pad, gen_seq)
+        self.get_exoncoords(self.fixannot, gen_seq)
         self.get_protein_exons(self.fixannot)
         for transcript in self.transcriptdict.keys():
             self.transcriptdict[transcript]['list_of_exons'].sort(key=float)
@@ -284,7 +297,7 @@ class Parser:
             self.find_cds_delay(transcript)
 
         for entry in self.transcriptdict.keys():
-            outputfile = self.genename+'_'+self.fileName.split('.')[0]+'_'+str(entry)+"_"+str(self.pad)
+            outputfile = self.transcriptdict['genename'] +'_'+self.fileName.split('.')[0]+'_'+str(entry)+"_"+str(self.transcriptdict['pad'])
             outputfilename = outputfile + '.tex'
             outputFilePath = os.path.join('outputFiles', outputfilename)
             if outputfile in self.existingFiles:
