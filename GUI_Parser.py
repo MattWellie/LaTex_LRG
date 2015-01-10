@@ -1,7 +1,3 @@
-#Retry of existing reference sequence producer. 
-#Various faults with formatting and exon handling exist in previous version
-#Formatting and logic is also messy; this is a cleanup attempt
-
 import sys
 import xml.etree.ElementTree as etree
 import os
@@ -19,7 +15,8 @@ class Parser:
             self.refseqname = self.root.find('fixed_annotation/sequence_source').text
             self.transcriptdict = {}
             self.existingFiles = existingfiles
-            self.pad = int(padding)
+            self.pad = int(padding) 
+            self.pad_offset = self.pad % 5
             self.is_matt_awesome = True
         except IOError as fileNotPresent:
             print "The specified file cannot be located: " + fileNotPresent.filename
@@ -33,7 +30,7 @@ class Parser:
             print 'This is designed for v.1.8'
             print 'This file is v.' + self.root.attrib['schema_version']
 
-#Grabs the sequence string from the <sequence/> tagged block
+    #Grabs the sequence string from the <sequence/> tagged block
     def grab_element(self, path, root):
         '''Grabs specific element from the xml file from a provided path'''
         try:
@@ -163,12 +160,18 @@ class Parser:
         codon_numbered = False
         post_protein_printer = 1
         for exon in latex_dict['list_of_exons']:
+            intron_offset = self.pad_offset
+            intron_wait = 3
+            intron_in_padding = self.pad
+            intron_out_padding = self.pad
+            exon_printed = False
             number_string  = [] 
             dna_string = []
             amino_string = []
             amino_number_string = []
             amino_spacing = False
             exon_spacing = False
+            dont_print = False
             exon_dict = latex_dict['exons'][exon]
             tran_start = exon_dict['transcript_start']
             tran_end = exon_dict['transcript_end']
@@ -185,7 +188,7 @@ class Parser:
                 if line_count % 60 == 0:
                     wait_value = 0
                     amino_wait = 0
-                    if exon_spacing == True: self.line_printer(number_string, outfile)
+                    self.line_printer(number_string, outfile)
                     self.line_printer(dna_string, outfile)
                     if amino_spacing == True: self.line_printer(amino_string, outfile)
                     self.line_printer(amino_number_string, outfile)
@@ -197,13 +200,30 @@ class Parser:
                     exon_spacing = False
                     amino_spacing = False
                 dna_string.append(char)
-                if char.isupper() : exon_spacing = True
+                if char.isupper() : 
+                    exon_printed = True # Can use same variable as above.
                                 
                 if CDS_count == 1:
                     amino_printing = True
                 if amino_acid_counter >= len(protein):
                     amino_printing = False
-                                    
+
+                #Intron numbering
+                #exon_printed == false means intron padding before exon
+                if char.islower() and exon_printed == False:
+                    dont_print = True
+                    if intron_offset != 0:
+                        intron_offset = intron_offset - 1
+                        intron_in_padding = intron_in_padding - 1
+                        number_string.append(' ')
+                    elif intron_offset == 0 and intron_in_padding % 5 == 0:
+                        number_string.append('.')
+                        intron_in_padding = intron_in_padding - 1
+                    elif intron_offset == 0 and intron_in_padding % 5 != 0:
+                        number_string.append(' ')
+                        intron_in_padding = intron_in_padding - 1
+
+                                   
                 if amino_printing == True and char.isupper():
                     amino_spacing = True
                     if codon_count == 3:
@@ -239,9 +259,28 @@ class Parser:
                     else:
                         post_protein_printer = post_protein_printer + 1
                         number_string.append(' ')
+                
+                #Intron after exon
+                if char.islower() and wait_value == 0 and exon_printed == True and intron_wait == 0:
+                    dont_print = True
+                    if intron_out_padding % 5 == 0:
+                        number_string.append('.')
+                        intron_out_padding = intron_out_padding - 1
+                    elif intron_out_padding % 5 != 0:
+                        number_string.append(' ')
+                        intron_out_padding = intron_out_padding - 1
+                elif char.islower() and wait_value == 0 and exon_printed == True:
+                    dont_print = True
+                    number_string.append(' ')
+                    intron_out_padding = intron_out_padding - 1
+                    intron_wait = intron_wait - 1 
+                 
+
                 else:
                     if wait_value != 0:
                         wait_value = wait_value - 1
+                    elif dont_print == True:
+                        dont_print = False
                     else:
                         number_string.append(' ')
                 
@@ -260,7 +299,7 @@ class Parser:
             if len(dna_string) != 0:
                 wait_value = 0
                 amino_wait = 0
-                if exon_spacing == True: self.line_printer(number_string, outfile)
+                self.line_printer(number_string, outfile)
                 self.line_printer(dna_string, outfile)
                 if amino_spacing == False: self.line_printer(amino_string, outfile)
                 self.line_printer(amino_number_string, outfile)
