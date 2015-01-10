@@ -38,6 +38,7 @@ to the command line. This can be edited in the XML_gui.py file
 ##Issue Tracker
 - stumbles on exons numbered with letters (e.g. 14a)
     - Due to a failed sorting mechanism, otherwise works
+- fails to corrrectly identify +1 base after stop codon
 
 ###Tinkering:
 
