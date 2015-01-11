@@ -200,10 +200,10 @@ class Parser:
                     wait_value = wait_value - 1
                     intron_out = intron_out + 1  
                 elif wait_value == 0:
-                    if intron_out % 5 == 0:
+                    if intron_out % 5 == 4:
                         output = '.'
                         intron_out = intron_out + 1
-                    elif intron_out % 5 != 0:
+                    elif intron_out % 5 != 4:
                         output = ' '
                         intron_out = intron_out + 1
                    
