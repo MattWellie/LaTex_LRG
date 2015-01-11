@@ -170,10 +170,10 @@ class Parser:
                     CDS_count = CDS_count + 1
             elif amino_acid_counter >= len(protein):
                 
-                if post_protein_printer % 10 == 1 and wait_value == 0:         
-                    output = '|+'+str(post_protein_printer)
+                if post_protein_printer % 10 == 0 and wait_value == 0:         
+                    output = '|+'+str(post_protein_printer+1)
                     print output
-                    wait_value = len(str(post_protein_printer))+1
+                    wait_value = len(str(post_protein_printer+1))+1
                     post_protein_printer = post_protein_printer + 1
                 elif wait_value != 0:
                     wait_value = wait_value -1
