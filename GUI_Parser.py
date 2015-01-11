@@ -6,13 +6,14 @@ import os
 class Parser:
 
     '''
-    Class version: 0.1
+    Class version: 0.2
     Modified Date: 10/01/2015
     Author : Matt Welland
     
     Notes:
         Majority of variable storage change to dictionary entries
         -   This replaces the list storage of initial draft
+        Final working version for LRG files, pending check with users
         Checked with clinical scientists, .gbk variant required
     '''
 
