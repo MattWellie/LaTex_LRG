@@ -65,7 +65,8 @@ def run_parser():
     os.mkdir(latex_file[0:-4]) # Try-catch, this folder may exist
     shutil.move(latex_file, os.path.join(latex_file[0:-4], latex_file))
     os.chdir(latex_file[0:-4])
-    call(["pdflatex", latex_file])
+    call(["pdflatex", "-interaction=batchmode", latex_file])
+    print "Process has completed successfully"
     root.quit()
     
 root = Tk()
