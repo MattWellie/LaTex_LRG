@@ -169,8 +169,10 @@ class Parser:
                     output = ' '
                     CDS_count = CDS_count + 1
             elif amino_acid_counter >= len(protein):
+                
                 if post_protein_printer % 10 == 1 and wait_value == 0:         
                     output = '|+'+str(post_protein_printer)
+                    print output
                     wait_value = len(str(post_protein_printer))+1
                     post_protein_printer = post_protein_printer + 1
                 elif wait_value != 0:
@@ -179,6 +181,7 @@ class Parser:
                 elif wait_value == 0:
                     post_protein_printer = post_protein_printer + 1
                     output = ' '
+                    print 'space'
         else:
             #lower case
             if self.exon_printed == False:
