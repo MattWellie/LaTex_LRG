@@ -172,7 +172,7 @@ class Parser:
                 
                 if post_protein_printer % 10 == 0 and wait_value == 0:         
                     output = '|+'+str(post_protein_printer+1)
-                    print output
+                    #print output
                     wait_value = len(str(post_protein_printer+1))+1
                     post_protein_printer = post_protein_printer + 1
                 elif wait_value != 0:
@@ -181,7 +181,7 @@ class Parser:
                 elif wait_value == 0:
                     post_protein_printer = post_protein_printer + 1
                     output = ' '
-                    print 'space'
+                    #print 'space'
         else:
             #lower case
             if self.exon_printed == False:
@@ -213,7 +213,7 @@ class Parser:
         return (output, wait_value, CDS_count,  amino_acid_counter, post_protein_printer, intron_offset, intron_in_padding, intron_out)
 
 
-    def decide_amino_string_character(self, char, codon_count, amino_acid_counter, codon_numbered, protein, CDS_count):
+    def decide_amino_string_character(self, char, codon_count, amino_acid_counter, codon_numbered, protein):
         output = ''
         if char.isupper() and amino_acid_counter < len(protein):## Bug, condition added
             if self.amino_printing == True:
@@ -221,7 +221,7 @@ class Parser:
                 if codon_count == 3:
                     #print 'AA = ' + protein[amino_acid_counter]
                     output = protein[amino_acid_counter]
-                    amino_acid_counter = amino_acid_counter + 1
+                    amino_acid_counter = amino_acid_counter + 1                     
                     codon_numbered = False
                     codon_count = 1
                 else:
@@ -234,7 +234,7 @@ class Parser:
         
         return (output, codon_count, amino_acid_counter, codon_numbered)
     
-    def decide_amino_number_string_character(self, char, amino_wait, codon_numbered,  amino_acid_counter, CDS_count):
+    def decide_amino_number_string_character(self, char, amino_wait, codon_numbered,  amino_acid_counter):
         output = ''
         if amino_wait != 0:
             amino_wait = amino_wait - 1
@@ -286,7 +286,7 @@ class Parser:
         amino_wait = 0
         amino_printing = False
         codon_numbered = False
-        post_protein_printer = 1
+        post_protein_printer = 0
         next_number_string = '' 
         for exon in latex_dict['list_of_exons']:
             intron_offset = self.transcriptdict['pad_offset']
@@ -334,16 +334,16 @@ class Parser:
                 if amino_acid_counter >= len(protein): self.amino_printing = False
                     
                 #Calls specifc methods for character decision
-                #Simplifies local logic
-                (next_number_string, wait_value, CDS_count, amino_acid_counter, post_protein_printer, intron_offset, intron_in_padding, intron_out) = self.decide_number_string_character(char, wait_value, CDS_count, amino_acid_counter, post_protein_printer, intron_offset, intron_in_padding, protein, intron_out)
-                number_string.append(next_number_string)
-                
-                (next_amino_string, codon_count, amino_acid_counter, codon_numbered) = self.decide_amino_string_character(char, codon_count, amino_acid_counter, codon_numbered, protein, CDS_count)  
+                #Simplifies local logic                
+                (next_amino_string, codon_count, amino_acid_counter, codon_numbered) = self.decide_amino_string_character(char, codon_count, amino_acid_counter, codon_numbered, protein)  
                 amino_string.append(next_amino_string)
 
-                (next_amino_number, amino_wait, codon_numbered, amino_acid_counter) = self.decide_amino_number_string_character(char, amino_wait, codon_numbered,  amino_acid_counter, CDS_count)
+                (next_amino_number, amino_wait, codon_numbered, amino_acid_counter) = self.decide_amino_number_string_character(char, amino_wait, codon_numbered,  amino_acid_counter)
                 amino_number_string.append(next_amino_number)
-                    
+                
+                (next_number_string, wait_value, CDS_count, amino_acid_counter, post_protein_printer, intron_offset, intron_in_padding, intron_out) = self.decide_number_string_character(char, wait_value, CDS_count, amino_acid_counter, post_protein_printer, intron_offset, intron_in_padding, protein, intron_out)
+                number_string.append(next_number_string)
+
                 line_count = line_count + 1
                 
             
