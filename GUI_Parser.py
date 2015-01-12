@@ -257,13 +257,19 @@ class Parser:
         self.line_printer('\\documentclass{article}', outfile)
         self.line_printer('\\usepackage{fancyvrb}', outfile)
         self.line_printer('\\begin{document}', outfile)
+        self.line_printer('\\renewcommand{\\footrulewidth}{1pt}', outfile)
+        self.line_printer('\\renewcommand{\\headrulewidth}{0pt}', outfile)
         self.line_printer('\\begin{center}', outfile)        
         self.line_printer('\\begin{large}', outfile)
         self.line_printer(' Gene: %s - Sequence: %s' % (self.transcriptdict['genename'], refseqid), outfile)
         self.line_printer(' ', outfile)
-        self.line_printer(' Date : \\today', outfile)
+        self.line_printer(' Date : \\today\\\\\\\\', outfile)
         self.line_printer('\\end{large}', outfile)
         self.line_printer('\\end{center}', outfile)
+        self.line_printer('$1^{st}$ line: Base numbering. Full stops for intronic +/- 5, 10, 15...\\\\', outfile)
+        self.line_printer('$2^{nd}$ line: Base sequence. lower case Introns, upper case Exons\\\\', outfile)
+        self.line_printer('$3^{rd}$ line: Amino acid sequence. Printed on FIRST base of codon\\\\', outfile)
+        self.line_printer('$4^{th}$ line: Amino acid numbering. Numbered on $1^{st}$ and increments of 10\\\\', outfile)
         self.line_printer(' \\begin{Verbatim}', outfile)
 
 
@@ -334,7 +340,7 @@ class Parser:
                 if CDS_count == 1: self.amino_printing = True
                 if amino_acid_counter >= len(protein): self.amino_printing = False
                     
-                #Calls specifc methods for character decision
+                #Calls specific methods for character decision
                 #Simplifies local logic                
                 (next_amino_string, codon_count, amino_acid_counter, codon_numbered) = self.decide_amino_string_character(char, codon_count, amino_acid_counter, codon_numbered, protein)  
                 amino_string.append(next_amino_string)

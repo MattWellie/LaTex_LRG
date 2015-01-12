@@ -1,13 +1,19 @@
 \documentclass{article}
 \usepackage{fancyvrb}
 \begin{document}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrulewidth}{0pt}
 \begin{center}
 \begin{large}
  Gene: EGFR - Sequence: NG\_007726.3
  
- Date : \today
+ Date : \today\\\\
 \end{large}
 \end{center}
+$1^{st}$ line: Base numbering. Full stops for intronic +/- 5, 10, 15...\\
+$2^{nd}$ line: Base sequence. lower case Introns, upper case Exons\\
+$3^{rd}$ line: Amino acid sequence. Printed on FIRST base of codon\\
+$4^{th}$ line: Amino acid numbering. Numbered on $1^{st}$ and increments of 10\\
  \begin{Verbatim}
  
 Exon 1 | Start: 1 | End: 334 | Length: 333

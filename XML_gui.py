@@ -23,7 +23,7 @@ def About():
     print 'This has been done to prevent any issues with later editing'
     print 'The document can be annontated by the use of highlighting\n\n'
     print 'If there are any faults during execution or output problems'
-    print 'please contact matthew.welland@bwnft.nhs.uk, WMRGL, Birmigham\n'
+    print 'please contact matthew.welland@bwnft.nhs.uk, WMRGL, Birmingham\n'
     '''
     print '─────────▄──────────────▄'
     print '────────▌▒█───────────▄▀▒▌'
@@ -45,7 +45,7 @@ def About():
     print '───▐▀▒▀▄▄▄▄▄▄▀▀▀▒▒▒▒▒▄▄▀'
     print '--──▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▀▀'
     '''
-    print '\nSuch gene\nSo parse\nWow'
+    print '\nSo gene\nSuch reference\nWow'
 
     #Operating instructions
 
