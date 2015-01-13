@@ -1,5 +1,6 @@
 #Complete overhaul of original version
 import sys
+from Bio import SeqIO
 import xml.etree.ElementTree as etree
 import os
 
@@ -17,10 +18,11 @@ class Parser:
         Checked with clinical scientists, .gbk variant required
     '''
 
-    def __init__(self, file_name, padding, existingfiles):#, root, option):
+    def __init__(self, file_name, padding, existingfiles, file_type):#, root, option):
         self.fileName = file_name
         #Read in the specified input file into a variable
         try:
+			self.file_type = file_type
             self.transcriptdict = {}
             self.transcriptdict['transcripts'] = {}
             self.tree = etree.parse(self.fileName)
