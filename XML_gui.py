@@ -58,15 +58,15 @@ def run_parser():
     directory_and_file= entry.get()
     file_name = directory_and_file.split('/')[-1]
     if file_name[-4:] == '.xml':
-		file_type = 'xml'
-	elif file_name[-3:] == '.gb':
+		file_type = 'lrg'
+    elif file_name[-3:] == '.gb':
 		file_type = 'gbk'
-	elif file_name[-4:] == '.gbk':
+    elif file_name[-4:] == '.gbk':
 		file_type = 'gbk'
-	else:
+    else:
 		print 'This program only works for GenBank and LRG files'
 		exit()
-	padding = pad.get()
+    padding = pad.get()
     xml_parser = Parser(file_name, padding, existingFiles, file_type)
     print 'Running parser'
     latex_file = xml_parser.run()

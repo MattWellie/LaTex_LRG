@@ -22,14 +22,18 @@ class Parser:
         self.fileName = file_name
         #Read in the specified input file into a variable
         try:
-			self.file_type = file_type
+            self.file_type = file_type
             self.transcriptdict = {}
             self.transcriptdict['transcripts'] = {}
-            self.tree = etree.parse(self.fileName)
-            self.root = self.tree.getroot()
-            self.fixannot = self.root.find('fixed_annotation') #ensures only exons from the fixed annotation will be taken
-            self.transcriptdict['genename'] = self.root.find('updatable_annotation/annotation_set/lrg_locus').text    
-            self.transcriptdict['refseqname'] = self.root.find('fixed_annotation/sequence_source').text
+            if self.file_type == 'lrg':
+                self.tree = etree.parse(self.fileName)
+                self.transcriptdict['root'] = self.tree.getroot()
+                self.transcriptdict['fixannot'] = self.transcriptdict['root'].find('fixed_annotation') #ensures only exons from the fixed annotation will be taken
+                self.transcriptdict['genename'] = self.transcriptdict['root'].find('updatable_annotation/annotation_set/lrg_locus').text    
+                self.transcriptdict['refseqname'] = self.transcriptdict['root'].find('fixed_annotation/sequence_source').text
+            elif self.file_type == 'gbk':
+                #Do this instead
+                print 'GBK'
             self.existingFiles = existingfiles
             self.transcriptdict['pad'] = int(padding)
             self.transcriptdict['pad_offset'] = int(padding) % 5
@@ -46,16 +50,16 @@ class Parser:
         assert self.transcriptdict['pad'] <= 2000, "Padding too large, please use a value below 2000 bases" 
 
     #Check the version of the file we are opening is correct
-        if self.root.attrib['schema_version'] <> '1.9':
+        if self.transcriptdict['root'].attrib['schema_version'] <> '1.9':
             print 'This LRG file is not the correct version for this script'
             print 'This is designed for v.1.8'
             print 'This file is v.' + self.root.attrib['schema_version']
 
     #Grabs the sequence string from the <sequence/> tagged block
-    def grab_element(self, path, root):
+    def grab_element(self, path):
         '''Grabs specific element from the xml file from a provided path'''
         try:
-            for item in self.root.findall(path):
+            for item in self.transcriptdict['root'].findall(path):
                 result = item.text
             return result
         except:
@@ -63,7 +67,7 @@ class Parser:
 
 
 #Grab exon coords and sequences from the xml file 
-    def get_exoncoords(self, level, genseq):
+    def get_exoncoords(self, genseq):
         ''' Traverses the LRG ETree to find all the useful coordinate values
             and sequence elements.
             Since previous version this has become a dictionary with the 
@@ -83,7 +87,7 @@ class Parser:
             transparency of the methods put in place. Absolute references should
             also make the program more easily extensible
         '''
-        for items in level.findall('transcript'):
+        for items in self.transcriptdict['fixannot'].findall('transcript'):
             t_number = int(items.attrib['name'][1:])    #e.g. 't1', 't2'
             self.transcriptdict['transcripts'][t_number] = {} #first should be indicated with '1'; 'p1' can write on
             self.transcriptdict['transcripts'][t_number]["exons"] = {}
@@ -122,9 +126,9 @@ class Parser:
 
 
     
-    def get_protein_exons(self, prot_level):
+    def get_protein_exons(self):
         ''' collects full protein sequence for the appropriate transcript '''
-        for item in prot_level.findall('transcript'):
+        for item in self.transcriptdict['fixannot'].findall('transcript'):
             p_number = int(item.attrib['name'][1:])            
             coding_region = item.find('coding_region')
             coordinates = coding_region.find('coordinates')
@@ -380,9 +384,13 @@ class Parser:
     def run(self):
         
         #initial sequence grabbing and populating dictionaries
-        gen_seq = self.grab_element('fixed_annotation/sequence', self.root)
-        self.get_exoncoords(self.fixannot, gen_seq)
-        self.get_protein_exons(self.fixannot)
+        if self.file_type == 'lrg':
+            gen_seq = self.grab_element('fixed_annotation/sequence')
+            self.get_exoncoords(gen_seq)
+            self.get_protein_exons()
+        elif self.file_type == 'gbk':
+            #This bit
+            print found
         for transcript in self.transcriptdict['transcripts'].keys():
             #print 'transcript: ' + str(transcript)
             #print self.transcriptdict['transcripts'][transcript]
