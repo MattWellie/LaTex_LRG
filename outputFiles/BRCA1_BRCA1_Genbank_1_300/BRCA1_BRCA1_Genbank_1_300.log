@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.2.19)  11 JAN 2015 23:47
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.2.19)  15 JAN 2015 16:48
 entering extended mode
-**COL1A1_LRG_1_1_300.tex
+**BRCA1_BRCA1_Genbank_1_300.tex
 
-("c:\Users\Doctor Doom\GitHub\LaTeX_LRG\outputFiles\COL1A1_LRG_1_1_300\COL1A1_L
-RG_1_1_300.tex"
+("c:\Users\Doctor Doom\GitHub\LaTeX_LRG\outputFiles\BRCA1_BRCA1_Genbank_1_300\B
+RCA1_BRCA1_Genbank_1_300.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -49,7 +49,7 @@ Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \FV@StepNumber=\count89
 \FV@OutFile=\write3
 )
-No file COL1A1_LRG_1_1_300.aux.
+No file BRCA1_BRCA1_Genbank_1_300.aux.
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
@@ -62,29 +62,75 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
+
+! LaTeX Error: \footrulewidth undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 \renewcommand{\footrulewidth}
+                                 {1pt}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: \headrulewidth undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 \renewcommand{\headrulewidth}
+                                 {0pt}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10  Date : \today\\\\
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 13.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 13.
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--17
+
+ []
+
 [1
 
 {C:/Users/Doctor Doom/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [
 3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [2
-0] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [
-36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51]
-("c:\Users\Doctor Doom\GitHub\LaTeX_LRG\outputFiles\COL1A1_LRG_1_1_300\COL1A1_L
-RG_1_1_300.aux") ) 
+0] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32]
+("c:\Users\Doctor Doom\GitHub\LaTeX_LRG\outputFiles\BRCA1_BRCA1_Genbank_1_300\B
+RCA1_BRCA1_Genbank_1_300.aux") ) 
 Here is how much of TeX's memory you used:
- 605 strings out of 493921
- 8838 string characters out of 3144858
- 60267 words of memory out of 3000000
- 3975 multiletter control sequences out of 15000+200000
+ 609 strings out of 493921
+ 8983 string characters out of 3144858
+ 61267 words of memory out of 3000000
+ 3979 multiletter control sequences out of 15000+200000
  4106 words of font info for 16 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 23i,4n,19p,171b,257s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mtt10.pfb>
-Output written on COL1A1_LRG_1_1_300.pdf (51 pages, 90684 bytes).
+ 23i,4n,19p,178b,249s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmmi7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmtt10.pfb>
+Output written on BRCA1_BRCA1_Genbank_1_300.pdf (32 pages, 91800 bytes).
 PDF statistics:
- 179 PDF objects out of 1000 (max. 8388607)
+ 121 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

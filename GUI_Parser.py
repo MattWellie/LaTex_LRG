@@ -120,8 +120,8 @@ class Parser:
                 if pad > 0:					
                     assert genomic_start - pad >= 0, "Exon index out of bounds"
                     assert genomic_end + pad <= len(genseq), "Exon index out of bounds"
-                    pad5 = genseq[genomic_start-pad:genomic_start]
-                    pad3 = genseq[genomic_end:genomic_end+pad]
+                    pad5 = genseq[genomic_start-(pad+1):genomic_start-1]
+                    pad3 = genseq[genomic_end:genomic_end+(pad+1)]
                     seq = pad5.lower() + seq + pad3.lower()
                     self.transcriptdict['transcripts'][t_number]["exons"][exon_number]['sequence'] = seq
                     self.transcriptdict['transcripts'][t_number]["exons"][exon_number]['genomic_start'] = genomic_start
@@ -142,7 +142,7 @@ class Parser:
             self.transcriptdict['transcripts'][p_number]['protein_seq'] = sequence+'* ' # Stop codon
 
 
-    def find_cds_delay(self, transcript):
+    def find_cds_delay_lrg(self, transcript):
         ''' Method to find the actual start of the translated sequence
             introduced to sort out non-coding exon problems '''
         offset_total = 0
@@ -158,11 +158,22 @@ class Parser:
                 self.transcriptdict['transcripts'][transcript]['cds_offset'] = offset_total + (offset - g_start)
                 break
 
-        #self.transcriptdict['transcripts'][transcript]['cds_offset'] = offset_total
-        #print 'Offset found: '
-        #print self.transcriptdict['transcripts'][transcript]['cds_offset']
-            
-            
+    def find_cds_delay_gbk(self, transcript):
+        ''' Method to find the actual start of the translated sequence
+            introduced to sort out non-coding exon problems '''
+        offset_total = 0
+        offset = self.transcriptdict['transcripts'][transcript]['cds_offset']
+        for exon in self.transcriptdict['transcripts'][transcript]['list_of_exons']:
+            #print 'exon: ' + exon
+            #print self.transcriptdict[transcript]['exons'][exon]
+            g_start = self.transcriptdict['transcripts'][transcript]['exons'][exon]['genomic_start']
+            g_stop = self.transcriptdict['transcripts'][transcript]['exons'][exon]['genomic_end']
+            if offset > g_stop :
+                offset_total = offset_total + (g_stop - g_start)
+            elif offset < g_stop and offset > g_start:   
+                self.transcriptdict['transcripts'][transcript]['cds_offset'] = offset_total + (offset - g_start)
+                break
+           
                       
     #Character deciding methods for the numbering and amino acid strings
     #May be over-complicating, but separates out logic trees
@@ -403,7 +414,7 @@ class Parser:
         self.gbk_protein(cds)
         self.exons_gbk(exons)
         self.transcriptdict['transcripts'][1]['cds_offset'] = cds[0].location.start
-        self.find_cds_delay(1)
+        self.find_cds_delay_gbk(1)
         
     def gbk_protein(self, cds):
         if len(cds) > 1 : print "This gene has multiple transcripts, sort it out!"
@@ -431,11 +442,8 @@ class Parser:
             sequence = self.transcriptdict['full genomic sequence'][location_feature.start:location_feature.end]
             if self.transcriptdict['pad'] !=0:
                 pad = self.transcriptdict['pad']
-                pad5 = self.transcriptdict['full genomic sequence'][location_feature.start-pad:location_feature.start]
-                #print exon_number + ' : pad5 : ' + pad5
-                #print exon_number + ': start:' + str(location_feature.start)
-                #print exon_number + ': end:' + str(location_feature.end)
-                pad3 = self.transcriptdict['full genomic sequence'][location_feature.end:location_feature.end+pad]
+                pad5 = self.transcriptdict['full genomic sequence'][location_feature.start-(pad+1):location_feature.start-1]
+                pad3 = self.transcriptdict['full genomic sequence'][location_feature.end:location_feature.end+(pad+1)]
                 #print exon_number + ' : pad3 : ' + pad3
                 sequence = pad5.lower() + sequence + pad3.lower()
             self.transcriptdict['transcripts'][1]['exons'][exon_number]['sequence'] = sequence
@@ -449,14 +457,14 @@ class Parser:
             gen_seq = self.grab_element('fixed_annotation/sequence')
             self.get_exoncoords(gen_seq)
             self.get_protein_exons()
+            for transcript in self.transcriptdict['transcripts'].keys():
+                #print 'transcript: ' + str(transcript)
+                #print self.transcriptdict['transcripts'][transcript]
+                self.transcriptdict['transcripts'][transcript]['list_of_exons'].sort(key=float)
+                self.find_cds_delay_lrg(transcript)
         elif self.file_type == 'gbk':
             #This bit
             self.examine_gbk()
-        for transcript in self.transcriptdict['transcripts'].keys():
-            #print 'transcript: ' + str(transcript)
-            #print self.transcriptdict['transcripts'][transcript]
-            self.transcriptdict['transcripts'][transcript]['list_of_exons'].sort(key=float)
-            self.find_cds_delay(transcript)
 
         for entry in self.transcriptdict['transcripts'].keys():
             outputfile = self.transcriptdict['genename'] +'_'+self.fileName.split('.')[0]+'_'+str(entry)+"_"+str(self.transcriptdict['pad'])
