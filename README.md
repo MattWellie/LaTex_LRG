@@ -3,19 +3,25 @@ At some point I'll work out what kind of license this should have...
 It's open source anyway...
 
 ##Requirements and testing
+
 pdflatex
 
 tkinter (python graphics package)
 
+BioPython (GenBank file parsing)
+
 Python 2.7
 
 ##What it does
-- This program takes an LRG file as input and creates a typeset reference sequence.
+- This program takes a file as input and creates a typeset reference sequence.
 This sequence is designed to be used during sequence checking, and includes an
 HGVS nomenclature naming system.
 
 - This ensures platform independence through use of platform-ambivalent file paths
 and naming conventions. 
+
+- Internal logic allows files in valid GenBank or LRG formats to be used as input
+without making any changes to the program code.
 
 ##Who its for
 
@@ -31,14 +37,11 @@ and allow file selection directly.
 to the command line. This can be edited in the XML_gui.py file
 
 ##Planned updates
--intronic markers for every 5 bases (not numbered due to visual conflict)
 
--.gbk file variant
 
 ##Issue Tracker
 - stumbles on exons numbered with letters (e.g. 14a)
     - Due to a failed sorting mechanism, otherwise works
-- fails to corrrectly identify +1 base after stop codon
 
 ###Tinkering:
 
