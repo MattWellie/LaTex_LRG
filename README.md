@@ -47,6 +47,9 @@ The program currently ignores input files with multiple transcripts, this shuold
     - Due to a failed sorting mechanism, otherwise works
         - A workaround is in place for this, which checks to see if a genbank exon has a number, if not a serial number is created. As things stand this will wrongly label genes with skipped exon numbers, or multiple exons of the same number (14a, 14b... though this is most likely to occur on parallel transcripts). A similar or better workaround could be put into the LRG variant
 
+- base numbering before the CDS currently counts through 0:
+    - the base immediately before the first base of the CDS is 0 rather than -1. Find a way of ignoring 0   
+
 ###Tinkering:
 
 To have the amino acid appear below different bases within the codon:
