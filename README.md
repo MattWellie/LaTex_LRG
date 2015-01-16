@@ -50,6 +50,9 @@ The program currently ignores input files with multiple transcripts, this shuold
 - base numbering before the CDS currently counts through 0:
     - the base immediately before the first base of the CDS is 0 rather than -1. Find a way of ignoring 0   
 
+- Requires a statement to check if the first base of the first exon is 1 (no 5' UTR) in which case a warning should be printed, and a preceeding intronic sequence should not be grabbed (will read from the end of the sequence due to negative reference (BRCA1 as an example)
+
+
 ###Tinkering:
 
 To have the amino acid appear below different bases within the codon:
