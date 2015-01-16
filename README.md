@@ -45,6 +45,7 @@ The program currently ignores input files with multiple transcripts, this shuold
 ##Issue Tracker
 - stumbles on exons numbered with letters (e.g. 14a)
     - Due to a failed sorting mechanism, otherwise works
+        - A workaround is in place for this, which checks to see if a genbank exon has a number, if not a serial number is created. As things stand this will wrongly label genes with skipped exon numbers, or multiple exons of the same number (14a, 14b... though this is most likely to occur on parallel transcripts). A similar or better workaround could be put into the LRG variant
 
 ###Tinkering:
 
