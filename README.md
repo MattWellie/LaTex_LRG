@@ -38,6 +38,9 @@ to the command line. This can be edited in the XML_gui.py file
 
 ##Planned updates
 
+The program currently ignores input files with multiple transcripts, this shuold be handled appropriately
+- Breaking up the program into more separate components?
+
 
 ##Issue Tracker
 - stumbles on exons numbered with letters (e.g. 14a)
