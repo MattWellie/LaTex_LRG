@@ -306,8 +306,15 @@ class Parser:
         refseqid = self.transcriptdict['refseqname'].replace('_', '\_')#Required for LaTex
         CDS_count = 1 - latex_dict['cds_offset'] #A variable to keep a count of the 
                                                  #transcript length across all exons
-	    #The initial line(s) of the LaTex file, required to execute
-	    
+        
+
+#Account for the number 0 being skipped 
+        CDS_count = CDS_count - 1
+        #The CDS begins at one, the preceeding base is -1. There is no 0
+        #The writer must skip 0, so the extra length compensates to keep 
+        #values in the correct places
+
+	    #The initial line(s) of the LaTex file, required to execute	    
         self.print_latex_header(outfile, refseqid)
 
         wait_value = 0
@@ -361,7 +368,9 @@ class Parser:
                 dna_string.append(char)
                 
                 if char.isupper() : self.exon_printed = True
-                if CDS_count == 1: self.amino_printing = True
+                if CDS_count == 0: 
+                    self.amino_printing = True
+                    CDS_count = 1
                 if amino_acid_counter >= len(protein): self.amino_printing = False
                     
                 #Calls specific methods for character decision
