@@ -1,4 +1,3 @@
-#Complete overhaul of original version
 import sys
 from Bio import SeqIO
 import xml.etree.ElementTree as etree
@@ -14,8 +13,7 @@ class Parser:
     Notes:
         Majority of variable storage change to dictionary entries
         -   This replaces the list storage of initial draft
-        Final working version for LRG files, pending check with users
-        Checked with clinical scientists, .gbk variant required
+        Final working version for LRG and GBK files, pending check with users
     '''
 
     def __init__(self, file_name, padding, existingfiles, file_type):#, root, option):
