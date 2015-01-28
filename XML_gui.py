@@ -2,16 +2,19 @@
 import os, sys, shutil
 from Tkinter import *
 from tkFileDialog import askopenfilename
-from GUI_Parser import Parser
-import xml.etree.ElementTree as etree
+from LRG_Parser import LRG_Parser
+from GBK_Parser import GBK_Parser
+from writer import writer
 from subprocess import call
 
 option = ''
+
 def open_file():
     name = askopenfilename(defaultextension = '')
     #Add name to entry free text
     entry.delete(0, END)
     entry.insert(0, name)
+
 def About():
     print '\nMatthew Welland, 8, January 2015'
     print 'This is a Python program for creating reference sequences'
@@ -47,29 +50,31 @@ def About():
     '''
     print '\nSo gene\nSuch reference\nWow'
 
-    #Operating instructions
+    # Operating instructions
+    # A fair amount of hard-coding is in place, just to ensure that output is in folders
 
-#OS methods (not fixed for class)
-#A fair amount of hard-coding is in place, just to ensure that output is in folders
 
 def run_parser():
-    #Files will not be stored directly in outputFiles anymore - requires overwrite check
-    existingFiles = os.listdir('outputFiles')
+    # Files will not be stored directly in outputFiles anymore - requires overwrite check
+    padding = pad.get()
+    existing_files= os.listdir('outputFiles')
     directory_and_file= entry.get()
     file_name = directory_and_file.split('/')[-1]
-    if file_name[-4:] == '.xml':
-		file_type = 'lrg'
-    elif file_name[-3:] == '.gb':
-		file_type = 'gbk'
-    elif file_name[-4:] == '.gbk':
-		file_type = 'gbk'
-    else:
-		print 'This program only works for GenBank and LRG files'
-		exit()
-    padding = pad.get()
-    xml_parser = Parser(file_name, padding, existingFiles, file_type)
-    print 'Running parser'
-    latex_file = xml_parser.run()
+    file_type = check_file_type(file_name)
+    dictionary = {}
+    if file_type == 'gbk':
+        print 'Running parser'
+        GBK_reader = GBK_Parser(file_name, padding, existing_files, file_type)
+        dictionary = GBK_reader.run()
+    elif file_type == 'xml':
+        print 'Running parser'
+        LRG_reader = LRG_Parser(file_name, padding, existing_files, file_type)
+        dictionary = LRG_reader.run()
+
+    # latex_file = xml_parser.run()
+    output_writer = writer(dictionary, True)
+    output_list = output_writer.run()
+
     os.chdir("outputFiles")
     os.mkdir(latex_file[0:-4]) # Try-catch, this folder may exist
     shutil.move(latex_file, os.path.join(latex_file[0:-4], latex_file))
@@ -77,7 +82,24 @@ def run_parser():
     call(["pdflatex", "-interaction=batchmode", latex_file])
     print "Process has completed successfully"
     root.quit()
-    
+
+def check_file_type(file_name):
+    ''' This function takes the file name which has been selected
+        as input. This will identify .xml and .gk/gbk files, and
+        will print an error message and exit the application if
+        a file is used which does not match either of these types
+    '''
+    if file_name[-4:] == '.xml':
+        return 'lrg'
+    elif file_name[-3:] == '.gb':
+        return 'gbk'
+    elif file_name[-4:] == '.gbk':
+        return 'gbk'
+    else:
+        print 'This program only works for GenBank and LRG files'
+        exit()
+
+
 root = Tk()
 menu = Menu(root)
 root.config(menu=menu)
