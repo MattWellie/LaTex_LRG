@@ -1,9 +1,4 @@
-__author__ = 'mwelland'
-
-import sys
-from Bio import SeqIO
-import xml.etree.ElementTree as etree
-import os
+import Bio
 
 
 class GbkParser:
@@ -46,7 +41,7 @@ class GbkParser:
         self.fileName = file_name
         # Read in the specified input file into a variable
         try:
-            self.transcriptdict = dict(transcripts={}, input=SeqIO.to_dict(SeqIO.parse(file_name, 'genbank')),
+            self.transcriptdict = dict(transcripts={}, input=Bio.SeqIO.to_dict(Bio.SeqIO.parse(file_name, 'genbank')),
                                        pad=int(padding),filename=self.fileName.split('.')[0] + '_' + padding,
                                        pad_offset= int(padding) % 5)
             self.transcriptdict['refseqname']=self.transcriptdict['input'].keys()[0]
