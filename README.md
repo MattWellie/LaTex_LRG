@@ -4,15 +4,16 @@ It's open source anyway...
 
 ##Requirements and testing
 
-pdflatex
+pdflatex/texlive/miktex
 
 tkinter (python graphics package)
 
-BioPython (GenBank file parsing)
+BioPython (GenBank file parsing, not required for LRG file references)
 
 Python 2.7
 
 ##What it does
+
 - This program takes a file as input and creates a typeset reference sequence.
 This sequence is designed to be used during sequence checking, and includes an
 HGVS nomenclature naming system.
@@ -26,11 +27,11 @@ without making any changes to the program code.
 ##Who its for
 
 ##How to operate it
-- At command line: *python XML_gui.py*
+- At command line: *python XML_gui.py* without any additional arguments
 
-- This command will bring up the main interface, offering two entry boxes. The top 
-text entry box defaults to LRG_304 (EGFR LRG file) and can either be edited 
-directly or by using the 'Browse...' button. this will show the local directory
+- This command will bring up the main interface, offering two entry boxes. 
+
+- The top entry box can either be edited directly or by using the 'Browse...' button. This will show the local directory
 and allow file selection directly.
 
 - There is a 'Help' button on the ribbon which will print a brief guide statement
@@ -38,17 +39,18 @@ to the command line. This can be edited in the XML_gui.py file
 
 ##Planned updates
 
-The program currently ignores input files with multiple transcripts, this shuold be handled appropriately
-- Breaking up the program into more separate components?
+- The program currently ignores input files with multiple transcripts, this should be handled appropriately
+
+- The program has been broken up into several different components;
+    - XML_gui.py to show the user interface
+    - LRG/GBK_Parser.py to read the input file into a dictionary
+    - reader.py to read the dictionary into an output format
+    - latex_writer.py to write the reader output into an output file and call a pdflatex command to typeset the file
 
 
 ##Issue Tracker
-- stumbles on exons numbered with letters (e.g. 14a)
-    - Due to a failed sorting mechanism, otherwise works
+- stumbles on exons numbered with letters (e.g. 14a) due to a failed sorting mechanism, otherwise works
         - A workaround is in place for this, which checks to see if a genbank exon has a number, if not a serial number is created. As things stand this will wrongly label genes with skipped exon numbers, or multiple exons of the same number (14a, 14b... though this is most likely to occur on parallel transcripts). A similar or better workaround could be put into the LRG variant
-
-- base numbering before the CDS currently counts through 0:
-    - the base immediately before the first base of the CDS is 0 rather than -1. Find a way of ignoring 0   
 
 - Requires a statement to check if the first base of the first exon is 1 (no 5' UTR) in which case a warning should be printed, and a preceeding intronic sequence should not be grabbed (will read from the end of the sequence due to negative reference (BRCA1 as an example)
 
