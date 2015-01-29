@@ -1,9 +1,9 @@
-__author__ = 'mwelland'
+from xml.etree.ElementTree import parse
 
-import xml.etree.ElementTree as etree
 
-class LRG_Parser:
-    '''
+class LrgParser:
+
+    """
     Class version: 0.1
     Modified Date: 28/01/2015
     Author : Matt Welland
@@ -16,6 +16,7 @@ class LRG_Parser:
     This will populate a dictionary to be returned at completion
 
             Dict { pad
+                   filename
                    genename
                    refseqname
                    transcripts {  transcript {   protein_seq
@@ -25,13 +26,13 @@ class LRG_Parser:
                                                                           transcript_start
                                                                           transcript_stop
                                                                           sequence (with pad)
-    '''
+    """
 
     def __init__(self, file_name, padding):
         self.fileName = file_name
         # Read in the specified input file into a variable
         try:
-            self.tree = etree.parse(self.fileName)
+            self.tree = parse(self.fileName)
             self.transcriptdict = {'transcripts': {},
                                    'root': self.tree.getroot(),
                                    'pad': int(padding),
@@ -59,7 +60,7 @@ class LRG_Parser:
 
     # Grabs the sequence string from the <sequence/> tagged block
     def grab_element(self, path):
-        ''' Grabs specific element from the xml file from a provided path '''
+        """ Grabs specific element from the xml file from a provided path """
         try:
             for item in self.transcriptdict['root'].findall(path):
                 result = item.text
@@ -67,17 +68,21 @@ class LRG_Parser:
         except:
             print "No sequence was identified"
 
-
     # Grab exon coords and sequences from the xml file
     def get_exoncoords(self, genseq):
-        ''' Traverses the LRG ETree to find all the useful values
+        '''
+        :param genseq:
+        :return:
+        '''
+        """ Traverses the LRG ETree to find all the useful values
             This should allow more robust use of the stored values, and enhances
             transparency of the methods put in place. Absolute references should
             also make the program more easily extensible
-        '''
+        """
+
         for items in self.transcriptdict['fixannot'].findall('transcript'):
-            t_number = int(items.attrib['name'][1:])  #e.g. 't1', 't2'
-            self.transcriptdict['transcripts'][t_number] = {}  #first should be indicated with '1'; 'p1' can write on
+            t_number = int(items.attrib['name'][1:])  # e.g. 't1', 't2'
+            self.transcriptdict['transcripts'][t_number] = {}  # First should be indicated with '1'; 'p1' can write on
             self.transcriptdict['transcripts'][t_number]["exons"] = {}
             self.transcriptdict['transcripts'][t_number]['list_of_exons'] = []
             # Gene sequence main coordinates are required to take introns
@@ -91,10 +96,6 @@ class LRG_Parser:
                 self.transcriptdict['transcripts'][t_number]['list_of_exons'].append(exon_number)
                 self.transcriptdict['transcripts'][t_number]["exons"][exon_number] = {}
                 for coordinates in exon:
-                    # Find Transcript Coordinates
-                    # if coordinates.attrib['coord_system'][-2] == 't':
-                    # self.transcriptdict['transcripts'][t_number]["exons"][exon_number]['transcript_start'] = int(coordinates.attrib['start'])
-                    # self.transcriptdict['transcripts'][t_number]["exons"][exon_number]['transcript_end'] = int(coordinates.attrib['end'])
                     if coordinates.attrib['coord_system'][-2] not in ['t', 'p']:
                         genomic_start = int(coordinates.attrib['start'])
                         genomic_end = int(coordinates.attrib['end'])
@@ -112,9 +113,8 @@ class LRG_Parser:
                     self.transcriptdict['transcripts'][t_number]["exons"][exon_number]['genomic_start'] = genomic_start
                     self.transcriptdict['transcripts'][t_number]["exons"][exon_number]['genomic_end'] = genomic_end
 
-
     def get_protein_exons(self):
-        ''' collects full protein sequence for the appropriate transcript '''
+        """ Collects full protein sequence for the appropriate transcript """
         for item in self.transcriptdict['fixannot'].findall('transcript'):
             p_number = int(item.attrib['name'][1:])
             coding_region = item.find('coding_region')
@@ -126,13 +126,11 @@ class LRG_Parser:
             self.transcriptdict['transcripts'][p_number]['protein_seq'] = sequence + '* '  # Stop codon
 
     def find_cds_delay_lrg(self, transcript):
-        ''' Method to find the actual start of the translated sequence
-            introduced to sort out non-coding exon problems '''
+        """ Method to find the actual start of the translated sequence
+            introduced to sort out non-coding exon problems """
         offset_total = 0
         offset = self.transcriptdict['transcripts'][transcript]['cds_offset']
         for exon in self.transcriptdict['transcripts'][transcript]['list_of_exons']:
-            #print 'exon: ' + exon
-            #print self.transcriptdict[transcript]['exons'][exon]
             g_start = self.transcriptdict['transcripts'][transcript]['exons'][exon]['genomic_start']
             g_stop = self.transcriptdict['transcripts'][transcript]['exons'][exon]['genomic_end']
             if offset > g_stop:
@@ -143,13 +141,11 @@ class LRG_Parser:
 
     def run(self):
 
-        #initial sequence grabbing and populating dictionaries
+        # Initial sequence grabbing and populating dictionaries
         gen_seq = self.grab_element('fixed_annotation/sequence')
         self.get_exoncoords(gen_seq)
         self.get_protein_exons()
         for transcript in self.transcriptdict['transcripts'].keys():
-            #print 'transcript: ' + str(transcript)
-            #print self.transcriptdict['transcripts'][transcript]
             self.transcriptdict['transcripts'][transcript]['list_of_exons'].sort(key=float)
             self.find_cds_delay_lrg(transcript)
 
