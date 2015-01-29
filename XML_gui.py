@@ -1,18 +1,68 @@
 # -*- coding: utf-8 -*-
-import os, shutil
-
 from Tkinter import *
 from tkFileDialog import askopenfilename
-from LRG_Parser import LRG_Parser
+from LrgParser import LrgParser
 from GBK_Parser import GBK_Parser
-from reader import reader
+from reader import Reader
 from latex_writer import LatexWriter
 from subprocess import call
 
+''' This module of the reference sequence writer creates the user interface.
+    This is version 2, for which the individual operational components have
+    been abstracted into separate modules.
+
+    Program flow:
+
+    - GUI is generated
+        - User chooses an input file (type: LRG (XML) / GenBank
+        - User chooses an amount of intronic flanking sequence (number)
+        - User clicks 'TRANSLATE'
+
+    - The input file type is checked and the file_type variable is set
+        - If the input is LRG, an LRG_Parser instance is created
+        - If the input is GenBank, an GBK_Parser instance is created
+        - The appropriate Parser instance is used to read the input file
+            contents into a dictionary object which is returned
+        - The dictionary has the following structure:
+
+            Dict { pad
+                   filename
+                   genename
+                   refseqname
+                   transcripts {  transcript {   protein_seq
+                                                 cds_offset
+                                                 exons {        exon_number {   genomic_start
+                                                                                genomic_stop
+                                                                                transcript_start
+                                                                                transcript_stop
+                                                                                sequence (with pad)
+
+        - Use of this dictionary structure allows for use of absolute references
+            to access each required part of the processed input, and allows for
+            the extension of the format to include any features required later
+
+    - The returned dictionary is passed through a Reader instance, which scans
+        through the created dictionary, and creates a list of Strings which
+        represent the typesetting which will be used for the final output.
+    - The Reader instance has been chosen to write out in a generic format, to
+        allow the dictionary contents to be used as a text output or for LaTex.
+        Use of a Boolean write_as_latex variable can be used to decide whether
+        the output will include LaTex headers and footers
+
+    - The list output from the Reader instance is written to an output file using
+        a writer object. Currently this is a LatexWriter instance, using standard
+        printing to file.This could be replaced with a print to .txt for inspection
+    - The LatexWriter Class creates an output directory which contains a reference
+        to the input file name, intronic padding, the date and time. This is done
+        to ensure that the output directory is unique and identifies the exact point
+        in time when the output file was created
+    - The LatexWriter also creates the full PDF output using a Python facilitated
+        command line call. The output '.tex' file is created in the new output
+        directory and is processed using pdflatex
+'''
 
 def open_file():
     name = askopenfilename(defaultextension = '')
-    #Add name to entry free text
     entry.delete(0, END)
     entry.insert(0, name)
 
@@ -52,34 +102,30 @@ def about():
     '''
     print '\nSo gene\nSuch reference\nWow'
 
-    # Operating instructions
-    # A fair amount of hard-coding is in place, just to ensure that output is in folders
-
 
 def run_parser():
     # Files will not be stored directly in outputFiles anymore - requires overwrite check
     padding = pad.get()
-    # existing_files= os.listdir('outputFiles')
     directory_and_file= entry.get()
     file_name = directory_and_file.split('/')[-1]
     file_type = check_file_type(file_name)
     dictionary = {}
     if file_type == 'gbk':
         print 'Running parser'
-        GBK_reader = GBK_Parser(file_name, padding)
-        dictionary = GBK_reader.run()
+        gbk_reader = GBK_Parser(file_name, padding)
+        dictionary = gbk_reader.run()
     elif file_type == 'lrg':
         print 'Running parser'
-        LRG_reader = LRG_Parser(file_name, padding)
-        dictionary = LRG_reader.run()
+        lrg_reader = LrgParser(file_name, padding)
+        dictionary = lrg_reader.run()
 
     print dictionary.keys()
     filename = dictionary['filename']
     for transcript in dictionary['transcripts']:
-        input_reader = reader(dictionary, transcript, True)
+        input_reader = Reader(dictionary, transcript, True)
         input_list = input_reader.run()
         writer = LatexWriter(input_list, filename)
-        latex_file, folder_name = writer.run()
+        latex_file = writer.run()
         call(["pdflatex", "-interaction=batchmode", latex_file])
         print "Process has completed successfully"
         root.quit()

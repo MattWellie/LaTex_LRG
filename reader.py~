@@ -1,7 +1,9 @@
-''' This is the Reader class which uses the completed dictionary
-    from the Parser classes as input and create a list object
-    containing each of the lines to be used as output in the
-    appropriate order to be printed.
+__author__ = 'mwelland'
+
+''' This class will contain the writer class for the LaTex output
+    This will use the completed dictionary as input and create a
+    list object containing each of the lines to be used as output
+    in the appropriate order to be printed
 
     Partitioning the output process will allow the program to be
     able to output to a simple .txt format or to a LaTex document
@@ -11,13 +13,13 @@
     generate output'''
 
 
-class Reader:
+class reader:
     '''
     Class version = 0.1
     Author = Matt Welland
-    Date = 29-01-2014
+    Date = 28-01-2014
 
-    This class is used to create list object which will contain the lines
+    This class is used to create an object which will contain the lines
     to be printed to a final output file
 
     This separates the creation of the dictionary, the writing of the
@@ -35,43 +37,29 @@ class Reader:
         self.exon_printed = False
         self.dont_print = False
 
-    def decide_number_string_character(self, char, wait_value, cds_count, amino_acid_counter, post_protein_printer,
-                                       intron_offset, intron_in_padding, protein_length, intron_out):
-        '''
-        :param char: the next base character to be written
-        :param wait_value: variable indicating whether a number has already been written
-        :param cds_count: the CDS position of the current char/base
-        :param amino_acid_counter: position of the amino acid in the protein sequence
-        :param post_protein_printer: to indicate the position of the exon after stop codon
-        :param intron_offset:
-        :param intron_in_padding:
-        :param protein_length: length of protein sequence
-        :param intron_out:
-        :return: all input values complete with appropriate additions and subtractions, and
-                 the new character(s) to be added to the number string
+        # Character deciding methods for the numbering and amino acid strings
 
-        This function is responsible for determining the next value(s) to be added to the
-        output string which will appear above the base sequence.
-        '''
-
+    # May be over-complicating, but separates out logic trees
+    def decide_number_string_character(self, char, wait_value, CDS_count, amino_acid_counter, post_protein_printer,
+                                       intron_offset, intron_in_padding, protein, intron_out):
         output = ''
         if char.isupper():
-            # Upper case
-            if amino_acid_counter < protein_length:
-                if cds_count % 10 == 1 and wait_value == 0:
-                    output = '|' + str(cds_count)
-                    wait_value = len(str(cds_count))
-                    cds_count += 1
+            if amino_acid_counter < len(protein):
+                if CDS_count % 10 == 1 and wait_value == 0:
+                    output = '|' + str(CDS_count)
+                    wait_value = len(str(CDS_count))
+                    CDS_count += 1
                 elif wait_value != 0:
-                    cds_count += 1
+                    CDS_count += 1
                     wait_value -= 1
                 elif wait_value == 0:
                     output = ' '
-                    cds_count += 1
-            elif amino_acid_counter >= protein_length:
+                    CDS_count += 1
+            elif amino_acid_counter >= len(protein):
 
                 if post_protein_printer % 10 == 0 and wait_value == 0:
                     output = '|+' + str(post_protein_printer + 1)
+                    # print output
                     wait_value = len(str(post_protein_printer + 1)) + 1
                     post_protein_printer += 1
                 elif wait_value != 0:
@@ -82,7 +70,7 @@ class Reader:
                     output = ' '
                     # print 'space'
         else:
-            # Lower case
+            # lower case
             if not self.exon_printed:
                 # Intron before exon
                 self.dont_print = True
@@ -97,7 +85,7 @@ class Reader:
                     output = ' '
                     intron_in_padding -= 1
             elif self.exon_printed:
-                # Intron after exon
+                # intron after exon
                 if wait_value != 0:
                     wait_value -= 1
                     intron_out += 1
@@ -109,23 +97,12 @@ class Reader:
                         output = ' '
                         intron_out += 1
 
-        return (output, wait_value, cds_count, amino_acid_counter,
-                post_protein_printer, intron_offset, intron_in_padding,intron_out)
+        return (
+            output, wait_value, CDS_count, amino_acid_counter, post_protein_printer, intron_offset, intron_in_padding,
+            intron_out)
+
 
     def decide_amino_string_character(self, char, codon_count, amino_acid_counter, codon_numbered, protein):
-        '''
-        :param char: the next base character to be written
-        :param codon_count: the position of the current base within the reading frame
-        :param amino_acid_counter: the position of the current AA in the protein sequence
-        :param codon_numbered: Boolean; has the current codon been numbered
-        :param protein: the full protein sequence
-        :return: all input values complete with appropriate additions and subtractions, and
-                 the new character(s) to be added to the amino number string
-
-        This function determines the next character to be added to the string which shows
-        the numbering for the amino acid labelling line
-        '''
-
         output = ''
         if char.isupper() and amino_acid_counter < len(protein):  # Bug, condition added
             if self.amino_printing:
@@ -133,6 +110,7 @@ class Reader:
                 if codon_count == 3:
                     # print 'AA = ' + protein[amino_acid_counter:amino_acid_counter+1][0]
                     output = protein[amino_acid_counter:amino_acid_counter + 1][0]
+                    # print output
                     amino_acid_counter += 1
                     codon_numbered = False
                     codon_count = 1
@@ -147,15 +125,6 @@ class Reader:
         return output, codon_count, amino_acid_counter, codon_numbered
 
     def print_latex_header(self, refseqid):
-        '''
-        :param refseqid: reference sequence identifier for current input
-
-        This function can be called if the file to be written out is designed to be
-        executed as a LaTex script. This will insert the appropriate preamble to
-        allow an article class document to be produced which uses a verbatim output
-        operation
-        '''
-
         self.line_printer('\\documentclass{article}')
         self.line_printer('\\usepackage{fancyvrb}')
         self.line_printer('\\begin{document}')
@@ -175,18 +144,12 @@ class Reader:
         self.line_printer(' \\begin{Verbatim}')
 
     def print_latex(self):
-
-        '''
-        This large class imports the entire dictionary and scans through the input dictionary
-        to build the output. This output will be kept as a list of strings (with the appropriate
-        order maintained) to allow a later decision on whether to print to LaTex, txt or other.
-        '''
-
         latex_dict = self.transcriptdict['transcripts'][self.transcript]
         ''' Creates a LaTex file which can be converted to a final document
             Lengths of numbers calculated using len(#)'''
 
         protein = latex_dict['protein_seq']
+        # print protein
         refseqid = self.transcriptdict['refseqname'].replace('_', '\_')  # Required for LaTex
         assert isinstance(latex_dict, object)
         cds_count = 1 - latex_dict['cds_offset']  # A variable to keep a count of the
@@ -198,8 +161,7 @@ class Reader:
         # values in the correct places
 
         # The initial line(s) of the LaTex file, required to execute
-        if self.write_as_LaTex:
-            self.print_latex_header(refseqid)
+        self.print_latex_header(refseqid)
 
         wait_value = 0
         codon_count = 3  # Print on first codon
@@ -272,7 +234,7 @@ class Reader:
                                                                                       amino_acid_counter,
                                                                                       post_protein_printer,
                                                                                       intron_offset, intron_in_padding,
-                                                                                      len(protein), intron_out)
+                                                                                      protein, intron_out)
                 number_string.append(next_number_string)
 
                 line_count += 1
@@ -288,26 +250,13 @@ class Reader:
                 self.line_printer(amino_number_string)
                 if self.amino_spacing: self.line_printer('  ')
 
-        if self.write_as_LaTex:
-            self.print_latex_footer()
+        self.print_latex_footer()
 
     def print_latex_footer(self):
-
-        '''
-        A brief function to set the final lines of the document if the output
-        is to be in a LaTex parse-able format
-        '''
         self.line_printer('\\end{Verbatim}')
         self.line_printer('\\end{document}')
 
     def line_printer(self, string):
-
-        '''
-        :param string: next string to be written to output list
-        :return: none
-
-        Generic print method to handle all list output in one location
-        '''
         self.output_list.append(''.join(string))
 
     def decide_amino_number_string_character(self, amino_wait, codon_numbered, amino_acid_counter):
@@ -328,5 +277,6 @@ class Reader:
         return output, amino_wait, codon_numbered, amino_acid_counter
 
     def run(self):
+        # Fill output file
         self.print_latex()
         return self.output_list
