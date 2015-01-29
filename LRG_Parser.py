@@ -1,13 +1,8 @@
 __author__ = 'mwelland'
 
-import sys
-from Bio import SeqIO
 import xml.etree.ElementTree as etree
-import os
 
 class LRG_Parser:
-
-
     '''
     Class version: 0.1
     Modified Date: 28/01/2015
@@ -32,41 +27,39 @@ class LRG_Parser:
                                                                           sequence (with pad)
     '''
 
-    def __init__(self, file_name, padding, existingfiles, file_type):#, root, option):
+    def __init__(self, file_name, padding):
         self.fileName = file_name
-        #Read in the specified input file into a variable
+        # Read in the specified input file into a variable
         try:
-            self.file_type = file_type
-            self.transcriptdict = {}
-            self.transcriptdict['transcripts'] = {}
             self.tree = etree.parse(self.fileName)
-            self.transcriptdict['root'] = self.tree.getroot()
-            self.transcriptdict['fixannot'] = self.transcriptdict['root'].find('fixed_annotation') #ensures only exons from the fixed annotation will be taken
-            self.transcriptdict['genename'] = self.transcriptdict['root'].find('updatable_annotation/annotation_set/lrg_locus').text
-            self.transcriptdict['refseqname'] = self.transcriptdict['root'].find('fixed_annotation/sequence_source').text
-            if self.transcriptdict['root'].attrib['schema_version'] <> '1.9':
+            self.transcriptdict = {'transcripts': {},
+                                   'root': self.tree.getroot(),
+                                   'pad': int(padding),
+                                   'pad_offset': int(padding) % 5}
+            self.transcriptdict['fixannot'] = self.transcriptdict['root'].find(
+                'fixed_annotation')  # ensures only exons from the fixed annotation will be taken
+            self.transcriptdict['genename'] = self.transcriptdict['root'].find(
+                'updatable_annotation/annotation_set/lrg_locus').text
+            self.transcriptdict['refseqname'] = self.transcriptdict['root'].find(
+                'fixed_annotation/sequence_source').text
+            self.transcriptdict['filename'] = self.transcriptdict['genename'] + '_' + self.fileName.split('.')[
+                0] + '_' + padding
+
+            if self.transcriptdict['root'].attrib['schema_version'] != '1.9':
                 print 'This LRG file is not the correct version for this script'
                 print 'This is designed for v.1.8'
                 print 'This file is v.' + self.root.attrib['schema_version']
-
-            self.existingFiles = existingfiles
-            self.transcriptdict['pad'] = int(padding)
-            self.transcriptdict['pad_offset'] = int(padding) % 5
-            self.amino_printing = False
-            self.amino_spacing = False
-            self.exon_spacing = False
-            self.exon_printed = False
-            self.dont_print = False
             self.is_matt_awesome = True
         except IOError as fileNotPresent:
             print "The specified file cannot be located: " + fileNotPresent.filename
             exit()
 
+        # This assertion is an artifact from LRG parsing, will need to be updated
         assert self.transcriptdict['pad'] <= 2000, "Padding too large, please use a value below 2000 bases"
 
-    #Grabs the sequence string from the <sequence/> tagged block
+    # Grabs the sequence string from the <sequence/> tagged block
     def grab_element(self, path):
-        '''Grabs specific element from the xml file from a provided path'''
+        ''' Grabs specific element from the xml file from a provided path '''
         try:
             for item in self.transcriptdict['root'].findall(path):
                 result = item.text
@@ -75,7 +68,7 @@ class LRG_Parser:
             print "No sequence was identified"
 
 
-    #Grab exon coords and sequences from the xml file
+    # Grab exon coords and sequences from the xml file
     def get_exoncoords(self, genseq):
         ''' Traverses the LRG ETree to find all the useful values
             This should allow more robust use of the stored values, and enhances
@@ -83,12 +76,12 @@ class LRG_Parser:
             also make the program more easily extensible
         '''
         for items in self.transcriptdict['fixannot'].findall('transcript'):
-            t_number = int(items.attrib['name'][1:])    #e.g. 't1', 't2'
-            self.transcriptdict['transcripts'][t_number] = {} #first should be indicated with '1'; 'p1' can write on
+            t_number = int(items.attrib['name'][1:])  #e.g. 't1', 't2'
+            self.transcriptdict['transcripts'][t_number] = {}  #first should be indicated with '1'; 'p1' can write on
             self.transcriptdict['transcripts'][t_number]["exons"] = {}
             self.transcriptdict['transcripts'][t_number]['list_of_exons'] = []
-            #Gene sequence main coordinates are required to take introns
-            #Transcript coordinates wanted for output
+            # Gene sequence main coordinates are required to take introns
+            # Transcript coordinates wanted for output
             genomic_start = 0
             genomic_end = 0
             transcript_start = 0
@@ -98,22 +91,22 @@ class LRG_Parser:
                 self.transcriptdict['transcripts'][t_number]['list_of_exons'].append(exon_number)
                 self.transcriptdict['transcripts'][t_number]["exons"][exon_number] = {}
                 for coordinates in exon:
-                    #Find Transcript Coordinates
-                    #if coordinates.attrib['coord_system'][-2] == 't':
-                    #    self.transcriptdict['transcripts'][t_number]["exons"][exon_number]['transcript_start'] = int(coordinates.attrib['start'])
-                    #    self.transcriptdict['transcripts'][t_number]["exons"][exon_number]['transcript_end'] = int(coordinates.attrib['end'])
+                    # Find Transcript Coordinates
+                    # if coordinates.attrib['coord_system'][-2] == 't':
+                    # self.transcriptdict['transcripts'][t_number]["exons"][exon_number]['transcript_start'] = int(coordinates.attrib['start'])
+                    # self.transcriptdict['transcripts'][t_number]["exons"][exon_number]['transcript_end'] = int(coordinates.attrib['end'])
                     if coordinates.attrib['coord_system'][-2] not in ['t', 'p']:
                         genomic_start = int(coordinates.attrib['start'])
                         genomic_end = int(coordinates.attrib['end'])
                 assert genomic_start >= 0, "Exon index out of bounds"
                 assert genomic_end <= len(genseq), "Exon index out of bounds"
-                seq = genseq[genomic_start-1:genomic_end]
+                seq = genseq[genomic_start - 1:genomic_end]
                 pad = self.transcriptdict['pad']
                 if pad > 0:
                     assert genomic_start - pad >= 0, "Exon index out of bounds"
                     assert genomic_end + pad <= len(genseq), "Exon index out of bounds"
-                    pad5 = genseq[genomic_start-(pad+1):genomic_start-1]
-                    pad3 = genseq[genomic_end:genomic_end+(pad+1)]
+                    pad5 = genseq[genomic_start - (pad + 1):genomic_start - 1]
+                    pad3 = genseq[genomic_end:genomic_end + (pad + 1)]
                     seq = pad5.lower() + seq + pad3.lower()
                     self.transcriptdict['transcripts'][t_number]["exons"][exon_number]['sequence'] = seq
                     self.transcriptdict['transcripts'][t_number]["exons"][exon_number]['genomic_start'] = genomic_start
@@ -130,7 +123,7 @@ class LRG_Parser:
 
             translation = coding_region.find('translation')
             sequence = translation.find('sequence').text
-            self.transcriptdict['transcripts'][p_number]['protein_seq'] = sequence+'* ' # Stop codon
+            self.transcriptdict['transcripts'][p_number]['protein_seq'] = sequence + '* '  # Stop codon
 
     def find_cds_delay_lrg(self, transcript):
         ''' Method to find the actual start of the translated sequence
@@ -142,8 +135,8 @@ class LRG_Parser:
             #print self.transcriptdict[transcript]['exons'][exon]
             g_start = self.transcriptdict['transcripts'][transcript]['exons'][exon]['genomic_start']
             g_stop = self.transcriptdict['transcripts'][transcript]['exons'][exon]['genomic_end']
-            if offset > g_stop :
-                offset_total = offset_total + (g_stop - g_start)+1
+            if offset > g_stop:
+                offset_total = offset_total + (g_stop - g_start) + 1
             elif offset < g_stop and offset > g_start:
                 self.transcriptdict['transcripts'][transcript]['cds_offset'] = offset_total + (offset - g_start)
                 break

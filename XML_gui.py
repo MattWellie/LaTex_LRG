@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
-import os, sys, shutil
+import os, shutil
+
 from Tkinter import *
 from tkFileDialog import askopenfilename
 from LRG_Parser import LRG_Parser
 from GBK_Parser import GBK_Parser
-from writer import writer
+from reader import reader
+from latex_writer import LatexWriter
 from subprocess import call
 
-option = ''
 
 def open_file():
     name = askopenfilename(defaultextension = '')
@@ -15,7 +16,8 @@ def open_file():
     entry.delete(0, END)
     entry.insert(0, name)
 
-def About():
+
+def about():
     print '\nMatthew Welland, 8, January 2015'
     print 'This is a Python program for creating reference sequences'
     print 'To create sequences you will need a computer with LaTex installed\n'
@@ -57,31 +59,31 @@ def About():
 def run_parser():
     # Files will not be stored directly in outputFiles anymore - requires overwrite check
     padding = pad.get()
-    existing_files= os.listdir('outputFiles')
+    # existing_files= os.listdir('outputFiles')
     directory_and_file= entry.get()
     file_name = directory_and_file.split('/')[-1]
     file_type = check_file_type(file_name)
     dictionary = {}
     if file_type == 'gbk':
         print 'Running parser'
-        GBK_reader = GBK_Parser(file_name, padding, existing_files, file_type)
+        GBK_reader = GBK_Parser(file_name, padding)
         dictionary = GBK_reader.run()
-    elif file_type == 'xml':
+    elif file_type == 'lrg':
         print 'Running parser'
-        LRG_reader = LRG_Parser(file_name, padding, existing_files, file_type)
+        LRG_reader = LRG_Parser(file_name, padding)
         dictionary = LRG_reader.run()
 
-    # latex_file = xml_parser.run()
-    output_writer = writer(dictionary, True)
-    output_list = output_writer.run()
+    print dictionary.keys()
+    filename = dictionary['filename']
+    for transcript in dictionary['transcripts']:
+        input_reader = reader(dictionary, transcript, True)
+        input_list = input_reader.run()
+        writer = LatexWriter(input_list, filename)
+        latex_file, folder_name = writer.run()
+        call(["pdflatex", "-interaction=batchmode", latex_file])
+        print "Process has completed successfully"
+        root.quit()
 
-    os.chdir("outputFiles")
-    os.mkdir(latex_file[0:-4]) # Try-catch, this folder may exist
-    shutil.move(latex_file, os.path.join(latex_file[0:-4], latex_file))
-    os.chdir(latex_file[0:-4])
-    call(["pdflatex", "-interaction=batchmode", latex_file])
-    print "Process has completed successfully"
-    root.quit()
 
 def check_file_type(file_name):
     ''' This function takes the file name which has been selected
@@ -104,7 +106,7 @@ root = Tk()
 menu = Menu(root)
 root.config(menu=menu)
 helpmenu = Menu(menu)
-menu.add_command(label="Help", command=About)
+menu.add_command(label="Help", command=about)
 
 text_in_label = Label(root, text="File name:")
 text_in_label.grid(row=0, column=1, sticky = 'w')
