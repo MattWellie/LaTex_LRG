@@ -2,7 +2,7 @@
 from Tkinter import *
 from tkFileDialog import askopenfilename
 from LrgParser import LrgParser
-from GBK_Parser import GBK_Parser
+from GbkParser import GbkParser
 from reader import Reader
 from latex_writer import LatexWriter
 from subprocess import call
@@ -20,7 +20,7 @@ from subprocess import call
 
     - The input file type is checked and the file_type variable is set
         - If the input is LRG, an LRG_Parser instance is created
-        - If the input is GenBank, an GBK_Parser instance is created
+        - If the input is GenBank, an GbkParser instance is created
         - The appropriate Parser instance is used to read the input file
             contents into a dictionary object which is returned
         - The dictionary has the following structure:
