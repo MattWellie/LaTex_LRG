@@ -4,7 +4,7 @@ import Bio
 class GbkParser:
     """
     Class version: 0.1
-    Modified Date: 28/01/2015
+    Modified Date: 01/02/2015
     Author : Matt Welland
 
     Notes:
