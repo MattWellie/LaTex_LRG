@@ -15,9 +15,9 @@ __author__ = 'mwelland'
 
 class writer:
     '''
-    Class version = 0.1
+    Class version = 1.0
     Author = Matt Welland
-    Date = 28-01-2014
+    Date = 02-02-2014
 
     This class is used to create an object which will contain the lines
     to be printed to a final output file
