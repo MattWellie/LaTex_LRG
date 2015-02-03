@@ -112,7 +112,7 @@ def run_parser():
     dictionary = {}
     if file_type == 'gbk':
         print 'Running parser'
-        gbk_reader = GBK_Parser(file_name, padding)
+        gbk_reader = GbkParser(file_name, padding)
         dictionary = gbk_reader.run()
     elif file_type == 'lrg':
         print 'Running parser'
