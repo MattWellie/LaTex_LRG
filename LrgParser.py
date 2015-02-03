@@ -44,7 +44,7 @@ class LrgParser:
             self.transcriptdict['refseqname'] = self.transcriptdict['root'].find(
                 'fixed_annotation/sequence_source').text
             self.transcriptdict['filename'] = self.transcriptdict['genename'] + '_' + self.fileName.split('.')[
-                0] + '_' + padding
+                0] + '_' + str(padding)
 
             if self.transcriptdict['root'].attrib['schema_version'] != '1.9':
                 print 'This LRG file is not the correct version for this script'
@@ -57,6 +57,10 @@ class LrgParser:
 
         # This assertion is an artifact from LRG parsing, will need to be updated
         assert self.transcriptdict['pad'] <= 2000, "Padding too large, please use a value below 2000 bases"
+		assert self.transcriptdict['pad'] >= 0, "Padding must be 0 or a positive value"
+	
+		if self.transcriptdict['pad'] < 0:
+			exit()
 
     # Grabs the sequence string from the <sequence/> tagged block
     def grab_element(self, path):
@@ -67,9 +71,10 @@ class LrgParser:
             return result
         except:
             print "No sequence was identified"
+			
 
-    # Grab exon coords and sequences from the xml file
-    def get_exoncoords(self, genseq):
+    # Grab exon coords from the file - separated from sequence gathering
+    def get_exon_coords(self):
         '''
         :param genseq:
         :return:
@@ -101,17 +106,26 @@ class LrgParser:
                         genomic_end = int(coordinates.attrib['end'])
                 assert genomic_start >= 0, "Exon index out of bounds"
                 assert genomic_end <= len(genseq), "Exon index out of bounds"
-                seq = genseq[genomic_start - 1:genomic_end]
-                pad = self.transcriptdict['pad']
-                if pad > 0:
-                    assert genomic_start - pad >= 0, "Exon index out of bounds"
-                    assert genomic_end + pad <= len(genseq), "Exon index out of bounds"
-                    pad5 = genseq[genomic_start - (pad + 1):genomic_start - 1]
-                    pad3 = genseq[genomic_end:genomic_end + (pad + 1)]
-                    seq = pad5.lower() + seq + pad3.lower()
-                    self.transcriptdict['transcripts'][t_number]["exons"][exon_number]['sequence'] = seq
-                    self.transcriptdict['transcripts'][t_number]["exons"][exon_number]['genomic_start'] = genomic_start
-                    self.transcriptdict['transcripts'][t_number]["exons"][exon_number]['genomic_end'] = genomic_end
+				self.transcriptdict['transcripts'][t_number]["exons"][exon_number]['sequence'] = seq
+                self.transcriptdict['transcripts'][t_number]["exons"][exon_number]['genomic_start'] = genomic_start
+                self.transcriptdict['transcripts'][t_number]["exons"][exon_number]['genomic_end'] = genomic_end
+
+	def grab_exon_contents(self, genseq):
+		transcripts = self.transcriptdict['transcripts'].keys()
+		for transcript in transcripts:
+			exon_list = self.transcriptdict['transcripts'][transcript]['list_of_exons']
+			for exon_number in exon_list:
+				genomic_start = self.transcriptdict['transcripts'][transcript]['exons'][exon_number]['genomic_start']
+				genomic_end = self.transcriptdict['transcripts'][transcript]['exons'][exon_number]['genomic_end']
+				seq = genseq[genomic_start - 1:genomic_end]
+	        	pad = self.transcriptdict['pad']
+		        if pad > 0:
+	            	assert genomic_start - pad >= 0, "Exon index out of bounds"
+		            assert genomic_end + pad <= len(genseq), "Exon index out of bounds"
+		            pad5 = genseq[genomic_start - (pad + 1):genomic_start - 1]
+		            pad3 = genseq[genomic_end:genomic_end + (pad + 1)]
+		            seq = pad5.lower() + seq + pad3.lower()
+	            self.transcriptdict['transcripts'][transcript]["exons"][exon_number]['sequence'] = seq
 
     def get_protein_exons(self):
         """ Collects full protein sequence for the appropriate transcript """
@@ -143,7 +157,8 @@ class LrgParser:
 
         # Initial sequence grabbing and populating dictionaries
         gen_seq = self.grab_element('fixed_annotation/sequence')
-        self.get_exoncoords(gen_seq)
+        self.get_exon_coords()
+		self.grab_exon_contents(gen_seq)
         self.get_protein_exons()
         for transcript in self.transcriptdict['transcripts'].keys():
             self.transcriptdict['transcripts'][transcript]['list_of_exons'].sort(key=float)
