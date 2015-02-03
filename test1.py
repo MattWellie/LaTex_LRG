@@ -1,8 +1,8 @@
 import unittest
 from LrgParser import LrgParser
-from GbkParser import GbkParser
-from reader import Reader
-from latex_writer import LatexWriter
+#from GbkParser import GbkParser
+#from reader import Reader
+#from latex_writer import LatexWriter
 
 class TestFixture(unittest.TestCase):
 
