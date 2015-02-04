@@ -4,8 +4,8 @@ from xml.etree.ElementTree import parse
 class LrgParser:
 
     """
-    Class version: 0.1
-    Modified Date: 28/01/2015
+    Class version: 0.2
+    Modified Date: 04/02/2015
     Author : Matt Welland
 
     Notes:
@@ -135,7 +135,7 @@ class LrgParser:
             sequence = translation.find('sequence').text
             self.transcriptdict['transcripts'][p_number]['protein_seq'] = sequence + '* '  # Stop codon
 
-    def find_cds_delay_lrg(self, transcript):
+    def find_cds_delay(self, transcript):
         """ Method to find the actual start of the translated sequence
             introduced to sort out non-coding exon problems """
         offset_total = 0
@@ -158,6 +158,6 @@ class LrgParser:
         self.get_protein_exons()
         for transcript in self.transcriptdict['transcripts'].keys():
             self.transcriptdict['transcripts'][transcript]['list_of_exons'].sort(key=float)
-            self.find_cds_delay_lrg(transcript)
+            self.find_cds_delay(transcript)
 
         return self.transcriptdict

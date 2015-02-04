@@ -24,6 +24,18 @@ class TestFixture(unittest.TestCase):
 		self.assertEqual(str(element.__class__),  "<type 'NoneType'>")
 		self.assertEqual(element, None)
 
+    def test_get_exon_coords(self):
+        pass
+    
+    def test_grab_exon_contents(self);
+        pass
+
+    def test_gt_protein_exons(self):
+        pass
+
+    def test_find_cds_delay(self):
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

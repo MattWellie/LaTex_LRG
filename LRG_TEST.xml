@@ -26,23 +26,23 @@
         <sequence>ACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTATGACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTATGACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGT</sequence>
       </cdna>
       <coding_region>
-        <coordinates coord_system="LRG_TEST" start="801" end="2655" strand="1" />
+        <coordinates coord_system="LRG_TEST" start="1677" end="2655" strand="1" />
         <translation name="p1">
           <sequence>ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLM</sequence>
         </translation>
       </coding_region>
       <exon label="1">
-        <coordinates coord_system="LRG_TEST" start="1301" end="1521" strand="1" />
+        <coordinates coord_system="LRG_TEST" start="801" end="1019" strand="1" />
         <coordinates coord_system="LRG_TESTt1" start="1" end="220" />
       </exon>
       <exon label="2">
-        <coordinates coord_system="LRG_TEST" start="2121" end="2280" strand="1" />
-        <coordinates coord_system="LRG_TESTt1" start="221" end="380" />
+        <coordinates coord_system="LRG_TEST" start="1621" end="1778" strand="1" />
+        <coordinates coord_system="LRG_TESTt1" start="221" end="379" />
         <coordinates coord_system="LRG_TESTp1" start="1" end="34" />
       </exon>
       <exon label="3">
-        <coordinates coord_system="LRG_TEST" start="2881" end="3156" strand="1" />
-        <coordinates coord_system="LRG_TESTt1" start="381" end="558" />
+        <coordinates coord_system="LRG_TEST" start="2381" end="2655" strand="1" />
+        <coordinates coord_system="LRG_TESTt1" start="380" end="658" />
         <coordinates coord_system="LRG_TESTp1" start="35" end="91" />
       </exon>
     </transcript>
