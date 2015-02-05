@@ -86,6 +86,7 @@ class LrgParser:
 
         for items in self.transcriptdict['fixannot'].findall('transcript'):
             t_number = int(items.attrib['name'][1:])  # e.g. 't1', 't2'
+            # print 't_number: ' + str(t_number)
             self.transcriptdict['transcripts'][t_number] = {}  # First should be indicated with '1'; 'p1' can write on
             self.transcriptdict['transcripts'][t_number]["exons"] = {}
             self.transcriptdict['transcripts'][t_number]['list_of_exons'] = []

@@ -20,14 +20,21 @@ class TestFixture(unittest.TestCase):
     
     def test_grab_element_fail(self):
         """This test should fail, as it references a non-existent node"""
-		element = self.test_lrg.grab_element('fixed_annotation/failure')
-		self.assertEqual(str(element.__class__),  "<type 'NoneType'>")
-		self.assertEqual(element, None)
+        element = self.test_lrg.grab_element('fixed_annotation/failure')
+        self.assertEqual(str(element.__class__),  "<type 'NoneType'>")
+        self.assertEqual(element, None)
 
     def test_get_exon_coords(self):
-        pass
-    
-    def test_grab_exon_contents(self);
+        self.test_lrg.get_exon_coords()
+        # print 'exon list = ' + 
+        self.test_lrg.transcriptdict['transcripts'][1]['list_of_exons'].sort(key=float)
+        exons = self.test_lrg.transcriptdict['transcripts'][1]["exons"]
+        print 'These are the exon keys: ' + str(exons.keys())
+        self.assertEqual(keys, ['1', '2', '3'])
+        self.assertEqual(self.test_lrg.transcriptdict['transcripts'][1]["list_of_exons"], ['1', '2', '3'])
+        self.assertEqual(exons.keys(), self.test_lrg.transcriptdict['transcripts'][1]["list_of_exons"])
+
+    def test_grab_exon_contents(self):
         pass
 
     def test_gt_protein_exons(self):
