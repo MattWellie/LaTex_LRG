@@ -8,7 +8,7 @@
     <sequence_source>NG_Welland.1</sequence_source>
     <organism taxon="9606">Homo sapiens</organism>
     <source>
-      <name>Matt Welland LRG Test - NOODLES</name>
+      <name>Matt Welland LRG Test - WELLAND</name>
       <url>https://github.com/MattWellie/LaTex_LRG.git</url>
       <contact>
         <name>Matt Welland</name>
