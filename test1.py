@@ -29,10 +29,13 @@ class TestFixture(unittest.TestCase):
         # print 'exon list = ' + 
         self.test_lrg.transcriptdict['transcripts'][1]['list_of_exons'].sort(key=float)
         exons = self.test_lrg.transcriptdict['transcripts'][1]["exons"]
-        print 'These are the exon keys: ' + str(exons.keys())
-        self.assertEqual(keys, ['1', '2', '3'])
+        #print 'These are the exon keys: ' + str(exons.keys())
+        exon_keys = exons.keys()
+        exon_keys.sort()
+        #print 'These are the sorted exon keys: ' + str(exon_keys)
+        self.assertEqual(exons.keys(), ['1', '3', '2'])
         self.assertEqual(self.test_lrg.transcriptdict['transcripts'][1]["list_of_exons"], ['1', '2', '3'])
-        self.assertEqual(exons.keys(), self.test_lrg.transcriptdict['transcripts'][1]["list_of_exons"])
+        self.assertEqual(exon_keys, self.test_lrg.transcriptdict['transcripts'][1]["list_of_exons"])
 
     def test_grab_exon_contents(self):
         pass
