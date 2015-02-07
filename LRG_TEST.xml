@@ -32,17 +32,17 @@
         </translation>
       </coding_region>
       <exon label="1">
-        <coordinates coord_system="LRG_TEST" start="801" end="1019" strand="1" />
+        <coordinates coord_system="LRG_TEST" start="801" end="1020" strand="1" />
         <coordinates coord_system="LRG_TESTt1" start="1" end="220" />
       </exon>
       <exon label="2">
-        <coordinates coord_system="LRG_TEST" start="1621" end="1778" strand="1" />
+        <coordinates coord_system="LRG_TEST" start="1621" end="1779" strand="1" />
         <coordinates coord_system="LRG_TESTt1" start="221" end="379" />
         <coordinates coord_system="LRG_TESTp1" start="1" end="34" />
       </exon>
       <exon label="3">
-        <coordinates coord_system="LRG_TEST" start="2381" end="2655" strand="1" />
-        <coordinates coord_system="LRG_TESTt1" start="380" end="658" />
+        <coordinates coord_system="LRG_TEST" start="2380" end="2655" strand="1" />
+        <coordinates coord_system="LRG_TESTt1" start="379" end="658" />
         <coordinates coord_system="LRG_TESTp1" start="35" end="91" />
       </exon>
     </transcript>

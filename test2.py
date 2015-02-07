@@ -1,6 +1,5 @@
 import unittest
-from LrgParser import LrgParser
-#from GbkParser import GbkParser
+from GbkParser import GbkParser
 #from reader import Reader
 #from latex_writer import LatexWriter
 
