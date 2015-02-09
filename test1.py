@@ -1,5 +1,6 @@
 import unittest
 from LrgParser import LrgParser
+
 #from GbkParser import GbkParser
 #from reader import Reader
 #from latex_writer import LatexWriter
@@ -51,6 +52,7 @@ class TestFixture(unittest.TestCase):
         self.test_lrg.get_exon_coords()
         self.test_lrg.grab_exon_contents(self.test_lrg.grab_element('fixed_annotation/sequence'))
         transcripts = self.test_lrg.transcriptdict['transcripts'].keys()
+        self.assertEqual(transcripts, [1])
         self.assertEqual(self.test_lrg.transcriptdict['transcripts'][1]['exons']['1']['sequence'], 'gaaaagaaaaACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTaaaagaaaaga')
         self.assertEqual(self.test_lrg.transcriptdict['transcripts'][1]['exons']['2']['sequence'], 'gaaaagaaaaACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTATGACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTaaaagaaaaga')
         self.assertEqual(self.test_lrg.transcriptdict['transcripts'][1]['exons']['3']['sequence'], 'gaaaagaaaaACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTATAAACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTaaaagaaaaga')

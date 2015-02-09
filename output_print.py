@@ -6,9 +6,16 @@ total = 1
 x = [1,2,3,4,5,6]
 for value in range(176):
     line_content = []
-    line_content.append(str(total)+' ')
+    spaces = '         '
+    if total > 9:
+        spaces = spaces[1:]
+        if total > 99:
+            spaces = spaces[1:]
+            if total > 999:
+                spaces = spaces[1:]
+    line_content.append(spaces+str(total)+' ')
     line = 0
     for element in x:
-        line_content.append(input[total-1:total+10]+' ')
+        line_content.append(input[total-1:total+9].lower()+' ')
         total += 10
     print >>out, ''.join(line_content)

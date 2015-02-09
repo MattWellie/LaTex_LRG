@@ -1,10 +1,9 @@
-import Bio
-
+from Bio import SeqIO
 
 class GbkParser:
     """
-    Class version: 0.1
-    Modified Date: 01/02/2015
+    Class version: 0.2
+    Modified Date: 09/02/2015
     Author : Matt Welland
 
     Notes:
@@ -37,14 +36,16 @@ class GbkParser:
         :param file_name: the location/identity of the target input file
         :param padding: the required amount of intronic padding
         '''
-
+        self.exons = []
+        self.cds = []
         self.fileName = file_name
         # Read in the specified input file into a variable
         try:
-            self.transcriptdict = dict(transcripts={}, input=Bio.SeqIO.to_dict(Bio.SeqIO.parse(file_name, 'genbank')),
-                                       pad=int(padding),filename=self.fileName.split('.')[0] + '_' + padding,
-                                       pad_offset= int(padding) % 5)
-            self.transcriptdict['refseqname']=self.transcriptdict['input'].keys()[0]
+            self.transcriptdict = dict(transcripts={}, input=SeqIO.to_dict(SeqIO.parse(file_name, 'genbank')),
+                                       pad=int(padding), filename=self.fileName.split('.')[0] + '_' + str(padding),
+                                       pad_offset=int(padding) % 5)
+            print self.transcriptdict
+            self.transcriptdict['refseqname'] = self.transcriptdict['input'].keys()[0]
             self.transcriptdict['transcripts'][1] = {}
             self.transcriptdict['transcripts'][1]['exons'] = {}
             self.is_matt_awesome = True
@@ -119,6 +120,21 @@ class GbkParser:
                 sequence = pad5.lower() + sequence + pad3.lower()
             self.transcriptdict['transcripts'][1]['exons'][exon_number]['sequence'] = sequence
 
+    def fill_and_find_features(self):
+        dictionary = self.transcriptdict['input'][self.transcriptdict['refseqname']]
+        self.transcriptdict['full genomic sequence'] = dictionary.seq
+        features = dictionary.features
+        for feature in features:
+            # Multiple exons are expected
+            if feature.type == 'exon':
+                self.exons.append(feature)
+            # A single CDS is ideal, may cause some confusion if multiple exist
+            # List handling is used to tidy up multiple CDS handling later (extensible)
+            elif feature.type == 'CDS':
+                self.cds.append(feature)
+        self.transcriptdict['genename'] = self.exons[0].qualifiers['gene'][0]
+        return features
+
     def run(self):
         """
         This is the main method of the GBK Parser. This method is called after class instantiation
@@ -130,23 +146,13 @@ class GbkParser:
                 explained in Class docstring above
         '''
         # initial sequence grabbing and populating dictionaries
-        dictionary = self.transcriptdict['input'][self.transcriptdict['refseqname']]
-        self.transcriptdict['full genomic sequence'] = dictionary.seq
-        features = dictionary.features
-        exons = []
-        cds = []
+        features = self.fill_and_find_features()
+
         # Sort through SeqFeatures to find the good stuff
-        for feature in features:
-            # Multiple exons are expected
-            if feature.type == 'exon':
-                exons.append(feature)
-            # A single CDS is ideal, may cause some confusion if multiple exist
-            # List handling is used to tidy up multiple CDS handling later
-            elif feature.type == 'CDS':
-                cds.append(feature)
-        self.transcriptdict['genename'] = exons[0].qualifiers['gene'][0]
-        self.get_protein(cds)
-        self.get_exons(exons)
-        self.transcriptdict['transcripts'][1]['cds_offset'] = cds[0].location.start
+
+        self.transcriptdict['genename'] = self.exons[0].qualifiers['gene'][0]
+        self.get_protein(self.cds)
+        self.get_exons(self.exons)
+        self.transcriptdict['transcripts'][1]['cds_offset'] = self.cds[0].location.start
         self.find_cds_delay_gbk(1)
         return self.transcriptdict

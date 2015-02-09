@@ -1,50 +1,176 @@
-1 GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG 
-61 GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG 
-121 GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG 
-181 GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG 
-241 GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG 
-301 GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG 
-361 GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG 
-421 GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG 
-481 GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG 
-541 GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG 
-601 GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG 
-661 GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG 
-721 GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG 
-781 GAAAAGAAAAG GAAAAGAAAAA ACGTACGTACG GTACGTACGTA ACGTACGTACG GTACGTACGTA 
-841 ACGTACGTACG GTACGTACGTA ACGTACGTACG GTACGTACGTA ACGTACGTACG GTACGTACGTA 
-901 ACGTACGTACG GTACGTACGTA ACGTACGTACG GTACGTACGTA ACGTACGTACG GTACGTACGTA 
-961 ACGTACGTACG GTACGTACGTA ACGTACGTACG GTACGTACGTA ACGTACGTACG GTACGTACGTA 
-1021 AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA 
-1081 AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA 
-1141 AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA 
-1201 AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA 
-1261 AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGG 
-1321 GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG 
-1381 GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG 
-1441 GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG 
-1501 GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG 
-1561 GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAG GAAAAGAAAAA 
-1621 ACGTACGTACG GTACGTACGTA ACGTACGTACG GTACGTACGTA ACGTACGTACG GTACGTATGAC 
-1681 CGTACGTACGT TACGTACGTAC CGTACGTACGT TACGTACGTAC CGTACGTACGT TACGTACGTAC 
-1741 CGTACGTACGT TACGTACGTAC CGTACGTACGT TACGTACGTAA AAAGAAAAGAA AAAGAAAAGAA 
-1801 AAAGAAAAGAA AAAGAAAAGAA AAAGAAAAGAA AAAGAAAAGAA AAAGAAAAGAA AAAGAAAAGAA 
-1861 AAAGAAAAGAA AAAGAAAAGAA AAAGAAAAGAA AAAGAAAAGAA AAAGAAAAGAA AAAGAAAAGAA 
-1921 AAAGAAAAGAA AAAGAAAAGAA AAAGAAAAGAA AAAGAAAAGAA AAAGAAAAGAA AAAGAAAAGAA 
-1981 AAAGAAAAGAA AAAGAAAAGAA AAAGAAAAGAA AAAGAAAAGAA AAAGAAAAGAA AAAGAAAAGAA 
-2041 AAAGAAAAGAA AAAGAAAAGAA AAAGAAAAGAA AAAGAAAAGGA AAAAGAAAAGA AAAAGAAAAGA 
-2101 AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA 
-2161 AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA 
-2221 AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA 
-2281 AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA 
-2341 AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAAC CGTACGTACGT TACGTACGTAC 
-2401 CGTACGTACGT TACGTACGTAC CGTACGTACGT TACGTACGTAC CGTACGTACGT TACGTACGTAC 
-2461 CGTACGTACGT TACGTACGTAC CGTACGTACGT TACGTACGTAC CGTACGTACGT TACGTACGTAC 
-2521 CGTACGTACGT TACGTACGTAC CGTACGTACGT TATAAACGTAC CGTACGTACGT TACGTACGTAC 
-2581 CGTACGTACGT TACGTACGTAC CGTACGTACGT TACGTACGTAC CGTACGTACGT TACGTACGTAC 
-2641 CGTACGTACGT TACGTAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA 
-2701 AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA 
-2761 AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA 
-2821 AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA 
-2881 AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA AAAAGAAAAGA 
-2941 AAAAGAAAAGA AAAAG  
+         1 gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa 
+        61 gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa 
+       121 gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa 
+       181 gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa 
+       241 gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa 
+       301 gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa 
+       361 gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa 
+       421 gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa 
+       481 gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa 
+       541 gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa 
+       601 gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa 
+       661 gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa 
+       721 gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa 
+       781 gaaaagaaaa gaaaagaaaa acgtacgtac gtacgtacgt acgtacgtac gtacgtacgt 
+       841 acgtacgtac gtacgtacgt acgtacgtac gtacgtacgt acgtacgtac gtacgtacgt 
+       901 acgtacgtac gtacgtacgt acgtacgtac gtacgtacgt acgtacgtac gtacgtacgt 
+       961 acgtacgtac gtacgtacgt acgtacgtac gtacgtacgt acgtacgtac gtacgtacgt 
+      1021 aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag 
+      1081 aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag 
+      1141 aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag 
+      1201 aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag 
+      1261 aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag 
+      1321 gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa 
+      1381 gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa 
+      1441 gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa 
+      1501 gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa 
+      1561 gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa gaaaagaaaa 
+      1621 acgtacgtac gtacgtacgt acgtacgtac gtacgtacgt acgtacgtac gtacgtatga 
+      1681 cgtacgtacg tacgtacgta cgtacgtacg tacgtacgta cgtacgtacg tacgtacgta 
+      1741 cgtacgtacg tacgtacgta cgtacgtacg tacgtacgta aaagaaaaga aaagaaaaga 
+      1801 aaagaaaaga aaagaaaaga aaagaaaaga aaagaaaaga aaagaaaaga aaagaaaaga 
+      1861 aaagaaaaga aaagaaaaga aaagaaaaga aaagaaaaga aaagaaaaga aaagaaaaga 
+      1921 aaagaaaaga aaagaaaaga aaagaaaaga aaagaaaaga aaagaaaaga aaagaaaaga 
+      1981 aaagaaaaga aaagaaaaga aaagaaaaga aaagaaaaga aaagaaaaga aaagaaaaga 
+      2041 aaagaaaaga aaagaaaaga aaagaaaaga aaagaaaagg aaaagaaaag aaaagaaaag 
+      2101 aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag 
+      2161 aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag 
+      2221 aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag 
+      2281 aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag 
+      2341 aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaaa cgtacgtacg tacgtacgta 
+      2401 cgtacgtacg tacgtacgta cgtacgtacg tacgtacgta cgtacgtacg tacgtacgta 
+      2461 cgtacgtacg tacgtacgta cgtacgtacg tacgtacgta cgtacgtacg tacgtacgta 
+      2521 cgtacgtacg tacgtacgta cgtacgtacg tataaacgta cgtacgtacg tacgtacgta 
+      2581 cgtacgtacg tacgtacgta cgtacgtacg tacgtacgta cgtacgtacg tacgtacgta 
+      2641 cgtacgtacg tacgtaaaag aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag 
+      2701 aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag 
+      2761 aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag 
+      2821 aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag 
+      2881 aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag aaaagaaaag 
+      2941 aaaagaaaag aaaag     
+      3001       
+      3061       
+      3121       
+      3181       
+      3241       
+      3301       
+      3361       
+      3421       
+      3481       
+      3541       
+      3601       
+      3661       
+      3721       
+      3781       
+      3841       
+      3901       
+      3961       
+      4021       
+      4081       
+      4141       
+      4201       
+      4261       
+      4321       
+      4381       
+      4441       
+      4501       
+      4561       
+      4621       
+      4681       
+      4741       
+      4801       
+      4861       
+      4921       
+      4981       
+      5041       
+      5101       
+      5161       
+      5221       
+      5281       
+      5341       
+      5401       
+      5461       
+      5521       
+      5581       
+      5641       
+      5701       
+      5761       
+      5821       
+      5881       
+      5941       
+      6001       
+      6061       
+      6121       
+      6181       
+      6241       
+      6301       
+      6361       
+      6421       
+      6481       
+      6541       
+      6601       
+      6661       
+      6721       
+      6781       
+      6841       
+      6901       
+      6961       
+      7021       
+      7081       
+      7141       
+      7201       
+      7261       
+      7321       
+      7381       
+      7441       
+      7501       
+      7561       
+      7621       
+      7681       
+      7741       
+      7801       
+      7861       
+      7921       
+      7981       
+      8041       
+      8101       
+      8161       
+      8221       
+      8281       
+      8341       
+      8401       
+      8461       
+      8521       
+      8581       
+      8641       
+      8701       
+      8761       
+      8821       
+      8881       
+      8941       
+      9001       
+      9061       
+      9121       
+      9181       
+      9241       
+      9301       
+      9361       
+      9421       
+      9481       
+      9541       
+      9601       
+      9661       
+      9721       
+      9781       
+      9841       
+      9901       
+      9961       
+      10021       
+      10081       
+      10141       
+      10201       
+      10261       
+      10321       
+      10381       
+      10441       
+      10501       
