@@ -8,14 +8,14 @@ class TestFixture(unittest.TestCase):
     def setUp(self):
         self.test_gbk = GbkParser('GB_TEST.gb', 10)
 
-    def test_LrgParser(self):
+    def test_GbkParser(self):
         self.assertEqual(str(self.test_gbk.__class__), 'GbkParser.GbkParser')
 
     def test_grab_element(self):
         """This test should pass based on the LRG_TEST.xml file 3/2/2015"""
         element = self.test_gbk.grab_element('fixed_annotation/sequence')
         self.assertEqual(str(element.__class__), "<type 'str'>")
-        self.assertEqual(element[0:60], 'GAAAAGAAAAGAAAAGAAAAGAAAAGAAAAGAAAAGAAAAGAAAAGAAAAGAAAAGAAAA')
+        self.assertEqual(element[0:60], 'gaaaagaaaagaaaagaaaagaaaagaaaagaaaagaaaagaaaagaaaagaaaagaaaa')
     
     def test_grab_element_fail(self):
         """This test should fail, as it references a non-existent node"""
