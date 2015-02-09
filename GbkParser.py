@@ -1,3 +1,4 @@
+import Bio
 from Bio import SeqIO
 
 class GbkParser:
@@ -44,7 +45,6 @@ class GbkParser:
             self.transcriptdict = dict(transcripts={}, input=SeqIO.to_dict(SeqIO.parse(file_name, 'genbank')),
                                        pad=int(padding), filename=self.fileName.split('.')[0] + '_' + str(padding),
                                        pad_offset=int(padding) % 5)
-            print self.transcriptdict
             self.transcriptdict['refseqname'] = self.transcriptdict['input'].keys()[0]
             self.transcriptdict['transcripts'][1] = {}
             self.transcriptdict['transcripts'][1]['exons'] = {}
@@ -55,7 +55,7 @@ class GbkParser:
 
         assert self.transcriptdict['pad'] <= 2000, "Padding too large, please use a value below 2000 bases"
 
-    def find_cds_delay_gbk(self, transcript):
+    def find_cds_delay(self, transcript):
         """ Method to find the actual start of the translated sequence
             introduced to sort out non-coding exon problems """
         '''
@@ -64,7 +64,9 @@ class GbkParser:
         '''
         offset_total = 0
         offset = self.transcriptdict['transcripts'][transcript]['cds_offset']
-        for exon in self.transcriptdict['transcripts'][transcript]['list_of_exons']:
+        exon_list = self.transcriptdict['transcripts'][transcript]['list_of_exons']
+        exon_list.sort(key=float)
+        for exon in exon_list:
             g_start = self.transcriptdict['transcripts'][transcript]['exons'][exon]['genomic_start']
             g_stop = self.transcriptdict['transcripts'][transcript]['exons'][exon]['genomic_end']
             if offset > g_stop:
@@ -114,9 +116,9 @@ class GbkParser:
             if self.transcriptdict['pad'] != 0:
                 pad = self.transcriptdict['pad']
                 pad5 = self.transcriptdict['full genomic sequence'][
-                       location_feature.start - (pad + 1):location_feature.start - 1]
+                       location_feature.start - (pad):location_feature.start]
                 pad3 = self.transcriptdict['full genomic sequence'][
-                       location_feature.end:location_feature.end + (pad + 1)]
+                       location_feature.end:location_feature.end + (pad)]
                 sequence = pad5.lower() + sequence + pad3.lower()
             self.transcriptdict['transcripts'][1]['exons'][exon_number]['sequence'] = sequence
 
@@ -154,5 +156,5 @@ class GbkParser:
         self.get_protein(self.cds)
         self.get_exons(self.exons)
         self.transcriptdict['transcripts'][1]['cds_offset'] = self.cds[0].location.start
-        self.find_cds_delay_gbk(1)
+        self.find_cds_delay(1)
         return self.transcriptdict

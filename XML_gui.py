@@ -119,7 +119,7 @@ def run_parser():
         lrg_reader = LrgParser(file_name, padding)
         dictionary = lrg_reader.run()
 
-    print dictionary.keys()
+    # print dictionary.keys()
     filename = dictionary['filename']
     for transcript in dictionary['transcripts']:
         input_reader = Reader(dictionary, transcript, True)

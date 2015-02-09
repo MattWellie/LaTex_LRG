@@ -1,4 +1,4 @@
-LOCUS       NG_Welland.1            2655 bp    DNA     linear   PRI 05-FEB-2015
+LOCUS       NG_Welland.1            2955 bp    DNA     linear   PRI 05-FEB-2015
 DEFINITION  Homo sapiens argininosuccinate lyase (ASL), RefSeqGene on
             chromosome 7.
 ACCESSION   NG_Welland.1
@@ -9,7 +9,7 @@ SOURCE      Homo sapiens (human)
             Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
             Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
             Catarrhini; Hominidae; Homo.
-REFERENCE   1  (bases 1 to 2655)
+REFERENCE   1  (bases 1 to 2955)
   AUTHORS   Welland, MJ
   TITLE     Welland Test File
   JOURNAL   Unpublished
@@ -20,9 +20,9 @@ COMMENT     This has been generated as a doftware test file for the reference
             https://github.com/MattWellie/LaTex_LRG.git
             
 PRIMARY     REFSEQ_SPAN         PRIMARY_IDENTIFIER PRIMARY_SPAN        COMP
-            1-2655              N/A                1-2655              c
+            1-2655              N/A                1-2955              c
 FEATURES             Location/Qualifiers
-     source          1..2655
+     source          1..2955
                      /organism="Homo sapiens"
                      /mol_type="genomic DNA"
                      /db_xref="taxon:9606"
@@ -46,7 +46,7 @@ FEATURES             Location/Qualifiers
                      /db_xref="GeneID:123456789"
                      /db_xref="HGNC:HGNC:N/A"
                      /db_xref="MIM:N/A"
-     mRNA            join(801..1019,1621..1778,2381..2655)
+     mRNA            join(801..1020,1621..1779,2380..2655)
                      /gene="WELLAND"
                      /gene_synonym="WELLAND"
                      /product="argininosuccinate lyase, transcript variant 2"
@@ -55,15 +55,15 @@ FEATURES             Location/Qualifiers
                      /db_xref="GeneID:435"
                      /db_xref="HGNC:HGNC:746"
                      /db_xref="MIM:608310"
-     exon            801..1019
+     exon            801..1020
                      /gene="WELLAND"
                      /gene_synonym="WELLAND"
                      /number=1
-     exon            1621..1778
+     exon            1621..1779
                      /gene="WELLAND"
                      /gene_synonym="WELLAND"
                      /number=2
-     CDS             join(801..1019,1621..1778,2381..2655)
+     CDS             join(1677..1778,2381..2655)
                      /gene="ASL"
                      /gene_synonym="ASAL"
                      /EC_number="4.3.2.1"
@@ -79,7 +79,7 @@ FEATURES             Location/Qualifiers
                      /db_xref="MIM:608310"
                      /translation="ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQR
                      STUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLM"
-     exon            2381..2655
+     exon            2380..2655
                      /gene="WELLAND"
                      /gene_synonym="WELLAND"
                      /number=3
