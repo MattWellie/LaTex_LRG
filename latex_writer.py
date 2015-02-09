@@ -18,7 +18,6 @@ class LatexWriter:
         self.input_list = input_list
         self.filename = filename
         self.latex_name = self.filename+'.tex'
-        out = open(self.latex_name, "w")
 
     def run(self):
 
