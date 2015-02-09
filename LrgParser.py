@@ -115,14 +115,14 @@ class LrgParser:
             for exon_number in exon_list:
                 genomic_start = self.transcriptdict['transcripts'][transcript]['exons'][exon_number]['genomic_start']
                 genomic_end = self.transcriptdict['transcripts'][transcript]['exons'][exon_number]['genomic_end']
-                seq = genseq[genomic_start - 1:genomic_end]
+                seq = genseq[genomic_start - 1:genomic_end].upper()
                 pad = self.transcriptdict['pad']
                 if pad > 0:
                     assert genomic_start - pad >= 0, "Exon index out of bounds"
                     assert genomic_end + pad <= len(genseq), "Exon index out of bounds"
                     pad5 = genseq[genomic_start - (pad + 1):genomic_start - 1]
                     pad3 = genseq[genomic_end:genomic_end + (pad + 1)]
-                    seq = pad5.lower() + seq + pad3.lower()
+                    seq = pad5 + seq + pad3
                 self.transcriptdict['transcripts'][transcript]["exons"][exon_number]['sequence'] = seq
 
     def get_protein_exons(self):
