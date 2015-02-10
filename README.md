@@ -43,7 +43,7 @@ filename you wish to convert.
 - There is a 'Help' button on the ribbon which will print a brief guide statement
 to the command line. This can be edited in the XML_gui.py file
 
-##Planned updates
+##How it works
 
 - The program has been broken up into several different components;
     - XML_gui.py to show the user interface
@@ -52,6 +52,11 @@ to the command line. This can be edited in the XML_gui.py file
     - writer.py to read the list into an actual file
     - latex_writer.py to write the reader output into a external file 
     - The XML_GUI.py module then calls a pdflatex command to typeset the file
+
+##Planned updates
+
+- As of 10/02/2015 there are no significant updates, only minor improvements
+- Please feel free to suggest any improvements you require
 
 ##Issue Tracker
 - stumbles on exons numbered with letters (e.g. 14a) due to a failed sorting mechanism, otherwise works
