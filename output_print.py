@@ -4,7 +4,7 @@ out = open('output_print.txt', "w")
 line = 0
 total = 1
 x = [1,2,3,4,5,6]
-for value in range(176):
+for value in range(50):
     line_content = []
     spaces = '         '
     if total > 9:
