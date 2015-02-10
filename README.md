@@ -64,6 +64,11 @@ to the command line. This can be edited in the XML_gui.py file
 
 - Requires a statement to check if the first base of the first exon is 1 (no 5' UTR) in which case a warning should be printed, and a preceeding intronic sequence should not be grabbed (will read from the end of the sequence due to negative reference (BRCA1 as an example)
 
+- A real corner case... If the output type is set to .txt and the input file contains multiple transcripts, the
+output files may be created so quickly that a second will not pass between the first and second file being created.
+This can cause the program to try and create an existing folder, which will throw an error. (seen on LRG.214.xml)
+
+
 
 ###Tinkering:
 
