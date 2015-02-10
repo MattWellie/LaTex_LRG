@@ -13,11 +13,14 @@ __author__ = 'mwelland'
 
 class LatexWriter:
 
-    def __init__(self, input_list, filename):
-
+    def __init__(self, input_list, filename, write_as_latex):
+        self.write_as_latex = write_as_latex
         self.input_list = input_list
         self.filename = filename
-        self.latex_name = self.filename+'.tex'
+        if self.write_as_latex:
+            self.outfile_name = self.filename+'.tex'
+        else:
+            self.outfile_name = self.filename + '.txt'
 
     def run(self):
 
@@ -25,14 +28,12 @@ class LatexWriter:
         folder_name = self.filename+'_'+time.strftime("%d-%m-%Y")+'_'+time.strftime("%H-%M-%S")
         os.mkdir(folder_name)
         os.chdir(folder_name)
-        out = open(self.latex_name, "w")
+        out = open(self.outfile_name, "w")
         self.fill_output_file(out)
-        return self.latex_name
+        return self.outfile_name
 
     def fill_output_file(self, out):
 
         for line in self.input_list:
             print >> out, line
         print 'File written'
-
-

@@ -14,7 +14,7 @@ __author__ = 'mwelland'
 
 
 class writer:
-    '''
+    """
     Class version = 1.0
     Author = Matt Welland
     Date = 02-02-2014
@@ -24,11 +24,11 @@ class writer:
 
     This separates the creation of the dictionary, the writing of the
     output and the actual creation of the output file
-    '''
+    """
 
-    def __init__(self, transcriptdict, transcript, write_as_LaTex):
+    def __init__(self, transcriptdict, transcript, write_as_latex):
         self.transcriptdict = transcriptdict
-        self.write_as_LaTex = write_as_LaTex
+        self.write_as_LaTex = write_as_latex
         self.transcript = transcript
         self.output_list = []
         self.amino_printing = False
@@ -101,7 +101,6 @@ class writer:
             output, wait_value, CDS_count, amino_acid_counter, post_protein_printer, intron_offset, intron_in_padding,
             intron_out)
 
-
     def decide_amino_string_character(self, char, codon_count, amino_acid_counter, codon_numbered, protein):
         output = ''
         if char.isupper() and amino_acid_counter < len(protein):  # Bug, condition added
@@ -161,7 +160,7 @@ class writer:
         # values in the correct places
 
         # The initial line(s) of the LaTex file, required to execute
-        self.print_latex_header(refseqid)
+        if self.write_as_LaTex: self.print_latex_header(refseqid)
 
         wait_value = 0
         codon_count = 3  # Print on first codon
@@ -250,7 +249,7 @@ class writer:
                 self.line_printer(amino_number_string)
                 if self.amino_spacing: self.line_printer('  ')
 
-        self.print_latex_footer()
+        if self.write_as_LaTex: self.print_latex_footer()
 
     def print_latex_footer(self):
         self.line_printer('\\end{Verbatim}')

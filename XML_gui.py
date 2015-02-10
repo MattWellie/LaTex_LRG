@@ -62,8 +62,9 @@ import os
         directory and is processed using pdflatex
 '''
 
+
 def open_file():
-    name = askopenfilename(defaultextension = '')
+    name = askopenfilename(defaultextension='')
     entry.delete(0, END)
     entry.insert(0, name)
 
@@ -106,8 +107,9 @@ def about():
 
 def run_parser():
     # Files will not be stored directly in outputFiles anymore - requires overwrite check
+    write_as_latex = False
     padding = pad.get()
-    directory_and_file= entry.get()
+    directory_and_file = entry.get()
     file_name = directory_and_file.split('/')[-1]
     file_type = check_file_type(file_name)
     dictionary = {}
@@ -123,11 +125,11 @@ def run_parser():
     filename = dictionary['filename']
     os.chdir("outputFiles")
     for transcript in dictionary['transcripts']:
-        input_reader = Reader(dictionary, transcript, True)
+        input_reader = Reader(dictionary, transcript, write_as_latex)
         input_list = input_reader.run()
-        writer = LatexWriter(input_list, filename)
+        writer = LatexWriter(input_list, filename, write_as_latex)
         latex_file = writer.run()
-        call(["pdflatex", "-interaction=batchmode", latex_file])
+        if write_as_latex: call(["pdflatex", "-interaction=batchmode", latex_file])
         # Move back a level to prepare for optional other transcripts
         os.chdir(os.pardir)
         print "Process has completed successfully"
@@ -135,11 +137,11 @@ def run_parser():
 
 
 def check_file_type(file_name):
-    ''' This function takes the file name which has been selected
+    """ This function takes the file name which has been selected
         as input. This will identify .xml and .gk/gbk files, and
         will print an error message and exit the application if
         a file is used which does not match either of these types
-    '''
+    """
     if file_name[-4:] == '.xml':
         return 'lrg'
     elif file_name[-3:] == '.gb':
@@ -158,22 +160,22 @@ helpmenu = Menu(menu)
 menu.add_command(label="Help", command=about)
 
 text_in_label = Label(root, text="File name:")
-text_in_label.grid(row=0, column=1, sticky = 'w')
+text_in_label.grid(row=0, column=1, sticky='w')
 entry = Entry(root)
-entry.grid(row=0,column=2, sticky = 'w')
+entry.grid(row=0, column=2, sticky='w')
 entry.insert(0, 'ASL_Genbank.gb')
 button = Button(root, text="Browse...", command=open_file)
 button.grid(row=0, column=3)
 
 padding_in_label = Label(root, text="Intronic padding:")
-padding_in_label.grid(row=1, column=1, sticky = 'w')
+padding_in_label.grid(row=1, column=1, sticky='w')
 pad = Entry(root)
-pad.grid(row=1,column=2, sticky = 'w')
+pad.grid(row=1, column=2, sticky='w')
 pad.insert(0, 300)
 
 button = Button(root, text="QUIT", fg="red", command=root.quit)
 button.grid(row=3, column=1)
-parser= Button(root, text="Translate", fg="blue", command=run_parser)
+parser = Button(root, text="Translate", fg="blue", command=run_parser)
 parser.grid(row=3, column=2)
 
 mainloop()

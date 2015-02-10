@@ -292,22 +292,20 @@ class Reader:
             self.print_latex_footer()
 
     def print_latex_footer(self):
-
-        '''
+        """
         A brief function to set the final lines of the document if the output
         is to be in a LaTex parse-able format
-        '''
+        """
         self.line_printer('\\end{Verbatim}')
         self.line_printer('\\end{document}')
 
     def line_printer(self, string):
-
-        '''
+        """
         :param string: next string to be written to output list
         :return: none
 
         Generic print method to handle all list output in one location
-        '''
+        """
         self.output_list.append(''.join(string))
 
     def decide_amino_number_string_character(self, amino_wait, codon_numbered, amino_acid_counter):
