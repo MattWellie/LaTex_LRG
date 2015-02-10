@@ -21,7 +21,6 @@ class LatexWriter:
 
     def run(self):
 
-        os.chdir("outputFiles")
         # The folder to store the LaTex output will use the date and time to ensure unique
         folder_name = self.filename+'_'+time.strftime("%d-%m-%Y")+'_'+time.strftime("%H-%M-%S")
         os.mkdir(folder_name)

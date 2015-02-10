@@ -6,6 +6,7 @@ from GbkParser import GbkParser
 from reader import Reader
 from latex_writer import LatexWriter
 from subprocess import call
+import os
 
 ''' This module of the reference sequence writer creates the user interface.
     This is version 2, for which the individual operational components have
@@ -119,14 +120,16 @@ def run_parser():
         lrg_reader = LrgParser(file_name, padding)
         dictionary = lrg_reader.run()
 
-
     filename = dictionary['filename']
+    os.chdir("outputFiles")
     for transcript in dictionary['transcripts']:
         input_reader = Reader(dictionary, transcript, True)
         input_list = input_reader.run()
         writer = LatexWriter(input_list, filename)
         latex_file = writer.run()
         call(["pdflatex", "-interaction=batchmode", latex_file])
+        # Move back a level to prepare for optional other transcripts
+        os.chdir(os.pardir)
         print "Process has completed successfully"
         root.quit()
 

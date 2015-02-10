@@ -46,8 +46,6 @@ class GbkParser:
                                        pad=int(padding), filename=self.fileName.split('.')[0] + '_' + str(padding),
                                        pad_offset=int(padding) % 5)
             self.transcriptdict['refseqname'] = self.transcriptdict['input'].keys()[0]
-            self.transcriptdict['transcripts'][1] = {}
-            self.transcriptdict['transcripts'][1]['exons'] = {}
             self.is_matt_awesome = True
         except IOError as fileNotPresent:
             print "The specified file cannot be located: " + fileNotPresent.filename
@@ -55,25 +53,27 @@ class GbkParser:
 
         assert self.transcriptdict['pad'] <= 2000, "Padding too large, please use a value below 2000 bases"
 
-    def find_cds_delay(self, transcript):
+    def find_cds_delay(self):
         """ Method to find the actual start of the translated sequence
             introduced to sort out non-coding exon problems """
         '''
         :param transcript: currently a relic of the LRG process (29-01-2015), designed to separate the
                            dictionary population process into distinct sections for each transcript
         '''
-        offset_total = 0
-        offset = self.transcriptdict['transcripts'][transcript]['cds_offset']
-        exon_list = self.transcriptdict['transcripts'][transcript]['list_of_exons']
-        exon_list.sort(key=float)
-        for exon in exon_list:
-            g_start = self.transcriptdict['transcripts'][transcript]['exons'][exon]['genomic_start']
-            g_stop = self.transcriptdict['transcripts'][transcript]['exons'][exon]['genomic_end']
-            if offset > g_stop:
-                offset_total = offset_total + (g_stop - g_start)
-            elif offset < g_stop and offset > g_start:
-                self.transcriptdict['transcripts'][transcript]['cds_offset'] = offset_total + (offset - g_start)
-                break
+        for transcript in self.transcriptdict['transcripts'].keys():
+            self.transcriptdict['transcripts'][transcript]['cds_offset'] = self.cds[0].location.start
+            offset_total = 0
+            offset = self.transcriptdict['transcripts'][transcript]['cds_offset']
+            exon_list = self.transcriptdict['transcripts'][transcript]['list_of_exons']
+            exon_list.sort(key=float)
+            for exon in exon_list:
+                g_start = self.transcriptdict['transcripts'][transcript]['exons'][exon]['genomic_start']
+                g_stop = self.transcriptdict['transcripts'][transcript]['exons'][exon]['genomic_end']
+                if offset > g_stop:
+                    offset_total = offset_total + (g_stop - g_start)
+                elif g_stop > offset > g_start:
+                    self.transcriptdict['transcripts'][transcript]['cds_offset'] = offset_total + (offset - g_start)
+                    break
 
     def get_protein(self, cds):
         """
@@ -84,43 +84,48 @@ class GbkParser:
         '''
         :param cds: a list containing the cds element(s) of the genbank features
         '''
-        if len(cds) > 1: print "This gene has multiple transcripts, sort it out!"
-        for x in cds:
-            protein_sequence = x.qualifiers['translation'][0] + '* '
-            self.transcriptdict['transcripts'][1]['protein_seq'] = protein_sequence
+        for alternative in range(self.transcriptdict['Alt transcripts']):
+            transcript_name = 'Alt CDS '+str(alternative)
+            self.transcriptdict['transcripts'][transcript_name] = {}
+            self.transcriptdict['transcripts'][transcript_name]['exons'] = {}
+            selected_cds = cds[alternative]
+            protein_sequence = selected_cds.qualifiers['translation'][0] + '* '
+            self.transcriptdict['transcripts'][transcript_name]['protein_seq'] = protein_sequence
 
     def get_exons(self, exons):
         """
         This function is supplied with the list of exon tagged blocks from the features section
         and populates the exons region of the dictionary with the exon number, coordinates, and
-        sequence segments whihc define the exon
+        sequence segments which define the exon
         """
         '''
         :param exons: a list of the exon objects from the GenBank features list
         '''
-        self.transcriptdict['transcripts'][1]['list_of_exons'] = []
-        exon_count = 1
-        for x in exons:
-            # Some Genbank files do not feature explicitly numbered exons
-            if 'number' in x.qualifiers:
-                exon_number = x.qualifiers['number'][0]
-            else:
-                exon_number = str(exon_count)
-                exon_count = exon_count + 1
-            self.transcriptdict['transcripts'][1]['exons'][exon_number] = {}
-            self.transcriptdict['transcripts'][1]['list_of_exons'].append(exon_number)
-            location_feature = x.location
-            self.transcriptdict['transcripts'][1]['exons'][exon_number]['genomic_start'] = location_feature.start
-            self.transcriptdict['transcripts'][1]['exons'][exon_number]['genomic_end'] = location_feature.end
-            sequence = self.transcriptdict['full genomic sequence'][location_feature.start:location_feature.end]
-            if self.transcriptdict['pad'] != 0:
-                pad = self.transcriptdict['pad']
-                pad5 = self.transcriptdict['full genomic sequence'][
-                       location_feature.start - (pad):location_feature.start]
-                pad3 = self.transcriptdict['full genomic sequence'][
-                       location_feature.end:location_feature.end + (pad)]
-                sequence = pad5.lower() + sequence + pad3.lower()
-            self.transcriptdict['transcripts'][1]['exons'][exon_number]['sequence'] = sequence
+        for cds in self.transcriptdict['transcripts'].keys():
+            self.transcriptdict['transcripts'][cds]['list_of_exons'] = []
+            exon_count = 1
+            for x in exons:
+                # Some Genbank files do not feature explicitly numbered exons
+                if 'number' in x.qualifiers:
+                    exon_number = x.qualifiers['number'][0]
+                else:
+                    exon_number = str(exon_count)
+                    exon_count += 1
+                self.transcriptdict['transcripts'][cds]['exons'][exon_number] = {}
+                self.transcriptdict['transcripts'][cds]['list_of_exons'].append(exon_number)
+                location_feature = x.location
+                self.transcriptdict['transcripts'][cds]['exons'][exon_number]['genomic_start'] = location_feature.start
+                self.transcriptdict['transcripts'][cds]['exons'][exon_number]['genomic_end'] = location_feature.end
+                sequence = self.transcriptdict['full genomic sequence'][location_feature.start:location_feature.end]
+                if self.transcriptdict['pad'] != 0:
+                    pad = self.transcriptdict['pad']
+                    pad5 = self.transcriptdict['full genomic sequence'][
+                        location_feature.start - pad:location_feature.start]
+                    pad3 = self.transcriptdict['full genomic sequence'][
+                        location_feature.end:location_feature.end + pad]
+                    sequence = pad5.lower() + sequence + pad3.lower()
+                self.transcriptdict['transcripts'][cds]['exons'][exon_number]['sequence'] = sequence
+        print self.transcriptdict
 
     def fill_and_find_features(self):
         dictionary = self.transcriptdict['input'][self.transcriptdict['refseqname']]
@@ -131,7 +136,6 @@ class GbkParser:
             if feature.type == 'exon':
                 self.exons.append(feature)
             # A single CDS is ideal, may cause some confusion if multiple exist
-            # List handling is used to tidy up multiple CDS handling later (extensible)
             elif feature.type == 'CDS':
                 self.cds.append(feature)
         self.transcriptdict['genename'] = self.exons[0].qualifiers['gene'][0]
@@ -149,12 +153,12 @@ class GbkParser:
         '''
         # initial sequence grabbing and populating dictionaries
         features = self.fill_and_find_features()
+        self.transcriptdict['Alt transcripts'] = len(self.cds)
 
         # Sort through SeqFeatures to find the good stuff
-
         self.transcriptdict['genename'] = self.exons[0].qualifiers['gene'][0]
+
         self.get_protein(self.cds)
         self.get_exons(self.exons)
-        self.transcriptdict['transcripts'][1]['cds_offset'] = self.cds[0].location.start
-        self.find_cds_delay(1)
+        self.find_cds_delay()
         return self.transcriptdict

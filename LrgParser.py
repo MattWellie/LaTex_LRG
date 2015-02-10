@@ -49,7 +49,7 @@ class LrgParser:
             if self.transcriptdict['root'].attrib['schema_version'] != '1.9':
                 print 'This LRG file is not the correct version for this script'
                 print 'This is designed for v.1.8'
-                print 'This file is v.' + self.root.attrib['schema_version']
+                print 'This file is v.' + self.transcriptdict['root'].attrib['schema_version']
             self.is_matt_awesome = True
         except IOError as fileNotPresent:
             print "The specified file cannot be located: " + fileNotPresent.filename
@@ -58,7 +58,6 @@ class LrgParser:
         # This assertion is an artifact from LRG parsing, will need to be updated
         assert self.transcriptdict['pad'] <= 2000, "Padding too large, please use a value below 2000 bases"
         assert self.transcriptdict['pad'] >= 0, "Padding must be 0 or a positive value"
-	
         if self.transcriptdict['pad'] < 0:
             exit()
 
@@ -71,13 +70,8 @@ class LrgParser:
             return result
         except:
             print "No sequence was identified"
-			
 
-    # Grab exon coords from the file - separated from sequence gathering
     def get_exon_coords(self):
-        '''
-        :return:
-        '''
         """ Traverses the LRG ETree to find all the useful values
             This should allow more robust use of the stored values, and enhances
             transparency of the methods put in place. Absolute references should
@@ -85,8 +79,7 @@ class LrgParser:
         """
 
         for items in self.transcriptdict['fixannot'].findall('transcript'):
-            t_number = int(items.attrib['name'][1:])  # e.g. 't1', 't2'
-            # print 't_number: ' + str(t_number)
+            t_number = int(items.attrib['name'][1:])
             self.transcriptdict['transcripts'][t_number] = {}  # First should be indicated with '1'; 'p1' can write on
             self.transcriptdict['transcripts'][t_number]["exons"] = {}
             self.transcriptdict['transcripts'][t_number]['list_of_exons'] = []
@@ -94,8 +87,6 @@ class LrgParser:
             # Transcript coordinates wanted for output  
             genomic_start = 0
             genomic_end = 0
-            transcript_start = 0
-            transcript_end = 0
             for exon in items.iter('exon'):
                 exon_number = exon.attrib['label']
                 self.transcriptdict['transcripts'][t_number]['list_of_exons'].append(exon_number)
@@ -121,7 +112,7 @@ class LrgParser:
                     assert genomic_start - pad >= 0, "Exon index out of bounds"
                     assert genomic_end + pad <= len(genseq), "Exon index out of bounds"
                     pad5 = genseq[genomic_start - (pad + 1):genomic_start - 1]
-                    pad3 = genseq[genomic_end:genomic_end + (pad)]
+                    pad3 = genseq[genomic_end:genomic_end + pad]
                     seq = pad5.lower() + seq + pad3.lower()
                 self.transcriptdict['transcripts'][transcript]["exons"][exon_number]['sequence'] = seq
 
@@ -146,7 +137,7 @@ class LrgParser:
             g_stop = self.transcriptdict['transcripts'][transcript]['exons'][exon]['genomic_end']
             if offset > g_stop:
                 offset_total = offset_total + (g_stop - g_start) + 1
-            elif offset < g_stop and offset > g_start:
+            elif g_stop > offset > g_start:
                 self.transcriptdict['transcripts'][transcript]['cds_offset'] = offset_total + (offset - g_start)
                 break
 
