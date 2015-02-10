@@ -4,7 +4,7 @@ It's open source anyway...
 
 ##Requirements and testing
 
-pdflatex/texlive/miktex
+pdflatex/texlive/miktex (For LaTex production, not required for text document (see write\_as\_latex in Xml_GUI)
 
 tkinter (python graphics package)
 
@@ -21,38 +21,53 @@ HGVS nomenclature naming system.
 - This ensures platform independence through use of platform-ambivalent file paths
 and naming conventions. 
 
-- Internal logic allows files in valid GenBank or LRG formats to be used as input
+- Separation into discrete paths allows files in valid GenBank or LRG formats to be used as input
 without making any changes to the program code.
 
 ##Who its for
 
+This is intended for use by any genetic scientist who may require a hard-copy of a genetic sequence 
+for checking against when signing off reports. This is intended to replace the existing procedure
+of manually creating reference sequence copies by using a uniform typesetting style and format for
+all inputs.
+
 ##How to operate it
-- At command line: *python XML_gui.py* without any additional arguments
+- At command line: *python XML_GUI.py* without any additional arguments. This can be done using *python X -> Tab*
 
 - This command will bring up the main interface, offering two entry boxes. 
 
-- The top entry box can either be edited directly or by using the 'Browse...' button. This will show the local directory
-and allow file selection directly.
+- The top entry box can either be edited directly or by using the 'Browse...' button. This 
+will show the local directory and allow file selection directly. This is where to insert the
+filename you wish to convert.
 
 - There is a 'Help' button on the ribbon which will print a brief guide statement
 to the command line. This can be edited in the XML_gui.py file
 
-##Planned updates
-
-- The program currently ignores input files with multiple transcripts, this should be handled appropriately
+##How it works
 
 - The program has been broken up into several different components;
     - XML_gui.py to show the user interface
     - LRG/GBK_Parser.py to read the input file into a dictionary
-    - reader.py to read the dictionary into an output format
-    - latex_writer.py to write the reader output into an output file and call a pdflatex command to typeset the file
+    - reader.py to read the dictionary into a list output format
+    - writer.py to read the list into an actual file
+    - latex_writer.py to write the reader output into a external file 
+    - The XML_GUI.py module then calls a pdflatex command to typeset the file
 
+##Planned updates
+
+- As of 10/02/2015 there are no significant updates, only minor improvements
+- Please feel free to suggest any improvements you require
 
 ##Issue Tracker
 - stumbles on exons numbered with letters (e.g. 14a) due to a failed sorting mechanism, otherwise works
         - A workaround is in place for this, which checks to see if a genbank exon has a number, if not a serial number is created. As things stand this will wrongly label genes with skipped exon numbers, or multiple exons of the same number (14a, 14b... though this is most likely to occur on parallel transcripts). A similar or better workaround could be put into the LRG variant
 
 - Requires a statement to check if the first base of the first exon is 1 (no 5' UTR) in which case a warning should be printed, and a preceeding intronic sequence should not be grabbed (will read from the end of the sequence due to negative reference (BRCA1 as an example)
+
+- A real corner case... If the output type is set to .txt and the input file contains multiple transcripts, the
+output files may be created so quickly that a second will not pass between the first and second file being created.
+This can cause the program to try and create an existing folder, which will throw an error. (seen on LRG.214.xml)
+
 
 
 ###Tinkering:
@@ -66,6 +81,11 @@ To have the amino acid appear below different bases within the codon:
 The protein sequence is grabbed as a single uninterrupted sequence, so none of these 
 approaches will affect the number of AAs printed, only the positions. However, this 
 may change which exon the AA is printed in (if a codon is across exons)
+
+To have the program print a .txt format file instead of using LaTex (useful in a pinch if the workstation
+does not have an installation of LaTex available):
+* set the write_as_latex variable in XML_GUI.py to False
+
 
 
 ─────────▄──────────────▄<br>
