@@ -1,3 +1,8 @@
+
+__author__ = 'mwelland'
+__version__ = 0.2
+__version_date__ = '11/02/2015'
+
 ''' This is the Reader class which uses the completed dictionary
     from the Parser classes as input and create a list object
     containing each of the lines to be used as output in the
@@ -13,10 +18,6 @@
 
 class Reader:
     '''
-    Class version = 0.1
-    Author = Matt Welland
-    Date = 29-01-2014
-
     This class is used to create list object which will contain the lines
     to be printed to a final output file
 
@@ -24,16 +25,25 @@ class Reader:
     output and the actual creation of the output file
     '''
 
-    def __init__(self, transcriptdict, transcript, write_as_LaTex):
-        self.transcriptdict = transcriptdict
-        self.write_as_LaTex = write_as_LaTex
-        self.transcript = transcript
+    def __init__(self):
+        self.list_of_versions = []
+        self.transcriptdict = {}
+        self.write_as_LaTex = True
+        self.transcript = ''
         self.output_list = []
         self.amino_printing = False
         self.amino_spacing = False
         self.exon_spacing = False
         self.exon_printed = False
         self.dont_print = False
+
+    @property
+    def get_version(self):
+        """
+        Quick function to grab version details for final printing
+        :return:
+        """
+        return 'Version: {0}, Version Date: {1}'.format(str(__version__), __version_date__)
 
     def decide_number_string_character(self, char, wait_value, cds_count, amino_acid_counter, post_protein_printer,
                                        intron_offset, intron_in_padding, protein_length, intron_out):
@@ -287,6 +297,10 @@ class Reader:
                 if not self.amino_spacing: self.line_printer(amino_string)
                 self.line_printer(amino_number_string)
                 if self.amino_spacing: self.line_printer('  ')
+                
+        for version in self.list_of_versions:
+            assert isinstance(version, str)
+            self.line_printer(version)
 
         if self.write_as_LaTex:
             self.print_latex_footer()
@@ -325,6 +339,11 @@ class Reader:
                 output = ' '
         return output, amino_wait, codon_numbered, amino_acid_counter
 
-    def run(self):
+    def run(self, dictionary, transcript, write_as_latex, list_of_versions):
+        self.list_of_versions = list_of_versions
+        self.transcriptdict = dictionary
+        self.write_as_LaTex = write_as_latex
+        self.transcript = transcript
+        
         self.print_latex()
         return self.output_list

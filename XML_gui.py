@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 from Tkinter import *
 from tkFileDialog import askopenfilename
 from LrgParser import LrgParser
@@ -9,6 +10,9 @@ from subprocess import call
 import time
 import os
 
+__author__ = 'mwelland'
+__version__ = 0.2
+__version_date__ = '11/02/2015'
 ''' This module of the reference sequence writer creates the user interface.
     This is version 2, for which the individual operational components have
     been abstracted into separate modules.
@@ -64,6 +68,14 @@ import os
 '''
 
 
+def get_version():
+    """
+    Quick function to grab version details for final printing
+    :return:
+    """
+    return 'Version: {0}, Version Date: {1}'.format(str(__version__), __version_date__)
+
+
 def open_file():
     name = askopenfilename(defaultextension='')
     entry.delete(0, END)
@@ -115,27 +127,38 @@ def run_parser():
     file_name = directory_and_file.split('/')[-1]
     file_type = check_file_type(file_name)
     dictionary = {}
+    parser_details = ''
     if file_type == 'gbk':
         print 'Running parser'
         gbk_reader = GbkParser(file_name, padding)
         dictionary = gbk_reader.run()
+        parser_details = gbk_reader.get_version
     elif file_type == 'lrg':
         print 'Running parser'
         lrg_reader = LrgParser(file_name, padding)
         dictionary = lrg_reader.run()
+        parser_details = lrg_reader.get_version
+
+    parser_details = '{0} {1} {2}'.format(file_type.upper(), 'Parser:', parser_details)
 
     filename = dictionary['filename']
     os.chdir("outputFiles")
     for transcript in dictionary['transcripts']:
-        input_reader = Reader(dictionary, transcript, write_as_latex)
-        input_list = input_reader.run()
-        writer = LatexWriter(input_list, filename, write_as_latex)
-        latex_file = writer.run()
+        input_reader = Reader()
+        writer = LatexWriter()
+        reader_details = 'Reader: ' + input_reader.get_version
+        writer_details = 'Writer: ' + writer.get_version
+        xml_gui_details = 'Control: ' + get_version()
+        list_of_versions = [parser_details, reader_details, writer_details, xml_gui_details]
+        input_list = input_reader.run(dictionary, transcript, write_as_latex, list_of_versions)
+
+        latex_file = writer.run(input_list, filename, write_as_latex)
         if write_as_latex: call(["pdflatex", "-interaction=batchmode", latex_file])
         # Move back a level to prepare for optional other transcripts
         os.chdir(os.pardir)
+        # quick sleep to allow for non-overlapping writes
         time.sleep(1)
-        print transcript + ' has been printed'
+        print str(transcript) + ' has been printed'
 
     print "Process has completed successfully"
     root.quit()

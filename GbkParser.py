@@ -1,12 +1,12 @@
 import Bio
 from Bio import SeqIO
 
+__author__ = 'mwelland'
+__version__ = 0.2
+__version_date__ = '11/02/2015'
+
 class GbkParser:
     """
-    Class version: 0.2
-    Modified Date: 09/02/2015
-    Author : Matt Welland
-
     Notes:
         Isolated class to deal exclusively with GBK files
         Should return dictionary, not write full output
@@ -52,6 +52,14 @@ class GbkParser:
             exit()
 
         assert self.transcriptdict['pad'] <= 2000, "Padding too large, please use a value below 2000 bases"
+
+    @property
+    def get_version(self):
+        """
+        Quick function to grab version details for final printing
+        :return:
+        """
+        return 'Version: {0}, Version Date: {1}'.format(str(__version__), __version_date__)
 
     def find_cds_delay(self):
         """ Method to find the actual start of the translated sequence
@@ -125,7 +133,6 @@ class GbkParser:
                         location_feature.end:location_feature.end + pad]
                     sequence = pad5.lower() + sequence + pad3.lower()
                 self.transcriptdict['transcripts'][cds]['exons'][exon_number]['sequence'] = sequence
-        print self.transcriptdict
 
     def fill_and_find_features(self):
         dictionary = self.transcriptdict['input'][self.transcriptdict['refseqname']]

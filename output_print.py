@@ -1,4 +1,7 @@
 import math
+__author__ = 'mwelland'
+__version__ = 0.1
+__version_date__ = '11/02/2015'
 """
 A generic method for printing genbank style gene sequence sections
 This may not be recognised correctly during BioPythong parsing
@@ -25,3 +28,12 @@ for value in range(math.ceil(len(input)%60)):
         line_content.append(input[total-1:total+9].lower()+' ')
         total += 10
     print >>out, ''.join(line_content)
+
+
+@property
+def get_version(self):
+    """
+    Quick function to grab version details for final printing
+    :return:
+    """
+    return '{0} {1}'.format(str(__version__), __version_date__)

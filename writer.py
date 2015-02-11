@@ -1,4 +1,6 @@
 __author__ = 'mwelland'
+__version__ = 0.2
+__version_date__ = '11/02/2015'
 
 ''' This class will contain the writer class for the LaTex output
     This will use the completed dictionary as input and create a
@@ -15,10 +17,6 @@ __author__ = 'mwelland'
 
 class writer:
     """
-    Class version = 1.0
-    Author = Matt Welland
-    Date = 02-02-2014
-
     This class is used to create an object which will contain the lines
     to be printed to a final output file
 
@@ -278,4 +276,4 @@ class writer:
     def run(self):
         # Fill output file
         self.print_latex()
-        return self.output_list
+        return self.output_list, __version__, __version_date__

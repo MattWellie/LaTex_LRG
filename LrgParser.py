@@ -1,5 +1,8 @@
 from xml.etree.ElementTree import parse
 
+__author__ = 'mwelland'
+__version__ = 0.2
+__version_date__ = '11/02/2015'
 
 class LrgParser:
 
@@ -60,6 +63,14 @@ class LrgParser:
         assert self.transcriptdict['pad'] >= 0, "Padding must be 0 or a positive value"
         if self.transcriptdict['pad'] < 0:
             exit()
+
+    @property
+    def get_version(self):
+        """
+        Quick function to grab version details for final printing
+        :return:
+        """
+        return 'Version: {0}, Version Date: {1}'.format(str(__version__), __version_date__)
 
     # Grabs the sequence string from the <sequence/> tagged block
     def grab_element(self, path):
