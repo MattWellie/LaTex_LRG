@@ -1,4 +1,3 @@
-
 __author__ = 'mwelland'
 __version__ = 0.2
 __version_date__ = '11/02/2015'
@@ -17,13 +16,13 @@ __version_date__ = '11/02/2015'
 
 
 class Reader:
-    '''
+    """
     This class is used to create list object which will contain the lines
     to be printed to a final output file
 
     This separates the creation of the dictionary, the writing of the
     output and the actual creation of the output file
-    '''
+    """
 
     def __init__(self):
         self.list_of_versions = []
@@ -47,7 +46,7 @@ class Reader:
 
     def decide_number_string_character(self, char, wait_value, cds_count, amino_acid_counter, post_protein_printer,
                                        intron_offset, intron_in_padding, protein_length, intron_out):
-        '''
+        """
         :param char: the next base character to be written
         :param wait_value: variable indicating whether a number has already been written
         :param cds_count: the CDS position of the current char/base
@@ -62,7 +61,7 @@ class Reader:
 
         This function is responsible for determining the next value(s) to be added to the
         output string which will appear above the base sequence.
-        '''
+        """
 
         output = ''
         if char.isupper():
@@ -123,7 +122,7 @@ class Reader:
                 post_protein_printer, intron_offset, intron_in_padding,intron_out)
 
     def decide_amino_string_character(self, char, codon_count, amino_acid_counter, codon_numbered, protein):
-        '''
+        """
         :param char: the next base character to be written
         :param codon_count: the position of the current base within the reading frame
         :param amino_acid_counter: the position of the current AA in the protein sequence
@@ -134,7 +133,7 @@ class Reader:
 
         This function determines the next character to be added to the string which shows
         the numbering for the amino acid labelling line
-        '''
+        """
 
         output = ''
         if char.isupper() and amino_acid_counter < len(protein):  # Bug, condition added
@@ -157,14 +156,14 @@ class Reader:
         return output, codon_count, amino_acid_counter, codon_numbered
 
     def print_latex_header(self, refseqid):
-        '''
+        """
         :param refseqid: reference sequence identifier for current input
 
         This function can be called if the file to be written out is designed to be
         executed as a LaTex script. This will insert the appropriate preamble to
         allow an article class document to be produced which uses a verbatim output
         operation
-        '''
+        """
 
         self.line_printer('\\documentclass{article}')
         self.line_printer('\\usepackage{fancyvrb}')
@@ -186,11 +185,14 @@ class Reader:
 
     def print_latex(self):
 
-        '''
+        """
         This large class imports the entire dictionary and scans through the input dictionary
         to build the output. This output will be kept as a list of strings (with the appropriate
         order maintained) to allow a later decision on whether to print to LaTex, txt or other.
-        '''
+
+        This function makes a range of calls out to other functions to determine the numbers and
+        formatting to use as it scans through the exon(s) base by base
+        """
 
         latex_dict = self.transcriptdict['transcripts'][self.transcript]
         ''' Creates a LaTex file which can be converted to a final document
@@ -198,9 +200,11 @@ class Reader:
 
         protein = latex_dict['protein_seq']
         refseqid = self.transcriptdict['refseqname'].replace('_', '\_')  # Required for LaTex
-        assert isinstance(latex_dict, object)
-        cds_count = 1 - latex_dict['cds_offset']  # A variable to keep a count of the
+        assert isinstance(latex_dict, dict)
+        # A variable to keep a count of the
         # transcript length across all exons
+        cds_count = 1 - latex_dict['cds_offset']
+
         # Account for the number 0 being skipped
         cds_count -= 1
         # The CDS begins at one, the preceeding base is -1. There is no 0
@@ -213,11 +217,12 @@ class Reader:
 
         wait_value = 0
         codon_count = 3  # Print on first codon
-        amino_acid_counter = 0
-        amino_wait = 0
-        codon_numbered = False
-        post_protein_printer = 0
-        for exon in latex_dict['list_of_exons']:
+        amino_acid_counter = 0  # Begin at AA index 0 (first)
+        amino_wait = 0  # No number string printed, no wait yet
+        codon_numbered = False  # First AA has not been numbered already
+        post_protein_printer = 0  # The number for 3' intron '+###' counting
+        for exon_number in range(len(latex_dict['list_of_exons'])):
+            exon = latex_dict['list_of_exons'][exon_number]
             intron_offset = self.transcriptdict['pad_offset']
             intron_in_padding = self.transcriptdict['pad']
             intron_out = 0  # Or 0?
@@ -234,6 +239,11 @@ class Reader:
             self.line_printer(' ')
             self.line_printer('Exon %s | Start: %s | End: %s | Length: %s' %
                               (exon, str(ex_start), str(ex_end), str(ex_end - ex_start)))
+            if exon_number != len(latex_dict['list_of_exons'])-1:
+                next_exon = latex_dict['list_of_exons'][exon_number+1]
+                if ex_end > latex_dict['exons'][next_exon]['genomic_start']-(self.transcriptdict['pad']*2):
+                    self.line_printer('BE AWARE: This section overlaps with the following exon')
+
             sequence = exon_dict['sequence']
 
             line_count = 0
