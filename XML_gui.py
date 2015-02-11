@@ -108,6 +108,7 @@ def about():
 def run_parser():
     # Files will not be stored directly in outputFiles anymore - requires overwrite check
     write_as_latex = True
+
     padding = pad.get()
     directory_and_file = entry.get()
     file_name = directory_and_file.split('/')[-1]
