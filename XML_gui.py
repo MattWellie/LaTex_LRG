@@ -127,7 +127,6 @@ def run_parser():
     filename = dictionary['filename']
     os.chdir("outputFiles")
     for transcript in dictionary['transcripts']:
-        time.sleep(1)
         input_reader = Reader(dictionary, transcript, write_as_latex)
         input_list = input_reader.run()
         writer = LatexWriter(input_list, filename, write_as_latex)
@@ -135,8 +134,11 @@ def run_parser():
         if write_as_latex: call(["pdflatex", "-interaction=batchmode", latex_file])
         # Move back a level to prepare for optional other transcripts
         os.chdir(os.pardir)
-        print "Process has completed successfully"
-        root.quit()
+        time.sleep(1)
+        print transcript + ' has been printed'
+
+    print "Process has completed successfully"
+    root.quit()
 
 
 def check_file_type(file_name):
