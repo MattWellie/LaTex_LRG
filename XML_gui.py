@@ -144,6 +144,7 @@ def run_parser():
     filename = dictionary['filename']
     os.chdir("outputFiles")
     for transcript in dictionary['transcripts']:
+        transcript_filename = filename + '_' + str(transcript)
         input_reader = Reader()
         writer = LatexWriter()
         reader_details = 'Reader: ' + input_reader.get_version
@@ -152,7 +153,7 @@ def run_parser():
         list_of_versions = [parser_details, reader_details, writer_details, xml_gui_details]
         input_list = input_reader.run(dictionary, transcript, write_as_latex, list_of_versions)
 
-        latex_file = writer.run(input_list, filename, write_as_latex)
+        latex_file = writer.run(input_list, transcript_filename, write_as_latex)
         if write_as_latex: call(["pdflatex", "-interaction=batchmode", latex_file])
         # Move back a level to prepare for optional other transcripts
         os.chdir(os.pardir)
