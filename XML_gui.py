@@ -124,7 +124,7 @@ def run_parser():
 
     padding = pad.get()
     directory_and_file = entry.get()
-    file_name = directory_and_file.split('/')[-1]
+    file_name = directory_and_file.split('/')[-2] + '/' + directory_and_file.split('/')[-1]
     file_type = check_file_type(file_name)
     dictionary = {}
     parser_details = ''
@@ -191,7 +191,7 @@ text_in_label = Label(root, text="File name:")
 text_in_label.grid(row=0, column=1, sticky='w')
 entry = Entry(root)
 entry.grid(row=0, column=2, sticky='w')
-entry.insert(0, 'LRG_5.xml')
+entry.insert(0, 'input/LRG_5.xml')
 button = Button(root, text="Browse...", command=open_file)
 button.grid(row=0, column=3)
 

@@ -18,7 +18,7 @@ class TestFixture(unittest.TestCase):
     def test_fill_and_find_features(self):
         """This test should pass based on the GB_TEST.gb file 9/2/2015"""
         features = self.test_gbk.fill_and_find_features()
-        self.test_gbk.transcriptdict['Alt transcripts'] = len(self.test_gbk.cds)
+        self.test_gbk.transcriptdict['Alt transcripts'] = range(1, len(self.test_gbk.cds)+1)
         self.assertAlmostEqual(str(self.test_gbk.transcriptdict['full genomic sequence'][0:60]), 'GAAAAGAAAAGAAAAGAAAAGAAAAGAAAAGAAAAGAAAAGAAAAGAAAAGAAAAGAAAA')
         self.assertEqual(len(features), 10)
         self.assertEqual(self.test_gbk.transcriptdict['genename'], 'WELLAND')
@@ -32,16 +32,14 @@ class TestFixture(unittest.TestCase):
     #     self.assertEqual(str(element.__class__),  "<type 'NoneType'>")
     #     self.assertEqual(element, None)
 
-    def test_get_exons(self):
+    def test_get_exons1(self):
         features = self.test_gbk.fill_and_find_features()
-        self.test_gbk.transcriptdict['Alt transcripts'] = len(self.test_gbk.cds)
+        self.test_gbk.transcriptdict['Alt transcripts'] = range(1, len(self.test_gbk.cds)+1)
         self.test_gbk.get_exons(self.test_gbk.exons)
         self.test_gbk.transcriptdict['transcripts']['Alt CDS 0']['list_of_exons'].sort(key=float)
         exons = self.test_gbk.transcriptdict['transcripts']['Alt CDS 0']["exons"]
-        #print 'These are the exon keys: ' + str(exons.keys())
         exon_keys = exons.keys()
         exon_keys.sort()
-        #print 'These are the sorted exon keys: ' + str(exon_keys)
         self.assertEqual(exons.keys(), ['1', '3', '2'])
         self.assertEqual(self.test_gbk.transcriptdict['transcripts']['Alt CDS 0']["list_of_exons"], ['1', '2', '3'])
         self.assertEqual(exon_keys, self.test_gbk.transcriptdict['transcripts']['Alt CDS 0']["list_of_exons"])
@@ -58,13 +56,13 @@ class TestFixture(unittest.TestCase):
 
     def test_get_protein(self):
         features = self.test_gbk.fill_and_find_features()
-        self.test_gbk.transcriptdict['Alt transcripts'] = len(self.test_gbk.cds)
+        self.test_gbk.transcriptdict['Alt transcripts'] = range(1, len(self.test_gbk.cds)+1)
         self.test_gbk.get_protein(self.test_gbk.cds)
         self.assertEqual(self.test_gbk.transcriptdict['transcripts']['Alt CDS 0']['protein_seq'], 'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLM* ')
 
-    def test_get_exons(self):
+    def test_get_exons2(self):
         features = self.test_gbk.fill_and_find_features()
-        self.test_gbk.transcriptdict['Alt transcripts'] = len(self.test_gbk.cds)
+        self.test_gbk.transcriptdict['Alt transcripts'] = range(1, len(self.test_gbk.cds)+1)
         self.test_gbk.get_protein(self.test_gbk.cds)
         self.test_gbk.get_exons(self.test_gbk.exons)
         self.assertEqual(str(self.test_gbk.transcriptdict['transcripts']['Alt CDS 0']['exons']['1']['sequence']), 'gaaaagaaaaACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTACGTaaaagaaaag')
@@ -73,13 +71,13 @@ class TestFixture(unittest.TestCase):
 
     def test_find_cds_delay(self):
         features = self.test_gbk.fill_and_find_features()
-        self.test_gbk.transcriptdict['Alt transcripts'] = len(self.test_gbk.cds)
+        self.test_gbk.transcriptdict['Alt transcripts'] = range(1, len(self.test_gbk.cds)+1)
         self.test_gbk.get_protein(self.test_gbk.cds)
         self.test_gbk.get_exons(self.test_gbk.exons)
-        self.test_gbk.transcriptdict['transcripts']['Alt CDS 0']['cds_offset'] = self.test_gbk.cds[0].location.start
-        self.assertEqual(1676, self.test_gbk.transcriptdict['transcripts']['Alt CDS 0']['cds_offset'])
+        self.test_gbk.transcriptdict['transcripts'][1]['cds_offset'] = self.test_gbk.cds[0].location.start
+        self.assertEqual(1676, self.test_gbk.transcriptdict['transcripts'][1]['cds_offset'])
         self.test_gbk.find_cds_delay()
-        self.assertEqual(276, self.test_gbk.transcriptdict['transcripts']['Alt CDS 0']['cds_offset'])
+        self.assertEqual(276, self.test_gbk.transcriptdict['transcripts'][1]['cds_offset'])
 
 if __name__ == '__main__':
     unittest.main()

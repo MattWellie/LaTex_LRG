@@ -48,7 +48,7 @@ class LrgParser:
                 'updatable_annotation/annotation_set/lrg_locus').text
             self.transcriptdict['refseqname'] = self.transcriptdict['root'].find(
                 'fixed_annotation/sequence_source').text
-            self.transcriptdict['filename'] = self.transcriptdict['genename'] + '_' + self.fileName.split('.')[
+            self.transcriptdict['filename'] = self.transcriptdict['genename'] + '_' + self.fileName.split('/')[-1].split('.')[
                 0] + '_' + str(padding)
 
             if self.transcriptdict['root'].attrib['schema_version'] != '1.9':
