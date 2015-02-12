@@ -191,7 +191,7 @@ text_in_label = Label(root, text="File name:")
 text_in_label.grid(row=0, column=1, sticky='w')
 entry = Entry(root)
 entry.grid(row=0, column=2, sticky='w')
-entry.insert(0, 'ASL_Genbank.gb')
+entry.insert(0, 'LRG_5.xml')
 button = Button(root, text="Browse...", command=open_file)
 button.grid(row=0, column=3)
 

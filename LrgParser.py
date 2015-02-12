@@ -42,6 +42,8 @@ class LrgParser:
                                    'pad_offset': int(padding) % 5}
             self.transcriptdict['fixannot'] = self.transcriptdict['root'].find(
                 'fixed_annotation')  # ensures only exons from the fixed annotation will be taken
+            self.transcriptdict['updatable'] = self.transcriptdict['root'].find(
+                'updatable_annotation')
             self.transcriptdict['genename'] = self.transcriptdict['root'].find(
                 'updatable_annotation/annotation_set/lrg_locus').text
             self.transcriptdict['refseqname'] = self.transcriptdict['root'].find(
@@ -82,6 +84,25 @@ class LrgParser:
         except:
             print "No sequence was identified"
 
+    def get_nm(self):
+        annotation_sets = self.transcriptdict['updatable'].findall('annotation_set')
+        for annotation_set in annotation_sets:
+            if annotation_set.attrib['type'] == 'ncbi':
+                features = annotation_set.find('features')
+                genes = features.findall('gene') # Multiple 'genes' includedin LRG
+                for gene in genes:
+                    transcripts = gene.findall('transcript')
+                    for transcript_block in transcripts:
+                        try:
+                            t_number = transcript_block.attrib['fixed_id'][1:]
+                            print transcript_block.attrib['accession']
+                            self.transcriptdict['transcripts'][int(t_number)]['NM_number'] = transcript_block.attrib['accession']
+                            protein_block = transcript_block.find('protein_product')
+                            if t_number == protein_block.attrib['fixed_id'][1:]:
+                                self.transcriptdict['transcripts'][int(t_number)]['NP_number'] = protein_block.attrib['accession']
+                        except KeyError:
+                            print 'found redundant transcript'
+
     def get_exon_coords(self):
         """ Traverses the LRG ETree to find all the useful values
             This should allow more robust use of the stored values, and enhances
@@ -91,6 +112,7 @@ class LrgParser:
 
         for items in self.transcriptdict['fixannot'].findall('transcript'):
             t_number = int(items.attrib['name'][1:])
+            # print 'first t number = ' + str(t_number)
             self.transcriptdict['transcripts'][t_number] = {}  # First should be indicated with '1'; 'p1' can write on
             self.transcriptdict['transcripts'][t_number]["exons"] = {}
             self.transcriptdict['transcripts'][t_number]['list_of_exons'] = []
@@ -100,6 +122,9 @@ class LrgParser:
             genomic_end = 0
             for exon in items.iter('exon'):
                 exon_number = exon.attrib['label']
+                if exon_number[-1] in ('a', 'b', 'c', 'd'):
+                    # print exon_number
+                    exon_number = exon_number[:-1]
                 self.transcriptdict['transcripts'][t_number]['list_of_exons'].append(exon_number)
                 self.transcriptdict['transcripts'][t_number]["exons"][exon_number] = {}
                 for coordinates in exon:
@@ -153,12 +178,13 @@ class LrgParser:
                 break
 
     def run(self):
-
         # Initial sequence grabbing and populating dictionaries
         gen_seq = self.grab_element('fixed_annotation/sequence')
         self.get_exon_coords()
+        self.get_nm()
         self.grab_exon_contents(gen_seq)
         self.get_protein_exons()
+
         for transcript in self.transcriptdict['transcripts'].keys():
             self.transcriptdict['transcripts'][transcript]['list_of_exons'].sort(key=float)
             self.find_cds_delay(transcript)

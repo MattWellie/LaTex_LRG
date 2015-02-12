@@ -39,6 +39,7 @@ class GbkParser:
         '''
         self.exons = []
         self.cds = []
+        self.mrna = []
         self.fileName = file_name
         # Read in the specified input file into a variable
         try:
@@ -92,13 +93,27 @@ class GbkParser:
         '''
         :param cds: a list containing the cds element(s) of the genbank features
         '''
-        for alternative in range(self.transcriptdict['Alt transcripts']):
-            transcript_name = 'Alt CDS '+str(alternative)
+        for alternative in self.transcriptdict['Alt transcripts']:
+            transcript_name = alternative
             self.transcriptdict['transcripts'][transcript_name] = {}
             self.transcriptdict['transcripts'][transcript_name]['exons'] = {}
-            selected_cds = cds[alternative]
+            selected_cds = cds[alternative-1]
             protein_sequence = selected_cds.qualifiers['translation'][0] + '* '
             self.transcriptdict['transcripts'][transcript_name]['protein_seq'] = protein_sequence
+            self.transcriptdict['transcripts'][transcript_name]['protein_accession'] = selected_cds.qualifiers['protein_id'][0]
+            self.transcriptdict['protein_accession'] = selected_cds.qualifiers['protein_id'][0]
+
+
+    def get_nm(self, transcript):
+        mrna = self.mrna[0]
+        self.transcriptdict['transcripts'][transcript]['NM_number'] = mrna.qualifiers['transcript_id'][0]
+        cds_feature = self.cds[transcript-1]
+        self.transcriptdict['transcripts'][transcript]['NP_number'] = cds_feature.qualifiers['protein_id'][0]
+        print self.transcriptdict['transcripts'][transcript]['NP_number']
+        print self.transcriptdict['transcripts'][transcript]['NM_number']
+        # print self.transcriptdict['NM_number']
+
+
 
     def get_exons(self, exons):
         """
@@ -145,6 +160,8 @@ class GbkParser:
             # A single CDS is ideal, may cause some confusion if multiple exist
             elif feature.type == 'CDS':
                 self.cds.append(feature)
+            elif feature.type == 'mRNA':
+                self.mrna.append(feature)
         self.transcriptdict['genename'] = self.exons[0].qualifiers['gene'][0]
         return features
 
@@ -160,7 +177,8 @@ class GbkParser:
         '''
         # initial sequence grabbing and populating dictionaries
         features = self.fill_and_find_features()
-        self.transcriptdict['Alt transcripts'] = len(self.cds)
+        self.transcriptdict['Alt transcripts'] = range(1, len(self.cds)+1)
+
 
         # Sort through SeqFeatures to find the good stuff
         self.transcriptdict['genename'] = self.exons[0].qualifiers['gene'][0]
@@ -168,4 +186,6 @@ class GbkParser:
         self.get_protein(self.cds)
         self.get_exons(self.exons)
         self.find_cds_delay()
+        for transcript in self.transcriptdict['transcripts']:
+            self.get_nm(transcript)
         return self.transcriptdict

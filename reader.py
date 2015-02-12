@@ -172,7 +172,15 @@ class Reader:
         self.line_printer('\\renewcommand{\\headrulewidth}{0pt}')
         self.line_printer('\\begin{center}')
         self.line_printer('\\begin{large}')
-        self.line_printer(' Gene: %s - Sequence: %s' % (self.transcriptdict['genename'], refseqid))
+        self.line_printer('Gene: %s - Sequence: %s\\\\' % (self.transcriptdict['genename'],
+                                                          refseqid))
+        # Not all files will include all these contents... Try-Catch
+        try:
+            nm = self.transcriptdict['transcripts'][self.transcript]['NM_number'].replace('_', '\_')  # Required for LaTex
+            np = self.transcriptdict['transcripts'][self.transcript]['NP_number'].replace('_', '\_')  # Required for LaTex
+        except KeyError:
+            print 'Additional details not present'
+        self.line_printer('Transcript: %s - Protein: %s' % (nm, np))
         self.line_printer(' ')
         self.line_printer(' Date : \\today\\\\\\\\')
         self.line_printer('\\end{large}')
@@ -354,6 +362,7 @@ class Reader:
         self.transcriptdict = dictionary
         self.write_as_LaTex = write_as_latex
         self.transcript = transcript
+        # print self.transcript
         
         self.print_latex()
         return self.output_list
