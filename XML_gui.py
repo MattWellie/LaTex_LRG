@@ -11,7 +11,7 @@ import time
 import os
 
 __author__ = 'mwelland'
-__version__ = 0.2
+__version__ = 0.3
 __version_date__ = '11/02/2015'
 ''' This module of the reference sequence writer creates the user interface.
     This is version 2, for which the individual operational components have

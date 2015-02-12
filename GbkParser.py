@@ -2,7 +2,7 @@ import Bio
 from Bio import SeqIO
 
 __author__ = 'mwelland'
-__version__ = 0.2
+__version__ = 0.3
 __version_date__ = '11/02/2015'
 
 class GbkParser:
