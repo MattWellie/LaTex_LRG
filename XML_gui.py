@@ -158,7 +158,6 @@ def run_parser():
         # Move back a level to prepare for optional other transcripts
         os.chdir(os.pardir)
         # quick sleep to allow for non-overlapping writes
-        time.sleep(1)
         print str(transcript) + ' has been printed'
 
     print "Process has completed successfully"
