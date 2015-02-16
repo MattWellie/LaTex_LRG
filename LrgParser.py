@@ -95,7 +95,7 @@ class LrgParser:
                     for transcript_block in transcripts:
                         try:
                             t_number = transcript_block.attrib['fixed_id'][1:]
-                            print transcript_block.attrib['accession']
+                            # print transcript_block.attrib['accession']
                             self.transcriptdict['transcripts'][int(t_number)]['NM_number'] = transcript_block.attrib['accession']
                             protein_block = transcript_block.find('protein_product')
                             if t_number == protein_block.attrib['fixed_id'][1:]:

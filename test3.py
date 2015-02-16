@@ -6,9 +6,9 @@ from LrgParser import LrgParser
 class TestFixture(unittest.TestCase):
 
     def setUp(self):
-        self.test_lrg = LrgParser('LRG_TEST.xml', 10)
+        self.test_lrg = LrgParser('input\\LRG_TEST.xml', 10)
         self.transcriptdict = self.test_lrg.run()
-        self.test_reader = Reader(self.transcriptdict, 1, True)
+        self.test_reader = Reader()#
         self.protein = self.transcriptdict['transcripts'][1]['protein_seq']
 
     """
@@ -83,3 +83,6 @@ class TestFixture(unittest.TestCase):
         pass
         output, amino_wait, codon_numbered, amino_acid_counter = self.test_reader.decide_amino_string_character('a', 1, 10, True, self.protein)
         self.assertEqual(output, ' ')
+
+    def test_reader_run(self):
+        check_list = self.test_reader.run(self.transcriptdict, 1, True, ['Version 1: 1'])

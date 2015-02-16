@@ -94,6 +94,7 @@ class GbkParser:
         :param cds: a list containing the cds element(s) of the genbank features
         '''
         for alternative in self.transcriptdict['Alt transcripts']:
+            # print 'Alt transcript: ' + str(alternative)
             transcript_name = alternative
             self.transcriptdict['transcripts'][transcript_name] = {}
             self.transcriptdict['transcripts'][transcript_name]['exons'] = {}
@@ -109,8 +110,8 @@ class GbkParser:
         self.transcriptdict['transcripts'][transcript]['NM_number'] = mrna.qualifiers['transcript_id'][0]
         cds_feature = self.cds[transcript-1]
         self.transcriptdict['transcripts'][transcript]['NP_number'] = cds_feature.qualifiers['protein_id'][0]
-        print self.transcriptdict['transcripts'][transcript]['NP_number']
-        print self.transcriptdict['transcripts'][transcript]['NM_number']
+        #print self.transcriptdict['transcripts'][transcript]['NP_number']
+        #print self.transcriptdict['transcripts'][transcript]['NM_number']
         # print self.transcriptdict['NM_number']
 
 
@@ -178,7 +179,6 @@ class GbkParser:
         # initial sequence grabbing and populating dictionaries
         features = self.fill_and_find_features()
         self.transcriptdict['Alt transcripts'] = range(1, len(self.cds)+1)
-
 
         # Sort through SeqFeatures to find the good stuff
         self.transcriptdict['genename'] = self.exons[0].qualifiers['gene'][0]

@@ -5,7 +5,7 @@ from LrgParser import LrgParser
 class TestFixture(unittest.TestCase):
 
     def setUp(self):
-        self.test_lrg = LrgParser('LRG_TEST.xml', 10)
+        self.test_lrg = LrgParser('input\\LRG_TEST.xml', 10)
 
     def test_LrgParser(self):
         self.assertEqual(str(self.test_lrg.__class__), 'LrgParser.LrgParser')
