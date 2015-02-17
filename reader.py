@@ -35,6 +35,7 @@ class Reader:
         self.exon_spacing = False
         self.exon_printed = False
         self.dont_print = False
+        self.print_clashes = True
 
     @property
     def get_version(self):
@@ -247,9 +248,12 @@ class Reader:
             self.line_printer(' ')
             self.line_printer('Exon %s | Start: %s | End: %s | Length: %s' %
                               (exon, str(ex_start), str(ex_end), str(ex_end - ex_start)))
+            """ This section allows for a note to be written where the 'intronic' flanking sequence
+                of an exon contains the next exon
+            """
             if exon_number != len(latex_dict['list_of_exons'])-1:
                 next_exon = latex_dict['list_of_exons'][exon_number+1]
-                if ex_end > latex_dict['exons'][next_exon]['genomic_start']-(self.transcriptdict['pad']*2):
+                if ex_end > latex_dict['exons'][next_exon]['genomic_start']-(self.transcriptdict['pad']):
                     self.line_printer('BE AWARE: This section overlaps with the following exon')
 
             sequence = exon_dict['sequence']
@@ -340,7 +344,8 @@ class Reader:
         """
         self.output_list.append(''.join(string))
 
-    def decide_amino_number_string_character(self, amino_wait, codon_numbered, amino_acid_counter):
+    @staticmethod
+    def decide_amino_number_string_character(amino_wait, codon_numbered, amino_acid_counter):
         output = ''
         if amino_wait != 0:
             amino_wait -= 1
@@ -351,18 +356,17 @@ class Reader:
                     amino_wait = len(str(amino_acid_counter))
                     codon_numbered = True
                 elif codon_numbered:
-                    # NOT SURE - condition shouldn't occur
                     output = ' '
             elif amino_acid_counter % 10 != 1:
                 output = ' '
         return output, amino_wait, codon_numbered, amino_acid_counter
 
-    def run(self, dictionary, transcript, write_as_latex, list_of_versions):
+    def run(self, dictionary, transcript, write_as_latex, list_of_versions, print_clashes):
         self.list_of_versions = list_of_versions
         self.transcriptdict = dictionary
         self.write_as_LaTex = write_as_latex
         self.transcript = transcript
-        # print self.transcript
+        self.print_clashes = print_clashes
         
         self.print_latex()
         return self.output_list

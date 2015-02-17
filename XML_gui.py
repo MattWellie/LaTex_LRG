@@ -121,6 +121,7 @@ def about():
 def run_parser():
     # Files will not be stored directly in outputFiles anymore - requires overwrite check
     write_as_latex = True
+    print_clashes = True
 
     padding = pad.get()
     directory_and_file = entry.get()
@@ -151,7 +152,7 @@ def run_parser():
         writer_details = 'Writer: ' + writer.get_version
         xml_gui_details = 'Control: ' + get_version()
         list_of_versions = [parser_details, reader_details, writer_details, xml_gui_details]
-        input_list = input_reader.run(dictionary, transcript, write_as_latex, list_of_versions)
+        input_list = input_reader.run(dictionary, transcript, write_as_latex, list_of_versions, print_clashes)
 
         latex_file = writer.run(input_list, transcript_filename, write_as_latex)
         if write_as_latex: call(["pdflatex", "-interaction=batchmode", latex_file])
