@@ -206,7 +206,6 @@ class Reader:
         latex_dict = self.transcriptdict['transcripts'][self.transcript]
         ''' Creates a LaTex file which can be converted to a final document
             Lengths of numbers calculated using len(#)'''
-
         protein = latex_dict['protein_seq']
         refseqid = self.transcriptdict['refseqname'].replace('_', '\_')  # Required for LaTex
         assert isinstance(latex_dict, dict)
@@ -230,7 +229,8 @@ class Reader:
         amino_wait = 0  # No number string printed, no wait yet
         codon_numbered = False  # First AA has not been numbered already
         post_protein_printer = 0  # The number for 3' intron '+###' counting
-        for exon_number in range(1, len(latex_dict['list_of_exons'])+1):
+        for exon_index in range(1, len(latex_dict['list_of_exons'])+1):
+            exon_number = latex_dict['list_of_exons'][exon_index-1]
             intron_offset = self.transcriptdict['pad_offset']
             intron_in_padding = self.transcriptdict['pad']
             intron_out = 0  # Or 0?
@@ -259,12 +259,15 @@ class Reader:
                 clash_after = False
                 clash_before = False
                 if exon_number < len(latex_dict['list_of_exons'])-1:
-                    next_exon = exon_number+1
-                    if ex_end > latex_dict['exons'][next_exon]['genomic_start']-(self.transcriptdict['pad']):
-                        clash_after = True
+                    try:
+                        # next_exon = exon_number+1
+                        if ex_end > latex_dict['exons'][latex_dict['list_of_exons'][exon_index]]['genomic_start']-(self.transcriptdict['pad']):
+                            clash_after = True
+                    except KeyError:
+                        print 'potential undetected clash after exon exon_number'
                 if exon_number > 1:
-                    prev_exon = exon_number-1
-                    if ex_start < latex_dict['exons'][prev_exon]['genomic_end']+(self.transcriptdict['pad']):
+                    # prev_exon = exon_number-1
+                    if ex_start < latex_dict['exons'][latex_dict['list_of_exons'][exon_index-2]]['genomic_end']+(self.transcriptdict['pad']):
                         clash_before = True
                 if clash_after is True and clash_before is True:
                     self.line_printer('BE AWARE: This section overlaps with both adjacent exons')
