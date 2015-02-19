@@ -2,7 +2,7 @@ import os
 import time
 
 __author__ = 'mwelland'
-__version__ = 0.3
+__version__ = 1
 __version_date__ = '11/02/2015'
 """ This will be a class to receive a list of objects and a file name
     and compose the output to be written to file

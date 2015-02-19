@@ -7,11 +7,10 @@ from GbkParser import GbkParser
 from reader import Reader
 from latex_writer import LatexWriter
 from subprocess import call
-import time
 import os
 
 __author__ = 'mwelland'
-__version__ = 0.3
+__version__ = 1
 __version_date__ = '11/02/2015'
 ''' This module of the reference sequence writer creates the user interface.
     This is version 2, for which the individual operational components have
@@ -122,6 +121,7 @@ def run_parser():
     # Files will not be stored directly in outputFiles anymore - requires overwrite check
     write_as_latex = True
     print_clashes = True
+    trim_flanking = True
 
     padding = pad.get()
     directory_and_file = entry.get()
@@ -131,12 +131,12 @@ def run_parser():
     parser_details = ''
     if file_type == 'gbk':
         print 'Running parser'
-        gbk_reader = GbkParser(file_name, padding)
+        gbk_reader = GbkParser(file_name, padding, trim_flanking)
         dictionary = gbk_reader.run()
         parser_details = gbk_reader.get_version
     elif file_type == 'lrg':
         print 'Running parser'
-        lrg_reader = LrgParser(file_name, padding)
+        lrg_reader = LrgParser(file_name, padding, trim_flanking)
         dictionary = lrg_reader.run()
         parser_details = lrg_reader.get_version
 

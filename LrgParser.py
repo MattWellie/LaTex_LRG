@@ -1,7 +1,7 @@
 from xml.etree.ElementTree import parse
 
 __author__ = 'mwelland'
-__version__ = 0.3
+__version__ = 1
 __version_date__ = '11/02/2015'
 
 class LrgParser:
@@ -31,8 +31,9 @@ class LrgParser:
                                                                           sequence (with pad)
     """
 
-    def __init__(self, file_name, padding):
+    def __init__(self, file_name, padding, trim_flanking):
         self.fileName = file_name
+        self.trim_flanking = trim_flanking
         # Read in the specified input file into a variable
         try:
             self.tree = parse(self.fileName)
@@ -125,6 +126,7 @@ class LrgParser:
                 if exon_number[-1] in ('a', 'b', 'c', 'd'):
                     # print exon_number
                     exon_number = exon_number[:-1]
+                exon_number = int(exon_number)
                 self.transcriptdict['transcripts'][t_number]['list_of_exons'].append(exon_number)
                 self.transcriptdict['transcripts'][t_number]["exons"][exon_number] = {}
                 for coordinates in exon:
@@ -140,45 +142,49 @@ class LrgParser:
         transcripts = self.transcriptdict['transcripts'].keys()
         for transcript in transcripts:
             exon_list = self.transcriptdict['transcripts'][transcript]['list_of_exons']
-            # print exon_list
             for exon_number in exon_list:
                 genomic_start = self.transcriptdict['transcripts'][transcript]['exons'][exon_number]['genomic_start']
                 genomic_end = self.transcriptdict['transcripts'][transcript]['exons'][exon_number]['genomic_end']
                 seq = genseq[genomic_start - 1:genomic_end]
                 pad = self.transcriptdict['pad']
                 exon_number = int(exon_number)
-                if pad > 0:
-                    # if exon_number < len(exon_list)-1:
-                    #     next_exon = exon_list[exon_number]
-                    #     if genomic_end > self.transcriptdict['transcripts'][transcript]['exons'][next_exon]['genomic_start']-(self.transcriptdict['pad']):
-                    #         next_start = self.transcriptdict['transcripts'][transcript]['exons'][next_exon]['genomic_start']
-                    #         pad3 = genseq[genomic_end:next_start-1]
-                    #         print 'Transcript: %s , exon %s clashes with exon %s' % (transcript, exon_number, next_exon)
-                    #     else:
-                    #         assert genomic_end + pad <= len(genseq), "Exon index out of bounds"
-                    #         pad3 = genseq[genomic_end:genomic_end + pad]
-                    # else:
-                    #     assert genomic_end + pad <= len(genseq), "Exon index out of bounds"
-                    #     pad3 = genseq[genomic_end:genomic_end + pad]
-                    #
-                    # if exon_number != 1:
-                    #     previous_exon = exon_list[exon_number-2]
-                    #     if genomic_start < self.transcriptdict['transcripts'][transcript]['exons'][previous_exon]['genomic_end']+(self.transcriptdict['pad']):
-                    #         previous_end = self.transcriptdict['transcripts'][transcript]['exons'][previous_exon]['genomic_end']
-                    #         pad5 = genseq[previous_end+1: genomic_start-1]
-                    #         # print 'Transcript: %s , exon %s clashes with exon %s' % (transcript, exon_number, previous_exon)
-                    #     else:
-                    #         assert genomic_start - pad >= 0, "Exon index out of bounds"
-                    #         pad5 = genseq[genomic_start - (pad + 1):genomic_start - 1]
-                    # else:
-                    #     assert genomic_start - pad >= 0, "Exon index out of bounds"
-                    #     pad5 = genseq[genomic_start - (pad + 1):genomic_start - 1]
-                    assert genomic_start - pad >= 0, "Exon index out of bounds"
-                    assert genomic_end + pad <= len(genseq), "Exon index out of bounds"
-                    pad3 = genseq[genomic_end:genomic_end + pad]
-                    pad5 = genseq[genomic_start - (pad + 1):genomic_start - 1]
+                pad3 = ''
+                pad5 = ''
+                if pad != 0:
+                    if self.trim_flanking:
+                        if exon_number < len(exon_list)-1:
+                            next_exon = exon_list[exon_number]
+                            if genomic_end > self.transcriptdict['transcripts'][transcript]['exons'][next_exon]['genomic_start']-(self.transcriptdict['pad']):
+                                next_start = self.transcriptdict['transcripts'][transcript]['exons'][next_exon]['genomic_start']
+                                pad3 = genseq[genomic_end:next_start-1]
+                                # print 'Transcript: %s , exon %s clashes with exon %s' % (transcript, exon_number, next_exon)
+                            else:
+                                assert genomic_end + pad <= len(genseq), "Exon index out of bounds"
+                                pad3 = genseq[genomic_end:genomic_end + pad]
+                        else:
+                            assert genomic_end + pad <= len(genseq), "Exon index out of bounds"
+                            pad3 = genseq[genomic_end:genomic_end + pad]
+
+                        if exon_number != 1:
+                            previous_exon = exon_list[exon_number-2]
+                            if genomic_start < self.transcriptdict['transcripts'][transcript]['exons'][previous_exon]['genomic_end']+(self.transcriptdict['pad']):
+                                previous_end = self.transcriptdict['transcripts'][transcript]['exons'][previous_exon]['genomic_end']
+                                pad5 = genseq[previous_end+1: genomic_start-1]
+                            else:
+                                assert genomic_start - pad >= 0, "Exon index out of bounds"
+                                pad5 = genseq[genomic_start - (pad + 1):genomic_start - 1]
+                        else:
+                            assert genomic_start - pad >= 0, "Exon index out of bounds"
+                            pad5 = genseq[genomic_start - (pad + 1):genomic_start - 1]
+                    else:
+                        assert genomic_start - pad >= 0, "Exon index out of bounds"
+                        assert genomic_end + pad <= len(genseq), "Exon index out of bounds"
+                        pad3 = genseq[genomic_end:genomic_end + pad]
+                        pad5 = genseq[genomic_start - (pad + 1):genomic_start - 1]
+
                     seq = pad5.lower() + seq + pad3.lower()
-                self.transcriptdict['transcripts'][transcript]["exons"][str(exon_number)]['sequence'] = seq
+
+                self.transcriptdict['transcripts'][transcript]["exons"][exon_number]['sequence'] = seq
 
     def get_protein_exons(self):
         """ Collects full protein sequence for the appropriate transcript """

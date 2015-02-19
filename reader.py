@@ -1,5 +1,5 @@
 __author__ = 'mwelland'
-__version__ = 0.3
+__version__ = 1
 __version_date__ = '11/02/2015'
 
 ''' This is the Reader class which uses the completed dictionary
@@ -230,8 +230,7 @@ class Reader:
         amino_wait = 0  # No number string printed, no wait yet
         codon_numbered = False  # First AA has not been numbered already
         post_protein_printer = 0  # The number for 3' intron '+###' counting
-        for exon_number in range(len(latex_dict['list_of_exons'])):
-            exon = latex_dict['list_of_exons'][exon_number]
+        for exon_number in range(1, len(latex_dict['list_of_exons'])+1):
             intron_offset = self.transcriptdict['pad_offset']
             intron_in_padding = self.transcriptdict['pad']
             intron_out = 0  # Or 0?
@@ -242,28 +241,43 @@ class Reader:
             amino_number_string = []
             self.amino_spacing = False
             self.exon_spacing = False
-            exon_dict = latex_dict['exons'][exon]
+            exon_dict = latex_dict['exons'][exon_number]
             ex_start = exon_dict['genomic_start']
             ex_end = exon_dict['genomic_end']
             self.line_printer(' ')
             self.line_printer('Exon %s | Start: %s | End: %s | Length: %s' %
-                              (exon, str(ex_start), str(ex_end), str(ex_end - ex_start)))
-            """ This section allows for a note to be written where the 'intronic' flanking sequence
-                of an exon contains the next exon
-            """
-            if exon_number != len(latex_dict['list_of_exons'])-1:
-                next_exon = latex_dict['list_of_exons'][exon_number+1]
-                if ex_end > latex_dict['exons'][next_exon]['genomic_start']-(self.transcriptdict['pad']):
+                              (exon_number, str(ex_start), str(ex_end), str(ex_end - ex_start)))
+
+            if self.print_clashes:
+                """ This section allows for a note to be written where the 'intronic' flanking sequence
+                    of an exon contains part of the next exon. This serves to clarify whether any overlap
+                    may take place. This will not impact the printed output
+
+                    A companion segment in the parser classes is responsible for altering the flanking region
+                    if the regions are to avoid overlaps.
+                """
+                clash_after = False
+                clash_before = False
+                if exon_number < len(latex_dict['list_of_exons'])-1:
+                    next_exon = exon_number+1
+                    if ex_end > latex_dict['exons'][next_exon]['genomic_start']-(self.transcriptdict['pad']):
+                        clash_after = True
+                if exon_number > 1:
+                    prev_exon = exon_number-1
+                    if ex_start < latex_dict['exons'][prev_exon]['genomic_end']+(self.transcriptdict['pad']):
+                        clash_before = True
+                if clash_after is True and clash_before is True:
+                    self.line_printer('BE AWARE: This section overlaps with both adjacent exons')
+                elif clash_after is True:
                     self.line_printer('BE AWARE: This section overlaps with the following exon')
+                elif clash_before is True:
+                    self.line_printer('BE AWARE: This section overlaps with the previous exon')
 
             sequence = exon_dict['sequence']
-
             line_count = 0
 
             for char in sequence:
                 # Stop each line at a specific length
-                # Remainder method prevents count being
-                # print amino_acid_counter
                 if line_count % 60 == 0:
                     wait_value = 0
                     amino_wait = 0

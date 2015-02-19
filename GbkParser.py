@@ -1,9 +1,8 @@
 import Bio
 from Bio import SeqIO
-from Bio.SeqFeature import FeatureLocation
 
 __author__ = 'mwelland'
-__version__ = 0.3
+__version__ = 1
 __version_date__ = '11/02/2015'
 
 class GbkParser:
@@ -27,7 +26,7 @@ class GbkParser:
                                                                           sequence (with pad)
     """
 
-    def __init__(self, file_name, padding):
+    def __init__(self, file_name, padding, trim_flanking):
 
         """
         This class is created by instantiating with a file name and a padding value.
@@ -38,6 +37,7 @@ class GbkParser:
         :param file_name: the location/identity of the target input file
         :param padding: the required amount of intronic padding
         '''
+        self.trim_flanking = trim_flanking
         self.exons = []
         self.cds = []
         self.mrna = []
@@ -116,7 +116,7 @@ class GbkParser:
                 self.transcriptdict['transcripts'][alternative]['exons'][exon]['genomic_start'] = coords.location.start
                 self.transcriptdict['transcripts'][alternative]['exons'][exon]['genomic_end'] = coords.location.end
                 exon += 1
-            print self.transcriptdict['transcripts'][alternative]
+            # print self.transcriptdict['transcripts'][alternative]
 
     def get_exon_contents(self):
         """
@@ -128,18 +128,47 @@ class GbkParser:
         :param exons: a list of the exon objects from the GenBank features list
         '''
         for alternative in self.transcriptdict['Alt transcripts']:
+            sequence = self.transcriptdict['full genomic sequence']
             for exon_number in self.transcriptdict['transcripts'][alternative]['exons'].keys():
                 start = self.transcriptdict['transcripts'][alternative]['exons'][exon_number]['genomic_start']
                 end = self.transcriptdict['transcripts'][alternative]['exons'][exon_number]['genomic_end']
-                sequence = self.transcriptdict['full genomic sequence'][start:end]
-                if self.transcriptdict['pad'] != 0:
-                    pad = self.transcriptdict['pad']
-                    pad5 = self.transcriptdict['full genomic sequence'][
-                        start - pad:start]
-                    pad3 = self.transcriptdict['full genomic sequence'][
-                        end:end + pad]
-                    sequence = pad5.lower() + sequence + pad3.lower()
-                self.transcriptdict['transcripts'][alternative]['exons'][exon_number]['sequence'] = sequence
+                seq = sequence[start:end]
+                pad = self.transcriptdict['pad']
+                exon_list = self.transcriptdict['transcripts'][alternative]['exons'].keys()
+                if pad != 0:
+                    if self.trim_flanking:
+                        if exon_number < len(exon_list)-1:
+                            next_exon = exon_list[exon_number]
+                            if end > self.transcriptdict['transcripts'][alternative]['exons'][next_exon]['genomic_start']-(self.transcriptdict['pad']):
+                                next_start = self.transcriptdict['transcripts'][alternative]['exons'][next_exon]['genomic_start']
+                                pad3 = sequence[end:next_start-1]
+                                # print 'Transcript: %s , exon %s clashes with exon %s' % (alternative, exon_number, next_exon)
+                            else:
+                                assert end + pad <= len(sequence), "Exon index out of bounds"
+                                pad3 = sequence[end:end + pad]
+                        else:
+                            assert end + pad <= len(sequence), "Exon index out of bounds"
+                            pad3 = sequence[end:end + pad]
+
+                        if exon_number != 1:
+                            previous_exon = exon_list[exon_number-2]
+                            if start < self.transcriptdict['transcripts'][alternative]['exons'][previous_exon]['genomic_end']+(self.transcriptdict['pad']):
+                                previous_end = self.transcriptdict['transcripts'][alternative]['exons'][previous_exon]['genomic_end']
+                                pad5 = sequence[previous_end+1: start-1]
+                            else:
+                                assert start - pad >= 0, "Exon index out of bounds"
+                                pad5 = sequence[start - (pad + 1):start - 1]
+                        else:
+                            assert start - pad >= 0, "Exon index out of bounds"
+                            pad5 = sequence[start - (pad + 1):start - 1]
+                    else:
+                        assert start - pad >= 0, "Exon index out of bounds"
+                        assert end + pad <= len(sequence), "Exon index out of bounds"
+                        pad3 = sequence[end:end + pad]
+                        pad5 = sequence[start - (pad + 1):start - 1]
+                        seq = pad5.lower() + seq + pad3.lower()
+                    seq = pad5.lower() + seq + pad3.lower()
+                self.transcriptdict['transcripts'][alternative]['exons'][exon_number]['sequence'] = seq
 
     def fill_and_find_features(self):
         dictionary = self.transcriptdict['input'][self.transcriptdict['refseqname']]
@@ -175,6 +204,7 @@ class GbkParser:
         :return transcriptdict: This function fills and returns the dictionary, contents
                 explained in Class docstring above
         '''
+        print 'version: ' + str(Bio.__version__)
         # initial sequence grabbing and populating dictionaries
         features = self.fill_and_find_features()
         self.transcriptdict['Alt transcripts'] = range(1, len(self.cds)+1)
