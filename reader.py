@@ -270,18 +270,18 @@ class Reader:
                     if ex_start < latex_dict['exons'][latex_dict['list_of_exons'][exon_index-2]]['genomic_end']+(self.transcriptdict['pad']):
                         clash_before = True
                 if clash_after is True and clash_before is True:
-                    self.line_printer('BE AWARE: This section overlaps with both adjacent exons')
+                    self.line_printer('BE AWARE: This intron is shared with both adjacent exons')
                 elif clash_after is True:
-                    self.line_printer('BE AWARE: This section overlaps with the following exon')
+                    self.line_printer('BE AWARE: This intron is shared with the following exon')
                 elif clash_before is True:
-                    self.line_printer('BE AWARE: This section overlaps with the previous exon')
+                    self.line_printer('BE AWARE: This intron is shared with the previous exon')
 
             sequence = exon_dict['sequence']
             line_count = 0
-
+            self.line_printer(' ')
             for char in sequence:
                 # Stop each line at a specific length
-                if line_count % 60 == 0:
+                if line_count % 60 == 0 and line_count != 0:
                     wait_value = 0
                     amino_wait = 0
                     self.line_printer(number_string)
