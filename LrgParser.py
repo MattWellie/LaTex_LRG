@@ -86,7 +86,6 @@ class LrgParser:
         except:
             print "No sequence was identified"
             print self.transcriptdict['filename']
-            print path
             exit()
 
 
@@ -147,7 +146,8 @@ class LrgParser:
         transcripts = self.transcriptdict['transcripts'].keys()
         for transcript in transcripts:
             exon_list = self.transcriptdict['transcripts'][transcript]['list_of_exons']
-            for exon_number in exon_list:
+            for position in range(len(exon_list)):
+                exon_number = exon_list[position]
                 genomic_start = self.transcriptdict['transcripts'][transcript]['exons'][exon_number]['genomic_start']
                 genomic_end = self.transcriptdict['transcripts'][transcript]['exons'][exon_number]['genomic_end']
                 seq = genseq[genomic_start - 1:genomic_end]
@@ -156,7 +156,7 @@ class LrgParser:
                 if pad != 0:
                     if self.trim_flanking:
                         if exon_number < len(exon_list)-1:
-                            next_exon = exon_list[exon_number]
+                            next_exon = exon_list[position+1]
                             if genomic_end > self.transcriptdict['transcripts'][transcript]['exons'][next_exon]['genomic_start']-(self.transcriptdict['pad']):
                                 next_start = self.transcriptdict['transcripts'][transcript]['exons'][next_exon]['genomic_start']
                                 half_way_point = int(round((next_start - (genomic_end+1))/2))
@@ -172,12 +172,11 @@ class LrgParser:
                             assert genomic_end + pad <= len(genseq), "Exon index out of bounds"
                             pad3 = genseq[genomic_end:genomic_end + pad]
 
-                        if exon_number != 1:
-                            previous_exon = exon_list[exon_number-2]
+                        if exon_number != exon_list[0]:
+                            previous_exon = exon_list[position-1]
                             if genomic_start < self.transcriptdict['transcripts'][transcript]['exons'][previous_exon]['genomic_end']+(self.transcriptdict['pad']):
                                 previous_end = self.transcriptdict['transcripts'][transcript]['exons'][previous_exon]['genomic_end']
                                 half_way_point = int(round((genomic_start - (previous_end+1))/2))
-                                # print 'halfway = ' + str(half_way_point)
                                 if half_way_point % 2 == 1:
                                     half_way_point -= 1  # or add 1?
                                 pad5 = genseq[previous_end+half_way_point: genomic_start-1]

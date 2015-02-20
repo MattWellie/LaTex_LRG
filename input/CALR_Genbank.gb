@@ -1,0 +1,376 @@
+LOCUS       NM_004343               1929 bp    mRNA    linear   PRI 11-MAY-2014
+DEFINITION  Homo sapiens calreticulin (CALR), mRNA.
+ACCESSION   NM_004343
+VERSION     NM_004343.3  GI:209862753
+KEYWORDS    RefSeq.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 1929)
+  AUTHORS   Rotunno G, Mannarelli C, Guglielmelli P, Pacilli A, Pancrazzi A,
+            Pieri L, Fanelli T, Bosi A and Vannucchi AM.
+  CONSRTM   Associazione Italiana per la Ricerca sul Cancro Gruppo Italiano
+            Malattie Mieloproliferative Investigators
+  TITLE     Impact of calreticulin mutations on clinical and hematological
+            phenotype and outcome in essential thrombocythemia
+  JOURNAL   Blood 123 (10), 1552-1555 (2014)
+   PUBMED   24371211
+  REMARK    GeneRIF: Patients carrying the CALR mutation had a lower risk of
+            thrombosis than JAK2- and MPL-mutated patients; CALR mutation had
+            no impact on survival or transformation to post-ET myelofibrosis.
+REFERENCE   2  (bases 1 to 1929)
+  AUTHORS   Rumi E, Pietra D, Ferretti V, Klampfl T, Harutyunyan AS, Milosevic
+            JD, Them NC, Berg T, Elena C, Casetti IC, Milanesi C, Sant'antonio
+            E, Bellini M, Fugazza E, Renna MC, Boveri E, Astori C, Pascutto C,
+            Kralovics R and Cazzola M.
+  CONSRTM   Associazione Italiana per la Ricerca sul Cancro Gruppo Italiano
+            Malattie Mieloproliferative Investigators
+  TITLE     JAK2 or CALR mutation status defines subtypes of essential
+            thrombocythemia with substantially different clinical course and
+            outcomes
+  JOURNAL   Blood 123 (10), 1544-1551 (2014)
+   PUBMED   24366362
+  REMARK    GeneRIF: JAK2-mutated essential thrombocythemia and polycythemia
+            vera represent different phenotypes of a single myeloproliferative
+            neoplasm, whereas CALR-mutated essential thrombocythemia is a
+            distinct disease entity.
+REFERENCE   3  (bases 1 to 1929)
+  AUTHORS   Gameiro SR, Jammeh ML, Wattenberg MM, Tsang KY, Ferrone S and Hodge
+            JW.
+  TITLE     Radiation-induced immunogenic modulation of tumor enhances antigen
+            processing and calreticulin exposure, resulting in enhanced T-cell
+            killing
+  JOURNAL   Oncotarget 5 (2), 403-416 (2014)
+   PUBMED   24480782
+  REMARK    GeneRIF: Tumor irradiation in vitro and in vivo significantly
+            increased cell-surface expression of calreticulin. Increased CD8+
+            T-cell-mediated lysis of lung, prostate, and breast human carcinoma
+            cells was mostly dictated by the presence of calreticulin on the
+            surface of tumor cells. These findings suggested a direct
+            interaction between exposed calreticulin and cytotoxic T cells,
+            highlighting a novel function for calreticulin.
+REFERENCE   4  (bases 1 to 1929)
+  AUTHORS   Nangalia J, Massie CE, Baxter EJ, Nice FL, Gundem G, Wedge DC,
+            Avezov E, Li J, Kollmann K, Kent DG, Aziz A, Godfrey AL, Hinton J,
+            Martincorena I, Van Loo P, Jones AV, Guglielmelli P, Tarpey P,
+            Harding HP, Fitzpatrick JD, Goudie CT, Ortmann CA, Loughran SJ,
+            Raine K, Jones DR, Butler AP, Teague JW, O'Meara S, McLaren S,
+            Bianchi M, Silber Y, Dimitropoulou D, Bloxham D, Mudie L, Maddison
+            M, Robinson B, Keohane C, Maclean C, Hill K, Orchard K, Tauro S, Du
+            MQ, Greaves M, Bowen D, Huntly BJ, Harrison CN, Cross NC, Ron D,
+            Vannucchi AM, Papaemmanuil E, Campbell PJ and Green AR.
+  TITLE     Somatic CALR mutations in myeloproliferative neoplasms with
+            nonmutated JAK2
+  JOURNAL   N. Engl. J. Med. 369 (25), 2391-2405 (2013)
+   PUBMED   24325359
+  REMARK    GeneRIF: Somatic mutations in the endoplasmic reticulum chaperone
+            CALR were found in a majority of patients with myeloproliferative
+            neoplasms with nonmutated JAK2.
+REFERENCE   5  (bases 1 to 1929)
+  AUTHORS   Klampfl T, Gisslinger H, Harutyunyan AS, Nivarthi H, Rumi E,
+            Milosevic JD, Them NC, Berg T, Gisslinger B, Pietra D, Chen D,
+            Vladimer GI, Bagienski K, Milanesi C, Casetti IC, Sant'Antonio E,
+            Ferretti V, Elena C, Schischlik F, Cleary C, Six M, Schalling M,
+            Schonegger A, Bock C, Malcovati L, Pascutto C, Superti-Furga G,
+            Cazzola M and Kralovics R.
+  TITLE     Somatic mutations of calreticulin in myeloproliferative neoplasms
+  JOURNAL   N. Engl. J. Med. 369 (25), 2379-2390 (2013)
+   PUBMED   24325356
+  REMARK    GeneRIF: Most patients with essential thrombocythemia or primary
+            myelofibrosis that was not associated with a JAK2 or MPL alteration
+            carried a somatic mutation in CALR.
+REFERENCE   6  (bases 1 to 1929)
+  AUTHORS   Hochstrasser DF, Frutiger S, Paquet N, Bairoch A, Ravier F,
+            Pasquali C, Sanchez JC, Tissot JD, Bjellqvist B and Vargas R.
+  CONSRTM   et al
+  TITLE     Human liver protein map: a reference database established by
+            microsequencing and gel comparison
+  JOURNAL   Electrophoresis 13 (12), 992-1001 (1992)
+   PUBMED   1286669
+REFERENCE   7  (bases 1 to 1929)
+  AUTHORS   Rasmussen HH, van Damme J, Puype M, Gesser B, Celis JE and
+            Vandekerckhove J.
+  TITLE     Microsequences of 145 proteins recorded in the two-dimensional gel
+            protein database of normal human epidermal keratinocytes
+  JOURNAL   Electrophoresis 13 (12), 960-969 (1992)
+   PUBMED   1286667
+REFERENCE   8  (bases 1 to 1929)
+  AUTHORS   McCauliffe DP, Yang YS, Wilson J, Sontheimer RD and Capra JD.
+  TITLE     The 5'-flanking region of the human calreticulin gene shares
+            homology with the human GRP78, GRP94, and protein disulfide
+            isomerase promoters
+  JOURNAL   J. Biol. Chem. 267 (4), 2557-2562 (1992)
+   PUBMED   1733953
+REFERENCE   9  (bases 1 to 1929)
+  AUTHORS   Rokeach LA, Haselby JA, Meilof JF, Smeenk RJ, Unnasch TR, Greene BM
+            and Hoch SO.
+  TITLE     Characterization of the autoantigen calreticulin
+  JOURNAL   J. Immunol. 147 (9), 3031-3039 (1991)
+   PUBMED   1919005
+REFERENCE   10 (bases 1 to 1929)
+  AUTHORS   Rojiani MV, Finlay BB, Gray V and Dedhar S.
+  TITLE     In vitro interaction of a polypeptide homologous to human Ro/SS-A
+            antigen (calreticulin) with a highly conserved amino acid sequence
+            in the cytoplasmic domain of integrin alpha subunits
+  JOURNAL   Biochemistry 30 (41), 9859-9866 (1991)
+   PUBMED   1911778
+COMMENT     REVIEWED REFSEQ: This record has been curated by NCBI staff. The
+            reference sequence was derived from AC092069.2 and BC007911.1.
+            This sequence is a reference standard in the RefSeqGene project.
+            On Oct 21, 2008 this sequence version replaced gi:5921996.
+            
+            Summary: Calreticulin is a multifunctional protein that acts as a
+            major Ca(2+)-binding (storage) protein in the lumen of the
+            endoplasmic reticulum. It is also found in the nucleus, suggesting
+            that it may have a role in transcription regulation. Calreticulin
+            binds to the synthetic peptide KLGFFKR, which is almost identical
+            to an amino acid sequence in the DNA-binding domain of the
+            superfamily of nuclear receptors. Calreticulin binds to antibodies
+            in certain sera of systemic lupus and Sjogren patients which
+            contain anti-Ro/SSA antibodies, it is highly conserved among
+            species, and it is located in the endoplasmic and sarcoplasmic
+            reticulum where it may bind calcium. The amino terminus of
+            calreticulin interacts with the DNA-binding domain of the
+            glucocorticoid receptor and prevents the receptor from binding to
+            its specific glucocorticoid response element. Calreticulin can
+            inhibit the binding of androgen receptor to its hormone-responsive
+            DNA element and can inhibit androgen receptor and retinoic acid
+            receptor transcriptional activities in vivo, as well as retinoic
+            acid-induced neuronal differentiation. Thus, calreticulin can act
+            as an important modulator of the regulation of gene transcription
+            by nuclear hormone receptors. Systemic lupus erythematosus is
+            associated with increased autoantibody titers against calreticulin
+            but calreticulin is not a Ro/SS-A antigen. Earlier papers referred
+            to calreticulin as an Ro/SS-A antigen but this was later disproven.
+            Increased autoantibody titer against human calreticulin is found in
+            infants with complete congenital heart block of both the IgG and
+            IgM classes. [provided by RefSeq, Jul 2008].
+            
+            Publication Note:  This RefSeq record includes a subset of the
+            publications that are available for this gene. Please see the Gene
+            record to access additional publications.
+            
+            ##Evidence-Data-START##
+            Transcript exon combination :: BC007911.1, M84739.1 [ECO:0000332]
+            RNAseq introns              :: single sample supports all introns
+                                           ERS025081, ERS025082 [ECO:0000348]
+            ##Evidence-Data-END##
+            COMPLETENESS: complete on the 3' end.
+PRIMARY     REFSEQ_SPAN         PRIMARY_IDENTIFIER PRIMARY_SPAN        COMP
+            1-171               AC092069.2         50907-51077         c
+            172-273             AC092069.2         50442-50543         c
+            274-477             AC092069.2         50046-50249         c
+            478-572             AC092069.2         49530-49624         c
+            573-782             AC092069.2         49225-49434         c
+            783-896             AC092069.2         49023-49136         c
+            897-1040            AC092069.2         48790-48933         c
+            1041-1133           AC092069.2         46048-46140         c
+            1134-1881           AC092069.2         45217-45964         c
+            1882-1929           BC007911.1         1873-1920
+FEATURES             Location/Qualifiers
+     source          1..1929
+                     /organism="Homo sapiens"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:9606"
+                     /chromosome="19"
+                     /map="19p13.3-p13.2"
+     gene            1..1929
+                     /gene="CALR"
+                     /gene_synonym="cC1qR; CRT; HEL-S-99n; RO; SSA"
+                     /note="calreticulin"
+                     /db_xref="GeneID:811"
+                     /db_xref="HGNC:HGNC:1455"
+                     /db_xref="HPRD:00169"
+                     /db_xref="MIM:109091"
+     exon            1..171
+                     /gene="CALR"
+                     /gene_synonym="cC1qR; CRT; HEL-S-99n; RO; SSA"
+                     /inference="alignment:Splign:1.39.8"
+     misc_feature    45..47
+                     /gene="CALR"
+                     /gene_synonym="cC1qR; CRT; HEL-S-99n; RO; SSA"
+                     /note="upstream in-frame stop codon"
+     CDS             81..1334
+                     /gene="CALR"
+                     /gene_synonym="cC1qR; CRT; HEL-S-99n; RO; SSA"
+                     /note="Sicca syndrome antigen A (autoantigen Ro;
+                     calreticulin); CRP55; ERp60; HACBP; grp60; calregulin;
+                     endoplasmic reticulum resident protein 60; epididymis
+                     secretory sperm binding protein Li 99n"
+                     /codon_start=1
+                     /product="calreticulin precursor"
+                     /protein_id="NP_004334.1"
+                     /db_xref="GI:4757900"
+                     /db_xref="CCDS:CCDS12288.1"
+                     /db_xref="GeneID:811"
+                     /db_xref="HGNC:HGNC:1455"
+                     /db_xref="HPRD:00169"
+                     /db_xref="MIM:109091"
+                     /translation="MLLSVPLLLGLLGLAVAEPAVYFKEQFLDGDGWTSRWIESKHKS
+                     DFGKFVLSSGKFYGDEEKDKGLQTSQDARFYALSASFEPFSNKGQTLVVQFTVKHEQN
+                     IDCGGGYVKLFPNSLDQTDMHGDSEYNIMFGPDICGPGTKKVHVIFNYKGKNVLINKD
+                     IRCKDDEFTHLYTLIVRPDNTYEVKIDNSQVESGSLEDDWDFLPPKKIKDPDASKPED
+                     WDERAKIDDPTDSKPEDWDKPEHIPDPDAKKPEDWDEEMDGEWEPPVIQNPEYKGEWK
+                     PRQIDNPDYKGTWIHPEIDNPEYSPDPSIYAYDNFGVLGLDLWQVKSGTIFDNFLITN
+                     DEAYAEEFGNETWGVTKAAEKQMKDKQDEEQRLKEEEEDKKRKEEEEAEDKEDDEDKD
+                     EDEEDEEDKEEDEEEDVPGQAKDEL"
+     sig_peptide     81..131
+                     /gene="CALR"
+                     /gene_synonym="cC1qR; CRT; HEL-S-99n; RO; SSA"
+                     /inference="COORDINATES: ab initio prediction:SignalP:4.0"
+     mat_peptide     132..1331
+                     /gene="CALR"
+                     /gene_synonym="cC1qR; CRT; HEL-S-99n; RO; SSA"
+                     /product="calreticulin"
+     misc_feature    132..671
+                     /gene="CALR"
+                     /gene_synonym="cC1qR; CRT; HEL-S-99n; RO; SSA"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="propagated from UniProtKB/Swiss-Prot (P27797.1);
+                     Region: N-domain"
+     misc_feature    222..224
+                     /gene="CALR"
+                     /gene_synonym="cC1qR; CRT; HEL-S-99n; RO; SSA"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="N6-acetyllysine; propagated from
+                     UniProtKB/Swiss-Prot (P27797.1); acetylation site"
+     misc_feature    555..557
+                     /gene="CALR"
+                     /gene_synonym="cC1qR; CRT; HEL-S-99n; RO; SSA"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="N6-acetyllysine; propagated from
+                     UniProtKB/Swiss-Prot (P27797.1); acetylation site"
+     misc_feature    651..845
+                     /gene="CALR"
+                     /gene_synonym="cC1qR; CRT; HEL-S-99n; RO; SSA"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="propagated from UniProtKB/Swiss-Prot (P27797.1);
+                     Region: 4 X approximate repeats"
+     misc_feature    672..1004
+                     /gene="CALR"
+                     /gene_synonym="cC1qR; CRT; HEL-S-99n; RO; SSA"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="propagated from UniProtKB/Swiss-Prot (P27797.1);
+                     Region: P-domain"
+     misc_feature    705..707
+                     /gene="CALR"
+                     /gene_synonym="cC1qR; CRT; HEL-S-99n; RO; SSA"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="N6-acetyllysine; propagated from
+                     UniProtKB/Swiss-Prot (P27797.1); acetylation site"
+     misc_feature    789..890
+                     /gene="CALR"
+                     /gene_synonym="cC1qR; CRT; HEL-S-99n; RO; SSA"
+                     /inference="non-experimental evidence, no additional
+                     details recorded"
+                     /note="propagated from UniProtKB/Swiss-Prot (P27797.1);
+                     Region: Interaction with PPIB (By similarity)"
+     misc_feature    855..971
+                     /gene="CALR"
+                     /gene_synonym="cC1qR; CRT; HEL-S-99n; RO; SSA"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="propagated from UniProtKB/Swiss-Prot (P27797.1);
+                     Region: 3 X approximate repeats"
+     misc_feature    1005..1331
+                     /gene="CALR"
+                     /gene_synonym="cC1qR; CRT; HEL-S-99n; RO; SSA"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="propagated from UniProtKB/Swiss-Prot (P27797.1);
+                     Region: C-domain"
+     misc_feature    1320..1331
+                     /gene="CALR"
+                     /gene_synonym="cC1qR; CRT; HEL-S-99n; RO; SSA"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="propagated from UniProtKB/Swiss-Prot (P27797.1);
+                     Region: Prevents secretion from ER"
+     exon            172..273
+                     /gene="CALR"
+                     /gene_synonym="cC1qR; CRT; HEL-S-99n; RO; SSA"
+                     /inference="alignment:Splign:1.39.8"
+     exon            274..477
+                     /gene="CALR"
+                     /gene_synonym="cC1qR; CRT; HEL-S-99n; RO; SSA"
+                     /inference="alignment:Splign:1.39.8"
+     exon            478..572
+                     /gene="CALR"
+                     /gene_synonym="cC1qR; CRT; HEL-S-99n; RO; SSA"
+                     /inference="alignment:Splign:1.39.8"
+     exon            573..782
+                     /gene="CALR"
+                     /gene_synonym="cC1qR; CRT; HEL-S-99n; RO; SSA"
+                     /inference="alignment:Splign:1.39.8"
+     exon            783..896
+                     /gene="CALR"
+                     /gene_synonym="cC1qR; CRT; HEL-S-99n; RO; SSA"
+                     /inference="alignment:Splign:1.39.8"
+     exon            897..1040
+                     /gene="CALR"
+                     /gene_synonym="cC1qR; CRT; HEL-S-99n; RO; SSA"
+                     /inference="alignment:Splign:1.39.8"
+     exon            1041..1133
+                     /gene="CALR"
+                     /gene_synonym="cC1qR; CRT; HEL-S-99n; RO; SSA"
+                     /inference="alignment:Splign:1.39.8"
+     exon            1134..1911
+                     /gene="CALR"
+                     /gene_synonym="cC1qR; CRT; HEL-S-99n; RO; SSA"
+                     /inference="alignment:Splign:1.39.8"
+     STS             1345..1589
+                     /gene="CALR"
+                     /gene_synonym="cC1qR; CRT; HEL-S-99n; RO; SSA"
+                     /standard_name="STS-M84739"
+                     /db_xref="UniSTS:36938"
+     regulatory      1894..1899
+                     /gene="CALR"
+                     /gene_synonym="cC1qR; CRT; HEL-S-99n; RO; SSA"
+                     /regulatory_class="polyA_signal_sequence"
+     polyA_site      1911
+                     /gene="CALR"
+                     /gene_synonym="cC1qR; CRT; HEL-S-99n; RO; SSA"
+ORIGIN      
+        1 gcggcgtccg tccgtactgc agagccgctg ccggagggtc gttttaaagg gcccgcgcgt
+       61 tgccgccccc tcggcccgcc atgctgctat ccgtgccgct gctgctcggc ctcctcggcc
+      121 tggccgtcgc cgagcctgcc gtctacttca aggagcagtt tctggacgga gacgggtgga
+      181 cttcccgctg gatcgaatcc aaacacaagt cagattttgg caaattcgtt ctcagttccg
+      241 gcaagttcta cggtgacgag gagaaagata aaggtttgca gacaagccag gatgcacgct
+      301 tttatgctct gtcggccagt ttcgagcctt tcagcaacaa aggccagacg ctggtggtgc
+      361 agttcacggt gaaacatgag cagaacatcg actgtggggg cggctatgtg aagctgtttc
+      421 ctaatagttt ggaccagaca gacatgcacg gagactcaga atacaacatc atgtttggtc
+      481 ccgacatctg tggccctggc accaagaagg ttcatgtcat cttcaactac aagggcaaga
+      541 acgtgctgat caacaaggac atccgttgca aggatgatga gtttacacac ctgtacacac
+      601 tgattgtgcg gccagacaac acctatgagg tgaagattga caacagccag gtggagtccg
+      661 gctccttgga agacgattgg gacttcctgc cacccaagaa gataaaggat cctgatgctt
+      721 caaaaccgga agactgggat gagcgggcca agatcgatga tcccacagac tccaagcctg
+      781 aggactggga caagcccgag catatccctg accctgatgc taagaagccc gaggactggg
+      841 atgaagagat ggacggagag tgggaacccc cagtgattca gaaccctgag tacaagggtg
+      901 agtggaagcc ccggcagatc gacaacccag attacaaggg cacttggatc cacccagaaa
+      961 ttgacaaccc cgagtattct cccgatccca gtatctatgc ctatgataac tttggcgtgc
+     1021 tgggcctgga cctctggcag gtcaagtctg gcaccatctt tgacaacttc ctcatcacca
+     1081 acgatgaggc atacgctgag gagtttggca acgagacgtg gggcgtaaca aaggcagcag
+     1141 agaaacaaat gaaggacaaa caggacgagg agcagaggct taaggaggag gaagaagaca
+     1201 agaaacgcaa agaggaggag gaggcagagg acaaggagga tgatgaggac aaagatgagg
+     1261 atgaggagga tgaggaggac aaggaggaag atgaggagga agatgtcccc ggccaggcca
+     1321 aggacgagct gtagagaggc ctgcctccag ggctggactg aggcctgagc gctcctgccg
+     1381 cagagctggc cgcgccaaat aatgtctctg tgagactcga gaactttcat ttttttccag
+     1441 gctggttcgg atttggggtg gattttggtt ttgttcccct cctccactct cccccacccc
+     1501 ctccccgccc tttttttttt ttttttttaa actggtattt tatctttgat tctccttcag
+     1561 ccctcacccc tggttctcat ctttcttgat caacatcttt tcttgcctct gtccccttct
+     1621 ctcatctctt agctcccctc caacctgggg ggcagtggtg tggagaagcc acaggcctga
+     1681 gatttcatct gctctccttc ctggagccca gaggagggca gcagaagggg gtggtgtctc
+     1741 caacccccca gcactgagga agaacggggc tcttctcatt tcacccctcc ctttctcccc
+     1801 tgcccccagg actgggccac ttctgggtgg ggcagtgggt cccagattgg ctcacactga
+     1861 gaatgtaaga actacaaaca aaatttctat taaattaaat tttgtgtctc caaaaaaaaa
+     1921 aaaaaaaaa
+//
+

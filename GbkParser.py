@@ -113,7 +113,7 @@ class GbkParser:
             subfeatures = selected_mrna._get_sub_features()
             for coords in subfeatures:
                 self.transcriptdict['transcripts'][alternative]['exons'][exon] = {}
-                self.transcriptdict['transcripts'][alternative]['list_of_exons'].append(exon)
+                self.transcriptdict['transcripts'][alternative]['list_of_exons'].append(coords.qualifiers['number'])
                 self.transcriptdict['transcripts'][alternative]['exons'][exon]['genomic_start'] = coords.location.start
                 self.transcriptdict['transcripts'][alternative]['exons'][exon]['genomic_end'] = coords.location.end
                 exon += 1
@@ -135,7 +135,7 @@ class GbkParser:
                 end = self.transcriptdict['transcripts'][alternative]['exons'][exon_number]['genomic_end']
                 seq = sequence[start:end]
                 pad = self.transcriptdict['pad']
-                exon_list = self.transcriptdict['transcripts'][alternative]['exons'].keys()
+                exon_list = self.transcriptdict['transcripts'][alternative]['list_of_exons']
                 if pad != 0:
                     if self.trim_flanking:
                         if exon_number < len(exon_list)-1:
@@ -155,9 +155,13 @@ class GbkParser:
                             assert end + pad <= len(sequence), "Exon index out of bounds"
                             pad3 = sequence[end:end + pad]
 
-                        if exon_number != 1:
+                        print exon_number
+                        if exon_number != exon_list[0]:
+                            print 'first if'
                             previous_exon = exon_list[exon_number-2]
+                            print 'previous exon = ' + str(previous_exon)
                             if start < self.transcriptdict['transcripts'][alternative]['exons'][previous_exon]['genomic_end']+(self.transcriptdict['pad']):
+                                print 'second if'
                                 previous_end = self.transcriptdict['transcripts'][alternative]['exons'][previous_exon]['genomic_end']
                                 half_way_point = int(round((start - (previous_end+1))/2))
                                 # print 'full = ' + str(start - (previous_end+1))

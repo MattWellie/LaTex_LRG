@@ -188,7 +188,7 @@ class Reader:
         self.line_printer('\\end{center}')
         self.line_printer('$1^{st}$ line: Base numbering. Full stops for intronic +/- 5, 10, 15...\\\\')
         self.line_printer('$2^{nd}$ line: Base sequence. lower case Introns, upper case Exons\\\\')
-        self.line_printer('$3^{rd}$ line: Amino acid sequence. Printed on FIRST base of codon\\\\')
+        self.line_printer('$3^{rd}$ line: Amino acid sequence. Printed on MIDDLE base of codon\\\\')
         self.line_printer('$4^{th}$ line: Amino acid numbering. Numbered on $1^{st}$ and increments of 10\\\\')
         self.line_printer(' \\begin{Verbatim}')
 
@@ -229,8 +229,9 @@ class Reader:
         amino_wait = 0  # No number string printed, no wait yet
         codon_numbered = False  # First AA has not been numbered already
         post_protein_printer = 0  # The number for 3' intron '+###' counting
-        for exon_index in range(1, len(latex_dict['list_of_exons'])+1):
-            exon_number = latex_dict['list_of_exons'][exon_index-1]
+        exon_list = latex_dict['list_of_exons']
+        for position in range(len(exon_list)):
+            exon_number = latex_dict['list_of_exons'][position]
             intron_offset = self.transcriptdict['pad_offset']
             intron_in_padding = self.transcriptdict['pad']
             intron_out = 0  # Or 0?
@@ -261,14 +262,17 @@ class Reader:
                 if exon_number < len(latex_dict['list_of_exons'])-1:
                     try:
                         # next_exon = exon_number+1
-                        if ex_end > latex_dict['exons'][latex_dict['list_of_exons'][exon_index]]['genomic_start']-(self.transcriptdict['pad']):
+                        if ex_end > latex_dict['exons'][latex_dict['list_of_exons'][position+1]]['genomic_start']-(self.transcriptdict['pad']):
                             clash_after = True
                     except KeyError:
-                        print 'potential undetected clash after exon exon_number'
+                        print 'potential undetected clash after exon ' + str(exon_number)
                 if exon_number > 1:
                     # prev_exon = exon_number-1
-                    if ex_start < latex_dict['exons'][latex_dict['list_of_exons'][exon_index-2]]['genomic_end']+(self.transcriptdict['pad']):
-                        clash_before = True
+                    # print exon_number
+                    # print latex_dict['list_of_exons'][exon_index-2]
+                    if exon_number > latex_dict['list_of_exons'][position-1]:
+                        if ex_start < latex_dict['exons'][latex_dict['list_of_exons'][position-1]]['genomic_end']+(self.transcriptdict['pad']):
+                            clash_before = True
                 if clash_after is True and clash_before is True:
                     self.line_printer('BE AWARE: This intron is shared with both adjacent exons')
                 elif clash_after is True:
@@ -379,6 +383,8 @@ class Reader:
         return output, amino_wait, codon_numbered, amino_acid_counter
 
     def run(self, dictionary, transcript, write_as_latex, list_of_versions, print_clashes):
+        print 'Transcript: ' + str(transcript)
+        print 'Exon numbers: ' + str(dictionary['transcripts'][transcript]['list_of_exons'])
         self.list_of_versions = list_of_versions
         self.transcriptdict = dictionary
         self.write_as_LaTex = write_as_latex

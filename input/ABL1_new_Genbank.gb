@@ -1,0 +1,750 @@
+LOCUS       NM_005157               5596 bp    mRNA    linear   PRI 06-AUG-2014
+DEFINITION  Homo sapiens ABL proto-oncogene 1, non-receptor tyrosine kinase
+            (ABL1), transcript variant a, mRNA.
+ACCESSION   NM_005157
+VERSION     NM_005157.5  GI:671696012
+KEYWORDS    RefSeq.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+REFERENCE   1  (bases 1 to 5596)
+  AUTHORS   Suzuki R, Matsushita H, Kawai H, Matsuzawa H, Tsuboi K, Watanabe S,
+            Kawada H, Ogawa Y and Ando K.
+  TITLE     Identification of a novel SEPT9-ABL1 fusion gene in a patient with
+            T-cell prolymphocytic leukemia
+  JOURNAL   Leuk Res Rep 3 (2), 54-57 (2014)
+   PUBMED   25068103
+  REMARK    Publication Status: Online-Only
+REFERENCE   2  (bases 1 to 5596)
+  AUTHORS   Duff DJ, Guzman MA and Batanian JR.
+  TITLE     ABL1 gene involvement within a complex three-way translocation
+            (2;9;4) in perineurioma characterized by molecular cytogenetic
+            methods
+  JOURNAL   Cancer Genet (2014) In press
+   PUBMED   25074247
+  REMARK    Publication Status: Available-Online prior to print
+REFERENCE   3  (bases 1 to 5596)
+  AUTHORS   Malvestiti F, Agrati C, Chinetti S, Di Meco A, Cirrincione S,
+            Oggionni M, Grimi B, Maggi F, Simoni G and Grati FR.
+  TITLE     Complex variant of Philadelphia translocation involving chromosomes
+            9, 12, and 22 in a case with chronic myeloid leukaemia
+  JOURNAL   Case Rep Genet 2014, 691630 (2014)
+   PUBMED   25045550
+REFERENCE   4  (bases 1 to 5596)
+  AUTHORS   De Braekeleer E, Douet-Guilbert N, Rowe D, Bown N, Morel F, Berthou
+            C, Ferec C and De Braekeleer M.
+  TITLE     ABL1 fusion genes in hematological malignancies: a review
+  JOURNAL   Eur. J. Haematol. 86 (5), 361-371 (2011)
+   PUBMED   21435002
+  REMARK    GeneRIF: Screening for ABL1 chimeric genes could be performed in
+            patients with ALL, more particularly in those with T-cell ALL
+            because ABL1 modulates T-cell development and plays a role in
+            cytoskeletal remodeling processes in T cells.
+            Review article
+REFERENCE   5  (bases 1 to 5596)
+  AUTHORS   Overduin M, Mayer B, Rios CB, Baltimore D and Cowburn D.
+  TITLE     Secondary structure of Src homology 2 domain of c-Abl by
+            heteronuclear NMR spectroscopy in solution
+  JOURNAL   Proc. Natl. Acad. Sci. U.S.A. 89 (24), 11673-11677 (1992)
+   PUBMED   1281542
+REFERENCE   6  (bases 1 to 5596)
+  AUTHORS   Muller AJ, Pendergast AM, Havlik MH, Puil L, Pawson T and Witte ON.
+  TITLE     A limited set of SH2 domains binds BCR through a high-affinity
+            phosphotyrosine-independent interaction
+  JOURNAL   Mol. Cell. Biol. 12 (11), 5087-5093 (1992)
+   PUBMED   1383690
+REFERENCE   7  (bases 1 to 5596)
+  AUTHORS   Cicchetti P, Mayer BJ, Thiel G and Baltimore D.
+  TITLE     Identification of a protein that binds to the SH3 region of Abl and
+            is similar to Bcr and GAP-rho
+  JOURNAL   Science 257 (5071), 803-806 (1992)
+   PUBMED   1379745
+REFERENCE   8  (bases 1 to 5596)
+  AUTHORS   Fainstein E, Einat M, Gokkel E, Marcelle C, Croce CM, Gale RP and
+            Canaani E.
+  TITLE     Nucleotide sequence analysis of human abl and bcr-abl cDNAs
+  JOURNAL   Oncogene 4 (12), 1477-1481 (1989)
+   PUBMED   2687768
+REFERENCE   9  (bases 1 to 5596)
+  AUTHORS   Bernards A, Rubin CM, Westbrook CA, Paskind M and Baltimore D.
+  TITLE     The first intron in the human c-abl gene is at least 200 kilobases
+            long and is a target for translocations in chronic myelogenous
+            leukemia
+  JOURNAL   Mol. Cell. Biol. 7 (9), 3231-3236 (1987)
+   PUBMED   3313010
+REFERENCE   10 (bases 1 to 5596)
+  AUTHORS   Shtivelman,E., Lifshitz,B., Gale,R.P., Roe,B.A. and Canaani,E.
+  TITLE     Alternative splicing of RNAs transcribed from the human abl gene
+            and from the bcr-abl fused gene
+  JOURNAL   Cell 47 (2), 277-284 (1986)
+   PUBMED   3021337
+COMMENT     REVIEWED REFSEQ: This record has been curated by NCBI staff. The
+            reference sequence was derived from M14752.1, AL161733.20,
+            X16416.1, AB209456.1 and AI458416.1.
+            On Aug 6, 2014 this sequence version replaced gi:317108181.
+            
+            Summary: This gene is a protooncogene that encodes a protein
+            tyrosine kinase involved in a variety of cellular processes,
+            including cell division, adhesion, differentiation, and response to
+            stress. The activity of the protein is negatively regulated by its
+            SH3 domain, whereby deletion of the region encoding this domain
+            results in an oncogene. The ubiquitously expressed protein has
+            DNA-binding activity that is regulated by CDC2-mediated
+            phosphorylation, suggesting a cell cycle function. This gene has
+            been found fused to a variety of translocation partner genes in
+            various leukemias, most notably the t(9;22) translocation that
+            results in a fusion with the 5' end of the breakpoint cluster
+            region gene (BCR; MIM:151410). Alternative splicing of this gene
+            results in two transcript variants, which contain alternative first
+            exons that are spliced to the remaining common exons. [provided by
+            RefSeq, Aug 2014].
+            
+            Transcript Variant: This variant (a) includes an alternate 5'
+            terminal exon (exon 1a instead of exon 1b), and it thus differs in
+            the 5' UTR and 5' coding region, compared to variant b. The encoded
+            isoform (a), which is localized in the nucleus, has a distinct
+            N-terminus and is shorter than isoform b.
+            
+            Publication Note:  This RefSeq record includes a subset of the
+            publications that are available for this gene. Please see the Gene
+            record to access additional publications.
+            
+            ##Evidence-Data-START##
+            Transcript exon combination :: X16416.1, M14752.1 [ECO:0000332]
+            ##Evidence-Data-END##
+            COMPLETENESS: full length.
+PRIMARY     REFSEQ_SPAN         PRIMARY_IDENTIFIER PRIMARY_SPAN        COMP
+            1-22                M14752.1           190-211
+            23-189              AL161733.20        58657-58823
+            190-2701            X16416.1           145-2656
+            2702-5573           AB209456.1         2712-5583
+            5574-5596           AI458416.1         1-23                c
+FEATURES             Location/Qualifiers
+     source          1..5596
+                     /organism="Homo sapiens"
+                     /mol_type="mRNA"
+                     /db_xref="taxon:9606"
+                     /chromosome="9"
+                     /map="9q34.1"
+     gene            1..5596
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /note="ABL proto-oncogene 1, non-receptor tyrosine kinase"
+                     /db_xref="GeneID:25"
+                     /db_xref="HGNC:HGNC:76"
+                     /db_xref="MIM:189980"
+     exon            1..271
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /inference="alignment:Splign:1.39.8"
+     misc_feature    73..75
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /note="upstream in-frame stop codon"
+     CDS             193..3585
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /EC_number="2.7.10.2"
+                     /note="isoform a is encoded by transcript variant a; c-abl
+                     oncogene 1, receptor tyrosine kinase; v-abl Abelson murine
+                     leukemia viral oncogene homolog 1; proto-oncogene
+                     tyrosine-protein kinase ABL1; bcr/c-abl oncogene protein;
+                     proto-oncogene c-Abl; Abelson tyrosine-protein kinase 1"
+                     /codon_start=1
+                     /product="tyrosine-protein kinase ABL1 isoform a"
+                     /protein_id="NP_005148.2"
+                     /db_xref="GI:62362414"
+                     /db_xref="CCDS:CCDS35166.1"
+                     /db_xref="GeneID:25"
+                     /db_xref="HGNC:HGNC:76"
+                     /db_xref="MIM:189980"
+                     /translation="MLEICLKLVGCKSKKGLSSSSSCYLEEALQRPVASDFEPQGLSE
+                     AARWNSKENLLAGPSENDPNLFVALYDFVASGDNTLSITKGEKLRVLGYNHNGEWCEA
+                     QTKNGQGWVPSNYITPVNSLEKHSWYHGPVSRNAAEYLLSSGINGSFLVRESESSPGQ
+                     RSISLRYEGRVYHYRINTASDGKLYVSSESRFNTLAELVHHHSTVADGLITTLHYPAP
+                     KRNKPTVYGVSPNYDKWEMERTDITMKHKLGGGQYGEVYEGVWKKYSLTVAVKTLKED
+                     TMEVEEFLKEAAVMKEIKHPNLVQLLGVCTREPPFYIITEFMTYGNLLDYLRECNRQE
+                     VNAVVLLYMATQISSAMEYLEKKNFIHRDLAARNCLVGENHLVKVADFGLSRLMTGDT
+                     YTAHAGAKFPIKWTAPESLAYNKFSIKSDVWAFGVLLWEIATYGMSPYPGIDLSQVYE
+                     LLEKDYRMERPEGCPEKVYELMRACWQWNPSDRPSFAEIHQAFETMFQESSISDEVEK
+                     ELGKQGVRGAVSTLLQAPELPTKTRTSRRAAEHRDTTDVPEMPHSKGQGESDPLDHEP
+                     AVSPLLPRKERGPPEGGLNEDERLLPKDKKTNLFSALIKKKKKTAPTPPKRSSSFREM
+                     DGQPERRGAGEEEGRDISNGALAFTPLDTADPAKSPKPSNGAGVPNGALRESGGSGFR
+                     SPHLWKKSSTLTSSRLATGEEEGGGSSSKRFLRSCSASCVPHGAKDTEWRSVTLPRDL
+                     QSTGRQFDSSTFGGHKSEKPALPRKRAGENRSDQVTRGTVTPPPRLVKKNEEAADEVF
+                     KDIMESSPGSSPPNLTPKPLRRQVTVAPASGLPHKEEAGKGSALGTPAAAEPVTPTSK
+                     AGSGAPGGTSKGPAEESRVRRHKHSSESPGRDKGKLSRLKPAPPPPPAASAGKAGGKP
+                     SQSPSQEAAGEAVLGAKTKATSLVDAVNSDAAKPSQPGEGLKKPVLPATPKPQSAKPS
+                     GTPISPAPVPSTLPSASSALAGDQPSSTAFIPLISTRVSLRKTRQPPERIASGAITKG
+                     VVLDSTEALCLAISRNSEQMASHSAVLEAGKNLYTFCVSYVDSIQQMRNKFAFREAIN
+                     KLENNLRELQICPATAGSGPAATQDFSKLLSSVKEISDIVQR"
+     misc_feature    193..372
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="propagated from UniProtKB/Swiss-Prot (P00519.4);
+                     Region: CAP"
+     misc_feature    268..273
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Breakpoint for translocation to form BCR-ABL
+                     oncogene; propagated from UniProtKB/Swiss-Prot (P00519.4);
+                     other site"
+     misc_feature    340..342
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (P00519.4); phosphorylation site"
+     misc_feature    400..402
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphotyrosine, by autocatalysis; propagated from
+                     UniProtKB/Swiss-Prot (P00519.4); phosphorylation site"
+     misc_feature    535..537
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphotyrosine; propagated from
+                     UniProtKB/Swiss-Prot (P00519.4); phosphorylation site"
+     misc_feature    574..576
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphotyrosine; propagated from
+                     UniProtKB/Swiss-Prot (P00519.4); phosphorylation site"
+     misc_feature    607..609
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphotyrosine; propagated from
+                     UniProtKB/Swiss-Prot (P00519.4); phosphorylation site"
+     misc_feature    706..708
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphotyrosine; propagated from
+                     UniProtKB/Swiss-Prot (P00519.4); phosphorylation site"
+     misc_feature    745..747
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphotyrosine; propagated from
+                     UniProtKB/Swiss-Prot (P00519.4); phosphorylation site"
+     misc_feature    835..837
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphotyrosine; propagated from
+                     UniProtKB/Swiss-Prot (P00519.4); phosphorylation site"
+     misc_feature    868..870
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphotyrosine, by autocatalysis; propagated from
+                     UniProtKB/Swiss-Prot (P00519.4); phosphorylation site"
+     misc_feature    949..951
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphotyrosine; propagated from
+                     UniProtKB/Swiss-Prot (P00519.4); phosphorylation site"
+     misc_feature    961..963
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphotyrosine; propagated from
+                     UniProtKB/Swiss-Prot (P00519.4); phosphorylation site"
+     misc_feature    982..984
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphotyrosine; propagated from
+                     UniProtKB/Swiss-Prot (P00519.4); phosphorylation site"
+     misc_feature    1333..1407
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="propagated from UniProtKB/Swiss-Prot (P00519.4);
+                     Region: Kinase activation loop"
+     misc_feature    1366..1368
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphothreonine; propagated from
+                     UniProtKB/Swiss-Prot (P00519.4); phosphorylation site"
+     misc_feature    1369..1371
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphotyrosine, by autocatalysis and SRC-type
+                     Tyr-kinases; propagated from UniProtKB/Swiss-Prot
+                     (P00519.4); phosphorylation site"
+     misc_feature    1372..1374
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphothreonine; propagated from
+                     UniProtKB/Swiss-Prot (P00519.4); phosphorylation site"
+     misc_feature    1597..1599
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphotyrosine; propagated from
+                     UniProtKB/Swiss-Prot (P00519.4); phosphorylation site"
+     misc_feature    1897..1899
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (P00519.4); phosphorylation site"
+     misc_feature    2005..2019
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /inference="non-experimental evidence, no additional
+                     details recorded"
+                     /note="propagated from UniProtKB/Swiss-Prot (P00519.4);
+                     Region: Nuclear localization signal 1 (Potential)"
+     misc_feature    2029..2031
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphothreonine; propagated from
+                     UniProtKB/Swiss-Prot (P00519.4); phosphorylation site"
+     misc_feature    2044..2046
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine, by PAK2; propagated from
+                     UniProtKB/Swiss-Prot (P00519.4); phosphorylation site"
+     misc_feature    2047..2049
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine, by PAK2; propagated from
+                     UniProtKB/Swiss-Prot (P00519.4); phosphorylation site"
+     misc_feature    2050..2052
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (P00519.4); phosphorylation site"
+     misc_feature    2167..2169
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (P00519.4); phosphorylation site"
+     misc_feature    2239..2241
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (P00519.4); phosphorylation site"
+     misc_feature    2317..2337
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /inference="non-experimental evidence, no additional
+                     details recorded"
+                     /note="propagated from UniProtKB/Swiss-Prot (P00519.4);
+                     Region: Nuclear localization signal 2 (Potential)"
+     misc_feature    2323..2325
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="N6-acetyllysine, by EP300; propagated from
+                     UniProtKB/Swiss-Prot (P00519.4); acetylation site"
+     misc_feature    2344..2346
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (P00519.4); phosphorylation site"
+     misc_feature    2395..2397
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphothreonine; propagated from
+                     UniProtKB/Swiss-Prot (P00519.4); phosphorylation site"
+     misc_feature    2476..2499
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /inference="non-experimental evidence, no additional
+                     details recorded"
+                     /note="propagated from UniProtKB/Swiss-Prot (P00519.4);
+                     Region: Nuclear localization signal 3 (Potential)"
+     misc_feature    2533..2535
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphothreonine; propagated from
+                     UniProtKB/Swiss-Prot (P00519.4); phosphorylation site"
+     misc_feature    2605..2607
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (P00519.4); phosphorylation site"
+     misc_feature    2617..2619
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (P00519.4); phosphorylation site"
+     misc_feature    2632..2634
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphothreonine; propagated from
+                     UniProtKB/Swiss-Prot (P00519.4); phosphorylation site"
+     misc_feature    2722..2724
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphothreonine; propagated from
+                     UniProtKB/Swiss-Prot (P00519.4); phosphorylation site"
+     misc_feature    2746..2748
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphothreonine; propagated from
+                     UniProtKB/Swiss-Prot (P00519.4); phosphorylation site"
+     misc_feature    2755..2757
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (P00519.4); phosphorylation site"
+     misc_feature    2797..3096
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /inference="non-experimental evidence, no additional
+                     details recorded"
+                     /note="propagated from UniProtKB/Swiss-Prot (P00519.4);
+                     Region: DNA-binding (By similarity)"
+     misc_feature    2941..2943
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (P00519.4); phosphorylation site"
+     misc_feature    2947..2949
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (P00519.4); phosphorylation site"
+     misc_feature    2998..3000
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (P00519.4); phosphorylation site"
+     misc_feature    3037..3039
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (P00519.4); phosphorylation site"
+     misc_feature    3049..3582
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="propagated from UniProtKB/Swiss-Prot (P00519.4);
+                     Region: F-actin-binding"
+     misc_feature    3121..3123
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /experiment="experimental evidence, no additional details
+                     recorded"
+                     /note="Phosphoserine; propagated from UniProtKB/Swiss-Prot
+                     (P00519.4); phosphorylation site"
+     misc_feature    3460..3492
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /inference="non-experimental evidence, no additional
+                     details recorded"
+                     /note="propagated from UniProtKB/Swiss-Prot (P00519.4);
+                     Region: Nuclear export signal (By similarity)"
+     exon            272..445
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /inference="alignment:Splign:1.39.8"
+     STS             358..642
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /standard_name="PMC20354P4"
+                     /db_xref="UniSTS:271937"
+     exon            446..741
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /inference="alignment:Splign:1.39.8"
+     exon            742..1014
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /inference="alignment:Splign:1.39.8"
+     exon            1015..1099
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /inference="alignment:Splign:1.39.8"
+     exon            1100..1277
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /inference="alignment:Splign:1.39.8"
+     exon            1278..1462
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /inference="alignment:Splign:1.39.8"
+     exon            1463..1615
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /inference="alignment:Splign:1.39.8"
+     exon            1616..1705
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /inference="alignment:Splign:1.39.8"
+     exon            1706..1870
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /inference="alignment:Splign:1.39.8"
+     exon            1871..5577
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /inference="alignment:Splign:1.39.8"
+     STS             2997..3762
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /standard_name="ABL1_685.2"
+                     /db_xref="UniSTS:466093"
+     STS             3593..3814
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /standard_name="G29321"
+                     /db_xref="UniSTS:26708"
+     STS             5245..5423
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /standard_name="RH69429"
+                     /db_xref="UniSTS:34678"
+     STS             5298..5545
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /standard_name="RH80013"
+                     /db_xref="UniSTS:84753"
+     regulatory      5554..5559
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+                     /regulatory_class="polyA_signal_sequence"
+     polyA_site      5577
+                     /gene="ABL1"
+                     /gene_synonym="ABL; bcr/abl; c-ABL; c-ABL1; JTK7; p150;
+                     v-abl"
+ORIGIN      
+        1 ttaacaggcg cgtcccggcc aggcggagac gcggccgcgg ccatgggcgg gcgcgggcgc
+       61 gcggggcggc ggtgagggcg gctggcgggg ccgggggcgc cgggggggcg cgcgggccga
+      121 gccgggcctg agccgggccc gcggaccgag ctgggagagg ggttccggcc cccgacgtgc
+      181 tggcgcggga aaatgttgga gatctgcctg aagctggtgg gctgcaaatc caagaagggg
+      241 ctgtcctcgt cctccagctg ttatctggaa gaagcccttc agcggccagt agcatctgac
+      301 tttgagcctc agggtctgag tgaagccgct cgttggaact ccaaggaaaa ccttctcgct
+      361 ggacccagtg aaaatgaccc caaccttttc gttgcactgt atgattttgt ggccagtgga
+      421 gataacactc taagcataac taaaggtgaa aagctccggg tcttaggcta taatcacaat
+      481 ggggaatggt gtgaagccca aaccaaaaat ggccaaggct gggtcccaag caactacatc
+      541 acgccagtca acagtctgga gaaacactcc tggtaccatg ggcctgtgtc ccgcaatgcc
+      601 gctgagtatc tgctgagcag cgggatcaat ggcagcttct tggtgcgtga gagtgagagc
+      661 agtcctggcc agaggtccat ctcgctgaga tacgaaggga gggtgtacca ttacaggatc
+      721 aacactgctt ctgatggcaa gctctacgtc tcctccgaga gccgcttcaa caccctggcc
+      781 gagttggttc atcatcattc aacggtggcc gacgggctca tcaccacgct ccattatcca
+      841 gccccaaagc gcaacaagcc cactgtctat ggtgtgtccc ccaactacga caagtgggag
+      901 atggaacgca cggacatcac catgaagcac aagctgggcg ggggccagta cggggaggtg
+      961 tacgagggcg tgtggaagaa atacagcctg acggtggccg tgaagacctt gaaggaggac
+     1021 accatggagg tggaagagtt cttgaaagaa gctgcagtca tgaaagagat caaacaccct
+     1081 aacctggtgc agctccttgg ggtctgcacc cgggagcccc cgttctatat catcactgag
+     1141 ttcatgacct acgggaacct cctggactac ctgagggagt gcaaccggca ggaggtgaac
+     1201 gccgtggtgc tgctgtacat ggccactcag atctcgtcag ccatggagta cctggagaag
+     1261 aaaaacttca tccacagaga tcttgctgcc cgaaactgcc tggtagggga gaaccacttg
+     1321 gtgaaggtag ctgattttgg cctgagcagg ttgatgacag gggacaccta cacagcccat
+     1381 gctggagcca agttccccat caaatggact gcacccgaga gcctggccta caacaagttc
+     1441 tccatcaagt ccgacgtctg ggcatttgga gtattgcttt gggaaattgc tacctatggc
+     1501 atgtcccctt acccgggaat tgacctgtcc caggtgtatg agctgctaga gaaggactac
+     1561 cgcatggagc gcccagaagg ctgcccagag aaggtctatg aactcatgcg agcatgttgg
+     1621 cagtggaatc cctctgaccg gccctccttt gctgaaatcc accaagcctt tgaaacaatg
+     1681 ttccaggaat ccagtatctc agacgaagtg gaaaaggagc tggggaaaca aggcgtccgt
+     1741 ggggctgtga gtaccttgct gcaggcccca gagctgccca ccaagacgag gacctccagg
+     1801 agagctgcag agcacagaga caccactgac gtgcctgaga tgcctcactc caagggccag
+     1861 ggagagagcg atcctctgga ccatgagcct gccgtgtctc cattgctccc tcgaaaagag
+     1921 cgaggtcccc cggagggcgg cctgaatgaa gatgagcgcc ttctccccaa agacaaaaag
+     1981 accaacttgt tcagcgcctt gatcaagaag aagaagaaga cagccccaac ccctcccaaa
+     2041 cgcagcagct ccttccggga gatggacggc cagccggagc gcagaggggc cggcgaggaa
+     2101 gagggccgag acatcagcaa cggggcactg gctttcaccc ccttggacac agctgaccca
+     2161 gccaagtccc caaagcccag caatggggct ggggtcccca atggagccct ccgggagtcc
+     2221 gggggctcag gcttccggtc tccccacctg tggaagaagt ccagcacgct gaccagcagc
+     2281 cgcctagcca ccggcgagga ggagggcggt ggcagctcca gcaagcgctt cctgcgctct
+     2341 tgctccgcct cctgcgttcc ccatggggcc aaggacacgg agtggaggtc agtcacgctg
+     2401 cctcgggact tgcagtccac gggaagacag tttgactcgt ccacatttgg agggcacaaa
+     2461 agtgagaagc cggctctgcc tcggaagagg gcaggggaga acaggtctga ccaggtgacc
+     2521 cgaggcacag taacgcctcc ccccaggctg gtgaaaaaga atgaggaagc tgctgatgag
+     2581 gtcttcaaag acatcatgga gtccagcccg ggctccagcc cgcccaacct gactccaaaa
+     2641 cccctccggc ggcaggtcac cgtggcccct gcctcgggcc tcccccacaa ggaagaagct
+     2701 ggaaagggca gtgccttagg gacccctgct gcagctgagc cagtgacccc caccagcaaa
+     2761 gcaggctcag gtgcaccagg gggcaccagc aagggccccg ccgaggagtc cagagtgagg
+     2821 aggcacaagc actcctctga gtcgccaggg agggacaagg ggaaattgtc caggctcaaa
+     2881 cctgccccgc cgcccccacc agcagcctct gcagggaagg ctggaggaaa gccctcgcag
+     2941 agcccgagcc aggaggcggc cggggaggca gtcctgggcg caaagacaaa agccacgagt
+     3001 ctggttgatg ctgtgaacag tgacgctgcc aagcccagcc agccgggaga gggcctcaaa
+     3061 aagcccgtgc tcccggccac tccaaagcca cagtccgcca agccgtcggg gacccccatc
+     3121 agcccagccc ccgttccctc cacgttgcca tcagcatcct cggccctggc aggggaccag
+     3181 ccgtcttcca ccgccttcat ccctctcata tcaacccgag tgtctcttcg gaaaacccgc
+     3241 cagcctccag agcggatcgc cagcggcgcc atcaccaagg gcgtggtcct ggacagcacc
+     3301 gaggcgctgt gcctcgccat ctctaggaac tccgagcaga tggccagcca cagcgcagtg
+     3361 ctggaggccg gcaaaaacct ctacacgttc tgcgtgagct atgtggattc catccagcaa
+     3421 atgaggaaca agtttgcctt ccgagaggcc atcaacaaac tggagaataa tctccgggag
+     3481 cttcagatct gcccggcgac agcaggcagt ggtccagcgg ccactcagga cttcagcaag
+     3541 ctcctcagtt cggtgaagga aatcagtgac atagtgcaga ggtagcagca gtcaggggtc
+     3601 aggtgtcagg cccgtcggag ctgcctgcag cacatgcggg ctcgcccata cccgtgacag
+     3661 tggctgacaa gggactagtg agtcagcacc ttggcccagg agctctgcgc caggcagagc
+     3721 tgagggccct gtggagtcca gctctactac ctacgtttgc accgcctgcc ctcccgcacc
+     3781 ttcctcctcc ccgctccgtc tctgtcctcg aattttatct gtggagttcc tgctccgtgg
+     3841 actgcagtcg gcatgccagg acccgccagc cccgctccca cctagtgccc cagactgagc
+     3901 tctccaggcc aggtgggaac ggctgatgtg gactgtcttt ttcatttttt tctctctgga
+     3961 gcccctcctc ccccggctgg gcctccttct tccacttctc caagaatgga agcctgaact
+     4021 gaggccttgt gtgtcaggcc ctctgcctgc actccctggc cttgcccgtc gtgtgctgaa
+     4081 gacatgtttc aagaaccgca tttcgggaag ggcatgcacg ggcatgcaca cggctggtca
+     4141 ctctgccctc tgctgctgcc cggggtgggg tgcactcgcc atttcctcac gtgcaggaca
+     4201 gctcttgatt tgggtggaaa acagggtgct aaagccaacc agcctttggg tcctgggcag
+     4261 gtgggagctg aaaaggatcg aggcatgggg catgtccttt ccatctgtcc acatccccag
+     4321 agcccagctc ttgctctctt gtgacgtgca ctgtgaatcc tggcaagaaa gcttgagtct
+     4381 caagggtggc aggtcactgt cactgccgac atccctcccc cagcagaatg gaggcagggg
+     4441 acaagggagg cagtggctag tggggtgaac agctggtgcc aaatagcccc agactgggcc
+     4501 caggcaggtc tgcaagggcc cagagtgaac cgtcctttca cacatctggg tgccctgaaa
+     4561 gggcccttcc cctcccccac tcctctaaga caaagtagat tcttacaagg ccctttcctt
+     4621 tggaacaaga cagccttcac ttttctgagt tcttgaagca tttcaaagcc ctgcctctgt
+     4681 gtagccgccc tgagagagaa tagagctgcc actgggcacc tgcgcacagg tgggaggaaa
+     4741 gggcctggcc agtcctggtc ctggctgcac tcttgaactg ggcgaatgtc ttatttaatt
+     4801 accgtgagtg acatagcctc atgttctgtg ggggtcatca gggagggtta ggaaaaccac
+     4861 aaacggagcc cctgaaagcc tcacgtattt cacagagcac gcctgccatc ttctccccga
+     4921 ggctgcccca ggccggagcc cagatacggg ggctgtgact ctgggcaggg acccggggtc
+     4981 tcctggacct tgacagagca gctaactccg agagcagtgg gcaggtggcc gcccctgagg
+     5041 cttcacgccg ggagaagcca ccttcccacc ccttcatacc gcctcgtgcc agcagcctcg
+     5101 cacaggccct agctttacgc tcatcaccta aacttgtact ttatttttct gatagaaatg
+     5161 gtttcctctg gatcgtttta tgcggttctt acagcacatc acctctttgc ccccgacggc
+     5221 tgtgacgcag ccggagggag gcactagtca ccgacagcgg ccttgaagac agagcaaagc
+     5281 gcccacccag gtcccccgac tgcctgtctc catgaggtac tggtcccttc cttttgttaa
+     5341 cgtgatgtgc cactatattt tacacgtatc tcttggtatg catcttttat agacgctctt
+     5401 ttctaagtgg cgtgtgcata gcgtcctgcc ctgccccctc gggggcctgt ggtggctccc
+     5461 cctctgcttc tcggggtcca gtgcattttg tttctgtata tgattctctg tggttttttt
+     5521 tgaatccaaa tctgtcctct gtagtatttt ttaaataaat cagtgtttac attagaaaaa
+     5581 aaaaaaaaaa aaaaaa
+//
+

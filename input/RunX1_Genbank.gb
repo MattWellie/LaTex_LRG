@@ -1,0 +1,253 @@
+LOCUS       NG_011402            1203911 bp    DNA     linear   PRI 14-JAN-2015
+DEFINITION  Homo sapiens runt-related transcription factor 1 (RUNX1),
+            RefSeqGene (LRG_482) on chromosome 21.
+ACCESSION   NG_011402
+VERSION     NG_011402.2  GI:427197668
+KEYWORDS    RefSeq; RefSeqGene.
+SOURCE      Homo sapiens (human)
+  ORGANISM  Homo sapiens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+            Catarrhini; Hominidae; Homo.
+COMMENT     REVIEWED REFSEQ: This record has been curated by NCBI staff in
+            collaboration with Nazneen Rahman, Rod Docking, Ilenia Simeoni,
+            Simon Chan. The reference sequence was derived from AP000687.2,
+            AF020802.2, AF020801.2, AF022141.2, AF020803.2, AF015720.2,
+            AF015722.3, AF015726.2, AF015723.2, AF015725.3, AF129107.2,
+            AF051934.2, AF129108.2, AF020800.2, AF022794.2, AF027207.2,
+            AF015724.2, AF015721.2, AF015262.2, AP000334.1, AP000333.1,
+            AP000332.2, AP000331.1 and AP000330.3.
+            This sequence is a reference standard in the RefSeqGene project.
+            On Dec 4, 2012 this sequence version replaced gi:224586926.
+            
+            Summary: Core binding factor (CBF) is a heterodimeric transcription
+            factor that binds to the core element of many enhancers and
+            promoters. The protein encoded by this gene represents the alpha
+            subunit of CBF and is thought to be involved in the development of
+            normal hematopoiesis. Chromosomal translocations involving this
+            gene are well-documented and have been associated with several
+            types of leukemia. Three transcript variants encoding different
+            isoforms have been found for this gene. [provided by RefSeq, Jul
+            2008].
+PRIMARY     REFSEQ_SPAN         PRIMARY_IDENTIFIER PRIMARY_SPAN        COMP
+            1-94848             AP000687.2         1-94848             c
+            94849-104652        AF020802.2         1-9804              c
+            104653-140913       AF020801.2         1-36261             c
+            140914-167893       AF022141.2         1-26980             c
+            167894-206888       AF020803.2         1-38995             c
+            206889-328174       AF015720.2         23761-145046        c
+            328175-369350       AF015722.3         1-41176             c
+            369351-391745       AF015726.2         1-22395             c
+            391746-423402       AF015723.2         1-31657             c
+            423403-439985       AF015725.3         10134-26716         c
+            439986-451691       AF129107.2         25046-36751         c
+            451692-569994       AF051934.2         26172-144474        c
+            569995-610868       AF129108.2         1-40874             c
+            610869-651811       AF020800.2         1-40943             c
+            651812-679816       AF022794.2         1-28005             c
+            679817-709246       AF027207.2         4983-34412          c
+            709247-744351       AF015724.2         1-35105             c
+            744352-769964       AF015721.2         1-25613             c
+            769965-1001583      AF015262.2         1-231619            c
+            1001584-1027186     AP000334.1         1-25603             c
+            1027187-1073935     AP000333.1         1-46749             c
+            1073936-1095885     AP000332.2         1-21950             c
+            1095886-1157377     AP000331.1         1-61492             c
+            1157378-1203911     AP000330.3         123336-169869       c
+FEATURES             Location/Qualifiers
+     source          1..1203911
+                     /organism="Homo sapiens"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:9606"
+                     /chromosome="21"
+                     /map="21q22.3"
+     gene            97560..98485
+                     /gene="MTND2P1"
+                     /note="MT-ND2 pseudogene 1"
+                     /pseudo
+                     /db_xref="GeneID:387315"
+                     /db_xref="HGNC:HGNC:7457"
+     gene            complement(100985..102819)
+                     /gene="PPP1R2P2"
+                     /note="protein phosphatase 1, regulatory (inhibitor)
+                     subunit 2 pseudogene 2"
+                     /pseudo
+                     /db_xref="GeneID:54036"
+                     /db_xref="HGNC:HGNC:9290"
+     gene            264545..265003
+                     /gene="RPS20P1"
+                     /gene_synonym="RPS20P; RPS20_16_1728"
+                     /note="ribosomal protein S20 pseudogene 1"
+                     /pseudo
+                     /db_xref="GeneID:54025"
+                     /db_xref="HGNC:HGNC:10408"
+     gene            complement(268903..268996)
+                     /gene="MIR802"
+                     /gene_synonym="hsa-mir-802; MIRN802"
+                     /note="microRNA 802"
+                     /db_xref="GeneID:768219"
+                     /db_xref="HGNC:HGNC:33140"
+                     /db_xref="MIM:616090"
+                     /db_xref="miRBase:MI0003906"
+     precursor_RNA   complement(268903..268996)
+                     /gene="MIR802"
+                     /gene_synonym="hsa-mir-802; MIRN802"
+                     /product="microRNA 802"
+                     /transcript_id="NR_030414.1"
+                     /db_xref="GI:262205136"
+                     /db_xref="GeneID:768219"
+                     /db_xref="HGNC:HGNC:33140"
+                     /db_xref="MIM:616090"
+                     /db_xref="miRBase:MI0003906"
+     ncRNA           complement(268957..268979)
+                     /gene="MIR802"
+                     /gene_synonym="hsa-mir-802; MIRN802"
+                     /ncRNA_class="miRNA"
+                     /product="hsa-miR-802"
+                     /db_xref="miRBase:MIMAT0004185"
+                     /db_xref="GeneID:768219"
+                     /db_xref="HGNC:HGNC:33140"
+                     /db_xref="MIM:616090"
+                     /db_xref="miRBase:MI0003906"
+     gene            complement(389456..390032)
+                     /gene="EZH2P1"
+                     /note="enhancer of zeste homolog 2 (Drosophila) pseudogene
+                     1"
+                     /pseudo
+                     /db_xref="GeneID:266693"
+                     /db_xref="HGNC:HGNC:39918"
+     gene            408947..617204
+                     /gene="LOC100506403"
+                     /note="uncharacterized LOC100506403"
+                     /db_xref="GeneID:100506403"
+     ncRNA           join(408947..409051,527686..527750,616918..617204)
+                     /gene="LOC100506403"
+                     /ncRNA_class="lncRNA"
+                     /product="uncharacterized LOC100506403"
+                     /transcript_id="NR_073512.1"
+                     /db_xref="GI:428983472"
+                     /db_xref="GeneID:100506403"
+     gene            517256..517635
+                     /gene="RPL34P3"
+                     /note="ribosomal protein L34 pseudogene 3"
+                     /pseudo
+                     /db_xref="GeneID:54026"
+                     /db_xref="HGNC:HGNC:10343"
+     gene            940414..1201911
+                     /gene="RUNX1"
+                     /gene_synonym="AML1; AML1-EVI-1; AMLCR1; CBFA2; EVI-1;
+                     PEBP2aB"
+                     /note="runt-related transcription factor 1"
+                     /db_xref="GeneID:861"
+                     /db_xref="HGNC:HGNC:10471"
+                     /db_xref="MIM:151385"
+     mRNA            join(940414..940544,940754..940870,1096749..1096787,
+                     1102616..1102869,1108999..1109155,1130134..1130238,
+                     1155111..1155302,1190250..1190411,1197102..1201911)
+                     /gene="RUNX1"
+                     /gene_synonym="AML1; AML1-EVI-1; AMLCR1; CBFA2; EVI-1;
+                     PEBP2aB"
+                     /product="runt-related transcription factor 1, transcript
+                     variant 1"
+                     /transcript_id="NM_001754.4"
+                     /db_xref="GI:169790829"
+                     /db_xref="LRG:t1"
+                     /db_xref="GeneID:861"
+                     /db_xref="HGNC:HGNC:10471"
+                     /db_xref="MIM:151385"
+     exon            940414..940544
+                     /gene="RUNX1"
+                     /gene_synonym="AML1; AML1-EVI-1; AMLCR1; CBFA2; EVI-1;
+                     PEBP2aB"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=1
+     exon            940754..940870
+                     /gene="RUNX1"
+                     /gene_synonym="AML1; AML1-EVI-1; AMLCR1; CBFA2; EVI-1;
+                     PEBP2aB"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=2
+     CDS             join(940813..940870,1096749..1096787,1102616..1102869,
+                     1108999..1109155,1130134..1130238,1155111..1155302,
+                     1190250..1190411,1197102..1197577)
+                     /gene="RUNX1"
+                     /gene_synonym="AML1; AML1-EVI-1; AMLCR1; CBFA2; EVI-1;
+                     PEBP2aB"
+                     /note="isoform AML1c is encoded by transcript variant 1;
+                     core-binding factor, runt domain, alpha subunit 2;
+                     AML1-EVI-1 fusion protein; CBF-alpha-2; PEA2-alpha B;
+                     PEBP2-alpha B; oncogene AML-1; acute myeloid leukemia 1
+                     protein; SL3-3 enhancer factor 1 alpha B subunit; SL3/AKV
+                     core-binding factor alpha B subunit; polyomavirus
+                     enhancer-binding protein 2 alpha B subunit"
+                     /codon_start=1
+                     /product="runt-related transcription factor 1 isoform
+                     AML1c"
+                     /protein_id="NP_001745.2"
+                     /db_xref="GI:19923198"
+                     /db_xref="CCDS:CCDS13639.1"
+                     /db_xref="LRG:p1"
+                     /db_xref="GeneID:861"
+                     /db_xref="HGNC:HGNC:10471"
+                     /db_xref="MIM:151385"
+     gene            950286..951787
+                     /gene="RUNX1-IT1"
+                     /gene_synonym="C21orf96"
+                     /note="RUNX1 intronic transcript 1 (non-protein coding)"
+                     /db_xref="GeneID:80215"
+                     /db_xref="HGNC:HGNC:16623"
+     ncRNA           950286..951787
+                     /gene="RUNX1-IT1"
+                     /gene_synonym="C21orf96"
+                     /ncRNA_class="lncRNA"
+                     /product="RUNX1 intronic transcript 1 (non-protein
+                     coding)"
+                     /transcript_id="NR_026812.1"
+                     /db_xref="GI:223468579"
+                     /db_xref="GeneID:80215"
+                     /db_xref="HGNC:HGNC:16623"
+     exon            1096749..1096787
+                     /gene="RUNX1"
+                     /gene_synonym="AML1; AML1-EVI-1; AMLCR1; CBFA2; EVI-1;
+                     PEBP2aB"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=3
+     exon            1102616..1102869
+                     /gene="RUNX1"
+                     /gene_synonym="AML1; AML1-EVI-1; AMLCR1; CBFA2; EVI-1;
+                     PEBP2aB"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=4
+     exon            1108999..1109155
+                     /gene="RUNX1"
+                     /gene_synonym="AML1; AML1-EVI-1; AMLCR1; CBFA2; EVI-1;
+                     PEBP2aB"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=5
+     exon            1130134..1130238
+                     /gene="RUNX1"
+                     /gene_synonym="AML1; AML1-EVI-1; AMLCR1; CBFA2; EVI-1;
+                     PEBP2aB"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=6
+     exon            1155111..1155302
+                     /gene="RUNX1"
+                     /gene_synonym="AML1; AML1-EVI-1; AMLCR1; CBFA2; EVI-1;
+                     PEBP2aB"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=7
+     exon            1190250..1190411
+                     /gene="RUNX1"
+                     /gene_synonym="AML1; AML1-EVI-1; AMLCR1; CBFA2; EVI-1;
+                     PEBP2aB"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=8
+     exon            1197102..1201911
+                     /gene="RUNX1"
+                     /gene_synonym="AML1; AML1-EVI-1; AMLCR1; CBFA2; EVI-1;
+                     PEBP2aB"
+                     /inference="alignment:Splign:1.39.8"
+                     /number=9
+ORIGIN      
+//
+
