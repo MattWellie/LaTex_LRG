@@ -141,7 +141,11 @@ class GbkParser:
                             next_exon = exon_list[exon_number]
                             if end > self.transcriptdict['transcripts'][alternative]['exons'][next_exon]['genomic_start']-(self.transcriptdict['pad']):
                                 next_start = self.transcriptdict['transcripts'][alternative]['exons'][next_exon]['genomic_start']
-                                pad3 = sequence[end:next_start-1]
+                                half_way_point = int(round((next_start - (end+1))/2))
+                                # print 'halfway = ' + str(half_way_point)
+                                if half_way_point % 2 == 1:
+                                    half_way_point -= 1
+                                pad3 = sequence[end:end+half_way_point]
                                 # print 'Transcript: %s , exon %s clashes with exon %s' % (alternative, exon_number, next_exon)
                             else:
                                 assert end + pad <= len(sequence), "Exon index out of bounds"
@@ -154,7 +158,12 @@ class GbkParser:
                             previous_exon = exon_list[exon_number-2]
                             if start < self.transcriptdict['transcripts'][alternative]['exons'][previous_exon]['genomic_end']+(self.transcriptdict['pad']):
                                 previous_end = self.transcriptdict['transcripts'][alternative]['exons'][previous_exon]['genomic_end']
-                                pad5 = sequence[previous_end+1: start-1]
+                                half_way_point = int(round((start - (previous_end+1))/2))
+                                # print 'full = ' + str(start - (previous_end+1))
+                                # print 'halfway = ' + str(half_way_point)
+                                if half_way_point % 2 == 1:
+                                    half_way_point -= 1  # or add 1?
+                                pad5 = sequence[previous_end+half_way_point:start-1]
                             else:
                                 assert start - pad >= 0, "Exon index out of bounds"
                                 pad5 = sequence[start - (pad + 1):start - 1]
@@ -204,7 +213,7 @@ class GbkParser:
         :return transcriptdict: This function fills and returns the dictionary, contents
                 explained in Class docstring above
         '''
-        print 'version: ' + str(Bio.__version__)
+        print 'BioPython version: ' + str(Bio.__version__)
         # initial sequence grabbing and populating dictionaries
         features = self.fill_and_find_features()
         self.transcriptdict['Alt transcripts'] = range(1, len(self.cds)+1)

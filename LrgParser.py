@@ -4,6 +4,7 @@ __author__ = 'mwelland'
 __version__ = 1
 __version_date__ = '11/02/2015'
 
+
 class LrgParser:
 
     """
@@ -84,6 +85,10 @@ class LrgParser:
             return result
         except:
             print "No sequence was identified"
+            print self.transcriptdict['filename']
+            print path
+            exit()
+
 
     def get_nm(self):
         annotation_sets = self.transcriptdict['updatable'].findall('annotation_set')
@@ -148,15 +153,17 @@ class LrgParser:
                 seq = genseq[genomic_start - 1:genomic_end]
                 pad = self.transcriptdict['pad']
                 exon_number = int(exon_number)
-                pad3 = ''
-                pad5 = ''
                 if pad != 0:
                     if self.trim_flanking:
                         if exon_number < len(exon_list)-1:
                             next_exon = exon_list[exon_number]
                             if genomic_end > self.transcriptdict['transcripts'][transcript]['exons'][next_exon]['genomic_start']-(self.transcriptdict['pad']):
                                 next_start = self.transcriptdict['transcripts'][transcript]['exons'][next_exon]['genomic_start']
-                                pad3 = genseq[genomic_end:next_start-1]
+                                half_way_point = int(round((next_start - (genomic_end+1))/2))
+                                # print 'halfway = ' + str(half_way_point)
+                                if half_way_point % 2 == 1:
+                                    half_way_point -= 1
+                                pad3 = genseq[genomic_end:genomic_end+half_way_point]
                                 # print 'Transcript: %s , exon %s clashes with exon %s' % (transcript, exon_number, next_exon)
                             else:
                                 assert genomic_end + pad <= len(genseq), "Exon index out of bounds"
@@ -169,7 +176,11 @@ class LrgParser:
                             previous_exon = exon_list[exon_number-2]
                             if genomic_start < self.transcriptdict['transcripts'][transcript]['exons'][previous_exon]['genomic_end']+(self.transcriptdict['pad']):
                                 previous_end = self.transcriptdict['transcripts'][transcript]['exons'][previous_exon]['genomic_end']
-                                pad5 = genseq[previous_end+1: genomic_start-1]
+                                half_way_point = int(round((genomic_start - (previous_end+1))/2))
+                                # print 'halfway = ' + str(half_way_point)
+                                if half_way_point % 2 == 1:
+                                    half_way_point -= 1  # or add 1?
+                                pad5 = genseq[previous_end+half_way_point: genomic_start-1]
                             else:
                                 assert genomic_start - pad >= 0, "Exon index out of bounds"
                                 pad5 = genseq[genomic_start - (pad + 1):genomic_start - 1]

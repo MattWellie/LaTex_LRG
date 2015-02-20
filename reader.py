@@ -224,7 +224,7 @@ class Reader:
             self.print_latex_header(refseqid)
 
         wait_value = 0
-        codon_count = 3  # Print on first codon
+        codon_count = 2  # Print AA at middle of codon
         amino_acid_counter = 0  # Begin at AA index 0 (first)
         amino_wait = 0  # No number string printed, no wait yet
         codon_numbered = False  # First AA has not been numbered already
