@@ -1,7 +1,7 @@
 from xml.etree.ElementTree import parse
 
 __author__ = 'mwelland'
-__version__ = 1
+__version__ = 1.1
 __version_date__ = '11/02/2015'
 
 
