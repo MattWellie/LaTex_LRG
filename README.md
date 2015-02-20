@@ -8,7 +8,7 @@ pdflatex/texlive/miktex (For LaTex production, not required for text document (s
 
 tkinter (python graphics package)
 
-BioPython (GenBank file parsing, not required for LRG file references)
+BioPython 1.65 (GenBank file parsing, not required for LRG file references)
 
 Python 2.7
 
@@ -86,6 +86,15 @@ To have the program print a .txt format file instead of using LaTex (useful in a
 does not have an installation of LaTex available):
 * set the write_as_latex variable in XML_GUI.py to False
 
+There are two variables in the XML_GUI class which can be used to determine how the application 
+handles exon boundaries where the flanking intron containss a region of the next intron. 
+* trim_flanking
+    - If True, the intronic sequence will be made shorter to avoid any appearance of the next (or previous) exon as intronic sequence
+    - If False, the program will not interfere and a full flanking region will be printed regardless of overlap
+
+* print_clashes
+    - If True, a line will be printed underneath the exon header of each exon involved in an overlap (regardless of having been trimmed to avoid overlap) to state that there is an overlap, and to say whether it is over the previous, next, or both
+    - If False, no warning messages are printed, whether or not a trim has been used
 
 
 ─────────▄──────────────▄<br>
