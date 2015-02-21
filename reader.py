@@ -169,12 +169,6 @@ class Reader:
         self.line_printer('\\documentclass{article}')
         self.line_printer('\\usepackage{fancyvrb}')
         self.line_printer('\\begin{document}')
-        self.line_printer('\\renewcommand{\\footrulewidth}{1pt}')
-        self.line_printer('\\renewcommand{\\headrulewidth}{0pt}')
-        self.line_printer('\\makeatletter')
-        self.line_printer('\\newcommand{\\verbatimfont}[1]{\def\\verbatim@font{#1}}%')
-        self.line_printer('\\verbatimfont{courier}')
-        self.line_printer('\\makeatother')
         self.line_printer('\\begin{center}')
         self.line_printer('\\begin{large}')
         self.line_printer('Gene: %s - Sequence: %s\\\\' % (self.transcriptdict['genename'],
@@ -187,7 +181,7 @@ class Reader:
             print 'Additional details not present'
         self.line_printer('Transcript: %s - Protein: %s' % (nm, np))
         self.line_printer(' ')
-        self.line_printer(' Date : \\today\\\\\\\\')
+        self.line_printer(' Date : \\today')
         self.line_printer('\\end{large}')
         self.line_printer('\\end{center}')
         self.line_printer('$1^{st}$ line: Base numbering. Full stops for intronic +/- 5, 10, 15...\\\\')
@@ -228,7 +222,7 @@ class Reader:
             self.print_latex_header(refseqid)
 
         wait_value = 0
-        codon_count = 2  # Print AA at middle of codon
+        codon_count = 3  # Print AA at start of codon
         amino_acid_counter = 0  # Begin at AA index 0 (first)
         amino_wait = 0  # No number string printed, no wait yet
         codon_numbered = False  # First AA has not been numbered already
