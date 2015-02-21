@@ -81,7 +81,7 @@ class Reader:
             elif amino_acid_counter >= protein_length:
 
                 if post_protein_printer % 10 == 0 and wait_value == 0:
-                    output = '|+' + str(post_protein_printer + 1)
+                    output = '|*' + str(post_protein_printer + 1)
                     wait_value = len(str(post_protein_printer + 1)) + 1
                     post_protein_printer += 1
                 elif wait_value != 0:
