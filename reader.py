@@ -171,6 +171,10 @@ class Reader:
         self.line_printer('\\begin{document}')
         self.line_printer('\\renewcommand{\\footrulewidth}{1pt}')
         self.line_printer('\\renewcommand{\\headrulewidth}{0pt}')
+        self.line_printer('\\makeatletter')
+        self.line_printer('\\newcommand{\\verbatimfont}[1]{\def\\verbatim@font{#1}}%')
+        self.line_printer('\\verbatimfont{courier}')
+        self.line_printer('\\makeatother')
         self.line_printer('\\begin{center}')
         self.line_printer('\\begin{large}')
         self.line_printer('Gene: %s - Sequence: %s\\\\' % (self.transcriptdict['genename'],
@@ -307,7 +311,6 @@ class Reader:
                     self.amino_printing = True
                     cds_count = 1
                 if amino_acid_counter >= len(protein): self.amino_printing = False
-
                 # Calls specific methods for character decision
                 # Simplifies local logic
                 (next_amino_string, codon_count, amino_acid_counter,
@@ -327,6 +330,8 @@ class Reader:
                                                                                       intron_offset, intron_in_padding,
                                                                                       len(protein), intron_out)
                 number_string.append(next_number_string)
+
+
 
                 line_count += 1
 
