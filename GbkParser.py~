@@ -110,7 +110,7 @@ class GbkParser:
             self.transcriptdict['transcripts'][alternative]['NM_number'] = selected_mrna.qualifiers['transcript_id'][0]
             exon = 1
             subfeatures = selected_mrna._get_sub_features()
-            
+            print subfeatures
             for coords in subfeatures:
                 self.transcriptdict['transcripts'][alternative]['exons'][exon] = {}
                 self.transcriptdict['transcripts'][alternative]['list_of_exons'].append(exon)
@@ -155,6 +155,7 @@ class GbkParser:
                             assert end + pad <= len(sequence), "Exon index out of bounds"
                             pad3 = sequence[end:end + pad]
 
+                        print exon_number
                         if exon_number != exon_list[0]:
                             previous_exon = exon_list[exon_number-2]
                             if start < self.transcriptdict['transcripts'][alternative]['exons'][previous_exon]['genomic_end']+(self.transcriptdict['pad']):
