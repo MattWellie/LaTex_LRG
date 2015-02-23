@@ -186,7 +186,7 @@ class Reader:
         self.line_printer('\\end{center}')
         self.line_printer('$1^{st}$ line: Base numbering. Full stops for intronic +/- 5, 10, 15...\\\\')
         self.line_printer('$2^{nd}$ line: Base sequence. lower case Introns, upper case Exons\\\\')
-        self.line_printer('$3^{rd}$ line: Amino acid sequence. Printed on MIDDLE base of codon\\\\')
+        self.line_printer('$3^{rd}$ line: Amino acid sequence. Printed on FIRST base of codon\\\\')
         self.line_printer('$4^{th}$ line: Amino acid numbering. Numbered on $1^{st}$ and increments of 10\\\\')
         self.line_printer(' \\begin{Verbatim}')
 
@@ -272,11 +272,11 @@ class Reader:
                         if ex_start < latex_dict['exons'][latex_dict['list_of_exons'][position-1]]['genomic_end']+(self.transcriptdict['pad']):
                             clash_before = True
                 if clash_after is True and clash_before is True:
-                    self.line_printer('BE AWARE: This intron is shared with both adjacent exons')
+                    self.line_printer('BE AWARE: Flanking intron is shared with both adjacent exons')
                 elif clash_after is True:
-                    self.line_printer('BE AWARE: This intron is shared with the following exon')
+                    self.line_printer('BE AWARE: Flanking intron is shared with the following exon')
                 elif clash_before is True:
-                    self.line_printer('BE AWARE: This intron is shared with the previous exon')
+                    self.line_printer('BE AWARE: Flanking intron is shared with the previous exon')
 
             sequence = exon_dict['sequence']
             line_count = 0
