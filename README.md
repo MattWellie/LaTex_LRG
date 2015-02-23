@@ -8,7 +8,7 @@ pdflatex/texlive/miktex (For LaTex production, not required for text document (s
 
 tkinter (python graphics package)
 
-BioPython (GenBank file parsing, not required for LRG file references)
+BioPython 1.65 (GenBank file parsing, not required for LRG file references)
 
 Python 2.7
 
