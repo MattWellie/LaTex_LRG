@@ -38,7 +38,7 @@ all inputs.
 
 - The top entry box can either be edited directly or by using the 'Browse...' button. This 
 will show the local directory and allow file selection directly. This is where to insert the
-filename you wish to convert.
+filename you wish to convert. The default contents of this box can be set in XML_GUI.py.
 
 - There is a 'Help' button on the ribbon which will print a brief guide statement
 to the command line. This can be edited in the XML_gui.py file
@@ -53,22 +53,31 @@ to the command line. This can be edited in the XML_gui.py file
     - latex_writer.py to write the reader output into a external file 
     - The XML_GUI.py module then calls a pdflatex command to typeset the file
 
+- For GB and LRG files with multiple transcripts the program has separate ways of dealing with contents
+    - for .gb files from NCBI, the program will only use CDS and mRNA features which have a gene 
+        annotation matching the gene name attached to each Exon. For files sourced from NCBI, the 
+        file may contain multiple genes and isoforms which span the region of the main gene, but 
+        only the main gene name will feature in exon annotations
+    - for .gb files from Ensembl, manual hacking is required. After downloading a copy of the Ensembl 
+        output in .gb format (Export Data -> Output:GB -> uncheck all but 'Gene Information'), 
+        delete all CDS and mRNA features which do not correspond to the accession of choice (usually 
+        all but the first pair), and try-catch blocks will handle the rest of the processing. This can
+        be used as standard GB input once the changes are made. Solution being investigated.
+    - LRG files do not contain details of other genes spanning the region, so each of the separate <transcript>
+        blocks is handled independently, along with the corresponding sets of exon coordinates
+- In all cases, if multiple valid transcripts exist, a separate file is printed for each
+
 ##Planned updates
 
-- As of 10/02/2015 there are no significant updates, only minor improvements
-- Please feel free to suggest any improvements you require
+- As of 24/02/2015 there are no significant updates, only minor improvements
 
 ##Issue Tracker
-- stumbles on exons numbered with letters (e.g. 14a) due to a failed sorting mechanism, otherwise works
-        - A workaround is in place for this, which checks to see if a genbank exon has a number, if not a serial number is created. As things stand this will wrongly label genes with skipped exon numbers, or multiple exons of the same number (14a, 14b... though this is most likely to occur on parallel transcripts). A similar or better workaround could be put into the LRG variant
 
 - Requires a statement to check if the first base of the first exon is 1 (no 5' UTR) in which case a warning should be printed, and a preceeding intronic sequence should not be grabbed (will read from the end of the sequence due to negative reference (BRCA1 as an example)
 
-- A real corner case... If the output type is set to .txt and the input file contains multiple transcripts, the
-output files may be created so quickly that a second will not pass between the first and second file being created.
-This can cause the program to try and create an existing folder, which will throw an error. (seen on LRG.214.xml)
-
-
+- Kludgey fixes in place in Gbk_Parser.py to allow for use of Ensembl transcripts in gb format, which do not
+    contain same feature annotations as NCBI GenBank files. This may cause as-yet undetected problems, check 
+    output
 
 ###Tinkering:
 
@@ -85,6 +94,15 @@ may change which exon the AA is printed in (if a codon is across exons)
 To have the program print a .txt format file instead of using LaTex (useful in a pinch if the workstation
 does not have an installation of LaTex available):
 * set the write_as_latex variable in XML_GUI.py to False
+
+This program now features multiple ways of handling files where adjacent exons would appear in the flanking
+intronic sequence. These are set using the two variables 
+* print_clashes
+* trim_flanking
+Print_clashes defines whether a message is appended after the exon header to inform the reader of any clashes.
+ Trim_flanking determines whether the intronic sequence is cut short to avoid printing exonic sequence as intron.
+
+These can be used in any combination, and are independent controls.
 
 
 
