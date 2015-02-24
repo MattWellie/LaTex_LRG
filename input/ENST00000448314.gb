@@ -1,0 +1,406 @@
+LOCUS       CHR_HSCHR6_MHC_SSTO_CTG1 4338 bp DNA HTG 24-FEB-2015
+DEFINITION  Homo sapiens chromosome CHR_HSCHR6_MHC_SSTO_CTG1 GRCh38 partial sequence
+            32030453..32034790 reannotated via EnsEMBL
+ACCESSION   chromosome:GRCh38:CHR_HSCHR6_MHC_SSTO_CTG1:32030453:32034790:1
+VERSION     chromosome:GRCh38:CHR_HSCHR6_MHC_SSTO_CTG1:32030453:32034790:1
+KEYWORDS    .
+SOURCE      human
+  ORGANISM  Homo sapiens
+            Eukaryota; Opisthokonta; Metazoa; Eumetazoa; Bilateria;
+            Deuterostomia; Chordata; Craniata; Vertebrata; Gnathostomata;
+            Teleostomi; Euteleostomi; Sarcopterygii; Dipnotetrapodomorpha;
+            Tetrapoda; Amniota; Mammalia; Theria; Eutheria; Boreoeutheria;
+            Euarchontoglires; Primates; Haplorrhini; Simiiformes; Catarrhini;
+            Hominoidea; Hominidae.
+COMMENT     This sequence was annotated by the Ensembl system. Please visit the Ensembl web
+            site, http://www.ensembl.org/ for more information.
+COMMENT     All feature locations are relative to the first (5') base of the sequence in this
+            file.  The sequence presented is always the forward strand of the assembly.
+            Features that lie outside of the sequence contained in this file have clonal
+            location coordinates in the format: .:..
+COMMENT     The /gene indicates a unique id for a gene, /note="transcript_id=..." a unique id
+            for a transcript, /protein_id a unique id for a peptide and note="exon_id=..." a
+            unique id for an exon. These ids are maintained wherever possible between
+            versions.
+COMMENT     All the exons and transcripts in Ensembl are confirmed by similarity to either
+            protein or cDNA sequences.
+FEATURES             Location/Qualifiers
+     source          1..4338
+                     /organism="Homo sapiens"
+                     /db_xref="taxon:9606"
+     gene            501..3870
+                     /gene=ENSG00000198457
+                     /locus_tag="CYP21A2"
+                     /note="cytochrome P450, family 21, subfamily A,
+                     polypeptide 2 [Source:HGNC Symbol;Acc:HGNC:2600]"
+     mRNA            join(501..824,922..1011,1294..1448,1556..1657,1746..1847,
+                     1949..2035,2205..2405,2606..2784,2868..2971,3069..3838)
+                     /gene="ENSG00000198457"
+                     /note="transcript_id=ENST00000448314"
+     CDS             join(626..824,922..1011,1294..1448,1556..1657,1746..1847,
+                     1949..2035,2205..2405,2606..2784,2868..2971,3069..3334)
+                     /gene="ENSG00000198457"
+                     /protein_id="ENSP00000398594"
+                     /note="transcript_id=ENST00000448314"
+                     /db_xref="Uniprot/SWISSPROT:P08686"
+                     /db_xref="RefSeq_peptide:NP_000491.4"
+                     /db_xref="RefSeq_mRNA:NM_000500.7"
+                     /db_xref="RefSeq_peptide_predicted:XP_006725959.1"
+                     /db_xref="RefSeq_peptide_predicted:XP_006726139.1"
+                     /db_xref="Vega_transcript:CYP21A2-002"
+                     /db_xref="Vega_transcript:OTTHUMT00000269125"
+                     /db_xref="Uniprot/SPTREMBL:A0A023J7R6"
+                     /db_xref="Uniprot/SPTREMBL:B8YJC6"
+                     /db_xref="Uniprot/SPTREMBL:K9LHU1"
+                     /db_xref="Uniprot/SPTREMBL:V5WC48"
+                     /db_xref="HPA:HPA048979"
+                     /db_xref="ChEMBL:CHEMBL2759"
+                     /db_xref="EMBL:AK054616"
+                     /db_xref="EMBL:AL645922"
+                     /db_xref="EMBL:AL662828"
+                     /db_xref="EMBL:AL662849"
+                     /db_xref="EMBL:AL844853"
+                     /db_xref="EMBL:AL929593"
+                     /db_xref="EMBL:BC125182"
+                     /db_xref="EMBL:BX679671"
+                     /db_xref="EMBL:CH471081"
+                     /db_xref="EMBL:CR753845"
+                     /db_xref="EMBL:CR936924"
+                     /db_xref="EMBL:FJ538293"
+                     /db_xref="EMBL:GQ222286"
+                     /db_xref="EMBL:GQ222296"
+                     /db_xref="EMBL:GQ222301"
+                     /db_xref="EMBL:JN034382"
+                     /db_xref="EMBL:JN034383"
+                     /db_xref="EMBL:JN034384"
+                     /db_xref="EMBL:JN034385"
+                     /db_xref="EMBL:JN034388"
+                     /db_xref="EMBL:JN034389"
+                     /db_xref="EMBL:JN034390"
+                     /db_xref="EMBL:JQ993310"
+                     /db_xref="EMBL:JQ993311"
+                     /db_xref="EMBL:JQ993314"
+                     /db_xref="EMBL:K02771"
+                     /db_xref="EMBL:KF692099"
+                     /db_xref="EMBL:KF812549"
+                     /db_xref="EMBL:M12792"
+                     /db_xref="EMBL:M13936"
+                     /db_xref="EMBL:M17252"
+                     /db_xref="EMBL:M19711"
+                     /db_xref="EMBL:M26856"
+                     /db_xref="EMBL:X58906"
+                     /db_xref="GO:GO:0004509"
+                     /db_xref="GO:GO:0005496"
+                     /db_xref="GO:GO:0005506"
+                     /db_xref="GO:GO:0005789"
+                     /db_xref="GO:GO:0006704"
+                     /db_xref="GO:GO:0006705"
+                     /db_xref="GO:GO:0006805"
+                     /db_xref="GO:GO:0008202"
+                     /db_xref="GO:GO:0008395"
+                     /db_xref="GO:GO:0016125"
+                     /db_xref="GO:GO:0016705"
+                     /db_xref="GO:GO:0020037"
+                     /db_xref="GO:GO:0044281"
+                     /db_xref="GO:GO:0055114"
+                     /db_xref="HGNC_trans_name:CYP21A2-002"
+                     /db_xref="PDB:2GEG"
+                     /db_xref="Vega_translation:138040"
+                     /db_xref="Vega_translation:OTTHUMP00000175020"
+                     /db_xref="goslim_goa:GO:0003674"
+                     /db_xref="goslim_goa:GO:0005575"
+                     /db_xref="goslim_goa:GO:0006629"
+                     /db_xref="goslim_goa:GO:0008150"
+                     /db_xref="goslim_goa:GO:0008289"
+                     /db_xref="goslim_goa:GO:0009058"
+                     /db_xref="goslim_goa:GO:0016491"
+                     /db_xref="goslim_goa:GO:0043167"
+                     /db_xref="goslim_goa:GO:0044281"
+                     /db_xref="protein_id:AAA52064.1"
+                     /db_xref="protein_id:AAA59695.1"
+                     /db_xref="protein_id:AAA59706.1"
+                     /db_xref="protein_id:AAA59985.1"
+                     /db_xref="protein_id:AAA83248.1"
+                     /db_xref="protein_id:AAB59440.1"
+                     /db_xref="protein_id:AAI25183.1"
+                     /db_xref="protein_id:ACL27177.1"
+                     /db_xref="protein_id:ACT35412.1"
+                     /db_xref="protein_id:ACT35422.1"
+                     /db_xref="protein_id:ACT35427.1"
+                     /db_xref="protein_id:AFK10105.1"
+                     /db_xref="protein_id:AFK10106.1"
+                     /db_xref="protein_id:AFK10107.1"
+                     /db_xref="protein_id:AFK10108.1"
+                     /db_xref="protein_id:AFK10111.1"
+                     /db_xref="protein_id:AFK10112.1"
+                     /db_xref="protein_id:AFK10113.1"
+                     /db_xref="protein_id:AFK10136.1"
+                     /db_xref="protein_id:AFK10137.1"
+                     /db_xref="protein_id:AFK10140.1"
+                     /db_xref="protein_id:AHC04400.1"
+                     /db_xref="protein_id:AHH24255.1"
+                     /db_xref="protein_id:BAB70774.1"
+                     /db_xref="protein_id:CAA41709.1"
+                     /db_xref="protein_id:CAM26070.1"
+                     /db_xref="protein_id:CAQ07659.1"
+                     /db_xref="protein_id:EAX03570.1"
+                     /db_xref="OTTP:OTTHUMP00000175020"
+                     /db_xref="OTTT:OTTHUMT00000269125"
+                     /db_xref="UniParc:UPI000011D64D"
+                     /translation="MLLLGLLLLPLLAGARLLWNWWKLRSLHLPPLAPGFLHLLQPDL
+                     PIYLLGLTQKFGPIYRLHLGLQDVVVLNSKRTIEEAMVKKWADFAGRPEPLTYKLVSK
+                     NYPDLSLGDYSLLWKAHKKLTRSALLLGIRDSMEPVVEQLTQEFCERMRAQPGTPVAI
+                     EEEFSLLTCSIICYLTFGDKIKDDNLMPAYYKCIQEVLKTWSHWSIQIVDVIPFLRFF
+                     PNPGLRRLKQAIEKRDHIVEMQLRQHKESLVAGQWRDMMDYMLQGVAQPSMEEGSGQL
+                     LEGHVHMAAVDLLIGGTETTANTLSWAVVFLLHHPEIQQRLQEELDHELGPGASSSRV
+                     PYKDRARLPLLNATIAEVLRLRPVVPLALPHRTTRPSSISGYDIPEGTVIIPNLQGAH
+                     LDETVWERPHEFWPDRFLEPGKNSRALAFGCGARVCLGEPLARLELFVVLTRLLQAFT
+                     LLPSGDALPSLQPLPHCSVILKMQPFQVRLQPRGMGAHSPGQNQ"
+     gene            complement(BX679671.7:69044..95890)
+                     /gene=ENSG00000236236
+                     /locus_tag="TNXB"
+                     /note="tenascin XB [Source:HGNC Symbol;Acc:HGNC:11976]"
+     exon            618..824
+                     /note="exon_id=ENSE00003690000"
+     exon            1949..2035
+                     /note="exon_id=ENSE00003508387"
+     exon            922..1315
+                     /note="exon_id=ENSE00001906577"
+     exon            1746..1751
+                     /note="exon_id=ENSE00001929694"
+     exon            2205..2405
+                     /note="exon_id=ENSE00003528578"
+     exon            2205..2405
+                     /note="exon_id=ENSE00003664798"
+     exon            2606..2971
+                     /note="exon_id=ENSE00001936623"
+     exon            3069..3870
+                     /note="exon_id=ENSE00001864862"
+     exon            618..824
+                     /note="exon_id=ENSE00003667288"
+     exon            568..824
+                     /note="exon_id=ENSE00001942216"
+     exon            2606..2784
+                     /note="exon_id=ENSE00003536432"
+     exon            2868..2971
+                     /note="exon_id=ENSE00003479660"
+     exon            1294..1448
+                     /note="exon_id=ENSE00003669463"
+     exon            519..824
+                     /note="exon_id=ENSE00001824542"
+     exon            1556..1657
+                     /note="exon_id=ENSE00003591640"
+     exon            501..824
+                     /note="exon_id=ENSE00001906236"
+     exon            573..1011
+                     /note="exon_id=ENSE00001846626"
+     exon            3069..3842
+                     /note="exon_id=ENSE00003467800"
+     exon            922..1011
+                     /note="exon_id=ENSE00003588687"
+     exon            568..1011
+                     /note="exon_id=ENSE00001832401"
+     exon            1746..1847
+                     /note="exon_id=ENSE00003639775"
+     exon            1556..1647
+                     /note="exon_id=ENSE00001951421"
+     exon            1275..1448
+                     /note="exon_id=ENSE00001860663"
+     exon            3069..3838
+                     /note="exon_id=ENSE00001944742"
+     exon            1556..1657
+                     /note="exon_id=ENSE00003528257"
+     exon            1294..1448
+                     /note="exon_id=ENSE00003609033"
+     exon            1746..1847
+                     /note="exon_id=ENSE00003508605"
+     exon            2868..2971
+                     /note="exon_id=ENSE00003487617"
+     exon            1302..1448
+                     /note="exon_id=ENSE00001954929"
+     exon            922..1011
+                     /note="exon_id=ENSE00003520055"
+     exon            1556..1683
+                     /note="exon_id=ENSE00001884575"
+     exon            1949..2035
+                     /note="exon_id=ENSE00003673350"
+     exon            2606..2784
+                     /note="exon_id=ENSE00003635586"
+     exon            922..965
+                     /note="exon_id=ENSE00001904645"
+     exon            1786..1847
+                     /note="exon_id=ENSE00001841182"
+     exon            complement(BX679671.7:92710..93006)
+                     /note="exon_id=ENSE00001601319"
+     exon            complement(BX679671.7:70840..70970)
+                     /note="exon_id=ENSE00003459558"
+     exon            complement(BX679671.7:75623..75674)
+                     /note="exon_id=ENSE00002353367"
+     exon            complement(BX679671.7:72895..73215)
+                     /note="exon_id=ENSE00003745172"
+     exon            complement(BX679671.7:70344..70495)
+                     /note="exon_id=ENSE00003634567"
+     exon            complement(BX679671.7:76252..76539)
+                     /note="exon_id=ENSE00001609471"
+     exon            complement(BX679671.7:89286..89609)
+                     /note="exon_id=ENSE00001699380"
+     exon            complement(BX679671.7:90046..90372)
+                     /note="exon_id=ENSE00001702397"
+     exon            complement(BX679671.7:83740..84063)
+                     /note="exon_id=ENSE00001642497"
+     exon            complement(3549..3650)
+                     /note="exon_id=ENSE00002343724"
+     exon            complement(BX679671.7:71896..72018)
+                     /note="exon_id=ENSE00003675095"
+     exon            complement(BX679671.7:72895..74017)
+                     /note="exon_id=ENSE00002047427"
+     exon            complement(BX679671.7:70588..70720)
+                     /note="exon_id=ENSE00003588099"
+     exon            complement(BX679671.7:77159..77476)
+                     /note="exon_id=ENSE00001732825"
+     exon            complement(BX679671.7:80559..80882)
+                     /note="exon_id=ENSE00001796326"
+     exon            complement(BX679671.7:71638..71781)
+                     /note="exon_id=ENSE00003497584"
+     exon            complement(BX679671.7:95567..95890)
+                     /note="exon_id=ENSE00001753115"
+     exon            complement(3971..4134)
+                     /note="exon_id=ENSE00003664169"
+     exon            complement(BX679671.7:70155..70251)
+                     /note="exon_id=ENSE00003655283"
+     exon            complement(BX679671.7:77887..78177)
+                     /note="exon_id=ENSE00001739449"
+     exon            complement(3355..3650)
+                     /note="exon_id=ENSE00003537297"
+     exon            complement(BX679671.7:72895..73215)
+                     /note="exon_id=ENSE00003513579"
+     exon            complement(BX679671.7:70840..70970)
+                     /note="exon_id=ENSE00003655612"
+     exon            complement(3355..3650)
+                     /note="exon_id=ENSE00003500683"
+     exon            complement(BX679671.7:72270..72605)
+                     /note="exon_id=ENSE00003741951"
+     exon            complement(BX679671.7:74064..74345)
+                     /note="exon_id=ENSE00003473857"
+     exon            complement(BX679671.7:70588..70970)
+                     /note="exon_id=ENSE00001899366"
+     exon            complement(BX679671.7:71896..72018)
+                     /note="exon_id=ENSE00003619914"
+     exon            complement(BX679671.7:71326..71445)
+                     /note="exon_id=ENSE00003549952"
+     exon            complement(BX679671.7:70155..70251)
+                     /note="exon_id=ENSE00003515074"
+     exon            complement(BX679671.7:72270..72605)
+                     /note="exon_id=ENSE00003719232"
+     exon            complement(BX679671.7:84475..84792)
+                     /note="exon_id=ENSE00001754558"
+     exon            complement(BX679671.7:71326..71341)
+                     /note="exon_id=ENSE00001895627"
+     exon            complement(BX679671.7:69901..70062)
+                     /note="exon_id=ENSE00003463306"
+     exon            complement(BX679671.7:81277..81567)
+                     /note="exon_id=ENSE00001697692"
+     exon            complement(BX679671.7:70588..70720)
+                     /note="exon_id=ENSE00003508255"
+     exon            complement(BX679671.7:75623..75901)
+                     /note="exon_id=ENSE00001780804"
+     exon            complement(BX679671.7:71638..71781)
+                     /note="exon_id=ENSE00003685919"
+     exon            complement(BX679671.7:85947..86279)
+                     /note="exon_id=ENSE00001795510"
+     exon            complement(BX679671.7:74064..74345)
+                     /note="exon_id=ENSE00003627553"
+     exon            complement(BX679671.7:74064..74496)
+                     /note="exon_id=ENSE00001883480"
+     exon            complement(BX679671.7:69901..70062)
+                     /note="exon_id=ENSE00003622584"
+     exon            complement(BX679671.7:70344..70495)
+                     /note="exon_id=ENSE00003619663"
+     exon            complement(3971..4134)
+                     /note="exon_id=ENSE00003570986"
+     exon            complement(BX679671.7:71064..71207)
+                     /note="exon_id=ENSE00003532399"
+     exon            complement(BX679671.7:71064..71207)
+                     /note="exon_id=ENSE00003677522"
+     exon            complement(BX679671.7:71326..71445)
+                     /note="exon_id=ENSE00003626956"
+     exon            complement(BX679671.7:72270..72605)
+                     /note="exon_id=ENSE00003508174"
+BASE COUNT         821 a       1376 c       1250 g        891 t          0 n
+ORIGIN
+        1 TGTCTGGTAC ATGCTATTAC TCCGCAGCGG GAAACCACTT CCTCCTTTGT CTTCTGGGCA
+       61 CTTTTGTGAG TGAAAGGAGG CACTAATAAC AATCACACTG GGATACCTGT ATATACTGGA
+      121 ATGCCCCAGG CAAACCAGGC TTAAACTGTA TTACTCTATC TGTAGCTTAA ACTAACAAAC
+      181 AACCCACACA AATCACATTT TGTTCTTCAG GCGATTCAGG AAGGCCTATT AGGCAGGGAC
+      241 TGCCATTTTC TCTCTGAGAC AAACATCATG CCAGTAAACT GGCCCACGGT GGGGTGGCAG
+      301 AGGGAGAGGG CCCAGGTGGG GGCGGACACT ATTGCCTGCA CAGTTGATGT GGAACCAGAA
+      361 AGCTGACTCT GGATGCAGGA AAAAGGTCAG GGTTGCATTT CCCTTCCTTG CTTCTTGATG
+      421 GGTGATCAAT TTTTTTGAAA TACGGACGTC CCAAGGCCAA TGAGACTGGT GTCATTCCAG
+      481 AAAAGGGCCA CTCTGTGGGC GGGTCGGTGG GAGGGTACCT GAAGGTGGGG TCAAGGGAGG
+      541 CCCCAAAACA GTCTACACAG CAGGAGGGAT GGCTGGGGCT CTTGAGCTAT AAGTGGCACC
+      601 TCAGGGCCCT GACGGGCGTC TCGCCATGCT GCTCCTGGGC CTGCTGCTGC TGCCCCTGCT
+      661 GGCTGGCGCC CGCCTGCTGT GGAACTGGTG GAAGCTCCGG AGCCTCCACC TCCCGCCTCT
+      721 TGCCCCGGGC TTCTTGCACT TGCTGCAGCC CGACCTCCCA ATCTATCTGC TTGGCCTGAC
+      781 TCAGAAATTC GGGCCCATCT ACAGGCTCCA CCTTGGGCTG CAAGGTGAGA GGCTGATCTC
+      841 GCTCTGGCCC TCACCATAGG AGGGGGCGGA GGTGACGGAG AGGGTCCTCT CTCCGCTGAC
+      901 GCTGCTTTGG CTGTCTCCCA GATGTGGTGG TGCTGAACTC CAAGAGGACC ATTGAGGAAG
+      961 CCATGGTCAA AAAGTGGGCA GACTTTGCTG GCAGACCTGA GCCACTTACC TGTAAGGGCT
+     1021 GGGGGCATTT TTTCTTTCTT AAACAAATTT TTTTTTAAGA GATGGGTTCT TGCTATGTTG
+     1081 CCCAGGCTGG TCTTAAATTC CTAGTCTCAA ATGATCCTCC CACCTCAGCC TCAAGTGTGA
+     1141 GCCACCTTTG GGGCATCCCC AATCCAGGTC CCTGGAAGCT CTTGGGGGGG CATATCTGGT
+     1201 GGGGAGAAAG CAGGGGTTGG GGAGGCCGAA GAAGGTCAGG CCCTCAGCTG CCTTCATCAG
+     1261 TTCCCACCCT CCAGCCCCCA ACTCCTCCTG CAGACAAGCT GGTGTCTAAG AACTACCCGG
+     1321 ACCTGTCCTT GGGAGACTAC TCCCTGCTCT GGAAAGCCCA CAAGAAGCTC ACCCGCTCAG
+     1381 CCCTGCTGCT GGGCATCCGT GACTCCATGG AGCCAGTGGT GGAGCAGCTG ACCCAGGAGT
+     1441 TCTGTGAGGT AAGGCTGGGC TCCTGAGGCC ACCTCGGGTC AGCCTCGCCT CTCACAGTAG
+     1501 CCCCCGCCCT GCCCGCTGCA CAGCGGCCTG CTGAACTCAC ACTGTTTCTC CACAGCGCAT
+     1561 GAGAGCCCAG CCCGGCACCC CTGTGGCCAT TGAGGAGGAA TTCTCTCTCC TCACCTGCAG
+     1621 CATCATCTGT TACCTCACCT TCGGAGACAA GATCAAGGTG CCTCACAGCC CCTCAGGCCC
+     1681 ACCCCCAGCC CCTCCCTGAG CCTCTCCTTG TCCTGAACTG AAAGTACTCC CTCCTTTTCT
+     1741 GGCAGGACGA CAACTTAATG CCTGCCTATT ACAAATGTAT CCAGGAGGTG TTAAAAACCT
+     1801 GGAGCCACTG GTCCATCCAA ATTGTGGACG TGATTCCCTT TCTCAGGGTG AGGACCTGGA
+     1861 GCCTAGACAC CCCTGGGTTG TAGGGGAGAG GCTGGGGTGG AGGGAGAGGC TCCTTCCCAC
+     1921 AGCTGCATTC TCATGCTTCC TGCCGCAGTT CTTCCCCAAT CCAGGTCTCC GGAGGCTGAA
+     1981 GCAGGCCATA GAGAAGAGGG ATCACATCGT GGAGATGCAG CTGAGGCAGC ACAAGGTGGG
+     2041 GACTGTACGT GGACGGCCTC CCCTCGGCCC ACAGCCAGTG ATGCTACCGG CCTCAGCATT
+     2101 GCTATGAGGC GGGTTCTTTT GCATACCCCA GTTATGGGCC TGTTGCCACT CTGTACTCCT
+     2161 CTCCCCAGGC CAGCCGCTCA GCCCGCTCCT TTCACCCTCT GCAGGAGAGC CTCGTGGCAG
+     2221 GCCAGTGGAG GGACATGATG GACTACATGC TCCAAGGGGT GGCGCAGCCG AGCATGGAAG
+     2281 AGGGCTCTGG ACAGCTCCTG GAAGGGCACG TGCACATGGC TGCAGTGGAC CTCCTGATCG
+     2341 GTGGCACTGA GACCACAGCA AACACCCTCT CCTGGGCCGT GGTTTTTTTG CTTCACCACC
+     2401 CTGAGGTGCG TCCTGGGGAC AAGCAAAAGG CTCCTTCCCA GCAACCTGGC CAGGGCGGTG
+     2461 GGCACCCTCA CTCAGCTCTG AGCACTGTGC GGCTGGGGCT GTGCTTGCCT CACCGGCACT
+     2521 CAGGCTCACT GGGTTGCTGA GGGAGCGGCT GGAGGCTGGG CAGCTGTGGG CTGCTGGGGC
+     2581 AGGACTCCAC CCGATCATTC CCCAGATTCA GCAGCGACTG CAGGAGGAGC TAGACCACGA
+     2641 ACTGGGCCCT GGTGCCTCCA GCTCCCGGGT CCCCTACAAG GACCGTGCAC GGCTGCCCTT
+     2701 GCTCAATGCC ACCATCGCCG AGGTGCTGCG CCTGCGGCCC GTTGTGCCCT TAGCCTTGCC
+     2761 CCACCGCACC ACACGGCCCA GCAGGTGACT CCCGAGGGTT GGGGATGAGT GAGGAAAGCC
+     2821 CGAGCCCAGG GAGGTCCTGG CCAGCCTCTA ACTCCAGCCC CCTTCAGCAT CTCCGGCTAC
+     2881 GACATCCCTG AGGGCACAGT CATCATTCCG AACCTCCAAG GCGCCCACCT GGATGAGACG
+     2941 GTCTGGGAGA GGCCACATGA GTTCTGGCCT GGTATGTGGG GGGCCGGGGG CCTGCCGTGA
+     3001 AAATGTGGTG GAGGCTGGTC CCCGCTGCCG CTGAACGCCT CCCCACCCAC CTGTCCACCC
+     3061 GCCCGCAGAT CGCTTCCTGG AGCCAGGCAA GAACTCCAGA GCTCTGGCCT TCGGCTGCGG
+     3121 TGCCCGCGTG TGCCTGGGCG AGCCGCTGGC GCGCCTGGAG CTCTTCGTGG TGCTGACCCG
+     3181 ACTGCTGCAG GCCTTCACGC TGCTGCCCTC CGGGGACGCC CTGCCCTCCC TGCAGCCCCT
+     3241 GCCCCACTGC AGTGTCATCC TCAAGATGCA GCCTTTCCAA GTGCGGCTGC AGCCCCGGGG
+     3301 GATGGGGGCC CACAGCCCAG GCCAGAACCA GTGATGGGGC AGGACCGATG CCAGCCGGGT
+     3361 ACCTCAGTTT CTCCTTTATT GCTCCCGTAC GAACCCCTCC CCTCCCCCCT GTAAACACAG
+     3421 TGCTGCGAGA TCGCTGGCAG AGAAGGCTTC CTCCAGCGGC TGGGTGGTGA AGGACCCTGG
+     3481 CTCTTCTCTC GGGGCGACCC CTCAGTGCTC GGCAGTCATA CTGGGGTGCG AGAGAGGTGG
+     3541 GCAGCAGCTC AGCCTCCCCC CGCTGGGGAG CGAAAGTTTC TTGGTCTCAG CTTCATTTCC
+     3601 GTGAAGGGCA CCGAGAACTC GAAGCCCTTC CAGTGGTACC AGCTCACTCC CTGGGAAAGG
+     3661 GGTTGTCAAG AGAGAGTCAA AGCCGGATGT CCCATCTGCT CTTCCCGTTC CCCTTAAGGA
+     3721 GGTAGCTCCC AGCACTCAAC CAACCTCCCC GCAGAGCTCC CTTCCTGACC CTCCGCTGCA
+     3781 GAGGATTGAG GCTTAATTCT GAGCTGGCCC TTTCCAGCCA ATAAATCAAC TCCAGCTCCC
+     3841 TCTGCGAGGC TGGCATGATT GTTCCATTTC ACCCAGCCGC TCAGTCCCTT GCCTGTTACA
+     3901 CTGTGGGGCT GAAACCTAGG CAGGCCGAGC CCCAGCCACC CCAGCTCTGA GCCGCCTCCC
+     3961 CACCCCTCAC CTGATGGTCC ACTGTGCTCC CGTAGAGCCC GTTGAGGTTG GCGTAGTGGC
+     4021 AGTTCCTGTA CCACCAGGCC CCTCGGTAGG AGACAGCGCA GGAGATGAGC AAGCTGTTGG
+     4081 GGTCCCGATC ACGGGCAGAG AAGACACTGC CGCTGTGGTA GCTCATGGAG TCCCCTGGGC
+     4141 AGGGTGGAGG AAGGAGCCAT GAGGGCCTCC CCTCCCAGCC TCACCCTCCC AGCCTCACAG
+     4201 CCTCTGCTTA CCTGCGGTGC CGTGGTAGCC CTCCAAGTGG AGGCGGTAGT ACTCCGCAGC
+     4261 CGAGTCTACG TGGAAGGAGT CGTACTGGGC GAACACAGCC TCGTCCCCAG CCCGCAGGTC
+     4321 CACGCGCATG GAGTAGTC
+//
+
+

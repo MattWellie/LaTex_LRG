@@ -107,7 +107,10 @@ class GbkParser:
             self.transcriptdict['transcripts'][alternative]['list_of_exons'] = []
             self.transcriptdict['transcripts'][alternative]['exons'] = {}
             selected_mrna = self.mrna[alternative-1]
-            self.transcriptdict['transcripts'][alternative]['NM_number'] = selected_mrna.qualifiers['transcript_id'][0]
+            try:
+                self.transcriptdict['transcripts'][alternative]['NM_number'] = selected_mrna.qualifiers['transcript_id'][0]
+            except KeyError:
+                self.transcriptdict['transcripts'][alternative]['NM_number'] = self.transcriptdict['genename']
             exon = 1
             subfeatures = selected_mrna._get_sub_features()
             
@@ -192,15 +195,23 @@ class GbkParser:
         """ This section works on the assumption that each exon in the file will use the appropriate gene name
             and that the only relevant CDS and mRNA sections will also contain the same accession
         """
-        self.transcriptdict['genename'] = self.exons[0].qualifiers['gene'][0]
-        for feature in features:
-            if feature.type == 'CDS':
-                if feature.qualifiers['gene'][0] == self.transcriptdict['genename']:
+        try:
+            self.transcriptdict['genename'] = self.exons[0].qualifiers['gene'][0]
+            for feature in features:
+                if feature.type == 'CDS':
+                    if feature.qualifiers['gene'][0] == self.transcriptdict['genename']:
+                        self.cds.append(feature)
+                elif feature.type == 'mRNA':
+                    if feature.qualifiers['gene'][0] == self.transcriptdict['genename']:
+                        self.mrna.append(feature)
+        except KeyError:
+            for feature in features:
+                if feature.type == 'CDS':
                     self.cds.append(feature)
-            elif feature.type == 'mRNA':
-                if feature.qualifiers['gene'][0] == self.transcriptdict['genename']:
+                elif feature.type == 'mRNA':
                     self.mrna.append(feature)
-
+            note = self.mrna[0].qualifiers['note'][0]
+            self.transcriptdict['genename'] = note.split('=')[1]
         assert len(self.cds) == len(self.mrna), "There are a different number of CDS and mRNA"
         return features
 
