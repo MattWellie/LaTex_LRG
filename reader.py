@@ -189,7 +189,7 @@ class Reader:
         self.line_printer('$2^{nd}$ line: Base sequence. lower case Introns, upper case Exons\\\\')
         self.line_printer('$3^{rd}$ line: Amino acid sequence. Printed on FIRST base of codon\\\\')
         self.line_printer('$4^{th}$ line: Amino acid numbering. Numbered on $1^{st}$ and increments of 10\\\\')
-        self.line_printer(' \\begin{Verbatim}')
+        self.line_printer('\\begin{Verbatim}')
 
     def print_latex(self):
 
@@ -244,7 +244,6 @@ class Reader:
             exon_dict = latex_dict['exons'][exon_number]
             ex_start = exon_dict['genomic_start']
             ex_end = exon_dict['genomic_end']
-            self.line_printer(' ')
             if self.file_type == 'gbk': ex_start += 1
             self.line_printer('Exon %s | Start: %s | End: %s | Length: %s' %
                               (exon_number, str(ex_start), str(ex_end), str(ex_end - ex_start)))
