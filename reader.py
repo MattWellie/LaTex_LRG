@@ -28,6 +28,7 @@ class Reader:
         self.list_of_versions = []
         self.transcriptdict = {}
         self.write_as_LaTex = True
+        self.file_type = ''
         self.transcript = ''
         self.output_list = []
         self.amino_printing = False
@@ -244,6 +245,7 @@ class Reader:
             ex_start = exon_dict['genomic_start']
             ex_end = exon_dict['genomic_end']
             self.line_printer(' ')
+            if self.file_type == 'gbk: ex_start += 1
             self.line_printer('Exon %s | Start: %s | End: %s | Length: %s' %
                               (exon_number, str(ex_start), str(ex_end), str(ex_end - ex_start)))
 
@@ -381,7 +383,7 @@ class Reader:
                 output = ' '
         return output, amino_wait, codon_numbered, amino_acid_counter
 
-    def run(self, dictionary, transcript, write_as_latex, list_of_versions, print_clashes):
+    def run(self, dictionary, transcript, write_as_latex, list_of_versions, print_clashes, file_type):
         print 'Transcript: ' + str(transcript)
         print 'Exon numbers: ' + str(dictionary['transcripts'][transcript]['list_of_exons'])
         self.list_of_versions = list_of_versions
@@ -389,6 +391,6 @@ class Reader:
         self.write_as_LaTex = write_as_latex
         self.transcript = transcript
         self.print_clashes = print_clashes
-        
+        self.file_type = file_type        
         self.print_latex()
         return self.output_list
