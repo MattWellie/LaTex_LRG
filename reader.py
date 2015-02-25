@@ -245,7 +245,7 @@ class Reader:
             ex_start = exon_dict['genomic_start']
             ex_end = exon_dict['genomic_end']
             self.line_printer(' ')
-            if self.file_type == 'gbk: ex_start += 1
+            if self.file_type == 'gbk': ex_start += 1
             self.line_printer('Exon %s | Start: %s | End: %s | Length: %s' %
                               (exon_number, str(ex_start), str(ex_end), str(ex_end - ex_start)))
 

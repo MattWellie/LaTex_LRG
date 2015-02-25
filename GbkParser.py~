@@ -107,7 +107,10 @@ class GbkParser:
             self.transcriptdict['transcripts'][alternative]['list_of_exons'] = []
             self.transcriptdict['transcripts'][alternative]['exons'] = {}
             selected_mrna = self.mrna[alternative-1]
-            self.transcriptdict['transcripts'][alternative]['NM_number'] = selected_mrna.qualifiers['transcript_id'][0]
+            try:
+                self.transcriptdict['transcripts'][alternative]['NM_number'] = selected_mrna.qualifiers['transcript_id'][0]
+            except KeyError:
+                self.transcriptdict['transcripts'][alternative]['NM_number'] = self.transcriptdict['genename']
             exon = 1
             subfeatures = selected_mrna._get_sub_features()
             
