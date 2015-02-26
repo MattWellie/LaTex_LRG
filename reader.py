@@ -291,7 +291,7 @@ class Reader:
                     self.line_printer(dna_string)
                     if self.amino_spacing: self.line_printer(amino_string)
                     self.line_printer(amino_number_string)
-                    if self.amino_spacing: self.line_printer('  ')
+                    # if self.amino_spacing: self.line_printer('  ')
                     amino_string = []
                     number_string = []
                     dna_string = []
@@ -325,9 +325,6 @@ class Reader:
                                                                                       intron_offset, intron_in_padding,
                                                                                       len(protein), intron_out)
                 number_string.append(next_number_string)
-
-
-
                 line_count += 1
 
             # Section for incomplete lines (has not reached line-limit print)
@@ -339,9 +336,8 @@ class Reader:
                 self.line_printer(dna_string)
                 if not self.amino_spacing: self.line_printer(amino_string)
                 self.line_printer(amino_number_string)
-                if self.amino_spacing: self.line_printer('  ')
 			
-			self.print_exon_end()
+            self.print_exon_end()
                 
         for version in self.list_of_versions:
             assert isinstance(version, str)
@@ -350,10 +346,11 @@ class Reader:
         if self.write_as_LaTex:
             self.print_latex_footer()
 			
-        def print_exon_end(self):
-	    self.line_printer('\\end{Verbatim}')
-	    self.line_printer('\\newpage')
-	    self.line_printer('\\begin{Verbatim}')
+    def print_exon_end(self):
+
+        self.line_printer('\\end{Verbatim}')
+        self.line_printer('\\newpage')
+        self.line_printer('\\begin{Verbatim}')
 		
 
     def print_latex_footer(self):
