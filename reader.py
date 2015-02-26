@@ -281,7 +281,7 @@ class Reader:
 
             sequence = exon_dict['sequence']
             line_count = 0
-            self.line_printer(' ')
+            self.line_printer('')
             for char in sequence:
                 # Stop each line at a specific length
                 if line_count % 60 == 0 and line_count != 0:
@@ -291,7 +291,7 @@ class Reader:
                     self.line_printer(dna_string)
                     if bool(" ".join(amino_string).strip()): self.line_printer(amino_string)
                     if bool(" ".join(amino_number_string).strip()):self.line_printer(amino_number_string)
-                    self.line_printer('  ')
+                    self.line_printer('')
                     amino_string = []
                     number_string = []
                     dna_string = []
