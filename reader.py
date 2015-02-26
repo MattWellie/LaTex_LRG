@@ -289,9 +289,9 @@ class Reader:
                     amino_wait = 0
                     self.line_printer(number_string)
                     self.line_printer(dna_string)
-                    if self.amino_spacing: self.line_printer(amino_string)
-                    self.line_printer(amino_number_string)
-                    if self.amino_spacing: self.line_printer('  ')
+                    if bool(" ".join(amino_string).strip()): self.line_printer(amino_string)
+                    if bool(" ".join(amino_number_string).strip()):self.line_printer(amino_number_string)
+                    self.line_printer('  ')
                     amino_string = []
                     number_string = []
                     dna_string = []
@@ -332,7 +332,7 @@ class Reader:
             if len(dna_string) != 0:
                 wait_value = 0
                 amino_wait = 0
-                self.line_printer(number_string)
+                if bool(" ".join(number_string).strip()): self.line_printer(number_string)
                 self.line_printer(dna_string)
                 if bool(" ".join(amino_string).strip()): self.line_printer(amino_string)
                 if bool(" ".join(amino_number_string).strip()): self.line_printer(amino_number_string)
