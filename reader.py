@@ -291,7 +291,7 @@ class Reader:
                     self.line_printer(dna_string)
                     if self.amino_spacing: self.line_printer(amino_string)
                     self.line_printer(amino_number_string)
-                    # if self.amino_spacing: self.line_printer('  ')
+                    if self.amino_spacing: self.line_printer('  ')
                     amino_string = []
                     number_string = []
                     dna_string = []
@@ -334,9 +334,8 @@ class Reader:
                 amino_wait = 0
                 self.line_printer(number_string)
                 self.line_printer(dna_string)
-                if not self.amino_spacing: self.line_printer(amino_string)
-                self.line_printer(amino_number_string)
-			
+                if bool(" ".join(amino_string).strip()): self.line_printer(amino_string)
+                if bool(" ".join(amino_number_string).strip()): self.line_printer(amino_number_string)
             self.print_exon_end()
                 
         for version in self.list_of_versions:
