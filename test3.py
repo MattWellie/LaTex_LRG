@@ -1,4 +1,5 @@
 import unittest
+import os
 from reader import Reader
 from LrgParser import LrgParser
 
@@ -6,7 +7,7 @@ from LrgParser import LrgParser
 class TestFixture(unittest.TestCase):
 
     def setUp(self):
-        self.test_lrg = LrgParser('input\\LRG_TEST.xml', 10)
+        self.test_lrg = LrgParser(os.path.join('input', 'LRG_TEST.xml'), 10, True)
         self.transcriptdict = self.test_lrg.run()
         self.test_reader = Reader()#
         self.protein = self.transcriptdict['transcripts'][1]['protein_seq']
@@ -44,7 +45,7 @@ class TestFixture(unittest.TestCase):
 
     def test_choose_number_string3(self):
         output, wait_value, cds_count, amino_acid_counter, post_protein_printer, intron_offset, intron_in_padding,intron_out = self.test_reader.decide_number_string_character('A', 0, 100, 21, 0, 0, 0, 5, 0)
-        self.assertEqual(output, '|+1')
+        self.assertEqual(output, '|*1')
         self.assertEqual(wait_value, 2)
         self.assertEqual(intron_in_padding, 0)
         self.assertEqual(post_protein_printer, 1)
@@ -54,7 +55,8 @@ class TestFixture(unittest.TestCase):
     """
 
     def test_decide_amino_string1(self):
-        # lower case, c_c = 1, aa_c = 0, c_num = False                                                    char, c_count, aa_count, c_numbered, protein
+        # lower case, c_c = 1, aa_c = 0, c_num = False
+        # char, c_count, aa_count, c_numbered, protein
         output, codon_count, amino_acid_counter, codon_numbered = self.test_reader.decide_amino_string_character('a', 1, 0, False, self.protein)
         self.assertEqual(output, ' ')
 
@@ -85,4 +87,4 @@ class TestFixture(unittest.TestCase):
         self.assertEqual(output, ' ')
 
     def test_reader_run(self):
-        check_list = self.test_reader.run(self.transcriptdict, 1, True, ['Version 1: 1'])
+        check_list = self.test_reader.run(self.transcriptdict, 1, True, ['Version 1: 1'], True, 'lrg')

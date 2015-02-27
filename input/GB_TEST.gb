@@ -64,7 +64,7 @@ FEATURES             Location/Qualifiers
                      /gene_synonym="WELLAND"
                      /number=2
      CDS             join(1677..1778,2381..2655)
-                     /gene="ASL"
+                     /gene="WELLAND"
                      /gene_synonym="ASAL"
                      /EC_number="4.3.2.1"
                      /note="isoform 1 is encoded by transcript variant 2;
