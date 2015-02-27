@@ -15,14 +15,17 @@ Python 2.7
 ##What it does
 
 - This program takes a file as input and creates a typeset reference sequence.
-This sequence is designed to be used during sequence checking, and includes an
-HGVS nomenclature naming system.
+This sequence is designed to be used during sequence checking, and includes 
+HGVS nomenclature base and amino acid numbering
 
-- This ensures platform independence through use of platform-ambivalent file paths
+- This program ensures platform independence through use of OS-ambivalent file paths
 and naming conventions. 
 
 - Separation into discrete paths allows files in valid GenBank or LRG formats to be used as input
 without making any changes to the program code.
+
+- GenBank format files sourced from Ensembl are also usable, with a set of conditions
+    present to handle the format differences between NCBI and Ensembl
 
 ##Who its for
 
@@ -54,26 +57,30 @@ to the command line. This can be edited in the XML_gui.py file
     - The XML_GUI.py module then calls a pdflatex command to typeset the file
 
 - For GB and LRG files with multiple transcripts the program has separate ways of dealing with contents
-    - for .gb files from NCBI, the program will only use CDS and mRNA features which have a gene 
+    - For .gb files from NCBI, the program will only use CDS and mRNA features which have a gene 
         annotation matching the gene name attached to each Exon. For files sourced from NCBI, the 
         file may contain multiple genes and isoforms which span the region of the main gene, but 
         only the main gene name will feature in exon annotations
-    - for .gb files from Ensembl, manual hacking is required. After downloading a copy of the Ensembl 
+    - For .gb files from Ensembl, manual hacking is required. After downloading a copy of the Ensembl 
         output in .gb format (Export Data -> Output:GB -> uncheck all but 'Gene Information'), 
         delete all CDS and mRNA features which do not correspond to the accession of choice (usually 
         all but the first pair), and try-catch blocks will handle the rest of the processing. This can
-        be used as standard GB input once the changes are made. Solution being investigated.
+        be used as standard GB input once the changes are made. Less manual solution being investigated.
     - LRG files do not contain details of other genes spanning the region, so each of the separate <transcript>
-        blocks is handled independently, along with the corresponding sets of exon coordinates
-- In all cases, if multiple valid transcripts exist, a separate file is printed for each
+        blocks is handled independently, along with the corresponding sets of exon coordinates. This offers the 
+        same content as the GB files, though the format is clearer for parsing.
+- In all cases, if multiple valid transcripts exist, a separate file is printed for each. These are currently numbered
+    sequentially (1, 2...) and will contain the specific transcript details within the file contents
 
 ##Planned updates
 
-- As of 24/02/2015 there are no significant updates, only minor improvements
+- As of 27/02/2015 there are no significant updates, only minor improvements
 
 ##Issue Tracker
 
-- Requires a statement to check if the first base of the first exon is 1 (no 5' UTR) in which case a warning should be printed, and a preceeding intronic sequence should not be grabbed (will read from the end of the sequence due to negative reference (BRCA1 as an example)
+- Problems arise due to the ordering of the number/base/AA printing methods when moving the position of the 
+    amino acid within codons; the first base of the 3' UTR is recognised 3-bases late which leads to false 
+    numbering. The current fix is to tell users that it can't be fixed... First base of the codon works
 
 - Kludgey fixes in place in Gbk_Parser.py to allow for use of Ensembl transcripts in gb format, which do not
     contain same feature annotations as NCBI GenBank files. This may cause as-yet undetected problems, check 
