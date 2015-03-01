@@ -290,14 +290,14 @@ class Reader:
                     amino_was_numbered = bool(" ".join(amino_number_string).strip())
 
                     print lines_on_page
-                    if lines_on_page % 45 >= 42:
+                    if lines_on_page >= 41:
                         extra_lines = 2   # Base and numbering strings as default
                         if amino_was_numbered: extra_lines += 1
                         if amino_was_printed: extra_lines += 1
-                        print 'total lines: ' + str((lines_on_page % 45) + extra_lines)
-                        if ((lines_on_page % 45) + extra_lines) >= 45:
+                        print 'total lines: ' + str((lines_on_page) + extra_lines)
+                        if ((lines_on_page) + extra_lines) >= 45:
                             self.print_exon_end()
-                    extra_lines = 0
+                            lines_on_page = 0
                     wait_value = 0
                     amino_wait = 0
                     self.line_printer(number_string)
@@ -356,7 +356,7 @@ class Reader:
                 if bool(" ".join(amino_string).strip()): self.line_printer(amino_string)
                 if bool(" ".join(amino_number_string).strip()): self.line_printer(amino_number_string)
             self.print_exon_end()
-            lines_on_page = 1
+            lines_on_page = 2
                 
         for version in self.list_of_versions:
             assert isinstance(version, str)
