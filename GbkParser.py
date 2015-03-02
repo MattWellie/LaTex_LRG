@@ -170,13 +170,13 @@ class GbkParser:
                                 # print 'halfway = ' + str(half_way_point)
                                 if half_way_point % 2 == 1:
                                     half_way_point -= 1  # or add 1?
-                                pad5 = sequence[previous_end+half_way_point:start-1]
+                                pad5 = sequence[previous_end+half_way_point+1:start]
                             else:
                                 assert start - pad >= 0, "Exon index out of bounds"
-                                pad5 = sequence[start - (pad + 1):start - 1]
+                                pad5 = sequence[start - (pad):start]
                         else:
                             assert start - pad >= 0, "Exon index out of bounds"
-                            pad5 = sequence[start - (pad + 1):start - 1]
+                            pad5 = sequence[start - (pad):start]
                     else:
                         assert start - pad >= 0, "Exon index out of bounds"
                         assert end + pad <= len(sequence), "Exon index out of bounds"
