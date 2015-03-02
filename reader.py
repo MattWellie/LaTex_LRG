@@ -289,12 +289,12 @@ class Reader:
                     amino_was_printed = bool(" ".join(amino_string).strip())
                     amino_was_numbered = bool(" ".join(amino_number_string).strip())
 
-                    print lines_on_page
+                    # print lines_on_page
                     if lines_on_page >= 41:
                         extra_lines = 2   # Base and numbering strings as default
                         if amino_was_numbered: extra_lines += 1
                         if amino_was_printed: extra_lines += 1
-                        print 'total lines: ' + str((lines_on_page) + extra_lines)
+                        # print 'total lines: ' + str((lines_on_page) + extra_lines)
                         if ((lines_on_page) + extra_lines) >= 45:
                             self.print_exon_end()
                             lines_on_page = 0
