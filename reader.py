@@ -189,7 +189,7 @@ class Reader:
         self.line_printer('$2^{nd}$ line: Base sequence. lower case Introns, upper case Exons\\\\')
         self.line_printer('$3^{rd}$ line: Amino acid sequence. Printed on FIRST base of codon\\\\')
         self.line_printer('$4^{th}$ line: Amino acid numbering. Numbered on $1^{st}$ and increments of 10\\\\')
-        self.line_printer('\\begin{Verbatim}[fontfamily=courier]')
+        self.line_printer('\\begin{Verbatim}[fontfamily=courier, fontseries=b]')
 
     def print_latex(self):
 
@@ -369,7 +369,7 @@ class Reader:
 
         self.line_printer('\\end{Verbatim}')
         self.line_printer('\\newpage')
-        self.line_printer('\\begin{Verbatim}[fontfamily=courier]')
+        self.line_printer('\\begin{Verbatim}[fontfamily=courier, fontseries=b]')
 		
 
     def print_latex_footer(self):
