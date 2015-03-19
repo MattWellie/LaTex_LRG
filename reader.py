@@ -1,5 +1,5 @@
 __author__ = 'mwelland'
-__version__ = 1
+__version__ = 1.2
 __version_date__ = '11/02/2015'
 
 ''' This is the Reader class which uses the completed dictionary
