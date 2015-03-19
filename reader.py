@@ -36,7 +36,12 @@ class Reader:
         self.exon_spacing = False
         self.exon_printed = False
         self.dont_print = False
+        self.check_AA = True
         self.print_clashes = True
+        bases = ['T', 'C', 'A', 'G']
+        codons = [a+b+c for a in bases for b in bases for c in bases]
+        amino_acids = 'FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG'
+        self.codon_table = dict(zip(codons, amino_acids))
 
     @property
     def get_version(self):
@@ -283,7 +288,8 @@ class Reader:
             sequence = exon_dict['sequence']
             characters_on_line = 0
             self.line_printer('')
-            for char in sequence:
+            for base_position in range(len(sequence)):
+                char = sequence[base_position]
                 # Stop each line at a specific length
                 if characters_on_line % 60 == 0 and characters_on_line != 0:
                     amino_was_printed = bool(" ".join(amino_string).strip())
@@ -331,6 +337,54 @@ class Reader:
                  codon_numbered) = self.decide_amino_string_character(char, codon_count, amino_acid_counter,
                                                                       codon_numbered, protein)
                 amino_string.append(next_amino_string)
+                if next_amino_string == '*': self.check_AA = False
+                pos3 = 0
+                pos2 = 0
+                if next_amino_string != ' ' and self.check_AA:             
+                    pos1 = char
+                    check_position = base_position + 1
+                    check_sequence = sequence
+                    #This should only fail on the final exon; where it is not needed
+                    try:
+                        check_next_exon = latex_dict['list_of_exons'][position+1]
+                    except IndexError:
+                        pass
+                    if check_sequence[check_position].isupper():
+                        pos2 = check_sequence[check_position]
+                        check_position += 1
+                    else:
+                        check_sequence = latex_dict['exons'][check_next_exon]['sequence']
+                        # print check_sequence
+                        # this = raw_input()
+                        check_position = 0
+                        pos2 = check_sequence[check_position]
+                        while pos2.islower():
+                            check_position += 1
+                            pos2 = check_sequence[check_position]
+                            # print 'pos2 ' + pos2
+                        check_position += 1
+                        # this = raw_input()
+                    if check_sequence[check_position].isupper():
+                        pos3 = check_sequence[check_position]
+                    else:
+                        check_sequence = latex_dict['exons'][check_next_exon]['sequence']
+                        check_position = 0
+                        pos3 = check_sequence[check_position]
+                        while pos3.islower():
+                            check_position += 1
+                            pos3 = check_sequence[check_position]
+                            #print 'pos3 ' + pos3
+                            #that = raw_input()
+                    index = pos1+pos2+pos3
+                    try:
+                        if self.codon_table[index] != next_amino_string:
+                            print 'There is an error with the amino acid - codon pairing in exon %s: %s - %s, AA# %s' % (str(check_next_exon), index, next_amino_string, str(amino_acid_counter))
+                            print 'Base 3 position = %s' % str(check_position)
+                            print 'Next few: %s' % check_sequence[check_position+1:check_position+5]
+                            this = raw_input()
+                    except KeyError:
+                        print "The key '%s' does not have a codon entry" % index
+                    # this = raw_input()
 
                 (next_amino_number, amino_wait, codon_numbered,
                  amino_acid_counter) = self.decide_amino_number_string_character(amino_wait, codon_numbered,
