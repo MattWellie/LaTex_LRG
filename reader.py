@@ -383,8 +383,8 @@ class Reader:
                             print 'Next few: %s' % check_sequence[check_position+1:check_position+5]
                             this = raw_input()
                     except KeyError:
-                        print "The key '%s' does not have a codon entry" % index
-                    # this = raw_input()
+                        print "The codon '%s' is not valid" % index
+                        this = raw_input()
 
                 (next_amino_number, amino_wait, codon_numbered,
                  amino_acid_counter) = self.decide_amino_number_string_character(amino_wait, codon_numbered,
