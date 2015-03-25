@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+import argparse
 from Tkinter import *
 from tkFileDialog import askopenfilename
 from LrgParser import LrgParser
@@ -75,6 +75,7 @@ def get_version():
     return 'Version: {0}, Version Date: {1}'.format(str(__version__), __version_date__)
 
 
+
 def open_file():
     name = askopenfilename(defaultextension='')
     entry.delete(0, END)
@@ -119,9 +120,9 @@ def about():
 
 def run_parser():
     # Files will not be stored directly in outputFiles anymore - requires overwrite check
-    write_as_latex = True
-    print_clashes = True
-    trim_flanking = True
+    # write_as_latex = True
+    # print_clashes = True
+    # trim_flanking = True
 
     padding = pad.get()
     directory_and_file = entry.get()
@@ -181,6 +182,20 @@ def check_file_type(file_name):
         print 'This program only works for GenBank and LRG files'
         exit()
 
+arg_parser = argparse.ArgumentParser(description='Customise reference sequence settings')
+
+write_as_latex = True
+print_clashes = True
+trim_flanking = True
+
+arg_parser.add_argument('--trim', dest='trim_flanking', action='store_false', default=True)
+arg_parser.add_argument('--clashes', dest='print_clashes', action='store_false', default=True)
+arg_parser.add_argument('--text', dest='write_as_latex', action='store_false', default=True)
+args=arg_parser.parse_args()
+
+if args.print_clashes == False: print_clashes = False
+if args.trim_flanking == False: trim_flanking = False
+if args.write_as_latex == False: write_as_latex = False
 
 root = Tk()
 menu = Menu(root)
