@@ -98,19 +98,11 @@ The protein sequence is grabbed as a single uninterrupted sequence, so none of t
 approaches will affect the number of AAs printed, only the positions. However, this 
 may change which exon the AA is printed in (if a codon is across exons)
 
-To have the program print a .txt format file instead of using LaTex (useful in a pinch if the workstation
-does not have an installation of LaTex available):
-* set the write_as_latex variable in XML_GUI.py to False
-
-This program now features multiple ways of handling files where adjacent exons would appear in the flanking
-intronic sequence. These are set using the two variables 
-* print_clashes
-* trim_flanking
-Print_clashes defines whether a message is appended after the exon header to inform the reader of any clashes.
- Trim_flanking determines whether the intronic sequence is cut short to avoid printing exonic sequence as intron.
-
-These can be used in any combination, and are independent controls.
-
+This program makes use of the ArgParse Python module (25/03/2015). The optional arguments listed can be 
+used to alter the function of the program:
+* --trim : prevent intronic flanking sequence being trimmed to prevent overlapping sequence
+* --clash : prevent messages being printed under exon headers to indicate sequence overlap
+* --text : print output files as text only (rather than being processed with LaTex)
 
 
 ─────────▄──────────────▄<br>
