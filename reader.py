@@ -302,11 +302,12 @@ class Reader:
                         if amino_was_printed: extra_lines += 1
                         # print 'total lines: ' + str((lines_on_page) + extra_lines)
                         if ((lines_on_page) + extra_lines) >= 45:
-			    if self.write_as_LaTex: 
-			        self.print_exon_end()
+                            if self.write_as_LaTex: 
+                                self.print_exon_end()
                             else:
                                 self.line_printer(' ')
-                                self.line_printer(' ')                            lines_on_page = 0
+                                self.line_printer(' ')
+                            lines_on_page = 0
                     wait_value = 0
                     amino_wait = 0
                     self.line_printer(number_string)
