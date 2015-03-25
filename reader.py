@@ -1,5 +1,5 @@
 __author__ = 'mwelland'
-__version__ = 1.2
+__version__ = 1
 __version_date__ = '11/02/2015'
 
 ''' This is the Reader class which uses the completed dictionary
@@ -302,7 +302,7 @@ class Reader:
                         if amino_was_printed: extra_lines += 1
                         # print 'total lines: ' + str((lines_on_page) + extra_lines)
                         if ((lines_on_page) + extra_lines) >= 45:
-                            self.print_exon_end()
+                            if self.write_as_latex: self.print_exon_end()
                             lines_on_page = 0
                     wait_value = 0
                     amino_wait = 0
@@ -383,8 +383,8 @@ class Reader:
                             print 'Next few: %s' % check_sequence[check_position+1:check_position+5]
                             this = raw_input()
                     except KeyError:
-                        print "The codon '%s' is not valid" % index
-                        this = raw_input()
+                        print "The key '%s' does not have a codon entry" % index
+                    # this = raw_input()
 
                 (next_amino_number, amino_wait, codon_numbered,
                  amino_acid_counter) = self.decide_amino_number_string_character(amino_wait, codon_numbered,
@@ -409,7 +409,7 @@ class Reader:
                 self.line_printer(dna_string)
                 if bool(" ".join(amino_string).strip()): self.line_printer(amino_string)
                 if bool(" ".join(amino_number_string).strip()): self.line_printer(amino_number_string)
-            self.print_exon_end()
+            if self.write_as_latex: self.print_exon_end()
             lines_on_page = 2
                 
         for version in self.list_of_versions:
