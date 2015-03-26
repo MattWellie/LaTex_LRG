@@ -129,6 +129,7 @@ def run_parser():
     file_name = directory_and_file.split('/')[-2] + '/' + directory_and_file.split('/')[-1]
     file_type = check_file_type(file_name)
     dictionary = {}
+    nm = ''
     parser_details = ''
     if file_type == 'gbk':
         print 'Running parser'
@@ -138,24 +139,24 @@ def run_parser():
     elif file_type == 'lrg':
         print 'Running parser'
         lrg_reader = LrgParser(file_name, padding, trim_flanking)
-        dictionary = lrg_reader.run()
+        dictionary  = lrg_reader.run()
         parser_details = lrg_reader.get_version
 
     parser_details = '{0} {1} {2}'.format(file_type.upper(), 'Parser:', parser_details)
 
-    filename = dictionary['filename']
+
     os.chdir("outputFiles")
-    for transcript in dictionary['transcripts']:
-        transcript_filename = filename + '_' + str(transcript)
+    for transcript in dictionary['transcripts']:    
+        
         input_reader = Reader()
         writer = LatexWriter()
         reader_details = 'Reader: ' + input_reader.get_version
         writer_details = 'Writer: ' + writer.get_version
         xml_gui_details = 'Control: ' + get_version()
         list_of_versions = [parser_details, reader_details, writer_details, xml_gui_details]
-        input_list = input_reader.run(dictionary, transcript, write_as_latex, list_of_versions, print_clashes, file_type)
-
-        latex_file = writer.run(input_list, transcript_filename, write_as_latex)
+        input_list, nm = input_reader.run(dictionary, transcript, write_as_latex, list_of_versions, print_clashes, file_type)
+        filename = dictionary['genename']+'_'+ nm
+        latex_file = writer.run(input_list, filename, write_as_latex)
         if write_as_latex: call(["pdflatex", "-interaction=batchmode", latex_file])
         # Move back a level to prepare for optional other transcripts
         os.chdir(os.pardir)
