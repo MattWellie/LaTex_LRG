@@ -26,6 +26,7 @@ class Reader:
 
     def __init__(self):
         self.list_of_versions = []
+        self.nm = ''
         self.transcriptdict = {}
         self.write_as_LaTex = True
         self.file_type = ''
@@ -38,6 +39,7 @@ class Reader:
         self.dont_print = False
         self.check_AA = True
         self.print_clashes = True
+        
         # This is a codon-AA dictionary construction created by Peter Collingridge
         # http://www.petercollingridge.co.uk/book/export/html/474
         bases = ['T', 'C', 'A', 'G']
@@ -183,11 +185,12 @@ class Reader:
                                                           refseqid))
         # Not all files will include all these contents... Try-Catch
         try:
-            nm = self.transcriptdict['transcripts'][self.transcript]['NM_number'].replace('_', '\_')  # Required for LaTex
+            self.nm = self.transcriptdict['transcripts'][self.transcript]['NM_number']
+            rep_nm = self.transcriptdict['transcripts'][self.transcript]['NM_number'].replace('_', '\_')  # Required for LaTex
             np = self.transcriptdict['transcripts'][self.transcript]['NP_number'].replace('_', '\_')  # Required for LaTex
         except KeyError:
             print 'Additional details not present'
-        self.line_printer('Transcript: %s - Protein: %s' % (nm, np))
+        self.line_printer('Transcript: %s - Protein: %s' % (rep_nm, np))
         self.line_printer(' ')
         self.line_printer(' Date : \\today')
         self.line_printer('\\end{large}')
@@ -476,4 +479,4 @@ class Reader:
         self.print_clashes = print_clashes
         self.file_type = file_type        
         self.print_latex()
-        return self.output_list
+        return self.output_list, self.nm
