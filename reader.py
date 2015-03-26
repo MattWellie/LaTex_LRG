@@ -38,6 +38,8 @@ class Reader:
         self.dont_print = False
         self.check_AA = True
         self.print_clashes = True
+        # This is a codon-AA dictionary construction created by Peter Collingridge
+        # http://www.petercollingridge.co.uk/book/export/html/474
         bases = ['T', 'C', 'A', 'G']
         codons = [a+b+c for a in bases for b in bases for c in bases]
         amino_acids = 'FFLLSSSSYY**CC*WLLLLPPPPHHQQRRRRIIIMTTTTNNKKSSRRVVVVAAAADDEEGGGG'
