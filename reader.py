@@ -1,5 +1,5 @@
 __author__ = 'mwelland'
-__version__ = 1
+__version__ = 1.3
 __version_date__ = '11/02/2015'
 
 ''' This is the Reader class which uses the completed dictionary
@@ -30,6 +30,7 @@ class Reader:
         self.transcriptdict = {}
         self.write_as_LaTex = True
         self.file_type = ''
+        self.filename = ''
         self.transcript = ''
         self.output_list = []
         self.amino_printing = False
@@ -192,7 +193,10 @@ class Reader:
             print 'Additional details not present'
         self.line_printer('Transcript: %s - Protein: %s' % (rep_nm, np))
         self.line_printer(' ')
-        self.line_printer(' Date : \\today')
+        if self.file_type == 'lrg':
+            self.line_printer('LRG: %s - Date : \\today' % self.filename)
+        else:
+            self.line_printer('Date : \\today')
         self.line_printer('\\end{large}')
         self.line_printer('\\end{center}')
         self.line_printer('$1^{st}$ line: Base numbering. Full stops for intronic +/- 5, 10, 15...\\\\')
@@ -272,7 +276,7 @@ class Reader:
                 if exon_number < len(latex_dict['list_of_exons'])-1:
                     try:
                         # next_exon = exon_number+1
-                        if ex_end > latex_dict['exons'][latex_dict['list_of_exons'][position+1]]['genomic_start']-(self.transcriptdict['pad']):
+                        if ex_end > latex_dict['exons'][latex_dict['list_of_exons'][position+1]]['genomic_start']-(self.transcriptdict['pad']*2):
                             clash_after = True
                     except KeyError:
                         print 'potential undetected clash after exon ' + str(exon_number)
@@ -281,7 +285,7 @@ class Reader:
                     # print exon_number
                     # print latex_dict['list_of_exons'][exon_index-2]
                     if exon_number > latex_dict['list_of_exons'][position-1]:
-                        if ex_start < latex_dict['exons'][latex_dict['list_of_exons'][position-1]]['genomic_end']+(self.transcriptdict['pad']):
+                        if ex_start < latex_dict['exons'][latex_dict['list_of_exons'][position-1]]['genomic_end']+(self.transcriptdict['pad']*2):
                             clash_before = True
                 if clash_after is True and clash_before is True:
                     self.line_printer('BE AWARE: Flanking intron is shared with both adjacent exons')
@@ -469,11 +473,12 @@ class Reader:
                 output = ' '
         return output, amino_wait, codon_numbered, amino_acid_counter
 
-    def run(self, dictionary, transcript, write_as_latex, list_of_versions, print_clashes, file_type):
+    def run(self, dictionary, transcript, write_as_latex, list_of_versions, print_clashes, file_type, filename):
         print 'Transcript: ' + str(transcript)
         print 'Exon numbers: ' + str(dictionary['transcripts'][transcript]['list_of_exons'])
         self.list_of_versions = list_of_versions
         self.transcriptdict = dictionary
+        self.filename = filename
         self.write_as_LaTex = write_as_latex
         self.transcript = transcript
         self.print_clashes = print_clashes
