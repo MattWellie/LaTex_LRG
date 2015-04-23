@@ -10,7 +10,7 @@ from subprocess import call
 import os
 
 __author__ = 'mwelland'
-__version__ = 1
+__version__ = 1.3
 __version_date__ = '11/02/2015'
 ''' This module of the reference sequence writer creates the user interface.
     This is version 2, for which the individual operational components have
@@ -146,7 +146,9 @@ def run_parser():
 
 
     os.chdir("outputFiles")
-    for transcript in dictionary['transcripts']:    
+    for transcript in dictionary['transcripts']:  
+        print 'transcript:'
+        transcript  
         
         input_reader = Reader()
         writer = LatexWriter()
@@ -154,8 +156,12 @@ def run_parser():
         writer_details = 'Writer: ' + writer.get_version
         xml_gui_details = 'Control: ' + get_version()
         list_of_versions = [parser_details, reader_details, writer_details, xml_gui_details]
-        input_list, nm = input_reader.run(dictionary, transcript, write_as_latex, list_of_versions, print_clashes, file_type)
-        filename = dictionary['genename']+'_'+ nm
+        lrg_num = file_name.split('.')[0].split('/')[1].replace('_', '\_')+'t'+str(transcript)
+        input_list, nm = input_reader.run(dictionary, transcript, write_as_latex, list_of_versions, print_clashes, file_type, lrg_num)
+        if file_type == 'gbk':
+            filename = dictionary['genename']+'_'+ nm
+        else:
+            filename = dictionary['genename']+'_'+ file_name.split('.')[0].split('/')[1]+'t'+str(transcript)
         latex_file = writer.run(input_list, filename, write_as_latex)
         if write_as_latex: call(["pdflatex", "-interaction=batchmode", latex_file])
         # Move back a level to prepare for optional other transcripts
