@@ -2,7 +2,7 @@ import Bio
 from Bio import SeqIO
 
 __author__ = 'mwelland'
-__version__ = 1.1
+__version__ = 1.3
 __version_date__ = '11/02/2015'
 
 
@@ -144,8 +144,8 @@ class GbkParser:
                     if self.trim_flanking:
                         if exon_number < len(exon_list)-1:
                             next_exon = exon_list[exon_number]
-                            if end > self.transcriptdict['transcripts'][alternative]['exons'][next_exon]['genomic_start']-(self.transcriptdict['pad']):
-                                next_start = self.transcriptdict['transcripts'][alternative]['exons'][next_exon]['genomic_start']
+                            next_start = self.transcriptdict['transcripts'][alternative]['exons'][next_exon]['genomic_start']
+                            if end > next_start-(self.transcriptdict['pad']*2):
                                 half_way_point = int(round((next_start - (end+1))/2))
                                 # print 'halfway = ' + str(half_way_point)
                                 if half_way_point % 2 == 1:
@@ -161,8 +161,8 @@ class GbkParser:
 
                         if exon_number != exon_list[0]:
                             previous_exon = exon_list[exon_number-2]
-                            if start < self.transcriptdict['transcripts'][alternative]['exons'][previous_exon]['genomic_end']+(self.transcriptdict['pad']):
-                                previous_end = self.transcriptdict['transcripts'][alternative]['exons'][previous_exon]['genomic_end']
+                            previous_end = self.transcriptdict['transcripts'][alternative]['exons'][previous_exon]['genomic_end']
+                            if start < previous_end+(self.transcriptdict['pad']*2):
                                 half_way_point = int(round((start - (previous_end+1))/2))
                                 # print 'full = ' + str(start - (previous_end+1))
                                 # print 'halfway = ' + str(half_way_point)
