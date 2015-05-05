@@ -52,6 +52,8 @@ class GbkParser:
         except IOError as fileNotPresent:
             print "The specified file cannot be located: " + fileNotPresent.filename
             exit()
+            
+            
 
         assert self.transcriptdict['pad'] <= 2000, "Padding too large, please use a value below 2000 bases"
 
@@ -100,6 +102,8 @@ class GbkParser:
             self.transcriptdict['transcripts'][alternative]['cds_offset'] = selected_cds.location.start
           
     def get_mrna_exons(self):
+        """ This uses the list of exon start and stop positions to populate 
+            the exon positions in the dictionary""" 
 
         for alternative in self.transcriptdict['Alt transcripts']:
             self.transcriptdict['transcripts'][alternative] = {}
@@ -147,11 +151,9 @@ class GbkParser:
                             next_start = self.transcriptdict['transcripts'][alternative]['exons'][next_exon]['genomic_start']
                             if end > next_start-(self.transcriptdict['pad']*2):
                                 half_way_point = int(round((next_start - (end+1))/2))
-                                # print 'halfway = ' + str(half_way_point)
                                 if half_way_point % 2 == 1:
                                     half_way_point -= 1
                                 pad3 = sequence[end:end+half_way_point]
-                                # print 'Transcript: %s , exon %s clashes with exon %s' % (alternative, exon_number, next_exon)
                             else:
                                 assert end + pad <= len(sequence), "Exon index out of bounds"
                                 pad3 = sequence[end:end + pad]
@@ -164,10 +166,8 @@ class GbkParser:
                             previous_end = self.transcriptdict['transcripts'][alternative]['exons'][previous_exon]['genomic_end']
                             if start < previous_end+(self.transcriptdict['pad']*2):
                                 half_way_point = int(round((start - (previous_end+1))/2))
-                                # print 'full = ' + str(start - (previous_end+1))
-                                # print 'halfway = ' + str(half_way_point)
                                 if half_way_point % 2 == 1:
-                                    half_way_point -= 1  # or add 1?
+                                    half_way_point -= 1 
                                 pad5 = sequence[previous_end+half_way_point+1:start]
                             else:
                                 assert start - pad >= 0, "Exon index out of bounds"
