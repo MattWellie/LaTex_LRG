@@ -25,6 +25,7 @@ class Reader:
     """
 
     def __init__(self):
+        self.username = ''
         self.list_of_versions = []
         self.nm = ''
         self.transcriptdict = {}
@@ -183,8 +184,8 @@ class Reader:
         self.line_printer('\\begin{center}')
         self.line_printer('\\begin{large}')
         self.line_printer('Gene: %s - Sequence: %s\\\\' % (self.transcriptdict['genename'],
-                                                          refseqid))
-        # Not all files will include all these contents... Try-Catch
+                                                          refseqid))                                                        
+
         try:
             self.nm = self.transcriptdict['transcripts'][self.transcript]['NM_number']
             rep_nm = self.transcriptdict['transcripts'][self.transcript]['NM_number'].replace('_', '\_')  # Required for LaTex
@@ -197,6 +198,7 @@ class Reader:
             self.line_printer('LRG: %s - Date : \\today' % self.filename)
         else:
             self.line_printer('Date : \\today')
+        self.print_pdfinfo()  
         self.line_printer('\\end{large}')
         self.line_printer('\\end{center}')
         self.line_printer('$1^{st}$ line: Base numbering. Full stops for intronic +/- 5, 10, 15...\\\\')
@@ -204,6 +206,12 @@ class Reader:
         self.line_printer('$3^{rd}$ line: Amino acid sequence. Printed on FIRST base of codon\\\\')
         self.line_printer('$4^{th}$ line: Amino acid numbering. Numbered on $1^{st}$ and increments of 10\\\\')
         self.line_printer('\\begin{Verbatim}[fontfamily=courier, fontseries=b]')
+        
+    def print_pdfinfo(self):
+        self.line_printer('\\pdfinfo{')
+        self.line_printer('/Author (%s)' % self.username)
+        self.line_printer('/Title (Reference sequence for gene: %s)' % self.nm)
+        self.line_printer('}')
 
     def print_latex(self):
 
@@ -438,7 +446,6 @@ class Reader:
         self.line_printer('\\newpage')
         self.line_printer('\\begin{Verbatim}[fontfamily=courier, fontseries=b]')
 		
-
     def print_latex_footer(self):
         """
         A brief function to set the final lines of the document if the output
@@ -473,9 +480,10 @@ class Reader:
                 output = ' '
         return output, amino_wait, codon_numbered, amino_acid_counter
 
-    def run(self, dictionary, transcript, write_as_latex, list_of_versions, print_clashes, file_type, filename):
+    def run(self, dictionary, transcript, write_as_latex, list_of_versions, print_clashes, file_type, filename, username):
         print 'Transcript: ' + str(transcript)
         print 'Exon numbers: ' + str(dictionary['transcripts'][transcript]['list_of_exons'])
+        self.username = username
         self.list_of_versions = list_of_versions
         self.transcriptdict = dictionary
         self.filename = filename
