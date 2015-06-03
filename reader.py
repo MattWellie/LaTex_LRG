@@ -424,6 +424,12 @@ class Reader:
             # Section for incomplete lines (has not reached line-limit print)
             # Called after exon finishes printing bases
             if len(dna_string) != 0:
+                if lines_on_page >= 44:
+                    if self.write_as_LaTex: 
+                        self.print_exon_end()
+                    else:
+                        self.line_printer('  ')
+                        self.line_printer('  ')
                 wait_value = 0
                 amino_wait = 0
                 if bool(" ".join(number_string).strip()): self.line_printer(number_string)
