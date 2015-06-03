@@ -128,6 +128,7 @@ def run_parser():
     directory_and_file = entry.get()
     file_name = directory_and_file.split('/')[-2] + '/' + directory_and_file.split('/')[-1]
     file_type = check_file_type(file_name)
+    username = entry_name.get()
     dictionary = {}
     nm = ''
     parser_details = ''
@@ -157,7 +158,7 @@ def run_parser():
         xml_gui_details = 'Control: ' + get_version()
         list_of_versions = [parser_details, reader_details, writer_details, xml_gui_details]
         lrg_num = file_name.split('.')[0].split('/')[1].replace('_', '\_')+'t'+str(transcript)
-        input_list, nm = input_reader.run(dictionary, transcript, write_as_latex, list_of_versions, print_clashes, file_type, lrg_num)
+        input_list, nm = input_reader.run(dictionary, transcript, write_as_latex, list_of_versions, print_clashes, file_type, lrg_num, username)
         if file_type == 'gbk':
             filename = dictionary['genename']+'_'+ nm
         else:
@@ -224,9 +225,15 @@ pad = Entry(root)
 pad.grid(row=1, column=2, sticky='w')
 pad.insert(0, 300)
 
+text2 = Label(root, text="User Name:")
+text2.grid(row=3, column=1, sticky='w')
+entry_name = Entry(root)
+entry_name.grid(row=3, column=2, sticky='w')
+entry_name.insert(0, 'Anonymous User')
+
 button = Button(root, text="QUIT", fg="red", command=root.quit)
-button.grid(row=3, column=1)
+button.grid(row=4, column=1)
 parser = Button(root, text="Translate", fg="blue", command=run_parser)
-parser.grid(row=3, column=2)
+parser.grid(row=4, column=2)
 
 mainloop()
