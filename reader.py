@@ -179,10 +179,13 @@ class Reader:
         """
 
         self.line_printer('\\documentclass{article}')
-        self.line_printer('\\usepackage{fancyvrb}')
+        self.line_printer('\\usepackage{color, soul}')
+        self.line_printer('\\usepackage{alltt}')
+        self.line_printer('\\usepackage{pdfcomment}')
         self.line_printer('\\begin{document}')
         self.line_printer('\\begin{center}')
         self.line_printer('\\begin{large}')
+        self.line_printer('\\fontfamily{courier}}')
         self.line_printer('Gene: %s - Sequence: %s\\\\' % (self.transcriptdict['genename'],
                                                           refseqid))                                                        
 
@@ -205,7 +208,7 @@ class Reader:
         self.line_printer('$2^{nd}$ line: Base sequence. lower case Introns, upper case Exons\\\\')
         self.line_printer('$3^{rd}$ line: Amino acid sequence. Printed on FIRST base of codon\\\\')
         self.line_printer('$4^{th}$ line: Amino acid numbering. Numbered on $1^{st}$ and increments of 10\\\\')
-        self.line_printer('\\begin{Verbatim}[fontfamily=courier, fontseries=b]')
+        self.line_printer('\\begin{alltt}')
         
     def print_pdfinfo(self):
         self.line_printer('\\pdfinfo{')
@@ -448,16 +451,16 @@ class Reader:
 			
     def print_exon_end(self):
 
-        self.line_printer('\\end{Verbatim}')
+        self.line_printer('\\end{alltt}')
         self.line_printer('\\newpage')
-        self.line_printer('\\begin{Verbatim}[fontfamily=courier, fontseries=b]')
+        self.line_printer('\\begin{alltt}')
 		
     def print_latex_footer(self):
         """
         A brief function to set the final lines of the document if the output
         is to be in a LaTex parse-able format
         """
-        self.line_printer('\\end{Verbatim}')
+        self.line_printer('\\end{alltt}')
         self.line_printer('\\end{document}')
 
     def line_printer(self, string):
