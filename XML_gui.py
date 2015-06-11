@@ -7,6 +7,7 @@ from GbkParser import GbkParser
 from reader import Reader
 from latex_writer import LatexWriter
 from subprocess import call
+from primer_module import primer
 import os
 
 __author__ = 'mwelland'
@@ -142,6 +143,11 @@ def run_parser():
         lrg_reader = LrgParser(file_name, padding, trim_flanking)
         dictionary  = lrg_reader.run()
         parser_details = lrg_reader.get_version
+
+    primer_label = primer()
+    dict = primer_label.run(dictionary, os.getcwd())
+    tempout = open('tempoiut.txt', 'w')
+    print >>tempout, dict
 
     parser_details = '{0} {1} {2}'.format(file_type.upper(), 'Parser:', parser_details)
 

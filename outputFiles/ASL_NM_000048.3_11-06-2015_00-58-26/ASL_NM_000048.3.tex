@@ -1,0 +1,626 @@
+\documentclass{article}
+\usepackage{color, soul}
+\usepackage{alltt}
+\usepackage{pdfcomment}
+\begin{document}
+\begin{center}
+\begin{large}
+
+\fontfamily{courier}}
+Gene: ASL - Sequence: NG\_009288.1\\
+Transcript: NM\_000048.3 - Protein: NP\_000039.2
+ 
+Date : \today
+\pdfinfo{
+/Author (Anonymous User)
+/Title (Reference sequence for gene: NM_000048.3)
+}
+\end{large}
+\end{center}
+$1^{st}$ line: Base numbering. Full stops for intronic +/- 5, 10, 15...\\
+$2^{nd}$ line: Base sequence. lower case Introns, upper case Exons\\
+$3^{rd}$ line: Amino acid sequence. Printed on FIRST base of codon\\
+$4^{th}$ line: Amino acid numbering. Numbered on $1^{st}$ and increments of 10\\
+
+\begin{alltt}
+Exon 1 | Start: 5001 | End: 5068 | Length: 67
+BE AWARE: Flanking intron is shared with the following exon
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+ggcctgatgtcat\pdfcomment[date]{this comment}\hl{agcctctacccctggcccga}gtctccagtcccctgcgtgtctgctgag
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+ccacagcacgaacgccagcgcactaccctcctcaaccccagcccaggccccttccccgtc
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+ggggtccccccaaccctttccccgcccgcttccccgccccggggccgcttagcctccagc
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+tcagcgggaggtatccccgcccacggccaggattggaggatggaggcaacgcccaccccg
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+ccgggcggcctcctattggcgcggccgtcgccaggggtggggacaggaccggcggctgct
+
+  |-109     |-99      |-89      |-79      |-69      |-59    
+GACGCCATCCCGGCCAGAAAAGCCCTGGCCAGTGGCGGGCGCGACACTATCCGTGCGGCC
+
+  |-49      .    .    .    .    .    .    .    .    .    .  
+AGGCGGAGgtgagtgcgcggcggccggatgggcgggacgggcgtggaggacgccgagcac
+
+  .    .    .    .    .    .    .    .
+cgtggcgcgcgctcacgtccgcgtccccaagggctgcg
+\end{alltt}
+\newpage
+\begin{alltt}
+Exon 2 | Start: 5251 | End: 5305 | Length: 54
+BE AWARE: Flanking intron is shared with the previous exon
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+tccctcaagcgcagtgcccagaactcggagccagcccggcccgggggaccctgctggcca
+
+.    .    .    .    .    .    .    |-39      |-29      |-19 
+aggaggtcgtcagtccggtcttgtcttccagACCCGGAGGACCGAAGCTTCCGGACGACG
+
+     |-9      |1        |11   .    .    .    .    .    .    
+AGGAACCGCCCAACATGGCCTCGGAGgtgagtgggacctcggggactccggtcctcctag
+              M  A  S  E                                    
+              |1                                            
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+cctccaaaggagagagtgggggcgccagacctgcctcgggccaccctgctgggaatcgcc
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+ctccaggaagcaattttgaaaattacctaggaagcctgcacccccagccctcccgggcgc
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+atcatctggagcccagcagtcacctttaccaggactcaccagtatccgcaggcagccctt
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+gtggcaaacccaccaacccacactactaggggtagagtggctctgccctcacctcacagt
+
+.    .    .    .    .    .
+gatgcctgcctggccaggaaaagtgg
+\end{alltt}
+\newpage
+\begin{alltt}
+Exon 3 | Start: 11015 | End: 11209 | Length: 194
+BE AWARE: Flanking intron is shared with the following exon
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+ctgggaggcagagtttgcagtgagctgagatggcaccactgtactccagcctggccgaca
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+aagtgagactctgtctcaaaaaaaaaaaaaaagaacccaaacttttggtgttcagccatg
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+ttcccatgctcactcccagggtggtgactctgggaaggtctcagcctccttgtctgccca
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+gttagaatgatctgatgcccctgctaccatcagacttgataagtttcccaaagactcttt
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+gcaagaagcactgttctggagggtggaggagagactaattgttcttgctctcctggccag
+
+        |21       |31       |41       |51       |61       |71
+AGTGGGAAGCTTTGGGGTGGCCGGTTTGTGGGTGCAGTGGACCCCATCATGGAGAAGTTC
+S  G  K  L  W  G  G  R  F  V  G  A  V  D  P  I  M  E  K  F  
+                  |11                           |21         
+
+        |81       |91       |101      |111      |121      |131
+AACGCGTCCATTGCCTACGACCGGCACCTTTGGGAGGTGGATGTTCAAGGCAGCAAAGCC
+N  A  S  I  A  Y  D  R  H  L  W  E  V  D  V  Q  G  S  K  A  
+                  |31                           |41         
+
+        |141      |151      |161      |171      |181      |191
+TACAGCAGGGGCCTGGAGAAGGCAGGGCTCCTCACCAAGGCCGAGATGGACCAGATACTC
+Y  S  R  G  L  E  K  A  G  L  L  T  K  A  E  M  D  Q  I  L  
+                  |51                           |61         
+
+        |201       .    .    .    .    .    .    .    .    .
+CATGGCCTAGACAAGgtacttgccgtggcccaagccccacccaaggccccttccctgtgg
+H  G  L  D  K                                               
+
+    .    .    .    .    .    .    .    .    .    .    .    .
+ccccaggctcccaccaaatccctgagcaaacagtgcagtgttgcccatctgtggtttcac
+
+    .    .    .    .    .    .    .    .    .    .    .    .
+attgaactaattatatactcaagtgctgtttaactgtgtgccttgatgactgcctctctc
+
+    .    .    .    
+catcctttaatgacccctg
+\end{alltt}
+\newpage
+\begin{alltt}
+Exon 4 | Start: 11580 | End: 11663 | Length: 83
+BE AWARE: Flanking intron is shared with both adjacent exons
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+ggcccacatggctcatgggtaaaggtgtgctgggcctgagatgccccctcccagggtgcg
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+cttccaggactcagctcctgggcagggacagtcagtcaccagggatagggtgggaccaag
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+gcaggggctctcttggctgctgatgcctgctcacctgaccccggcattgctgctacccac
+
+.       |211      |221      |231      |241      |251      |261
+tacagGTGGCTGAGGAGTGGGCCCAGGGCACCTTCAAACTGAACTCCAATGATGAGGACA
+     V  A  E  E  W  A  Q  G  T  F  K  L  N  S  N  D  E  D  I
+        |71                           |81                   
+
+        |271      |281      |291 .    .    .    .    .    . 
+TCCACACAGCCAATGAGCGCCGCCTGAAGgtacgacccctggagccccaccgctttcctt
+  H  T  A  N  E  R  R  L  K                                 
+        |91                                                 
+
+   .    .    .    .    .    .    .    .    .    .    .    . 
+gcctcccctctccaccttgcccagggccactttgagcattagcaccattctgtttacttc
+
+   .    .    .    .    .    .    .    .    .    .    .    . 
+gccattggcagacagcatgtgagacctcaggacatgagccaggcaccctggctcatgcct
+
+   .    .    .    .    .    .    .    .    .    .    .    . 
+ataatcctagcactttgggaggctgaggtgggaggattgcttgagaccaggagttcgaga
+
+c
+\end{alltt}
+\newpage
+\begin{alltt}
+Exon 5 | Start: 12092 | End: 12148 | Length: 56
+BE AWARE: Flanking intron is shared with both adjacent exons
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+agcctgggcaacataatgaggtcccacagctacaaaaattaaaaaaagaaaagaaaaaaa
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+gaacaggcctcagcagaaatggcgagagatttggggaggacccggagccctggggtatgg
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+aggtaggttggcagggctgatgaggaaaactgccctgcctgggttgactcctctgggggt
+
+.    .    .    .    .    .    .             |301      |311  
+atagaccgtgaccctgggtctcccttcacctccagGAGCTCATTGGTGCAACGGCAGGGA
+                                   E  L  I  G  A  T  A  G  K
+                                            |101            
+
+    |321      |331      |341        .    .    .    .    .   
+AGCTGCACACGGGACGGAGCCGGAATGACCAGgtgctttagcccctccaccccctgctcc
+  L  H  T  G  R  S  R  N  D  Q                              
+              |111                                          
+
+ .    .    .    .    .    .    .    .   
+gtgttgtcccaaccttgaggagcccagggggcagttagag
+\end{alltt}
+\newpage
+\begin{alltt}
+Exon 6 | Start: 12289 | End: 12386 | Length: 97
+BE AWARE: Flanking intron is shared with the previous exon
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+tctgcagcggtcctggctcctcagggaagcaacacatcggcctccctgagcaccatctcc
+
+.    .    .  |351      |361      |371      |381      |391   
+tccttgcacagGTGGTCACAGACCTCAGGCTGTGGATGCGGCAGACCTGCTCCACGCTCT
+           V  V  T  D  L  R  L  W  M  R  Q  T  C  S  T  L  S
+                       |121                          |131   
+
+   |401      |411      |421      |431      |441      .    . 
+CGGGCCTCCTCTGGGAGCTCATTAGGACCATGGTGGATCGGGCAGAGGCgtgagtcctac
+  G  L  L  W  E  L  I  R  T  M  V  D  R  A  E  A            
+                       |141                                 
+
+   .    .    .    .    .    .    .    .    .    .    .    . 
+agggacacccagggggcagacagaggtgtgatggaagcctgaacaggagacctagggggc
+
+   .    .    .    .    .    .    .    .    .    .    .    . 
+aggggtgaacagcgtgggggtgccaggccctgggggacaggggcatcccagaactccagg
+
+   .    .    .    .    .    .    .    .    .    .    .    . 
+atcgaggcagagcagccaggagtgggccatttcctgcaggccccaatactcccatgccag
+
+   .    .    .    .    .    .    .    .    .    .    .    . 
+tctagctcagcaggcagagaagactaacccttcgtggggctgggtgcggtggctcacgcc
+
+   .    .    .    .    .    .    .    .    .    .
+tgtaatctcagcactttgggaggccgaggtgggtggatcacctgaggtc
+\end{alltt}
+\newpage
+\begin{alltt}
+Exon 7 | Start: 15797 | End: 15874 | Length: 77
+BE AWARE: Flanking intron is shared with the following exon
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+tattctggcccctgctcggagatgctgagtgacagaggctggacttggggtgtttctggc
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+aaagcctcactgcaggaagccccacagctcaggcccagtccttggttcacacggtcccac
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+ttccagcttcttttgcccttaagactgatttgtccctgggagatcaccagatccctcatt
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+caggtggagtgctgcagcgtgacactttttccaggggtgacccaggcctgcagggttcca
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+gtgtcacaggcaggccttgcatgagcctccacccgagcttctgctcctcctctcccacag
+
+    |451      |461      |471      |481      |491      |501  
+GGAACGTGATGTTCTCTTCCCGGGGTACACCCATTTGCAGAGGGCCCAGCCCATCCGCTG
+ E  R  D  V  L  F  P  G  Y  T  H  L  Q  R  A  Q  P  I  R  W 
+    |151                          |161                      
+
+    |511      |521    .    .    .    .    .    .    .    .
+GAGCCACTGGATTCTGAGgtgagccaggtgaggtgcaggggctgtgctagaggggagg
+ S  H  W  I  L  S                                         
+    |171                                                  
+\end{alltt}
+\newpage
+\begin{alltt}
+Exon 8 | Start: 15956 | End: 16033 | Length: 77
+BE AWARE: Flanking intron is shared with both adjacent exons
+
+.    .    .    .    .    .    .    .          |531      |541
+ccccggctgccctgaccctcctgcccctggcttcccacagCCACGCCGTGGCACTGACCC
+                                         H  A  V  A  L  T  R
+                                                        |181
+
+      |551      |561      |571      |581      |591      |601
+GAGACTCTGAGCGGCTGCTGGAGGTGCGGAAGCGGATCAATGTCCTGCCCCTGGGGAGgt
+  D  S  E  R  L  L  E  V  R  K  R  I  N  V  L  P  L  G  S   
+                          |191                          |201
+
+  .    .    .    .    .    .    .    .    .    .    .    .  
+gggtgaggctccagtgccccgagggcctggtgggggtggctgctgcatagccttagggat
+
+  .    .    .    .    .    .    .    .    .    .    .    .  
+tgacagagctgggaagtgcagagtgggacagaaaaccgccttatctgctcagcgggggac
+
+  .    .    .    .    .    .    .    .    .    .    .    .  
+tctgcatggagccccagctctcgctaaggtgacgaccaagccattgaatgtgtctgagca
+
+  .    .    .    .    .    .    .    .    .    .    .    .  
+gggccagagccctccagcaaggctcctggcaagcccagcctgctgccctcagcctgacat
+
+  .    .    
+gtgggaacatgt
+\end{alltt}
+\newpage
+\begin{alltt}
+Exon 9 | Start: 16546 | End: 16598 | Length: 52
+BE AWARE: Flanking intron is shared with both adjacent exons
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+tcaggagacaagtgtcctgcacccagggtgacttagtgcttggggacaagtgttttgtgg
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+acacttggggacaagtattctgtacccaaggagactgggccagggaagaggctaagcgcc
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+aggtggttgccctggcaaccaggacttggttctctgtgtgtgcgttcgtgtgtgtgtgtg
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+tgtgtgtgtgtgtgtgtgtgtgtgtgtcagggctgcctgccaggagccctggtcaccatg
+
+.    .    .    .         |611      |621      |631      |641 
+aatccctgtccctgcagTGGGGCCATTGCAGGCAATCCCCTGGGTGTGGACCGAGAGCTG
+                  G  A  I  A  G  N  P  L  G  V  D  R  E  L  
+                                             |211           
+
+     |651     .    .    .    .    .    .    .    .    .    .
+CTCCGAGCAGgtgagacgtcctgcccctcctccccagggagaatcaccctcagcacccgc
+L  R  A  E                                                  
+
+    .    .    .    .    .    .    .    .    .    .    .    .
+caagacctgcagacacacctgaaaccagagggcaggggcctgtggctcctggtgaaacct
+
+    .    .    .    .    .    .    .    .    .    .    .    .
+tcattcattgcctatgggcactgaggtcatcaagttcaggggtcactcatggcagggatg
+\end{alltt}
+\newpage
+\begin{alltt}
+Exon 10 | Start: 16941 | End: 17003 | Length: 62
+BE AWARE: Flanking intron is shared with the previous exon
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+ctggtactgagagactcagggctcctgcctccctcctgggactgtgcaaaagatccctcc
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+ccccagctgttgccccaccctgatcaggggagggggctgggcaacctagttgggggagag
+
+.    .    .    .    .    .    .    .    .    .    .     |661
+ggggccactccctgtcctccagcttagccctgcttcctcccacccccccagAACTCAACT
+                                                     L  N  F
+                                                        |221
+
+      |671      |681      |691      |701      |711        . 
+TTGGGGCCATCACTCTCAACAGCATGGATGCCACTAGTGAGCGGGACTTTGTGGgtgagt
+  G  A  I  T  L  N  S  M  D  A  T  S  E  R  D  F  V  A      
+                          |231                              
+
+   .    .    .    .    .    .    .    .    .    .    .    . 
+cctggggagccagtcccctgccctgtgcctcactttagtccttcagcccagcttctctcc
+
+   .    .    .    .    .    .    .    .    .    .    .    . 
+agtttcctcccacacctccacggacaggctggttgtggtgatattgtacactgaagtata
+
+   .    .    .    .    .    .    .    .    .    .    .    . 
+aaccttaaatgggtaaagtgggtggggcatggtggttcaccatgcccagcactggccaac
+
+   .    .    .    .    .    .    .    .    .    .    .    . 
+atggtgaaaccccatctctactaagaatacaaaatttagctgggtgtgtggtggcaggtg
+
+   .    .    .    .    .    .    .    .    .    .    .
+cctgtaatcccagctactcaggagttctgaggccagagaatcacttgaacccag
+\end{alltt}
+\newpage
+\begin{alltt}
+Exon 11 | Start: 18019 | End: 18133 | Length: 114
+BE AWARE: Flanking intron is shared with the following exon
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+ataaattgtatgtgagtgataactcagtaaagctggtttatttaaaacaacaacaataac
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+aaaaaacacgctaggtgcaatggcttacgtttgtaatcctagcactttgggaggccaaag
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+cagaaggattgcttgagcccacaagtttcagaacagcttgggcgacatagcacgacccca
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+tctttgcgaaaaatgaaaatttagccgggtccccccaccgcctaacctcctcctgccccc
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+tgtatggtcaggctgggtggggatgggagaggcctggtgactgggaaccttttctcccag
+
+  |721      |731      |741      |751      |761      |771    
+CCGAGTTCCTGTTCTGGGCTTCGCTGTGCATGACCCATCTCAGCAGGATGGCCGAGGACC
+  E  F  L  F  W  A  S  L  C  M  T  H  L  S  R  M  A  E  D  L
+  |241                          |251                        
+
+  |781      |791      |801      |811      |821      |831   .
+TCATCCTCTACTGCACCAAGGAATTCAGCTTCGTGCAGCTCTCAGATGCCTACAGgtaag
+  I  L  Y  C  T  K  E  F  S  F  V  Q  L  S  D  A  Y  S      
+  |261                          |271                        
+
+    .    .    .    .    .    .    .    .    .    .    .    .
+ccctgaactgccacctccatctgccgctgccggcctctgtatcccccgccgcccgcggac
+
+    .    .    .    
+gtggctgccttcctccccg
+\end{alltt}
+\newpage
+\begin{alltt}
+Exon 12 | Start: 18303 | End: 18387 | Length: 84
+BE AWARE: Flanking intron is shared with both adjacent exons
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+cccacccctccgccagacctggccattgcggcgctggaccagccaagggtccagcccctt
+
+.    .    .    .    .          |841      |851      |861     
+cagcgccagcacctctgtccccagCACGGGAAGCAGCCTGATGCCCCAGAAGAAAAACCC
+                         T  G  S  S  L  M  P  Q  K  K  N  P 
+                               |281                         
+
+ |871      |881      |891      |901      |911        .    . 
+CGACAGTTTGGAGCTGATCCGGAGCAAGGCTGGGCGTGTGTTTGGGCGGgtgagcaaggc
+ D  S  L  E  L  I  R  S  K  A  G  R  V  F  G  R             
+ |291                          |301                         
+
+   .    .    .    .    .    .    .   
+agggggaggggcggggcctctgggctgatggtgggtg
+\end{alltt}
+\newpage
+\begin{alltt}
+Exon 13 | Start: 18488 | End: 18547 | Length: 59
+BE AWARE: Flanking intron is shared with both adjacent exons
+
+.    .    .    .    .    .    .    .    .    .    .  |921   
+ccaggggggcaggatcccgggtccagcccctgtgcctccctcttcccgcagTGTGCCGGG
+                                                   C  A  G  
+
+   |931      |941      |951      |961      |971        .    
+CTCCTGATGACCCTCAAGGGACTTCCCAGCACCTACAACAAAGACTTACAGgtgcgaggc
+L  L  M  T  L  K  G  L  P  S  T  Y  N  K  D  L  Q           
+   |311                          |321                       
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+cgggggaggcctggctagtacgtgccagttctcagggctctggcacactcaggcagggcc
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+ccaccccgggattgccatacatcctcccatcctgtgcacacagctccatccgtggctgcc
+
+.    . 
+cttgaac
+\end{alltt}
+\newpage
+\begin{alltt}
+Exon 14 | Start: 18824 | End: 18907 | Length: 83
+BE AWARE: Flanking intron is shared with the previous exon
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+ctctgcccttcctttgttggggtattgagtgttcttcccatggaaggcagtggggatgcc
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+tcagtgggggggtggggctgtggggaccctgggtgccagggggctgctaggccctcacct
+
+.    .    .    .     |981      |991      |1001     |1011    
+cctgccatgtgcctcccagGAGGACAAGGAAGCTGTGTTTGAAGTGTCAGACACTATGAG
+                   E  D  K  E  A  V  F  E  V  S  D  T  M  S 
+                               |331                         
+
+ |1021     |1031     |1041     |1051     |1061 .    .    .  
+TGCCGTGCTCCAGGTGGCCACTGGCGTCATCTCTACGCTGCAGgcaagacatcacccccc
+ A  V  L  Q  V  A  T  G  V  I  S  T  L  Q                   
+ |341                          |351                         
+
+  .    .    .    .    .    .    .    .    .    .    .    .  
+tgcttctcctcccctaggtcccaggcactggggtgggcatgcggggagggtggccttggg
+
+  .    .    .    .    .    .    .    .    .    .    .    .  
+aggaggtgaggtggggctggaggacctggggcagggaaggagaggtgtgctcgctcctgc
+
+  .    .    .    .    .    .    .    .    .    .    .    .  
+tcctggggaacagggaaaggacagaaactgctgccatgcagtggaagtagatgagactca
+
+  .    .    .    .    .    .    .    .    .    .    .    .  
+gggggcctggggcctgtcaaatggcctgaccagaactctttaaaaaaagaaaatctaaac
+
+  .    .    .    .    .    .    .    .    .
+aaaaggccaggtgcagtggctcatgcctggaatctcacacttt
+\end{alltt}
+\newpage
+\begin{alltt}
+Exon 15 | Start: 21218 | End: 21298 | Length: 80
+BE AWARE: Flanking intron is shared with the following exon
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+gaccctgtctcctaaaacagaaaacaaatcctccaggaacatctgatgcatgctgaagat
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+aaggactctttgaaaacataaaggccagtaaaacatacaggccagtaagtgttcatagca
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+catgtaaatattatcgataattatgagaagatggttcaagttgagagtgagacagagccg
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+agtgggtaagagagtatctgcccaaggcagggatgtcctggcagaggggcaggtcctggg
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+cctggcagcttcagatcccagggtccccagggctcaccactcgcccacctgtgcccccag
+
+        |1071     |1081     |1091     |1101     |1111     |1121
+ATTCACCAAGAGAACATGGGACAGGCTCTCAGCCCCGACATGCTGGCCACTGACCTTGCC
+I  H  Q  E  N  M  G  Q  A  L  S  P  D  M  L  A  T  D  L  A  
+                  |361                          |371        
+
+        |1131     |1141  .    .    .    .    .    .    .    
+TATTACCTGGTCCGCAAAGGGgtaagtgtgtagcagccagggggagggtgaggagatggg
+Y  Y  L  V  R  K  G                                         
+                  |381                                      
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+gtgccccccccagagggtgggggagctcaggaatgggtgcaagcggcccagcctggtggc
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+tcacccctgtaatcccagcactttgggaagccgaggtgggcgggtcacttgaggccagga
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+gttcgagaccagcctggtcaacatggtgaaaccccgtctcttttgatgtaaaaatacaac
+
+.    .    .    
+aattagctgggtgtg
+\end{alltt}
+\newpage
+\begin{alltt}
+Exon 16 | Start: 21769 | End: 21875 | Length: 106
+BE AWARE: Flanking intron is shared with the previous exon
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+tggcacactcctgtaatcccagttactcgggaggctgaggcaggagaattgattgaactg
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+ggaggtggagtttgcggtgaggtgagatcgcgccactgcactccagcctgggcaacagag
+
+.    .    .    .    .    .    .    .    .    .    .    .    
+cgagactttgtgtcaaaaagaaaaaaaaaaaaaaaaggaagggggtgcaggcaatggagg
+
+.    .    .    .    .    .    .    .    .    .    .         
+cagatcagggcatggagaaacctgcctcagcgccatcttcctccctggcacccagATGCC
+                                                       M  P 
+
+  |1151     |1161     |1171     |1181     |1191     |1201   
+ATTCCGCCAGGCCCACGAGGCCTCCGGGAAAGCTGTGTTCATGGCCGAGACCAAGGGGGT
+ F  R  Q  A  H  E  A  S  G  K  A  V  F  M  A  E  T  K  G  V 
+                      |391                          |401    
+
+  |1211     |1221     |1231     |1241         .    .    .   
+CGCCCTCAACCAGCTGTCACTGCAGGAGCTGCAGACCATCAGgtacggcccatccccttc
+ A  L  N  Q  L  S  L  Q  E  L  Q  T  I  S                   
+                      |411                                  
+
+ .    .    .    .    .    .    .    .    .    .    .    .   
+cccatgctgcctcctaggaagtgagcctgggtgcctggagcccagggtggcctggcgccc
+
+ .    .    .    .    .    .    .    .    .    .    .    .   
+tggcccacctcttcctctctccccagccccctgttctcgggcgacgtgatctgcgtgtgg
+
+ .    .    .    .    .    .    .    .    .    .    .    .   
+gactacgggcacagtgtggagcagtatggtgccctgggcggcactgcgcgctccagcgtc
+
+ .    .    .    .    .    .    .    .    .    .    .    .   
+gactggcagatccgccaggtgcgggcgctactgcaggcacagcaggcctaggtcctccca
+
+ .    .    .    .    .    .    .    .    .
+cacctgccccctaataaagtgggcgcgagaggaggctgctgt
+\end{alltt}
+\newpage
+\begin{alltt}
+Exon 17 | Start: 21980 | End: 22555 | Length: 575
+BE AWARE: Flanking intron is shared with the previous exon
+
+.    .    .    .    .    .    .    .    .    .    .  |1251  
+cctggagcccagggtggcctggcgccctggcccacctcttcctctctccccagCCCCCTG
+                                                      P  L  
+
+   |1261     |1271     |1281     |1291     |1301     |1311  
+TTCTCGGGCGACGTGATCTGCGTGTGGGACTACGGGCACAGTGTGGAGCAGTATGGTGCC
+F  S  G  D  V  I  C  V  W  D  Y  G  H  S  V  E  Q  Y  G  A  
+   |421                          |431                       
+
+   |1321     |1331     |1341     |1351     |1361     |1371  
+CTGGGCGGCACTGCGCGCTCCAGCGTCGACTGGCAGATCCGCCAGGTGCGGGCGCTACTG
+L  G  G  T  A  R  S  S  V  D  W  Q  I  R  Q  V  R  A  L  L  
+   |441                          |451                       
+
+   |1381     |1391|*1       |*11      |*21      |*31      |*41
+CAGGCACAGCAGGCCTAGGTCCTCCCACACCTGCCCCCTAATAAAGTGGGCGCGAGAGGA
+Q  A  Q  Q  A  *   
+   |461                                                     
+
+        |*51      |*61      |*71      |*81      |*91      |*101
+GGCTGCTGTGTGTTTCCTGCCCCAGCCTGGCTCCCTCGTTGCTGGGCTTTCGGGGCTGGC
+
+        |*111     |*121     |*131     |*141     |*151     |*161
+CAGTGGGGACAGTCAGGGACTGGAGAGGCAGGGCAGGGTGGCCTGTAATCCCAGCACTTT
+
+        |*171     |*181     |*191     |*201     |*211     |*221
+GGAAGGGCAAGGTGCGAGGATGCTTGAGGCCAGGAGTTTGACACAGCCTGGGCAACACAG
+
+        |*231     |*241     |*251     |*261     |*271     |*281
+GGAGACCCCCATCTCTACTCAATAATAAAACAAATAGCCTGGCGTGGTGGCCCATGCATA
+
+        |*291     |*301     |*311     |*321     |*331     |*341
+TAGTCCCAGCTACTTGTAAGGCTGAGGTGAGAGGACACTTGTGCCCAGGAGTGGAGGCTG
+
+        |*351     |*361     |*371     |*381     |*391     |*401
+CAGTGAGCTATGATCACGCCACTGCATTCCAGCCTGGATAACAGAGTGAGAACCTATCTC
+
+        |*411     |*421     |*431.    .    .    .    .    . 
+TAAAAATAAATAAATAAACGAAAAATAAAtggaagcggagaaaactgggcaagggcaatg
+
+   .    .    .    .    .    .    .    .    .    .    .    . 
+agagtcgtagacgggaagggaagagggggctcccatcatagcctctgctctgtccaggcc
+
+\end{alltt}
+\newpage
+\begin{alltt}
+   .    .    .    .    .    .    .    .    .    .    .    . 
+ccatccccttcagacagggtatcacagtgacctcctaggccaggagcgatggctcacgcc
+
+   .    .    .    .    .    .    .    .    .    .    .    . 
+tgtaatcctagcattttgggaggcctgggcaacaggaagactccaactaccatattaaaa
+
+   .    .    .    .    .    .    .    .    .    .    .    . 
+aaaacatgaatgaaagcaaaaacaaaacaactagccaaactgggcgcggtggctcacacc
+
+   .    .    .    .    .    .
+tgtaatcccagcactgtaggaggctgagg
+\end{alltt}
+\newpage
+\begin{alltt}
+GBK Parser: Version: 1.3, Version Date: 11/02/2015
+Reader: Version: 1.3, Version Date: 11/02/2015
+Writer: Version: 1.3, Version Date: 11/02/2015
+Control: Version: 1.3, Version Date: 11/02/2015
+\end{alltt}
+\end{document}
