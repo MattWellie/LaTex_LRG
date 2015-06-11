@@ -55,13 +55,17 @@ class primer:
                 self.search_for_seq(seq, constructed_string)
 
     def search_for_seq(self, seq, construct):
-        pat = re.compile(seq, re.IGNORECASE)
         for transcript in self.dict['transcripts']:
             exonlist = self.dict['transcripts'][transcript]['exons'].keys()
             for exon in exonlist:
-                seq_rep = re.sub(pat, r'\pdfcomment[date]{%s}\hl{%s}' % (construct, seq),\
-                    self.dict['transcripts'][transcript]['exons'][exon]['sequence'])
-                self.dict['transcripts'][transcript]['exons'][exon]['sequence'] = seq_rep
+                match = re.search(r'(?i)%s' % seq, self.dict['transcripts'][transcript]['exons'][exon]['sequence'])
+                if match:
+                    print self.dict['transcripts'][transcript]['exons'][exon]['sequence']
+                    self.dict['transcripts'][transcript]['exons'][exon]['sequence'] = \
+                                re.sub(r'(?i)%s' % seq, r'\pdfcomment[date]{%s}\hl{%s}' % (construct, match.group()),\
+                                self.dict['transcripts'][transcript]['exons'][exon]['sequence'])
+                    print self.dict['transcripts'][transcript]['exons'][exon]['sequence']
+                    this = raw_input()
 
     def run(self, dictionary, basepath):
         #This is the main method
