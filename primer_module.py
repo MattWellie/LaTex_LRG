@@ -1,6 +1,7 @@
 import re
 import os
 import csv
+import Bio
 
 __author__ = 'Matt'
 __version__ = 0.1
@@ -35,19 +36,26 @@ class primer:
                 self.carry_on = True
                 return filename
 
-
     def digest_input(self, filename):
         print filename
         #Extract contents of the CSV
         with open(os.path.join('primers', filename+'.csv')) as csvfile:
             reader = csv.DictReader(csvfile)
             exon = 1
+            frag_size = 0
             for row in reader:
                 seq = row['Primer Sequences']
                 if row['Exon'] != '':
                     exon = row['Exon']
                 direction = row['Direction']
-                frag = row['Fragment Size']
+                if direction == 'R':
+                    seq = self.create_reverse_complement(seq)
+                if row['Fragment Size'] == '':
+                    frag = frag_size
+                else:
+                    frag = row['Fragment Size']
+                    frag_size = frag
+
                 if row['Primer Batch Numbers In Use'] == '':
                     row['Primer Batch Numbers In Use'] = 'Unavailable'
                 batch = row['Primer Batch Numbers In Use']
@@ -60,12 +68,26 @@ class primer:
             for exon in exonlist:
                 match = re.search(r'(?i)%s' % seq, self.dict['transcripts'][transcript]['exons'][exon]['sequence'])
                 if match:
-                    print self.dict['transcripts'][transcript]['exons'][exon]['sequence']
+                    #print self.dict['transcripts'][transcript]['exons'][exon]['sequence']
                     self.dict['transcripts'][transcript]['exons'][exon]['sequence'] = \
-                                re.sub(r'(?i)%s' % seq, r'\pdfcomment[date]{%s}\hl{%s}' % (construct, match.group()),\
+                                re.sub(r'(?i)%s' % seq, r'\\pdfcomment[date]{%s}\\hl{%s}' % (construct, match.group()),\
                                 self.dict['transcripts'][transcript]['exons'][exon]['sequence'])
-                    print self.dict['transcripts'][transcript]['exons'][exon]['sequence']
-                    this = raw_input()
+                    #print self.dict['transcripts'][transcript]['exons'][exon]['sequence']
+                    #this = raw_input()
+
+    def create_reverse_complement(self, string):
+        new_list = []
+        for x in string:
+            if x == 'A':
+                new_list.append('T')
+            if x == 'C':
+                new_list.append('G')
+            if x == 'G':
+                new_list.append('C')
+            if x == 'T':
+                new_list.append('A')
+        new_string = ''.join(new_list)
+        return new_string[::-1]
 
     def run(self, dictionary, basepath):
         #This is the main method
@@ -76,5 +98,7 @@ class primer:
         if self.carry_on == True:
             #other methods
             self.digest_input(filename)
+            #print self.dict['transcripts'][1]['exons'][18]
+            #this = raw_input()
             return self.dict
 

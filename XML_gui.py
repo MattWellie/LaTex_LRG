@@ -120,10 +120,6 @@ def about():
 
 
 def run_parser():
-    # Files will not be stored directly in outputFiles anymore - requires overwrite check
-    # write_as_latex = True
-    # print_clashes = True
-    # trim_flanking = True
 
     padding = pad.get()
     directory_and_file = entry.get()
@@ -221,7 +217,7 @@ text_in_label = Label(root, text="File name:")
 text_in_label.grid(row=0, column=1, sticky='w')
 entry = Entry(root)
 entry.grid(row=0, column=2, sticky='w')
-entry.insert(0, 'input/LRG_769.xml')
+entry.insert(0, 'G:/Git/Reference_Sequencer/lrgs/LRG_292.xml')
 button = Button(root, text="Browse...", command=open_file)
 button.grid(row=0, column=3)
 

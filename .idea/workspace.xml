@@ -2,659 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f621aaf5-0b0d-47c8-aefd-d38384ab8ff6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/primer_module.py" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_10.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_100.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_101.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_102.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_103.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_104.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_105.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_106.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_107.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_108.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_109.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_11.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_110.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_111.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_112.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_113.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_114.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_115.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_116.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_117.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_118.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_119.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_12.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_120.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_121.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_122.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_123.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_124.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_125.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_126.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_127.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_128.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_129.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_13.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_130.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_132.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_133.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_134.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_135.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_136.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_137.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_138.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_139.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_140.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_141.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_142.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_144.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_145.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_146.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_147.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_148.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_149.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_15.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_150.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_151.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_152.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_154.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_155.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_156.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_157.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_158.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_159.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_16.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_160.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_161.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_162.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_163.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_164.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_165.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_168.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_169.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_17.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_170.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_171.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_172.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_173.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_174.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_175.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_176.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_177.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_178.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_179.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_18.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_180.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_182.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_183.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_184.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_185.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_186.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_187.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_188.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_189.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_19.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_190.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_191.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_192.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_193.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_194.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_195.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_196.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_197.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_198.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_199.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_20.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_200.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_201.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_202.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_203.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_204.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_205.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_207.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_208.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_209.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_21.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_210.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_211.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_212.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_213.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_214.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_215.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_216.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_217.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_218.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_219.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_22.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_220.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_221.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_226.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_227.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_228.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_229.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_23.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_230.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_231.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_232.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_234.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_236.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_239.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_24.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_241.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_242.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_243.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_245.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_246.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_248.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_249.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_25.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_250.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_251.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_252.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_253.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_254.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_255.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_256.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_257.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_258.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_26.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_260.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_261.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_262.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_263.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_264.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_265.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_266.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_267.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_268.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_269.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_27.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_270.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_271.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_272.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_273.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_274.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_275.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_276.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_278.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_279.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_28.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_280.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_281.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_283.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_284.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_285.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_286.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_287.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_288.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_289.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_29.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_290.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_291.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_292.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_293.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_294.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_295.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_296.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_298.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_299.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_30.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_300.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_301.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_304.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_306.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_307.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_308.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_309.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_31.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_310.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_311.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_314.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_316.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_317.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_318.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_319.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_32.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_321.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_322.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_325.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_326.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_327.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_328.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_329.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_33.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_330.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_331.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_332.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_333.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_334.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_335.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_336.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_337.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_34.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_340.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_341.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_343.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_345.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_346.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_347.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_348.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_349.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_35.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_350.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_351.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_352.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_353.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_354.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_355.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_356.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_357.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_358.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_359.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_36.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_361.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_362.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_363.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_364.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_365.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_366.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_368.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_369.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_37.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_371.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_372.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_373.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_374.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_375.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_376.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_377.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_378.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_379.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_38.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_380.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_382.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_383.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_384.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_385.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_386.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_388.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_389.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_39.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_390.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_391.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_392.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_393.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_394.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_395.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_396.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_397.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_398.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_399.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_40.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_400.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_401.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_403.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_404.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_405.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_406.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_408.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_409.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_41.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_410.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_411.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_413.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_414.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_415.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_416.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_417.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_419.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_42.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_421.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_422.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_423.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_424.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_426.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_43.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_432.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_433.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_434.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_435.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_437.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_439.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_44.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_440.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_442.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_443.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_444.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_445.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_446.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_447.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_448.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_449.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_45.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_450.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_451.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_452.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_454.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_455.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_456.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_457.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_458.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_46.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_460.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_461.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_462.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_463.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_464.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_465.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_466.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_467.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_469.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_47.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_470.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_471.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_472.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_473.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_474.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_475.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_476.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_48.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_482.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_483.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_484.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_485.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_486.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_487.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_488.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_489.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_49.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_490.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_491.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_492.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_493.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_494.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_495.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_496.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_497.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_498.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_499.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_50.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_500.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_501.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_502.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_503.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_504.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_505.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_507.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_509.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_51.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_510.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_511.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_512.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_513.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_514.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_515.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_516.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_517.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_518.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_519.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_52.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_520.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_521.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_522.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_523.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_524.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_525.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_526.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_527.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_528.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_529.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_53.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_530.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_531.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_532.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_533.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_534.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_535.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_536.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_537.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_538.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_539.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_54.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_540.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_541.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_55.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_556.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_557.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_56.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_57.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_58.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_59.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_6.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_60.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_607.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_608.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_609.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_61.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_610.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_611.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_612.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_613.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_614.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_615.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_616.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_617.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_618.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_62.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_620.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_621.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_622.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_623.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_625.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_627.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_629.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_63.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_631.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_64.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_640.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_642.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_643.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_65.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_650.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_652.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_653.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_657.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_659.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_66.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_661.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_662.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_663.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_664.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_665.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_666.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_669.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_67.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_670.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_672.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_673.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_674.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_675.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_676.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_683.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_684.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_685.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_687.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_689.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_69.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_690.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_691.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_692.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_693.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_697.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_70.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_700.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_702.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_71.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_715.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_717.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_719.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_72.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_720.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_721.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_722.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_723.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_725.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_726.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_727.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_73.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_733.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_734.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_74.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_741.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_742.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_744.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_748.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_749.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_75.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_750.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_751.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_753.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_754.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_755.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_757.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_759.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_76.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_760.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_764.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_767.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_769.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_77.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_770.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_771.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_776.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_777.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_778.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_78.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_787.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_788.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_79.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_8.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_80.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_81.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_828.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_83.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_84.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_85.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_86.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_88.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_89.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_90.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_91.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_92.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_93.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_94.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_96.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_97.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_98.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\LRG_99.xml" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\NF1_Genbank.gb" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\input\NF1_Genbank.gb.gb" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\ABL1_LRG_769_300_2_01-03-2015_11-09-21\ABL1_LRG_769_300_2.aux" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\ABL1_LRG_769_300_2_01-03-2015_11-09-21\ABL1_LRG_769_300_2.log" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\ABL1_LRG_769_300_2_01-03-2015_11-09-21\ABL1_LRG_769_300_2.pdf" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\ABL1_LRG_769_300_2_01-03-2015_11-09-21\ABL1_LRG_769_300_2.synctex.gz" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\ABL1_LRG_769_300_2_01-03-2015_11-09-21\ABL1_LRG_769_300_2.tex" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\APC_LRG_130_300_1_02-03-2015_10-40-14\APC_LRG_130_300_1.aux" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\APC_LRG_130_300_1_02-03-2015_10-40-14\APC_LRG_130_300_1.log" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\APC_LRG_130_300_1_02-03-2015_10-40-14\APC_LRG_130_300_1.pdf" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\APC_LRG_130_300_1_02-03-2015_10-40-14\APC_LRG_130_300_1.tex" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\APC_LRG_130_300_2_02-03-2015_10-40-15\APC_LRG_130_300_2.aux" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\APC_LRG_130_300_2_02-03-2015_10-40-15\APC_LRG_130_300_2.log" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\APC_LRG_130_300_2_02-03-2015_10-40-15\APC_LRG_130_300_2.pdf" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\APC_LRG_130_300_2_02-03-2015_10-40-15\APC_LRG_130_300_2.tex" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\APC_LRG_130_300_3_02-03-2015_10-40-15\APC_LRG_130_300_3.aux" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\APC_LRG_130_300_3_02-03-2015_10-40-15\APC_LRG_130_300_3.log" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\APC_LRG_130_300_3_02-03-2015_10-40-15\APC_LRG_130_300_3.pdf" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\APC_LRG_130_300_3_02-03-2015_10-40-15\APC_LRG_130_300_3.tex" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292_300_1_02-03-2015_10-40-43\BRCA1_LRG_292_300_1.aux" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292_300_1_02-03-2015_10-40-43\BRCA1_LRG_292_300_1.log" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292_300_1_02-03-2015_10-40-43\BRCA1_LRG_292_300_1.pdf" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292_300_1_02-03-2015_10-40-43\BRCA1_LRG_292_300_1.tex" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\COL4A5_LRG_232_300_1_02-03-2015_10-40-56\COL4A5_LRG_232_300_1.aux" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\COL4A5_LRG_232_300_1_02-03-2015_10-40-56\COL4A5_LRG_232_300_1.log" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\COL4A5_LRG_232_300_1_02-03-2015_10-40-56\COL4A5_LRG_232_300_1.pdf" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\COL4A5_LRG_232_300_1_02-03-2015_10-40-56\COL4A5_LRG_232_300_1.tex" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\COL4A5_LRG_232_300_2_02-03-2015_10-40-57\COL4A5_LRG_232_300_2.aux" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\COL4A5_LRG_232_300_2_02-03-2015_10-40-57\COL4A5_LRG_232_300_2.log" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\COL4A5_LRG_232_300_2_02-03-2015_10-40-57\COL4A5_LRG_232_300_2.pdf" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\COL4A5_LRG_232_300_2_02-03-2015_10-40-57\COL4A5_LRG_232_300_2.tex" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\ENST00000448314_300_1_02-03-2015_10-42-05\CYP21A2_300_1.pdf" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\ENST00000448314_300_1_02-03-2015_10-42-05\ENST00000448314_300_1.aux" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\ENST00000448314_300_1_02-03-2015_10-42-05\ENST00000448314_300_1.log" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\ENST00000448314_300_1_02-03-2015_10-42-05\ENST00000448314_300_1.tex" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\FBN1_LRG_778_300_1_02-03-2015_10-42-32\FBN1_LRG_778_300_1.aux" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\FBN1_LRG_778_300_1_02-03-2015_10-42-32\FBN1_LRG_778_300_1.log" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\FBN1_LRG_778_300_1_02-03-2015_10-42-32\FBN1_LRG_778_300_1.pdf" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\FBN1_LRG_778_300_1_02-03-2015_10-42-32\FBN1_LRG_778_300_1.tex" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\GJB2_Genbank_300_1_02-03-2015_10-42-50\GJB2_Genbank_300_1.aux" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\GJB2_Genbank_300_1_02-03-2015_10-42-50\GJB2_Genbank_300_1.log" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\GJB2_Genbank_300_1_02-03-2015_10-42-50\GJB2_Genbank_300_1.pdf" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\GJB2_Genbank_300_1_02-03-2015_10-42-50\GJB2_Genbank_300_1.tex" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\MECP2_LRG_764_300_1_02-03-2015_10-43-13\MECP2_LRG_764_300_1.aux" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\MECP2_LRG_764_300_1_02-03-2015_10-43-13\MECP2_LRG_764_300_1.log" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\MECP2_LRG_764_300_1_02-03-2015_10-43-13\MECP2_LRG_764_300_1.pdf" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\MECP2_LRG_764_300_1_02-03-2015_10-43-13\MECP2_LRG_764_300_1.tex" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\MECP2_LRG_764_300_2_02-03-2015_10-43-14\MECP2_LRG_764_300_2.aux" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\MECP2_LRG_764_300_2_02-03-2015_10-43-14\MECP2_LRG_764_300_2.log" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\MECP2_LRG_764_300_2_02-03-2015_10-43-14\MECP2_LRG_764_300_2.pdf" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\MECP2_LRG_764_300_2_02-03-2015_10-43-14\MECP2_LRG_764_300_2.tex" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\MSH6_LRG_219_300_1_02-03-2015_10-43-38\MSH6_LRG_219_300_1.aux" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\MSH6_LRG_219_300_1_02-03-2015_10-43-38\MSH6_LRG_219_300_1.log" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\MSH6_LRG_219_300_1_02-03-2015_10-43-38\MSH6_LRG_219_300_1.pdf" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\MSH6_LRG_219_300_1_02-03-2015_10-43-38\MSH6_LRG_219_300_1.tex" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\NF1_LRG_214_300_1_02-03-2015_10-43-54\NF1_LRG_214_300_1.aux" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\NF1_LRG_214_300_1_02-03-2015_10-43-54\NF1_LRG_214_300_1.log" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\NF1_LRG_214_300_1_02-03-2015_10-43-54\NF1_LRG_214_300_1.pdf" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\NF1_LRG_214_300_1_02-03-2015_10-43-54\NF1_LRG_214_300_1.tex" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\NF1_LRG_214_300_2_02-03-2015_10-43-55\NF1_LRG_214_300_2.aux" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\NF1_LRG_214_300_2_02-03-2015_10-43-55\NF1_LRG_214_300_2.log" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\NF1_LRG_214_300_2_02-03-2015_10-43-55\NF1_LRG_214_300_2.pdf" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\NF1_LRG_214_300_2_02-03-2015_10-43-55\NF1_LRG_214_300_2.tex" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\NSD1_Ensembl_300_1_02-03-2015_10-44-25\NSD1_Ensembl_300_1.aux" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\NSD1_Ensembl_300_1_02-03-2015_10-44-25\NSD1_Ensembl_300_1.log" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\NSD1_Ensembl_300_1_02-03-2015_10-44-25\NSD1_Ensembl_300_1.pdf" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\NSD1_Ensembl_300_1_02-03-2015_10-44-25\NSD1_Ensembl_300_1.tex" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\PALB2_LRG_308_300_1_02-03-2015_10-44-40\PALB2_LRG_308_300_1.aux" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\PALB2_LRG_308_300_1_02-03-2015_10-44-40\PALB2_LRG_308_300_1.log" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\PALB2_LRG_308_300_1_02-03-2015_10-44-40\PALB2_LRG_308_300_1.pdf" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\PALB2_LRG_308_300_1_02-03-2015_10-44-40\PALB2_LRG_308_300_1.tex" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\SDHB_LRG_316_300_1_02-03-2015_10-44-53\SDHB_LRG_316_300_1.aux" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\SDHB_LRG_316_300_1_02-03-2015_10-44-53\SDHB_LRG_316_300_1.log" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\SDHB_LRG_316_300_1_02-03-2015_10-44-53\SDHB_LRG_316_300_1.pdf" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\SDHB_LRG_316_300_1_02-03-2015_10-44-53\SDHB_LRG_316_300_1.tex" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\SLC25A13_Genbank_300_1_02-03-2015_10-45-10\SLC25A13_Genbank_300_1.aux" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\SLC25A13_Genbank_300_1_02-03-2015_10-45-10\SLC25A13_Genbank_300_1.log" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\SLC25A13_Genbank_300_1_02-03-2015_10-45-10\SLC25A13_Genbank_300_1.pdf" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\SLC25A13_Genbank_300_1_02-03-2015_10-45-10\SLC25A13_Genbank_300_1.tex" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\VHL_LRG_322_300_1_02-03-2015_10-45-36\VHL_LRG_322_300_1.aux" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\VHL_LRG_322_300_1_02-03-2015_10-45-36\VHL_LRG_322_300_1.log" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\VHL_LRG_322_300_1_02-03-2015_10-45-36\VHL_LRG_322_300_1.pdf" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\VHL_LRG_322_300_1_02-03-2015_10-45-36\VHL_LRG_322_300_1.tex" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\WFS1_Ensembl_300_1_02-03-2015_10-46-02\WFS1_Ensembl_300_1.aux" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\WFS1_Ensembl_300_1_02-03-2015_10-46-02\WFS1_Ensembl_300_1.log" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\WFS1_Ensembl_300_1_02-03-2015_10-46-02\WFS1_Ensembl_300_1.pdf" afterPath="" />
-      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\WFS1_Ensembl_300_1_02-03-2015_10-46-02\WFS1_Ensembl_300_1.tex" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/LaTex_LRG.iml" afterPath="$PROJECT_DIR$/.idea/LaTex_LRG.iml" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\ASL_NM_000048.3_11-06-2015_00-58-26\ASL_NM_000048.3.aux" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\ASL_NM_000048.3_11-06-2015_00-58-26\ASL_NM_000048.3.log" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\ASL_NM_000048.3_11-06-2015_00-58-26\ASL_NM_000048.3.out" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\ASL_NM_000048.3_11-06-2015_00-58-26\ASL_NM_000048.3.pdf" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\ASL_NM_000048.3_11-06-2015_00-58-26\ASL_NM_000048.3.synctex.gz" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\ASL_NM_000048.3_11-06-2015_00-58-26\ASL_NM_000048.3.tex" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\ASL_NM_000048.3_11-06-2015_00-58-26\ASL_NM_000048.3.upa" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\ASL_NM_000048.3_11-06-2015_00-58-26\ASL_NM_000048.3.upb" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-19-24\BRCA1_LRG_292t1.aux" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-19-24\BRCA1_LRG_292t1.log" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-19-24\BRCA1_LRG_292t1.out" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-19-24\BRCA1_LRG_292t1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-19-24\BRCA1_LRG_292t1.tex" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-19-24\BRCA1_LRG_292t1.upa" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-19-24\BRCA1_LRG_292t1.upb" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-24-05\BRCA1_LRG_292t1.aux" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-24-05\BRCA1_LRG_292t1.log" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-24-05\BRCA1_LRG_292t1.out" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-24-05\BRCA1_LRG_292t1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-24-05\BRCA1_LRG_292t1.tex" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-24-05\BRCA1_LRG_292t1.upa" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-24-05\BRCA1_LRG_292t1.upb" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-25-56\BRCA1_LRG_292t1.aux" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-25-56\BRCA1_LRG_292t1.log" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-25-56\BRCA1_LRG_292t1.out" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-25-56\BRCA1_LRG_292t1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-25-56\BRCA1_LRG_292t1.tex" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-25-56\BRCA1_LRG_292t1.upa" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-25-56\BRCA1_LRG_292t1.upb" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-26-48\BRCA1_LRG_292t1.aux" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-26-48\BRCA1_LRG_292t1.log" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-26-48\BRCA1_LRG_292t1.out" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-26-48\BRCA1_LRG_292t1.pdf" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-26-48\BRCA1_LRG_292t1.tex" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-26-48\BRCA1_LRG_292t1.upa" afterPath="" />
+      <change type="DELETED" beforePath="G:\Git\Reference_Sequencer\outputFiles\BRCA1_LRG_292t1_11-06-2015_01-26-48\BRCA1_LRG_292t1.upb" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/XML_gui.py" afterPath="$PROJECT_DIR$/XML_gui.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/primer_module.py" afterPath="$PROJECT_DIR$/primer_module.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reader.py" afterPath="$PROJECT_DIR$/reader.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Reference_Sequencer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -674,76 +61,7 @@
     <favorites_list name="Reference_Sequencer" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="reader.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reader.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="latex_writer.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/latex_writer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GbkParser.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/GbkParser.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="XML_gui.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/XML_gui.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="151" column="87" selection-start-line="151" selection-start-column="87" selection-end-line="151" selection-end-column="87" />
-              <folding>
-                <element signature="e#24#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="automate.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/automate.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LrgParser.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LrgParser.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -760,6 +78,7 @@
       <list>
         <option value="$PROJECT_DIR$/XML_gui.py" />
         <option value="$PROJECT_DIR$/primer_module.py" />
+        <option value="$PROJECT_DIR$/reader.py" />
       </list>
     </option>
   </component>
@@ -940,7 +259,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="0" width="1280" height="1400" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -948,18 +267,18 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -981,16 +300,36 @@
     <entry file="file://$PROJECT_DIR$/reader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="41" column="28" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/autoreader.py">
+    <entry file="file://$PROJECT_DIR$/primer_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="89" selection-start-line="63" selection-start-column="89" selection-end-line="63" selection-end-column="89" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/XML_gui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="151" column="87" selection-start-line="151" selection-start-column="87" selection-end-line="151" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/automate.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1005,8 +344,15 @@
     <entry file="file://$PROJECT_DIR$/reader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/autoreader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1014,8 +360,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19239905">
+          <caret line="338" column="44" selection-start-line="338" selection-start-column="38" selection-end-line="338" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/primer_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.94615996">
+          <caret line="101" column="13" selection-start-line="101" selection-start-column="13" selection-end-line="101" selection-end-column="13" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/XML_gui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.040380046">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GbkParser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1030,33 +409,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/XML_gui.py">
+    <entry file="file://$PROJECT_DIR$/LrgParser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="151" column="87" selection-start-line="151" selection-start-column="87" selection-end-line="151" selection-end-column="87" />
-          <folding>
-            <element signature="e#24#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/primer_module.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7577197">
-          <caret line="63" column="89" selection-start-line="63" selection-start-column="89" selection-end-line="63" selection-end-column="89" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GbkParser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+          <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>

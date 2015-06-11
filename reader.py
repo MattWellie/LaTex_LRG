@@ -1,6 +1,8 @@
+import re
 __author__ = 'mwelland'
 __version__ = 1.3
 __version_date__ = '11/02/2015'
+
 
 ''' This is the Reader class which uses the completed dictionary
     from the Parser classes as input and create a list object
@@ -39,8 +41,11 @@ class Reader:
         self.exon_spacing = False
         self.exon_printed = False
         self.dont_print = False
-        self.check_AA = True
+        self.check_AA = False
         self.print_clashes = True
+        self.line_break_print = False
+        self.pattern = re.compile(r'\\p.*?l{')
+        self.found_first_slash = False
         
         # This is a codon-AA dictionary construction created by Peter Collingridge
         # http://www.petercollingridge.co.uk/book/export/html/474
@@ -185,7 +190,6 @@ class Reader:
         self.line_printer('\\begin{document}')
         self.line_printer('\\begin{center}')
         self.line_printer('\\begin{large}')
-        self.line_printer('\\fontfamily{courier}}')
         self.line_printer('Gene: %s - Sequence: %s\\\\' % (self.transcriptdict['genename'],
                                                           refseqid))                                                        
 
@@ -308,10 +312,12 @@ class Reader:
             sequence = exon_dict['sequence']
             characters_on_line = 0
             self.line_printer('')
+            pdfannotation_timer = 0
             for base_position in range(len(sequence)):
-                char = sequence[base_position]
+
                 # Stop each line at a specific length
-                if characters_on_line % 60 == 0 and characters_on_line != 0:
+                if characters_on_line % 60 == 0 and characters_on_line != 0\
+                        and pdfannotation_timer == 0:
                     amino_was_printed = bool(" ".join(amino_string).strip())
                     amino_was_numbered = bool(" ".join(amino_number_string).strip())
 
@@ -322,7 +328,7 @@ class Reader:
                         if amino_was_printed: extra_lines += 1
                         # print 'total lines: ' + str((lines_on_page) + extra_lines)
                         if ((lines_on_page) + extra_lines) >= 45:
-                            if self.write_as_LaTex: 
+                            if self.write_as_LaTex:
                                 self.print_exon_end()
                             else:
                                 self.line_printer(' ')
@@ -331,6 +337,8 @@ class Reader:
                     wait_value = 0
                     amino_wait = 0
                     self.line_printer(number_string)
+                    if self.line_break_print:
+                        dna_string.append('}')
                     self.line_printer(dna_string)
                     lines_on_page += 2
                     if amino_was_printed:
@@ -343,92 +351,124 @@ class Reader:
                     lines_on_page += 1
                     amino_string = []
                     number_string = []
-                    dna_string = []
+                    if self.line_break_print:
+                        dna_string = ['\\hl{']
+                        self.line_break_print = False
+                    else:
+                        dna_string = []
                     amino_number_string = []
                     self.exon_spacing = False
                     self.amino_spacing = False
 
-                dna_string.append(char)
+                char = sequence[base_position]
+                if pdfannotation_timer > 0:
+                    pdfannotation_timer -=1
+                    dna_string.append(char)
+                    if pdfannotation_timer == 0:
+                        self.line_break_print = True
+                elif char == '}':
+                    dna_string.append(char)
+                    self.line_break_print = False
 
-                if char.isupper(): self.exon_printed = True
-                if cds_count == 0:
-                    self.amino_printing = True
-                    cds_count = 1
-                if amino_acid_counter >= len(protein): self.amino_printing = False
-                # Calls specific methods for character decision
-                # Simplifies local logic
-                (next_amino_string, codon_count, amino_acid_counter,
-                 codon_numbered) = self.decide_amino_string_character(char, codon_count, amino_acid_counter,
-                                                                      codon_numbered, protein)
-                amino_string.append(next_amino_string)
-                if next_amino_string == '*': self.check_AA = False
-                pos3 = 0
-                pos2 = 0
-                if next_amino_string != ' ' and self.check_AA:             
-                    pos1 = char
-                    check_position = base_position + 1
-                    check_sequence = sequence
-                    #This should only fail on the final exon; where it is not needed
-                    try:
-                        check_next_exon = latex_dict['list_of_exons'][position+1]
-                    except IndexError:
-                        pass
-                    if check_sequence[check_position].isupper():
-                        pos2 = check_sequence[check_position]
-                        check_position += 1
-                    else:
-                        check_sequence = latex_dict['exons'][check_next_exon]['sequence']
-                        # print check_sequence
-                        # this = raw_input()
-                        check_position = 0
-                        pos2 = check_sequence[check_position]
-                        while pos2.islower():
-                            check_position += 1
+                #Deal with the insertions of PDF annotations and highlighting
+                elif char == '\\':
+                    dna_string.append(char)
+                    subseq = sequence[base_position-2:]
+                    #print subseq
+                    #this = raw_input()
+                    match = re.search(self.pattern, subseq)
+                    #print match.group()
+                    #this = raw_input()
+                    #dna_string.append(match.group())
+                    #print len(match.group())
+                    #this = raw_input()
+                    pdfannotation_timer = len(match.group())-1
+
+                #if self.line_break_print:
+                #    print 'char at this point is %s' % char
+                else:
+                    dna_string.append(char)
+
+                    if char.isupper(): self.exon_printed = True
+                    if cds_count == 0:
+                        self.amino_printing = True
+                        cds_count = 1
+                    if amino_acid_counter >= len(protein): self.amino_printing = False
+                    # Calls specific methods for character decision
+                    # Simplifies local logic
+                    (next_amino_string, codon_count, amino_acid_counter,
+                     codon_numbered) = self.decide_amino_string_character(char, codon_count, amino_acid_counter,
+                                                                          codon_numbered, protein)
+                    amino_string.append(next_amino_string)
+                    if next_amino_string == '*': self.check_AA = False
+                    pos3 = 0
+                    pos2 = 0
+                    if next_amino_string != ' ' and self.check_AA:
+                        pos1 = char
+                        check_position = base_position + 1
+                        check_sequence = sequence
+                        #This should only fail on the final exon; where it is not called
+                        try:
+                            check_next_exon = latex_dict['list_of_exons'][position+1]
+                        except IndexError:
+                            pass
+                        if check_sequence[check_position].isupper():
                             pos2 = check_sequence[check_position]
-                            # print 'pos2 ' + pos2
-                        check_position += 1
-                        # this = raw_input()
-                    if check_sequence[check_position].isupper():
-                        pos3 = check_sequence[check_position]
-                    else:
-                        check_sequence = latex_dict['exons'][check_next_exon]['sequence']
-                        check_position = 0
-                        pos3 = check_sequence[check_position]
-                        while pos3.islower():
                             check_position += 1
+                        else:
+                            check_sequence = latex_dict['exons'][check_next_exon]['sequence']
+                            # print check_sequence
+                            # this = raw_input()
+                            check_position = 0
+                            pos2 = check_sequence[check_position]
+                            while pos2.islower():
+                                check_position += 1
+                                pos2 = check_sequence[check_position]
+                                # print 'pos2 ' + pos2
+                            check_position += 1
+                            # this = raw_input()
+                        if check_sequence[check_position].isupper():
                             pos3 = check_sequence[check_position]
-                            #print 'pos3 ' + pos3
-                            #that = raw_input()
-                    index = pos1+pos2+pos3
-                    try:
-                        if self.codon_table[index] != next_amino_string:
-                            print 'There is an error with the amino acid - codon pairing in exon %s: %s - %s, AA# %s' % (str(check_next_exon), index, next_amino_string, str(amino_acid_counter))
-                            print 'Base 3 position = %s' % str(check_position)
-                            print 'Next few: %s' % check_sequence[check_position+1:check_position+5]
-                            this = raw_input()
-                    except KeyError:
-                        print "The key '%s' does not have a codon entry" % index
-                    # this = raw_input()
+                        else:
+                            check_sequence = latex_dict['exons'][check_next_exon]['sequence']
+                            check_position = 0
+                            pos3 = check_sequence[check_position]
+                            while pos3.islower():
+                                check_position += 1
+                                pos3 = check_sequence[check_position]
+                                #print 'pos3 ' + pos3
+                                #that = raw_input()
+                        index = pos1+pos2+pos3
+                        try:
+                            if self.codon_table[index] != next_amino_string:
+                                print 'There is an error with the amino acid - codon pairing in exon %s: %s - %s, AA# %s' % (str(check_next_exon), index, next_amino_string, str(amino_acid_counter))
+                                print 'Base 3 position = %s' % str(check_position)
+                                print 'Next few: %s' % check_sequence[check_position+1:check_position+5]
+                                this = raw_input()
+                        except KeyError:
+                            print "The key '%s' does not have a codon entry" % index
+                            print dna_string
+                        # this = raw_input()
 
-                (next_amino_number, amino_wait, codon_numbered,
-                 amino_acid_counter) = self.decide_amino_number_string_character(amino_wait, codon_numbered,
-                                                                            amino_acid_counter)
-                amino_number_string.append(next_amino_number)
+                    (next_amino_number, amino_wait, codon_numbered,
+                     amino_acid_counter) = self.decide_amino_number_string_character(amino_wait, codon_numbered,
+                                                                                amino_acid_counter)
+                    amino_number_string.append(next_amino_number)
 
-                (next_number_string, wait_value, cds_count, amino_acid_counter, post_protein_printer, intron_offset,
-                 intron_in_padding, intron_out) = self.decide_number_string_character(char, wait_value, cds_count,
-                                                                                      amino_acid_counter,
-                                                                                      post_protein_printer,
-                                                                                      intron_offset, intron_in_padding,
-                                                                                      len(protein), intron_out)
-                number_string.append(next_number_string)
-                characters_on_line += 1
+                    (next_number_string, wait_value, cds_count, amino_acid_counter, post_protein_printer, intron_offset,
+                     intron_in_padding, intron_out) = self.decide_number_string_character(char, wait_value, cds_count,
+                                                                                          amino_acid_counter,
+                                                                                          post_protein_printer,
+                                                                                          intron_offset, intron_in_padding,
+                                                                                          len(protein), intron_out)
+                    number_string.append(next_number_string)
+                    characters_on_line += 1
 
             # Section for incomplete lines (has not reached line-limit print)
             # Called after exon finishes printing bases
             if len(dna_string) != 0:
                 if lines_on_page >= 44:
-                    if self.write_as_LaTex: 
+                    if self.write_as_LaTex:
                         self.print_exon_end()
                     else:
                         self.line_printer('  ')
