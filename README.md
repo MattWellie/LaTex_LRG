@@ -74,7 +74,7 @@ to the command line. This can be edited in the XML_gui.py file
 
 ##Planned updates
 
-- As of 27/02/2015 there are no significant updates, only minor improvements
+- As of 10/06/2015 the addition of primer site recognition and labelling is being created
 
 ##Issue Tracker
 
