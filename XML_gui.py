@@ -131,22 +131,19 @@ def run_parser():
     parser_details = ''
     if file_type == 'gbk':
         print 'Running parser'
-        gbk_reader = GbkParser(file_name, padding, trim_flanking)
+        gbk_reader = GbkParser(file_name, padding, args.trim_flanking)
         dictionary = gbk_reader.run()
         parser_details = gbk_reader.get_version
     elif file_type == 'lrg':
         print 'Running parser'
-        lrg_reader = LrgParser(file_name, padding, trim_flanking)
+        lrg_reader = LrgParser(file_name, padding, args.trim_flanking)
         dictionary  = lrg_reader.run()
         parser_details = lrg_reader.get_version
-
-    primer_label = primer()
-    dict = primer_label.run(dictionary, os.getcwd())
-    tempout = open('tempoiut.txt', 'w')
-    print >>tempout, dict
-
-    parser_details = '{0} {1} {2}'.format(file_type.upper(), 'Parser:', parser_details)
-
+    
+    if args.write_as_latex == True and write_primers ==True:
+        primer_label = primer()
+        dict = primer_label.run(dictionary, os.getcwd())
+        parser_details = '{0} {1} {2}'.format(file_type.upper(), 'Parser:', parser_details)
 
     os.chdir("outputFiles")
     for transcript in dictionary['transcripts']:  
