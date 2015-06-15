@@ -51,6 +51,7 @@ to the command line. This can be edited in the XML_gui.py file
 - The program has been broken up into several different components;
     - XML_gui.py to show the user interface
     - LRG/GBK_Parser.py to read the input file into a dictionary
+    - optional call to primer module to annotate primers in final output
     - reader.py to read the dictionary into a list output format
     - writer.py to read the list into an actual file
     - latex_writer.py to write the reader output into a external file 
@@ -74,7 +75,7 @@ to the command line. This can be edited in the XML_gui.py file
 
 ##Planned updates
 
-- As of 10/06/2015 the addition of primer site recognition and labelling is being created
+- No further updates planned
 
 ##Issue Tracker
 
