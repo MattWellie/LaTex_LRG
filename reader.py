@@ -382,7 +382,8 @@ class Reader:
                     #dna_string.append(match.group())
                     #print len(match.group())
                     #this = raw_input()
-                    pdfannotation_timer = len(match.group())-1
+                    if match:
+                    	pdfannotation_timer = len(match.group())-1
 
                 #if self.line_break_print:
                 #    print 'char at this point is %s' % char
