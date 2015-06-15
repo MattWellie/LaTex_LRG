@@ -191,6 +191,7 @@ def check_file_type(file_name):
 
 arg_parser = argparse.ArgumentParser(description='Customise reference sequence settings')
 
+write_primers = True
 write_as_latex = True
 print_clashes = True
 trim_flanking = True
