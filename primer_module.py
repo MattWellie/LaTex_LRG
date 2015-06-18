@@ -44,7 +44,7 @@ class primer:
             exon = 1
             frag_size = 0
             for row in reader:
-                seq = row['Primer Sequences']
+                seq = row['Primer Sequences'].upper()
                 if row['Exon'] != '':
                     exon = row['Exon']
                 direction = row['Direction']
@@ -56,22 +56,24 @@ class primer:
                     frag = row['Fragment Size']
                     frag_size = frag
 
-                if row['Primer Batch Numbers In Use'] == '':
-                    row['Primer Batch Numbers In Use'] = 'Unavailable'
-                batch = row['Primer Batch Numbers In Use']
+                if row['Primer Batch Numbers'] == '':
+                    row['Primer Batch Numbers'] = 'Unavailable'
+                batch = row['Primer Batch Numbers']
                 constructed_string = 'Primer %s, Batch number %s, Frag size = %s' % (exon+direction, batch, frag)
                 self.search_for_seq(seq, constructed_string)
 
     def search_for_seq(self, seq, construct):
+    
         for transcript in self.dict['transcripts']:
             exonlist = self.dict['transcripts'][transcript]['exons'].keys()
             for exon in exonlist:
-                match = re.search(r'(?i)%s' % seq, self.dict['transcripts'][transcript]['exons'][exon]['sequence'])
+                match = re.search(r'(?i)%s' % \
+                    seq, str(self.dict['transcripts'][transcript]['exons'][exon]['sequence']))
                 if match:
                     #print self.dict['transcripts'][transcript]['exons'][exon]['sequence']
                     self.dict['transcripts'][transcript]['exons'][exon]['sequence'] = \
                                 re.sub(r'(?i)%s' % seq, r'\\pdfcomment[date]{%s}\\hl{%s}' % (construct, match.group()),\
-                                self.dict['transcripts'][transcript]['exons'][exon]['sequence'])
+                                str(self.dict['transcripts'][transcript]['exons'][exon]['sequence']))
                     #print self.dict['transcripts'][transcript]['exons'][exon]['sequence']
                     #this = raw_input()
 
@@ -98,7 +100,5 @@ class primer:
         if self.carry_on == True:
             #other methods
             self.digest_input(filename)
-            #print self.dict['transcripts'][1]['exons'][18]
-            #this = raw_input()
-            return self.dict
+        return self.dict
 
