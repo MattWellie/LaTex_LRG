@@ -1,0 +1,91 @@
+Gene,Exon,Direction,Version Number,Primer Sequences,Chromosome Number,M13 Tagged? (y/n),Primer Batch Numbers,Fragment Size,Annealing Temp(ºC),Batch Test of New Primer,Other Info,,SNP Check Build:,Number of SNPs identified,dbSNP rs number,HGVS nomenclature,Frequency Data,Number of ss refs,Projects creating ss refs ,other info,ACTION TO BE TAKEN,Checked by:,,SNP Check Build (date):,Number of SNPs identified,dbSNP rs number,HGVS nomenclature,Frequency Data,Number of ss refs,Projects creating ss refs ,other info,ACTION TO BE TAKEN,Checked by:,SNP Check Build:,Number of SNPs identified,dbSNP rs number,HGVS nomenclature,Frequency Data,Number of ss refs,Projects creating ss refs ,other info,ACTION TO BE TAKEN,Checked by:
+ALMS1,1,F,,CCTGTAGCAAACCTCCGCCCTAAG,2,y,C1002D11,631,63,,6bp+/- poly may only get F,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,1,rs111967756,c.-122,There is no frequency data,ss205977550,ss205977550 - Human Genome Sequencing Center. Ascertainment sample size 2,,,
+,,R,,GCGCGTTTTCTCCGTCAGG,,y,C1002D12,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,2,F,,GTTTATGCAAAAGTATGCTGTGT,2,y,X8858E08,401,63,,F only due to -35delT,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,,TCCATTCTTCATAGCTAAATCAGA,,y, X8858E09,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,3,F,,GATGTGTAGTAATGGGAAGAGGTC,2,y,X8858E10 ,487,63,,F only due to -26delA,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,,TCCTTAACTCAAAAAGGGGAAA,,y,X8858E11,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,4,F,,GCTGCTACTGCTGTTGCTTTTA,2,y,X8858E12 ,403,63,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,,ACTTTGTTACCTTCAGGGCGTGTC,,y,X8858F01,,,,,,131,1,rs75821812,c.767+127G>A,"0.147 (west African)
+50 chromosomes",1,ss126693330  - 1000 genome,SNP in middle of primer,,,,130(18.05.09),none,,,,,,,,,132,1,rs75821812,c.767+127G>A,"ss126693330 G=0.920 A=0.080 Av. Het. 0.147 (West African), 50 chromosomes
+ss219326239 G=0.915 A=0.085 (West African), 118 chromosomes","ss126693330
+ss210928602
+ss219326239","ss126693330  - 1000 genome (rs freq data obtained from this ss)
+ss210928602 - 1000 genome (no freq data)
+ss219326239 - 1000 genome (freq data)",,,
+ALMS1,5,F,,AGGAGAGCTGTGTTTTTCAATACA,2,y,X8858F02 ,742,63,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,,GTTTCTGGGTGGTGCAAAGTTC,,y,X8858F03,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,6,F,,CTGATATAGGCCAAGGTGAAAGTC,2,y,X8858F04 ,299,63,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,,ACCCAGGAAACAGTAAAAAGTAAAAT,,y,S2668G02,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,7,F,,GGTCATTCTAATCTGGGCATT,2,y,X8858F05 ,297,63,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,,CAGGATTTATAAACACATCTAATCTGA,,y,S2668G03,,,,R misses 17bp of F primer,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,1,rs114424447,c.1435+113A>G,There is no frequency data under rs (under ss),ss231226812,ss231226812 - 1000 genome North American 120 chromosomes A=0.983 G=0.017,,,
+ALMS1,8A1 ,F,2, GGCTGTTTCCTTAGGATTCATTTC,2,y,C4221A09,935,TD,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,2,TGGTCCAGGAGTGGCTGA,,y, C4221A10,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,8A2 ,F,,GAAGACGGGAATACCTACAG,2,y,X5703E07 ,,TD,,FORWARD = ALMS1-8.3F,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,2,TGAGTAGAAACTAGATGGTGCTGAG,,y,C4221A11,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,8B ,F,2,CTGACGGAAAGACTGGGACA,2,y,C4221A12,819,TD,,,,131,1,rs77517267,c.2538C>T,"0.295 (West African)
+50 chromosomes",1,ss126693409 - 1000 genome,SNP 5 bases from 5' end,,,,130(18.05.09),none,,,,,,,,,132,1,rs77517267,c.2538C>T; p.Asp846Asp,"ss126693409 C=0.820 T=0.180 Av. Het. 0.295 (West African), 50 chromosomes
+ss219326328 C=0.847 T=0.153 (West African), 118 chromosomes","ss126693409
+ss219326328","ss126693409 - 1000 genome (rs freq data obtained from this ss)
+ss219326328 - 1000 genome (freq data)",Visible in overlapping fragment,,
+,,R,2,GCAGATGACTCTCTGGCAAGG,,y,C4221B01,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,8C ,F,2,GAAAGTTTCAGCCTTCCCTG,2,y,X8852F07,661,63,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,2,GCTGGGCTTCTCTCTATATTGTG,,y, X8858F07,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,8D,F,3,GACCTTGCCAGGTAGTCACA,2,y,C4221B02,821,TD,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,3,ATGAGCTGGAAGGGGAGGTT,,y,C4221B03,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,8E,F,2,AAGAACGTTTCAGCGGTTCC,2,y,D0295C09,683,63,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,2,AGCAGAGCCTGCCGGTAGAA,,y, D0295C10,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,8F,F,,GAGGCTCTGAAAGTTTCCATTG,2,y,X6397E04,791,63,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,,TGCTCTCTCTGTGGGTAGGAA,,y, X6397E05,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,8G,F,2,AAGCCCATTGTTTCCTACCA,2,y,C4221B04,,TD,,,,131,1,rs78039319,"c.5436G>C, p.Lys1812Asn","0.211 (West African)
+50 chromosomes",2,ss126693424 - 1000 genome,SNP 3 bases from 5' end,,,,130(18.05.09),ONE,62151609,c.5460G>A or c. 5466G>A,None,ss91208588,BCMHGSC_JDW|JWB-2987070,Validation status unknown. SNP should be detectable in 8F fragment seqeuncing.,None,CAH 19/10/09,132,1,rs78039319,"c.5436G>C, p.Lys1812Asn","ss126693424 G=0.880 C=0.120 Av. Het. 0.211 (West African), 50 chromosomes
+ss219326338 G=0.932 C=0.068 (West African), 118 chromosomes","ss126693424
+ss161076063
+ss219326338","ss126693424 - 1000 genome (rs freq data obtained from this ss)
+ss161076063 - Illumina (no freq data)
+ss219326338 - 1000 genome (freq data)",Visible in overlapping fragment,,
+,,R,,TTCAGGGACAGCTGAAATCTT,,y,X6402C05,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,8H,F,,TCCATCCCAGACAGCTTTTC,2,y,X6397E08 ,,TD,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,2,TTGGGCTTTCCTCTGTGAAT,,y,C4221B05,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,8I,F,,GCACTGAAACGATGCAATTTT,2,y,X6397E10,808,63,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,,GCTAAGCTTCCTCAAAACATAAAT,,y, X6397E11,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,9,F,,TCTTCTGTGTTGCAATTGTTGA,2,y,X8858F09 ,295,63,,,,131,1,rs75381420          ,c.7544-55T>C,"0.027 (UTAH USA)
+72 chromosomes",1,ss122980423 - 1000 genomes        ,SNP 4 bases from 3' end,,,,130(18.05.09),none,,,,,,,,,132,1,rs75381420,c.7544-55T>C,"ss122980423 T=0.986 C=0.014 Av. Het. 0.027 (North American), 72 chromosomes",ss122980423,ss122980423 - 1000 genomes (rs freq data obtained from this ss)       ,,,
+,,R,,CAACTCAACTGATGCCCAAGT,,y,X8858F10,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,10A,F,,GGTCTAATCTTAGCGTGGGT,2,y,H9789G03,840,63,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,,CGCTCAAAATCAACAGGTAA,,y,S2668G04,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,10B,F,,CAGAAAACCTCTTCCCCTTCA,2,y,S2668G05,789,63,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,,ACAGTGATTTGGGGCTGACT,,y,X4276C10,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,10C,F,,GGATTCTATAGCTTCAGACC,2,y,S2668G06,796,63,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,,CCTCCACTCAGAGAAATCAC,,y,H9789G08,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,11,F,2,AATAACGTTTGACATTGATGTGTCC,2,y,C4221B06,538,TD,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,2,TTGACAGCTATGCAAATAAAAGACAG,,y,C4221B07,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,12,F,,GAACACTGCCTGAAACATAGAAG,2,y,X8858G01 ,293,63,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,,CACTCCAGAATCAACTAGCCAAT,,y,X8858G02,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,13,F,,CCTGGCCTGTAGTGCTTTTT,2,y,X8852F11 ,398,63,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,,GGAGAAAAGCTTGTATAACAAAACAGA,,y,X8859D06,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,14,F,2,GGGGAGGATTACTTGTCTGTTGTG,2,y,C4221B08,267,TD,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,2,GGGAATAGTCTCATTTTAGAAGACCAG,,y,C4221B09,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,15,F,,ACCGCTACCTCTTTTTCTGACTGT,2,y,S2668G07,474,63,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,,CTCATCAGAATGAAATGGAAACA,,y,  X8858G04,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,1,rs114044746,c.10387+85A>G,There is no frequency data under rs (under ss),ss231227006,ss231227006 - 1000 genome North American 120 chromosomes A=0.992 G=0.008,,,
+ALMS1,16A,F,,GCAGGCAGTGAATTTTCTG,2,y,H9789G09 ,807,63,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,,CTCTAGGCTTTTAAACCGCTTC,,y,H9789G10,,,,,,131,1,rs78060324 ,"c.11040T>A, p.Phe3680Leu","0.236 (Chinese/Japanese)
+88 chromosomes",2,ss128205586 - 1000 genomes,SNP in middle of primer,,,,130(18.05.09),none,,,,,,,,,132,1,rs78060324,"c.11040T>A, p.Phe3680Leu","ss128205586 T=0.864 A=0.136 Av. Het. 0.236 (East Asia), 88 chromosomes","ss128205586
+ss161076071","ss128205586 - 1000 genomes (rs freq data obtained from this ss)
+ss161076071 - Illumina (no freq data)",Visible in overlapping fragment,,
+ALMS1,16B,F,,GGACCGACTTGATCGTTTGG,2,y,H9789G11 ,773,63,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,,GGAAAGGGCAAATGGCTTG,,y,S2668G08,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,17,F,,CCTCCAAATGCATCTCAACAG,2,y,X8858G05 ,400,63,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,,TCAAACTTGAATTTATGCCAATC,,y,  X8858G06,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,18,F,,AAAAGGGTTCACGTACTCACTTG,2,y,X8858G07  ,391,63,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,,GGTGGGGACCACATAGAGTC,,y, X8852G01,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,19,F,,CAGCTGAGACCCCTGAGAAC,2,y,X8852G02,443,63,,R only -41delA,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,,CCTCAGCTCACCAAGTCACA,,y,  X8852G03,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,20,F,,GCAGGTGGTGTGTCTCCAG,2,y,S2668G09,396,63,,R only -8delT,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,,GGCAAGCAAAAGGTCACTGT,,y,S2668G10,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,21,F,,CTAAGATTTGAACCCAGGTGTGCT,2,y,X8858G08  ,,TD,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,2, TCAGTGCCATAAGTGAGAAATGA,,y,C4221B10,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,22,F,,GGGAGGTATAGGGAGGGATGAT,2,y,S2668G11,270,63,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,,GGCAACGTGTTTTCTCCATT,,y,  X8852G07,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+ALMS1,23,F,,GATTTGAATAGGACCACACTGATT,2,y,X8858G10  ,563,63,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
+,,R,,AGAGCCCATTTCCCTCAACT,,y, X8852G08,,,,,,131,0,,,,,,,,,,130(18.05.09),none,,,,,,,,,132,0,,,,,,,,
