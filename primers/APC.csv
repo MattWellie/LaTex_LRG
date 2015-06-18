@@ -1,0 +1,66 @@
+Gene,Exon,Direction,Version Number,Primer Sequences,Chromosome Number,M13 tagged,Primer Batch Numbers,Fragment Size,Annealing Temp(ºC),Primer batch test MS project, Works on Touchdown or has to be done manually (Td or M), order date,,,,,,,,,SNP check build 137,SNP Check Build: 134,"SNP Check Build: 132
+SNPs found?",dbSNP rs number,HGVS nomenclature,Frequency Data,Number of ss refs,Projects creating ss refs ,other info,ACTION TO BE TAKEN,Checked by:
+APC,promoter,F,A1, CAACTCAGGCAACCCAGACT,5,y,C9481B05,691,,,td,,,,,,,,,,,,Yes,rs75581138,,50%in Bantu0.186 in other pop'n,2,,3rd most 5' base,none,"PKR 15.04.11, RB 15/09/2011"
+,,R,A1,AAGACAGTGCGAGGGAAAAC,,y,C9481B06,,57,,td,,,,,,,,,,,,,,,,,,,,
+APC,5'UTR,F,A2,CTAGGGCTAGGCAGGCTG,5,y,S1380E06,441,,,td,,,,,,,,,,,,,,,,,,,,
+,,R,A2,CCTGGATCCGAAGTACAGGA,,y,S1380E07,,57,,td,,,,,,,,,,,,,,,,,,,,
+APC,1,F,A2, CACTGTTTCATCCTCTTAGATG,5,y,S1380E08,480,,,td,,,,,,,,,,,,,,,,,,,,
+,,R,A1, AAATGCTAACTTTTGCAAGAAAGA,,y,C9481B08,,57,,td,,,,,,,,,,,Yes,,rs138017072,,no data,1,1000genomes,middle base of primer,none,RB 15/09/2011
+APC,2,F,A1, AAGGTGCGTGCTTTGAGAGT,5,y,C9481B09,308,,,td,,,,,,,,,,,,,,,,,,,,
+,,R,A1, ACCAACACCCAAATCGAGAG,,y,C9481B10,,57,,td,,,,,,,,,,Yes,,,rs191456805,,,,,,,
+APC,3,F,A1, TTACCCTGACCCAAGTGGAC,5,y,C9481B11,499,57,,td,,,,,,,,,,,,,,,,,,,,
+,,R,A1, TGCAAAATGCTCTAAGTGTTAGC,,y,C9481B12,,,,td,,,,,,,,,,,,,,,,,,,,
+APC,4,F,A1,GCACTTTAGGTAGAGAAGTTTGC,5,y,C9481C01,300,57,,td,,,,,,,,,,,,,,,,,,,,
+,,R,A1,TCCTGAATTTTAATGGATTACCT,,y,C9481C02,,,,td,,,,,,,,,,,,,,,,,,,,
+APC,5,F,A1, CATGCACCATGACTGACGTA,5,y,M6830D07,385,57,,td,,,,,,,,,,,,,,,,,,,,
+,,R,A2, AGCAGCCATGATAAATC,,y,S1380E09,,,,td,,,,,,,,,,,,,,,,,,,,
+APC,6,F,A2,GAGAATGATTTGACATAACCCTG,5,y,S7434(A04),319,57,,td,,,,,,,,,,,,,,,,,,,,
+,,R,A1,CGGTATTTAAATTCTCTGAAAGAACA,,y,S8342(B08),,,Seq21.09.11,td,,,,,,,,,,Yes,,Yes,rs111833433,C/T,"Seen at 50% in two chromosomes(1 person?) from Bushman2 pop'n.Updated by 1000genomes project, not validated no frequency data but 2188 c'somes.",,,11/26 base from 5' end,none,"PKR 15.04.11, RB 15/09/2011"
+APC,7,F,A1, CGTGCAGCTCTAATGCTCAA,5,y,C9481C07,468,57,Seq15.06.11,td,,,,,,,,,,,Yes,,rs146698397,A/G,no data,1,1000genomes,last but one base at 5'end,none,RB 15/09/2011
+,,R,A1, TGGTACTGAATGCTTCTGGAAA,,y,C9481C08,,,,td,,,,,,,,,,,,,,,,,,,,
+APC,8,F,A1,CCATTCTGCAGTTTAATGCTCA,5,y,M2612G01,360,57,,td,,,,,,,,,,,,,,,,,,,,
+,,R,A1,GACCAGGGTTTGTAATC,,y,C9481C10,,,,td,,,,,,,,,,Yes,,,rs188627032,,,,,,,
+APC,9,F,A2, CCCATTCATCACTTAATTGG,5,y,M2612F12,593,57,,td,,,,,,,,,,,,,,,,,,,,
+,,R,A1, TGAGTAGCACAAATGGCTGA,,y,C9481C12,,,,td,,,,,,,,,,,Yes,,rs142238937,A/G,no data,1,1000genomes,most 5'base of primer,none,RB 15/09/2011
+APC,10,F,A1, GTCAAGGGCAGATGAGTGGT,5,y,C9481D01,485,57,,td,,,,,,,,,,,,,,,,,,,,
+,,R,A1, TTTTTGCTACACAGAGGAAGCA,,y,C9481D02,,,,td,,,,,,,,,,,,,,,,,,,,
+APC,11,F,A2,GTTACCAACTTGGTACCAG,5,y,E0700E05,339,57,Seq 17.01.12,td,,,,,,,,,,Yes,,,rs185558823,,"no data, not validated",1,1000 genomes,,,
+,,R,A1, GCACAGGTTTTTATCAGTCATTG,,y,S7842(D01),,,,td,,,,,,,,,,,,,,,,,,,,
+APC,12,F,A2,AAGCTTGGCTTCAAGTTGTC,5,y,M4706C09,199,57,Seq31.08.11,td,,,,,,,,,,,,,,,,,,,,
+,,R,A1,GTGGTGTGCACCTGTAGGC,,y,M4706(C10),,,,td,,,,,,,,,,,,,,,,,,,,
+APC,13,F,A1,ACCACGGCTAGCCAGAATTT,5,y,C9481D09,574,57,,td,,,,,,,,,,,,,,,,,,,,
+,,R,A1,TACAAATAGCCGGGAGTGGT,,y,C9481D10,,,,td,,,,,,,,,,,,,,,,,,,,
+APC,14,F,A1,AGTGAGGGACGGGCAATAG,5,y,S7842(D02),441,57,,td,,,,,,,,,,,,,,,,,,,,
+,,R,A1,TTTTGGCTTAAAACTTTCATGATT,,y,S2842(D03),,,,td,,,,,,,,,,,,,,,,,,,,
+APC,15.1,F,A1,TGCCTTTTGTCTTCTATCCTTTT,5,y,C9481E01,683,57,,td,,,,,,,,,,,,,,,,,,,,
+,,R,A1,CCAAACTTCTATCTTTTTCAGAACG,,y,E5861(F08),,,,td,,,,,,,,,,,,,,,,,,,,
+APC,15.2,F,A2,GCAGAGACACAAGCAAAGTCT,5,y,S1380E12,690,57,,td,,,,,,,,,,,,,,,,,,,,
+,,R,A1,TCATTATCATCCATATGATTTGCAC,,y,C9483A05,,,,td,,,,,,,,,,,,,,,,,,,,
+APC,15.3,F,A1,GCCTTATGCCAAATTAGAATACAA,5,y,M4706C12,699,57,,td,,,,,,,,,,,Yes,,rs147394539,G/T,0.001,1,NHLBi,most 5'base of primer,none,RB 15/09/2011
+,,R,A1,TTTAAACTATAATCAATAGGCTGATCC,,y,C9483A06,,,,td,,,,,,,,,,,,,,,,,,,,
+APC,15.4,F,A2,GTGTCAAGAAGATGACTATG,5,y,E4621C09,671,57,,td,,,,,,,,,,,,,,,,,,,,
+,,R,A1,GCCTGGCTGATTCTGAAGAT,,y,C9481E06,,,,td,,,,,,,,,,,,,,,,,,,,
+APC,15.5,F,A1,CAGACGACACAGGAAGCAGA,5,y,E2488 (B03),673,57,,td,,,,,,,,,,,,,,,,,,,,
+,,R,A1,ATGGCTCATCGAGGCTCA,,y,E2488B04,,,Previous primer: C9481E08,td,,,,,,,,,,,Yes,,rs150089434,C/T,0.001,1,NHLBi,10/18th base from 5'end,none,RB 15/09/2011
+APC,15.6,F,A1,TGCTGAAAAGAGAGAGAGTGGA,5,y,,,,,td,,,,,,,,,,,,Yes,rs112961968,A/G,Seen at 50% in two chromosomes(1 person?) from Bantu/Bushman pop'n.,1,Bushman,8/22 base from 3'end,none (overlapping primers,PKR 15.04.11
+,,R,A1,TCTCGTTTTTCAAATTCACCTG,,y,C9481E10,,,,td,,,,,,,,,,,,,,,,,,,,
+APC,15.7,F,A1,GCAACCCCAAAAGCATGTTA,5,y,C9481E11,669,57,,td,,,,,,,,,,,,,,,,,,,,
+,,R,A2,GTGTAATGATGAGGTGAAT,,y,E7206A06,,,,td,,,,,,,,,,,,,,,,,,,,
+APC,15.8,F,A2,TGAATATAGGACACGTGTAAGAAAA,5,y,S1380F02,695,57,,td,,,,,,,,,,Yes,Yes,,"rs140073303
+rs201472075",C/T,"0.001
+no data","1
+1","NHBLi
+1000 genomes",12/25base from 3'end,none,RB 15/09/2011
+,,R,A1,CAACATGAAATGATTTAGGAGCA,,y,C9481F02,,,M0297E05,td,,,,,,,,,,,Yes,,rs143313902,A/G,no data,1,1000genomes,4th base from 5'end,none,RB 15/09/2011
+APC,15.9,F,A1,AGACAGAGGGGCAGCAACT,5,y,C9481F03,685,57,,td,,,,,,,,,,,,,,,,,,,,
+,,R,A1,TTTTAGAATTCGTGGGCCTTT,,y,C9481F04,,,,td,,,,,,,,,,,,,,,,,,,,
+APC,15.11,F,A1,GCTGCTGCTGCATGTTTATC,5,y,M4706C11,697,57,,td,,,,,,,,,,,,,,,,,,,,
+,,R,A1,GGGATGATGTCCTTGGAAGTT,,y,C9481F06,,,,td,,,,,,,,,,Yes,,yes,rs200756935,,0.002,2,Exome chip and clin seq,2nd and 3rd bases from 5'end of primer,none (overlapping primers,PKR 15.04.11
+APC,15.12,F,A1,TCCCAAATAGGTGGGTCAAG,5,y,S7842C09 ,692,57,,td,,,,,,,,,,,Yes,,rs148878262,A/T,0.001,2,NHBLI and 1000genomes,6th base from 5'end of primer,none,RB 15/09/2011
+,,R,A1,CCATCATTATACTCTATAGTGGGACTG,,y,S7842C02,,,,td,,,,,,,,,,,,,,,,,,,,
+APC,15.13,F,A1,TGGAGGAATCTGCTTCATTTG,5,y,E6747C03,684,57,,td,,,,,,,,,,,,,,,,,,,,
+,,R,A1,CAATCACCGGGGGAGTATTA,,y,M8152(D02),,,,td,,,,,,,,,,,Yes,,rs149347068,C/G,0.001,1,NHBLI,8/20base from 5'end,none,RB 15/09/2011
+APC,15.14,F,A1,CTTCTCAGACCGTTTCCTCAG,5,y,C9481F10,647,57,,td,,,,,,,,,,,Yes,,rs145011827,G/T,0.001,1,NHLBi,2nd base from 5'end,none,RB 15/09/2011
+,,R,A1,TGTCACAAGGTAAGACCCAGAA,,y,C9481F11,,,,td,,,,,,,,,,,Yes,,rs144896466,C/T,0,1,NHLBi,in middle of primer,none,RB 15/09/2011
+APC,15.15,F,A1,CAGCGCAGATAGCACTTCAG,5,y,C9481F12,669,57,,td,,,,,,,,,,,Yes,,rs147287751,A/G,0,1,NHLBi,in middle of primer,none,RB 15/09/2011
+,,R,A2,ATCAAGAGTGCCTCCCAAAA,,y,S1380E11,,,,td,,,,,,,,,,,,,,,,,,,,
