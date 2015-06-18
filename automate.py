@@ -99,6 +99,7 @@ def check_file_type(file_name):
         exit()
 
 startingdir = os.getcwd()
+    
 try:
     new_folder = "lrg references - %s" % (time.strftime("%d-%m-%Y"))
     os.mkdir(new_folder)
@@ -134,9 +135,7 @@ for filename in sorted(os.listdir('lrgs')):
             lrg_reader = LrgParser(filepath, padding, trim_flanking)
             dictionary  = lrg_reader.run()
             parser_details = lrg_reader.get_version
-
-        parser_details = '{0} {1} {2}'.format(file_type.upper(), 'Parser:', parser_details)
-        
+            
         os.chdir(new_folder)
         for transcript in dictionary['transcripts']:  
             print 'transcript:'
