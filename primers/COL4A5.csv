@@ -1,0 +1,139 @@
+Gene,Exon,Direction,Version Number,Primer Sequences,Chromosome Number,M13 Tagged? (y/n),Primer Batch Numbers,Primer Batch Test MS Project Name,Primer Order Date,Fragment Size,Annealing Temp(ºC),Other Info,,SNP Check Build:,Number of SNPs identified,dbSNP rs number,HGVS nomenclature NM_000495.4,Frequency Data,Number of ss refs,Projects creating ss refs ,other info,ACTION TO BE TAKEN,Checked by:,,SNP Check Build:,Number of SNPs identified,dbSNP rs number,HGVS nomenclature NM_000495.3,Frequency Data,Number of ss refs,Projects creating ss refs ,other info,ACTION TO BE TAKEN,Checked by:,,SNP Check Build:,Number of SNPs identified,dbSNP rs number,HGVS nomenclature NM_000495.3,Frequency Data,Number of ss refs,Projects creating ss refs ,other info,ACTION TO BE TAKEN,Checked by:
+COL4A5,1,F,,GCTTCTTTCTCTTCACCCAAG,X,y,E0877C08,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,CCTAGTCAACGCCAAAAGGA,,y,E0877D09,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+COL4A5,2,F,,GGATTGTTGATTTCAGTTGAGC,X,y,E0877D10,,,,,,,138,1,rs371241295 ,c.82-82T>C,None,ss662961896 ,SSMP,,None,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,TGTGACAGAAACTGATGTGTCC,,y,E0877D11,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+COL4A5,3,F,,TGAATCTCAACCATGCCTGT,X,y,E0877D12,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,GACTCCCCGTCATTCCATT,,y,E0877E01,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+COL4A5,4,F,,TAAATGCTTCTTCCTTGGGTG,X,y,E0877E02,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,CATAATTCTCAACCATAAGCTAC,,y,E0877C09,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+COL4A5,05-Jun,F,,GTGCAATGAAGACAATGCTCC,X,y,E0877C10,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,2,rs191448930 ,c.277-220C>T,No,ss466799869,1000 genomes,Sample size=2188,None,
+,,R,,ACCCAATGCAATATCCCAGC,,y,E0877D01,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,rs112300643,c.277-215A>G,No,ss204332923,bushman,Sample size = 1. Last base of exon,?None,
+COL4A5,07-Aug,F,,TGGCATGTTTCAAAATGGCTT,X,y,E0877D02,,,,,,,138,2,"1.rs190645082
+2.rs111978148","1.c.385-102A>G
+2.c.385-97G>A","1.Seen in 6/2188. MAF:G=0.004/6 1000 genomes. Only seen in Finnish cohort, MAF=0.04/4%.
+2.Bushman sample size=3 A=0.667 G=0.333
+Seen in 16/1258. MAF:A=0.010/16 1000 genomes
+","1.ss466799883
+2.ss204332925
+ss341704990 ss662962005","1.1000 genomes               2. Bushman, 1000 genomes, SSMP ",,None,,,137,2 in F,"rs190645082
+rs111978148","c.385-102A>G
+c.385-97G>A","Seen in 6/2188. MAF:G=0.004/6 1000 genomes
+Bushman sample size=3 A=0.667 G=0.333
+Seen in 16/1258. MAF:A=0.010/16 1000 genomes
+","ss466799883
+ss204332925
+ss341704990","1000 genomes (no frequency data)
+ Bushman sample size=10
+1000 genomes (no frequency data)",,None,,,135,2,rs190645082,c.385-102A>G,No,ss466799883,1000 genomes,Sample size=2188,,
+,,R,,TTGAAGTTGCCAGCTTTCCT,,y,E0877D03,,,,,,,138,1,rs371752800 ,c.465+64A>G,7/1209 alleles in ESP African American cohort. MAF=0.006/0.6%,ss713661568 ,ESP,,None,,,137,0,,,,, ,,,,,135,,rs111978148,,,2,Bushman and 1000 genomes,"1000 genomes = 1258, Bushman=11",,
+COL4A5,9,F,,CAGTGTACTCTGGCCACTTCC,X,y,E0877D04,,,,,,,138,1,rs181676314,c.466-182G>C,Seen in 4/2188. MAF:C=0.002/4 1000 genomes,ss466799890,1000 genomes (no frequency data),3rd base in F primer,None,,,137,1 in F,rs181676314,c.466-182G>C,Seen in 4/2188. MAF:C=0.002/4 1000 genomes,ss466799890,1000 genomes (no frequency data),3rd base in F primer,None,,,135,1,rs181676314,c.466-182G>C,No,ss466799890,1000 genomes,Sample size=2188. 3rd base in F primer,None,
+,,R,,ATTCTCCCTGGTCCAGATTG,,y,E0877D06,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+COL4A5,10,F,,GGCGACACAAGTGAGACTTTG,X,y,E0877D07,,,,,,,138,1,rs143334408,c.547-92C>T,MAF:T=0.000/0 1000 genomes,ss341705005,"1000 genomes. Ensembl indicates that this variant was not identified in any of the 1000 genomes cohorts, possible error.",,None,,,137,1 in F,rs143334408,c.547-92C>T,MAF:T=0.000/0 1000 genomes,ss341705005,1000 genomes (no frequency data) Sample size=1258,,None,,,135,1,,c.547-92C>T,No,ss341705005,1000 genomes,Sample size=1258,,
+,,R,,TTCACCATATCATTGTAAAGTCACC,,y,E0877D08,,,,,,,138,,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+COL4A5,11-Dec,F,2,GCTACCTCTCTACCTCTGCC,X,y,Q8980F09,Seq 24/11/14,14/11/2014,599 bp,,,,138,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+,,R,2,CCTTGCTCACCCTGTTTGCA,,y,Q8980F10,,,,,,,138,4,"rs104886441 
+rs104886076
+rs104886077
+rs281874763","c.688-3C>G
+c.688G>C
+c.689delG
+c.689G>A","
+No frequency data
+No frequency data
+No frequency data
+No frequency data","ss244223608
+ss244223235
+ss244223236
+ss689950509","ARUP_COL4A5
+ARUP_COL4A5
+ARUP_COL4A5
+ARUP_COL4A5","All are listed as ""with pathogenic allele""",None,,,,,,,,,,,,,,,,,,,,,,,
+COL4A5,13,F,2,GTGAGTAAAGAAAGAGAGCTGGTTAT,X,y,Q8980F11,Seq 24/11/14,14/11/2014,525 bp,,,,138,2,"rs104886440
+rs372626056","c.687+1G>A
+c.687+19C>A","No frequency data
+No frequency data","ss244223607
+ss713661577","ARUP_COL4A5
+NHLBI-ESP","First is listed as ""with pathogenic allele""",None,,,,,,,,,,,,,,,,,,,,,,,
+,,R,2,ACCCTTATATATAACCACATTTCAGCT,,y,Q8980F12,,,,,,,138,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+COL4A5,14-16,F,,TTGCTCCAACATAGATGTAGCTGT,X,y,E0876B12,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,TTGTCATACTGCTTCTCTGCCA,,y,E0876C01,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+COL4A5,17,F,,TGCTGCAAGCTTTGGTTAAG,X,y,E0876C03,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,CTGTGATTTATGGCAATGGAAT,,y,E0876C04,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+COL4A5,18,F,,CATCACAGGTTAGGCTTAGC,X,y,E0876C05,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,GACCTTGAGGTCAACATTACTGA,,y,E0876C06,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+COL4A5,19,F,,AATGTTTTCAGGAGAACAAGGCT,X,y,E0876C07,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,TCTCCTACTTCCATGCTGACCA,,y,E0876C08,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+COL4A5,20,F,,GAAGATCTTATCATTATCTAATGT,X,y,E0876C09,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,,,,,,,,,
+,,R,,CAGAAACGCAACAAATGAGGC,,y,E0876C10,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,,,,,,,,,
+COL4A5,21,F,,TGGATGTTTACATTTGCTCTTCA,X,y,E0876C11,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,,,,,,,,,
+,,R,,TGAGATGGTCTTGGGGTATGA,,y,E0876C12,,,,,,,138,1,rs373387976 ,c.1423+120A>G,None,ss662962054 ,SSMP,,None,,,137,0,,,,,,,,,,135,,,,,,,,,
+COL4A5,22,F,,AGGCTTCTCCAATCACACCA,X,y,E0876B03,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,TGATAACAAATGGAGGCATTTCA,,y,E0876B04,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+COL4A5,23-24,F,,GGAGTTCAAGCTCAAAGCTTA,X,y,E3368C10,,,,,,,138,,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,TCTCAGCATCAGTCCCATCC,,y,E0876D01,,,,,,,138,2,"1.rs190775521 2.rs104886336
+",1.c.1779+88C>A 2.c.1739_1948+98del,"1.1000 Genomes, in Utah (MAF=0.008/0.8%) and Italian (MAF=0.007/0/7%) cohorts, overall MAF=0.001.
+2.Pathogenic - submitted by ARUP database",1.ss466799995 2.ss244223501,"1.1000 genomes
+2.ARUP database ((1441 BP DEL)/-)",rs104886336 looks like a pathogenic change that should be detected by MLPA,None,,,137,2 in R,"rs190775521
+rs104886336
+","c.1779+88C>A
+c.1739_1948+98del","Seen in 4/2188. MAF:A=0.001/2 1000 genomes
+Pathogenic - submitted by ARUP database","ss466799995
+ss244223501","1000 genomes (no frequency data)
+ARUP database ((1441 BP DEL)/-)",rs104886336 looks like a pathogenic change that should be detected by MLPA,None,,,135,2,rs190775521,c.1779+88C>A,no,,,rs104886336  looks like a pathogenic change,,
+COL4A5,25,F,,ATGGCTATATCCTTTCCCCAGT,X,y,E0876D12,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,GCCAGGGAAACACACCTCT,,y,E0876E11,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+COL4A5,26,F,,TGCTTTACCAGCGATCTCAGTA ,X,y,E2288B08,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,ACGCCACTGTACTCCAGCAT ,,y,E2288B09,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+COL4A5,27,F,,ACCTCAGGTGACCCATTGC,X,y,E0876G07,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,redesign F primer as >4000 other 100% hits,,,,,,,,
+,,R,,AGATATTTTCTTGTCTGGACTG,,y,E0876G08,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,,,,,,,,,
+COL4A5,28,F,,TGTGCTTTTGACATCTTACTGTT,X,y,E0876B05,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,GGGCTTGGGATGATATCTGA,,y,E2288B12,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,1,rs192551533,c.2244+157C>T,no,1,1000 genomes,,,
+COL4A5,29,F,,TTCGGCATTAAATTCTCTGTGG,X,y,E0876B07,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,CACCCATAAACTTTCCCAAAGG,,y,E0876B08,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+COL4A5,30,F,,TGCTGAATGAATGCCCAGT,X,y,E0876B09,,,,,,,138,1,rs185493661,c.2396-105A>G,MAF:G=0.000/0 1000 genomes. Ensembl lists all 1000 genomes cohorts as 100% 'A'. Possible error. ,ss466800068,1000 genomes,,None,,,137,1 in F,rs185493661,c.2396-105A>G,MAF:G=0.000/0 1000 genomes,ss466800068,1000 genomes (no frequency data) Sample size=2188,,None,,,135,1,,,,,,,,
+,,R,,AGCTTTTATGCTGTGGCTTGT,,y,E0876D02,,,,,,,138,,,,,,,,,,,137,0,,,,,,,,,,135,1,rs185493661,c.2396-105A>G,no=REV frag,1,1000 genomes,Sample size=2188,no,
+COL4A5,31,F,,TGTGCATGATGTCAAAAGTATCTCT,X,y,E0876D03,,,,,,,138,1,rs113448750,c.2510-140T>C,No frequency data,"ss169168706
+ss169446931","Illumina Quadv3. Sample size=270
+Illumina Duov3. Sample size=270",,None,,,137,1 in F,rs113448750,c.2510-140T>C,No frequency data,"ss169168706
+ss169446931","Illumina Quadv3. Sample size=270
+Illumina Duov3. Sample size=270",,None,,,135,1,rs113448750,c.2510-140T>C,no,2,Illumina and Duov3(also Illumina),,none,
+,,R,,CAAAGTGAGCTTCCTGCAGTC,,y,E0876D04,,,,,,,138,,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+COL4A5,32,F,,GTGCCTTACGTCCAACCCTC,X,y,E0876D05,,,,,,,138,,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,AGAAACACAAGTAACCATTGCTCA,,y,E0876D06,,,,,,,138,1,rs111338920,c.2767+114T>C,No frequency data,"ss169168677
+ss169446899","Illumina Quadv3. Sample size=270
+Illumina Duov3. Sample size=270",,None,,,137,1 in R,rs111338920,c.2767+114T>C,No frequency data,"ss169168677
+ss169446899","Illumina Quadv3. Sample size=270
+Illumina Duov3. Sample size=270",,None,,,135,1,rs111338920,c.2767+114T>C,no,2,Illumina and Duov3(also Illumina),,none,
+COL4A5,33,F,,GCCAGTGGCCTACTCAACTATG,X,y,E0876D07,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,TGCCTTTGTTGGTGAATTCTG,,y,E0876D08,,,,,,,138,1,rs373641511 ,c.2917+103G>A,No frequency data,ss662962160 ,SSMP,,None,,,137,0,,,,,,,,,,135,0,,,,,,,,
+COL4A5,34,F,,ATTTTCGTGTGAGTCCAGTGC,X,y,E0876D09,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,GCTACCCAAGCTTATTACCATGA,,y,E0876D10,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+COL4A5,35-36,F,,CCATTCCCATGAAACCAGAC,X,y,E0876D11,,,,,,,138,,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,TCATATCTGCTCAAGTATGTGCCTA,,y,E0876E01,,,,,,,138,1,rs201171311,c.3246+43A>G,"Ensembl indicates that this variant was not identified in any of the 1000 genomes cohorts, possible error.                                                      ESP: 2/6728 alleles in European American cohort (MAF=0.0003/0.03%).",1.ss489231384 2.ss713661651,1.1000 genomes.  2.ESP,,None,,,137,1 in R,rs201171311,c.3246+43A>G,MAF:G=0.000/0 1000 genomes,ss489231384,1000 genomes exome capture (no frequency data) Sample size=2256,,None,,,135,0,,,,,,,,
+COL4A5,37,F,,TGGAGATAATGAAGCCTAACTCACA,X,y,E0876E02,,,,,,,138,,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,TGCCAAATAAGAAGCTGCTCTG,,y,E0876E03,,,,,,,138,1,rs181206891,c.3373+67C>A,"Ensembl indicates that this variant was not identified in any of the 1000 genomes cohorts, possible error.  ",ss466800285,1000 genomes (no frequency data) Sample size=2188,,None,,,137,1 in R,rs181206891,c.3373+67C>A,MAF:A=0.000/0 1000 genomes,ss466800285,1000 genomes (no frequency data) Sample size=2188,,None,,,135,1,rs181206891,c.3373+67C>A,no,1,1000 genomes,,,
+COL4A5,38,F,,ACCAGCATCTTTTGGGTTTCT,X,y,E0876E04,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,CCCAGCCAATTTTAAGCACT,,y,E0876E05,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+COL4A5,39,F,,CCAAAGGAGTGTCTCAAAAGC,X,y,E0876E06,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,GGAAAAGGGGAAAGTGTGTG,,y,E0876E07,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+COL4A5,40,F,, TCATTTTCTCATGTTAGAATTGCAG,X,y,E0876E08,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,AGGTTTGAGTTTTCTGGGTTCTT,,y,E0876E09,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+COL4A5,41,F,,TTGTGAATTCCATTAATTGCCC,X,y,E0876E10,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,ACCTGCCAGCAAAACGAAAT,,y,E0876E12,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+COL4A5,44,F,,TGTTGTGTGGGTTTTATTCTGC,X,y,E0876F01,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,TAATTCGCCAGTGAGCCACA,,y,E0876F02,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+COL4A5,45-46,F,,CTCAATCACCTTCCTCCCCT,X,y,E0876F03,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,CTTAGCCTCCGATGGTCTGG,,y,E0876F04,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+COL4A5,47,F,,GGTCACTTTGGCTTCCATTTC,X,y,E0876F05,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,2 100% hits elsewhere in genome but diff assemblies of the X region,,
+,,R,,AGGGCCTGTCAAGGGGTAG,,y,E0876F06,,,,,,,138,0,,,,,,,,,,137,0,,,,,,2 100% hits elsewhere in genome but diff assemblies of the X region,,,,135,0,,,,,,,,
+COL4A5,48,F,,TCCTTGTTGGCTTCTTTGGT,X,y,E0876F07,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,AGGTCCACATTCACCAGTCAG,,y,E0876F08,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+COL4A5,49,F,,ATCCATAAGAGTGGATCAGAGCTT,X,y,E0876F09,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,TGGCCAAGGCTACTCTAGAACC,,y,E0876F11,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+COL4A5,50,F,,GGCAAGTTTCCTTGAAAGGCT,X,y,E0876F12,,,,,,,138,1,rs193157822,c.4511-96C>A,"1000 genomes, detected in Kenyan cohort only. 1/146 alleles (MAF=0.007/0.7%). Overall MAF<0.001.",ss466800462,1000 genomes ,,None,,,137,1 in F,rs193157822,c.4511-96C>A,MAF:A=0.001/1 1000 genomes,ss466800462,1000 genomes (no frequency data) Sample size=2188,,None,,,135,1,rs193157822,c.4511-96C>A,no,,1000 genomes,,none,
+,,R,,GCTTTGGACTCAAATCTGACTAGC,,y,E0876G01,,,,,,,138,1,rs104886417,c.4689-3_4717del32,Pathogenic - submitted by ARUP database,ss244223583,ARUP database ((1913 BP DEL)/-),rs104886417 looks like a pathogenic change,None,,,137,1 in R,rs104886417,c.4689-3_4717del32,Pathogenic - submitted by ARUP database,ss244223583,ARUP database ((1913 BP DEL)/-),rs104886417 looks like a pathogenic change,None,,,135,1,rs104886417,pathogenic,,,,,,
+COL4A5,51-52,F,,GAAGGCTTCCAATGAAGCAG,X,y,E0876G02,,,,,,,138,,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,TGAAGGAAGCTTTGGACCTG,,y,E0876G03,,,,,,,138,0,rs104886426 DELETED OCTOBER 2013,c.4994_5001del8,Pathogenic - submitted by ARUP database,ss244223592,ARUP database ((865 BP DEL)/-),"On dbSNP: 'rs104886426 was deleted on Dec 02, 2013 due to mapping or clustering errors.'",None,,,137,1 in R,rs104886426,c.4994_5001del8,Pathogenic - submitted by ARUP database,ss244223592,ARUP database ((865 BP DEL)/-),rs104886426 looks like a pathogenic change,None,,,135,1,rs104886426,pathogenic,,,,,none,
+COL4A5,53,F,,GTAAACCATTAAGTCACCAAGAG,X,y,E0876G04,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
+,,R,,TGAGGTACATCTGAATCTTCATG,,y,E0876G05,,,,,,,138,0,,,,,,,,,,137,0,,,,,,,,,,135,0,,,,,,,,
