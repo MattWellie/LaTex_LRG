@@ -1,4 +1,4 @@
-Gene,Exon,Direction,Version Number,Primer Sequences,Chromosome Number,Primer Batch Numbers In Use,Fragment Size
+Gene,Exon,Direction,Version Number,Primer Sequences,Chromosome Number,Primer Batch Numbers,Fragment Size
 BRCA1,1,F,1,CAAGTGATGCTCTGGGGTACTG,17,unknown,579
 BRCA1,,R,1,AAAATCCTGTCTCCTCCCCTTC,17,unknown,
 BRCA1,2,F,1,AAGGACGTTGTCATTAGTTCTTTGG,17,Q1149D02,441
