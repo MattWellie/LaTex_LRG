@@ -139,11 +139,12 @@ def run_parser():
         lrg_reader = LrgParser(file_name, padding, args.trim_flanking)
         dictionary  = lrg_reader.run()
         parser_details = lrg_reader.get_version
-    
-    if args.write_as_latex == True and write_primers ==True:
-        primer_label = primer()
-        dict = primer_label.run(dictionary, os.getcwd())
-        parser_details = '{0} {1} {2}'.format(file_type.upper(), 'Parser:', parser_details)
+
+    primer_label = primer()
+    dictionary = primer_label.run(dictionary, os.getcwd())
+
+    parser_details = '{0} {1} {2}'.format(file_type.upper(), 'Parser:', parser_details)
+
 
     os.chdir("outputFiles")
     for transcript in dictionary['transcripts']:  
@@ -155,15 +156,17 @@ def run_parser():
         reader_details = 'Reader: ' + input_reader.get_version
         writer_details = 'Writer: ' + writer.get_version
         xml_gui_details = 'Control: ' + get_version()
-        list_of_versions = [parser_details, reader_details, writer_details, xml_gui_details]
+        primer_details = 'Primer Labels: ' + primer_label.get_version
+        list_of_versions = [parser_details, reader_details, \
+                            writer_details, xml_gui_details, primer_details]
         lrg_num = file_name.split('.')[0].split('/')[1].replace('_', '\_')+'t'+str(transcript)
-        input_list, nm = input_reader.run(dictionary, transcript, write_as_latex, list_of_versions, print_clashes, file_type, lrg_num, username)
+        input_list, nm = input_reader.run(dictionary, transcript, args.write_as_latex, list_of_versions, args.print_clashes, file_type, lrg_num, username)
         if file_type == 'gbk':
             filename = dictionary['genename']+'_'+ nm
         else:
             filename = dictionary['genename']+'_'+ file_name.split('.')[0].split('/')[1]+'t'+str(transcript)
-        latex_file = writer.run(input_list, filename, write_as_latex)
-        if write_as_latex: call(["pdflatex", "-interaction=batchmode", latex_file])
+        latex_file = writer.run(input_list, filename, args.write_as_latex)
+        if args.write_as_latex: call(["pdflatex", "-interaction=batchmode", latex_file])
         # Move back a level to prepare for optional other transcripts
         os.chdir(os.pardir)
         # quick sleep to allow for non-overlapping writes
@@ -191,19 +194,11 @@ def check_file_type(file_name):
 
 arg_parser = argparse.ArgumentParser(description='Customise reference sequence settings')
 
-write_primers = True
-write_as_latex = True
-print_clashes = True
-trim_flanking = True
 
 arg_parser.add_argument('--trim', dest='trim_flanking', action='store_false', default=True)
 arg_parser.add_argument('--clashes', dest='print_clashes', action='store_false', default=True)
 arg_parser.add_argument('--text', dest='write_as_latex', action='store_false', default=True)
 args=arg_parser.parse_args()
-
-if args.print_clashes == False: print_clashes = False
-if args.trim_flanking == False: trim_flanking = False
-if args.write_as_latex == False: write_as_latex = False
 
 root = Tk()
 menu = Menu(root)
