@@ -5,6 +5,10 @@ It's open source anyway...
 ##Requirements and testing
 
 pdflatex/texlive/miktex (For LaTex production, not required for text document (see write\_as\_latex in Xml_GUI)
+-   This requires the packages:
+-- Soul & Color (Default LaTex packages
+-- Pdfcomment (possibly a default package, https://www.ctan.org/pkg/pdfcomment?lang=en)
+-- alltt (available by default)
 
 tkinter (python graphics package)
 
