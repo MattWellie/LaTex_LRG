@@ -126,5 +126,3 @@ used to alter the function of the program:
 ────▀▄▒▒▒▒▒▒▒▒▒▒▄▄▄▀▒▒▒▒▄▀<br>
 ───▐▀▒▀▄▄▄▄▄▄▀▀▀▒▒▒▒▒▄▄▀<br>
  ──▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▀▀<br>
-
-#Happy hunting
