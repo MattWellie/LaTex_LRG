@@ -78,7 +78,8 @@ def get_version():
 
 
 def open_file():
-    name = askopenfilename(defaultextension='')
+    current = os.path.join(os.getcwd(), 'input')
+    name = askopenfilename(initialdir='%s' % current)
     entry.delete(0, END)
     entry.insert(0, name)
 
@@ -95,6 +96,9 @@ def about():
     print 'The document can be annontated by the use of highlighting\n\n'
     print 'If there are any faults during execution or output problems'
     print 'please contact matthew.welland@bwnft.nhs.uk, WMRGL, Birmingham\n'
+    
+    print 'If your gene of choice is in GenBank format and contains a single exon,\n'
+    print 'Un-comment the code block in GbkParser.py, line 123\n'
     '''
     print '─────────▄──────────────▄'
     print '────────▌▒█───────────▄▀▒▌'
@@ -121,60 +125,105 @@ def about():
 
 def run_parser():
 
-    padding = pad.get()
+    padding = 300
     directory_and_file = entry.get()
     file_name = directory_and_file.split('/')[-2] + '/' + directory_and_file.split('/')[-1]
     file_type = check_file_type(file_name)
     username = entry_name.get()
+    matt_is_awesome = True
     dictionary = {}
     nm = ''
     parser_details = ''
+    #primer_list = [name.split('.')[0] for name in os.listdir('primers')]
+    primer_list = os.listdir('primers')
+    primer_applied = False
     if file_type == 'gbk':
         print 'Running parser'
         gbk_reader = GbkParser(file_name, padding, args.trim_flanking)
         dictionary = gbk_reader.run()
         parser_details = gbk_reader.get_version
+        if dictionary['genename'][:5] == 'ENSG0':
+            actual_file_name = file_name.split('/')[1]
+            dictionary['genename'] = actual_file_name.split('_')[0]
     elif file_type == 'lrg':
         print 'Running parser'
         lrg_reader = LrgParser(file_name, padding, args.trim_flanking)
         dictionary  = lrg_reader.run()
         parser_details = lrg_reader.get_version
 
-    primer_label = primer()
-    dictionary = primer_label.run(dictionary, os.getcwd())
+    primer_applied = False
+    try:
+        if dictionary['genename']+'.csv' in primer_list:
+            primer_applied = True
+            primer_label = primer()
+            primer_details = 'Primer Labels: ' + primer_label.get_version
+            dictionary = primer_label.run(dictionary, os.getcwd())
+    except:
+        print 'primer failure'
 
     parser_details = '{0} {1} {2}'.format(file_type.upper(), 'Parser:', parser_details)
 
-
-    os.chdir("outputFiles")
+    os.chdir("output")
     for transcript in dictionary['transcripts']:  
-        print 'transcript:'
-        transcript  
-        
+        print 'Transcript: %d' % transcript
         input_reader = Reader()
         writer = LatexWriter()
         reader_details = 'Reader: ' + input_reader.get_version
         writer_details = 'Writer: ' + writer.get_version
         xml_gui_details = 'Control: ' + get_version()
-        primer_details = 'Primer Labels: ' + primer_label.get_version
-        list_of_versions = [parser_details, reader_details, \
+        if primer_applied:
+            list_of_versions = [parser_details, reader_details, \
                             writer_details, xml_gui_details, primer_details]
+        else:
+            list_of_versions = [parser_details, reader_details, \
+                            writer_details, xml_gui_details]
         lrg_num = file_name.split('.')[0].split('/')[1].replace('_', '\_')+'t'+str(transcript)
         input_list, nm = input_reader.run(dictionary, transcript, args.write_as_latex, list_of_versions, args.print_clashes, file_type, lrg_num, username)
         if file_type == 'gbk':
             filename = dictionary['genename']+'_'+ nm
         else:
             filename = dictionary['genename']+'_'+ file_name.split('.')[0].split('/')[1]+'t'+str(transcript)
-        latex_file = writer.run(input_list, filename, args.write_as_latex)
-        if args.write_as_latex: call(["pdflatex", "-interaction=batchmode", latex_file])
-        # Move back a level to prepare for optional other transcripts
-        os.chdir(os.pardir)
-        # quick sleep to allow for non-overlapping writes
+        if args.write_as_latex:
+            latex_file, pdf_file = writer.run(input_list, filename, args.write_as_latex)
+            call(["pdflatex", "-interaction=batchmode", latex_file])
+            clean_up(os.getcwd(), pdf_file)
+            move_files(latex_file)
+        else:
+            latex_file = writer.run(input_list, filename, args.write_as_latex)
+        
+        # quick step to allow for non-overlapping writes
         print str(transcript) + ' has been printed'
 
     print "Process has completed successfully"
     root.quit()
+    
+def kill_the_spare():
+    pass
 
+def move_files(latex):
+    os.rename(latex, os.path.join('tex files', latex))
+    
+def clean_up(path, pdf_file):
+    pdf_split = pdf_file.split('_')
+    pwd_files = os.listdir(path)
+    pdf_files = [doc for doc in pwd_files if \
+                doc.split('.')[-1] == 'pdf']
+    for target in pdf_files:        
+        if target == 'tex files':
+            pass  
+        else:
+            target_split = target.split('_')
+            if target_split[0:3] == pdf_split[0:3]\
+                and target_split[-2:] != pdf_split[-2:]:
+                os.remove(os.path.join(path, target))
+    targets = [doc for doc in pwd_files if \
+                doc.split('.')[-1] not in keep_extensions]
+    for target in targets:
+        if target == 'tex files':
+            pass   
+        else:   
+            os.remove(os.path.join(path, target))
+        
 
 def check_file_type(file_name):
     """ This function takes the file name which has been selected
@@ -193,12 +242,12 @@ def check_file_type(file_name):
         exit()
 
 arg_parser = argparse.ArgumentParser(description='Customise reference sequence settings')
-
-
 arg_parser.add_argument('--trim', dest='trim_flanking', action='store_false', default=True)
 arg_parser.add_argument('--clashes', dest='print_clashes', action='store_false', default=True)
 arg_parser.add_argument('--text', dest='write_as_latex', action='store_false', default=True)
 args=arg_parser.parse_args()
+
+keep_extensions = ['pdf', 'tex']
 
 root = Tk()
 menu = Menu(root)
@@ -210,15 +259,9 @@ text_in_label = Label(root, text="File name:")
 text_in_label.grid(row=0, column=1, sticky='w')
 entry = Entry(root)
 entry.grid(row=0, column=2, sticky='w')
-entry.insert(0, 'G:/Git/Reference_Sequencer/lrgs/LRG_292.xml')
+entry.insert(0, 'input/LRG_292.xml')
 button = Button(root, text="Browse...", command=open_file)
 button.grid(row=0, column=3)
-
-padding_in_label = Label(root, text="Intronic padding:")
-padding_in_label.grid(row=1, column=1, sticky='w')
-pad = Entry(root)
-pad.grid(row=1, column=2, sticky='w')
-pad.insert(0, 300)
 
 text2 = Label(root, text="User Name:")
 text2.grid(row=3, column=1, sticky='w')
