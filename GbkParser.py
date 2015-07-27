@@ -128,8 +128,6 @@ class GbkParser:
             self.transcriptdict['transcripts'][alternative]['exons'][exon]['genomic_start'] = selected_mrna.location.start
             """
             for coords in subfeatures:
-                print 'Found a coord'
-                his = raw_input()
                 self.transcriptdict['transcripts'][alternative]['exons'][exon] = {}
                 self.transcriptdict['transcripts'][alternative]['list_of_exons'].append(exon)
                 self.transcriptdict['transcripts'][alternative]['exons'][exon]['genomic_start'] = coords.location.start
