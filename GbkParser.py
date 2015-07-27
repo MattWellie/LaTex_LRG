@@ -78,6 +78,7 @@ class GbkParser:
             exon_list = self.transcriptdict['transcripts'][transcript]['list_of_exons']
             # exon_list.sort(key=float)
             for exon in exon_list:
+                print "Woring on exon %d" % exon
                 g_start = self.transcriptdict['transcripts'][transcript]['exons'][exon]['genomic_start']
                 g_stop = self.transcriptdict['transcripts'][transcript]['exons'][exon]['genomic_end']
                 if offset > g_stop:
@@ -119,7 +120,16 @@ class GbkParser:
             exon = 1
             subfeatures = selected_mrna._get_sub_features()
             
+            # Un-comment this section for single Exon genes
+            """
+            self.transcriptdict['transcripts'][alternative]['exons'][exon] = {}
+            self.transcriptdict['transcripts'][alternative]['list_of_exons'].append(exon)
+            self.transcriptdict['transcripts'][alternative]['exons'][exon]['genomic_end'] = selected_mrna.location.end
+            self.transcriptdict['transcripts'][alternative]['exons'][exon]['genomic_start'] = selected_mrna.location.start
+            """
             for coords in subfeatures:
+                print 'Found a coord'
+                his = raw_input()
                 self.transcriptdict['transcripts'][alternative]['exons'][exon] = {}
                 self.transcriptdict['transcripts'][alternative]['list_of_exons'].append(exon)
                 self.transcriptdict['transcripts'][alternative]['exons'][exon]['genomic_start'] = coords.location.start
@@ -213,6 +223,8 @@ class GbkParser:
                     self.mrna.append(feature)
             note = self.mrna[0].qualifiers['note'][0]
             self.transcriptdict['genename'] = note.split('=')[1]
+        except IndexError:
+            print "some aspect of exon gathering failed"
         assert len(self.cds) == len(self.mrna), "There are a different number of CDS and mRNA"
         return features
 
